@@ -1,10 +1,12 @@
 import React from "react";
 import Router, {Route, DefaultRoute} from "react-router";
 import Application from "./Application";
+import SingleArticle from "./SingleArticle";
 import Home from "./Home";
 
 const routes = (
-  <Route name="app" path="/" handler={Application} >
+  <Route name="app" path="/" >
+    <Route name="article" path="/article/:articleID" handler={SingleArticle} />
     <DefaultRoute handler={Home} />
   </Route>
   );
