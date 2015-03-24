@@ -4,12 +4,14 @@
 p, blockquote, h1, h2, h3, ul, ol, li, a, span {
    font-family: 'Noto Sans', sans-serif;
    line-height: 1.8;
-   font-size: 20px;
+   font-size: 18px;
    color: rgb(53,55,54);
 }
 .Article {
 	width: 100%;
-	margin: 0 auto;
+	margin: 100px auto;
+   margin-bottom: 30px;
+
 }
 @media screen and (min-width: 400px){
     .Article {
@@ -18,17 +20,34 @@ p, blockquote, h1, h2, h3, ul, ol, li, a, span {
     }
 }
 .Article-author {
-
-	margin: 8px;
-	line-height: 1.4;
-	font-family: 'Noto Sans', sans-serif;
+   background: #FAFAFA;
+   min-height: 150px;
+   line-height: 1.4;
+   font-family: 'Noto Sans', sans-serif;
 }
 .Article-avatar {
 	float: left;
+   margin: 20px 10px 0px 20px;
+   background: white;
+   border: 3px solid;
+   border-radius: 50%;
+   width: 80px;
 }
 .Article-info {
 	overflow:hidden;  _overflow:visible;  zoom:1; 
 	padding-left:10px;
+   padding-top: 24px;
+}
+div.Article-name {
+  font-size: 22px;
+  font-weight: 800;
+  display: inline-block;
+}
+div.Article-date {
+  display: inline-block;
+  font-size: 10px;
+  font-weight: 200;
+  margin: 0 6px;
 }
 
 blockquote {
@@ -42,10 +61,10 @@ blockquote {
    
 }
 h1 {
-   font-size: 46px;
-   line-height: 1.1;
+   font-size: 40px;
+   line-height: 1.25;
    font-weight: 900;
-   margin: 10px 0px;
+   margin: 40px 0px;
 }
 h2 {
    font-size: 26px;
@@ -71,7 +90,8 @@ a:hover {
 	
 }
 hr {
-   border: 1px solid;
+   border: none;
+   border-top: 1px solid rgb(200,200,200);
 }
 /* IMAGES */
 a.lightbox {
