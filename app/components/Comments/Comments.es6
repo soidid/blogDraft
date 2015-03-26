@@ -1,4 +1,4 @@
-import React from "react";
+import React from "react/addons";
 import "./Comments.css";
 
 //http://community.citizenedu.tw/t/topic/798/11
@@ -10,14 +10,16 @@ export default React.createClass({
   displayName: "Comments",
   
   getInitialState(){
-       return {
-          focusTab: 'editorsPick',//all
-          max: 3,
-          commentData: post_stream.posts
-       }
+      return {
+         focusTab: 'editorsPick',//all
+         max: 3,
+         commentData: post_stream.posts,
+         expandedCommentId:{}
+      }
   },
 
   _onToggle(choice, event){
+      console.log(choice);
       this.setState({
           focusTab: choice
       });
@@ -30,7 +32,17 @@ export default React.createClass({
 
   },
 
-  /////////////////// IMAGE URL ISSUE
+  _onReadMore(item, event){
+
+    var current = this.state.expandedCommentId;
+    current[item.id] = true;
+
+    this.setState({
+        expandedCommentId: current
+    });
+
+  },
+  // /////////////////// IMAGE URL ISSUE
   componentDidMount() {
       var trimCommentData = [];
       this.state.commentData.map((item, key)=>{
@@ -40,22 +52,23 @@ export default React.createClass({
         var el = document.createElement( 'div' );
         el.innerHTML = item.cooked;
 
-        $("img").each(function(index, value){
+        // $("img").each(function(index, value){
 
-            var check = value.src.indexOf('community.citizenedu.tw');
+        //     var check = value.src.indexOf('community.citizenedu.tw');
             
-            if(check === -1){
-                var split = '/images/';
-                var relativePath = value.src.split('/images/')[1];
-                if(!relativePath){
-                    split = '/letter_avatar/';
-                    relativePath = value.src.split('/letter_avatar/')[1];
-                }
-                value.src = 'http://community.citizenedu.tw' + split + relativePath; 
-                //console.log(value);
-            }
+        //     if(check === -1){
+        //         var split = '/images/';
+        //         var relativePath = value.src.split('/images/')[1];
+        //         if(!relativePath){
+        //             split = '/letter_avatar/';
+        //             relativePath = value.src.split('/letter_avatar/')[1];
+        //         }
+        //         value.src = 'http://community.citizenedu.tw' + split + relativePath; 
+        //         //console.log(value);
+        //     }
             
-        });
+        // });
+        
         //console.log(item.cooked);
         item.cooked = el.innerHTML;
         trimCommentData.push(item);
@@ -64,15 +77,13 @@ export default React.createClass({
     this.setState({
         commentData: trimCommentData
     });
-
   },
-
   render() {
       
       /* ================================ 
        *   Comments
        * ================================ */
-      var { focusTab, max, commentData } =  this.state;
+      var { focusTab, max, commentData, expandedCommentId } =  this.state;
       
       //console.log(commentData);
 
@@ -85,51 +96,37 @@ export default React.createClass({
           var size = 120;
           var avatarTemplate = item.avatar_template.split('{size}')[0]+"/"+size+"/"+item.avatar_template.split('{size}')[1];
           var imgURL = "http://community.citizenedu.tw"+avatarTemplate;
-          var classes = (key < this.state.max) ? "Comments-post" : "Comments-post is-hide";
           
-          //Create a dummy DOM element in order to manuplate HTML string
-          // Replace image url
-              // var el = document.createElement( 'div' );
-              // el.innerHTML = item.cooked;
-      
-              // $("img").each(function(index, value){
-              //     value.async = true;
+          var classSet = React.addons.classSet;
+          var commentClasses = classSet({
+              "Comments-post": true,
+              "is-hide": key > this.state.max
+          });
+          var mainClasses = classSet({
+              "Comments-main": true,
+              "is-expanded": expandedCommentId[item.id]
+          });
 
-              //     var check = value.src.indexOf('community.citizenedu.tw');
-                  
-              //     if(check === -1){
-              //         var split = '/images/';
-              //         var relativePath = value.src.split('/images/')[1];
-              //         if(!relativePath){
-              //             split = '/letter_avatar/';
-              //             relativePath = value.src.split('/letter_avatar/')[1];
-              //         }
-              //         value.src = 'http://community.citizenedu.tw' + split + relativePath; 
-              //         console.log(value);
-              //     }
-                  
-              // });
-              // //console.log(item.cooked);
-              // item.cooked = el.innerHTML;
-             
-          //------------------------------------------
-        
-        return (
-           <div className={classes}
-                key={key}>
-
+          var bouncClick = this._onReadMore.bind(null, item);
+          var expandButtomItem = (expandedCommentId[item.id]) ? 
+          "" :  (<div className="Comments-expandButton"
+                      onClick= {bouncClick}>Read more</div>);
+          return (
+            <div className={commentClasses}
+                 key={key}>
+                
                 <div className="Comments-left">
-                     <img className="Comments-img" src={imgURL} />
+                    <img className="Comments-img" src={imgURL} />
                 </div>
-                <div className="Comments-main">
-                     <div className="Comments-author">{item.name}</div> 
-                     <div className="Comments-date">{"・發表於  "+item.created_at.split('T')[0]}</div>
-                     <div dangerouslySetInnerHTML={{__html: item.cooked}}></div>
+                <div className={mainClasses}
+                     id={"CommentMain"+item.id}>
+                    <div className="Comments-author">{item.name}</div> 
+                    <div className="Comments-date">{"・發表於  "+item.created_at.split('T')[0]}</div>
+                    <div dangerouslySetInnerHTML={{__html: item.cooked}}></div>
                 </div>
-                <div className="Comments-expandButton">Read more</div>
-               
+                {expandButtomItem}
             </div>
-        )
+          )
       });
 
       /* ================================ 

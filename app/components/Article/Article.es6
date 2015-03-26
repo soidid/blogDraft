@@ -24,10 +24,11 @@ export default React.createClass({
       var size = 120;//size=45,120
       var avatarTemplate = article.avatar_template.split('{size}')[0]+"/"+size+"/"+article.avatar_template.split('{size}')[1];
       var imgURL = "http://community.citizenedu.tw"+avatarTemplate;
-        
+    
       return (
-      <div className="Article">
-          {this.props}
+      <div>
+
+          <div className="Article">
           <div className="Article-content">
             <div dangerouslySetInnerHTML={{__html: data.cooked}}></div>
           </div>
@@ -50,7 +51,7 @@ export default React.createClass({
                
           </div>
          
-         
+          </div> 
       </div>
       );
   }
