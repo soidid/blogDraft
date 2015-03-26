@@ -9,39 +9,55 @@ p, blockquote, h1, h2, h3, ul, ol, li, a, span {
 }
 .Article {
 	width: 100%;
-	margin: 100px auto;
-   margin-bottom: 30px;
-
+	margin: 100px auto 0px auto;
+}
+.Article-authorWrapper {
+  background: rgb(230,230,230);
+  padding: 10px;
 }
 @media screen and (min-width: 400px){
-    .Article {
-		max-width: 600px;
-
+    .Article-content,.Article-author{
+		    max-width: 600px;
+        margin: 0 auto;
     }
 }
 .Article-author {
-   background: #FAFAFA;
-   min-height: 150px;
-   line-height: 1.4;
-   font-family: 'Noto Sans', sans-serif;
+  //background: #FAFAFA;
+  line-height: 1.4;
+  font-family: 'Noto Sans', sans-serif;
+  
+}
+.Article-authorHeader {
+  min-height: 120px;
 }
 .Article-avatar {
+  cursor: pointer;
 	float: left;
-   margin: 20px 10px 0px 20px;
-   background: white;
-   border: 3px solid;
-   border-radius: 50%;
-   width: 80px;
+  margin: 20px 10px 0px 20px;
+  background: white;
+  //border: 3px solid rgb(140,140,140);
+  box-shadow: 3px 3px 0px rgba(200,200,200,0.4);
+  border-radius: 50%;
+  width: 80px;
+}
+.Article-avatar:hover {
+  box-shadow: 3px 3px 0px rgba(200,200,200,0.7);
 }
 .Article-info {
 	overflow:hidden;  _overflow:visible;  zoom:1; 
 	padding-left:10px;
-   padding-top: 24px;
+  padding-top: 24px;
+
 }
 div.Article-name {
+  cursor: pointer;
   font-size: 22px;
   font-weight: 800;
+  margin-top: 20px;
   display: inline-block;
+}
+div.Article-name:hover {
+  text-decoration: underline;
 }
 div.Article-date {
   display: inline-block;
@@ -105,6 +121,26 @@ a.lightbox img {
 }
 .informations {
 	display: none;
+}
+.Article-footer {
+  text-align: center;
+  background: rgb(230,230,230);
+  min-height: 150px;
+  
+}
+.Article-button {
+  border: 1px solid rgb(50,50,50);
+  border-radius: 30px; 
+  display: inline-block;
+  padding: 12px 24px;
+  cursor: pointer;
+  margin-top: 10px;
+  color: rgb(50,50,50);
+}
+.Article-button:hover {
+  color: black;
+  border-color: black;
+
 }
 
 

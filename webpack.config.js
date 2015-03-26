@@ -22,7 +22,8 @@ module.exports = {
     loaders: [
       { test: /\.(js|es6)$/, exclude:/node_modules/, loaders: es6Loaders.concat(["babel-loader"]) },
       { test: /\.css$/, loader: "style-loader!css-loader" },
-      { test: /\.(jpg|png)$/, loader: "url-loader"}
+      { test: /\.(jpg|png)$/, loader: "url-loader"},
+      { test: /\.(json)$/, loader: "json-loader"}
     ]
   },
   plugins: [
