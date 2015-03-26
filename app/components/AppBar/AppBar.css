@@ -7,3 +7,6 @@
 	font-weight: 700;
 	cursor: pointer;
 }
+.AppBar-logo:hover {
+	color: #87B825;
+}
