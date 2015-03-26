@@ -7,7 +7,7 @@ export default React.createClass({
   render() {
       return (
       <div className="AppBar">
-         公民學院部落格
+          <a href="/"><div className="AppBar-logo">公民學院部落格</div></a>
       </div>
       );
   }

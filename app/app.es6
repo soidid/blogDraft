@@ -3,9 +3,10 @@ import Router, {Route, DefaultRoute} from "react-router";
 import Application from "./Application";
 import SingleArticle from "./SingleArticle";
 import Home from "./Home";
+import "./normalize.css";
 
 const routes = (
-  <Route name="app" path="/" >
+  <Route name="app" path="/" handler={Application} >
     <Route name="article" path="/article/:articleID" handler={SingleArticle} />
     <DefaultRoute handler={Home} />
   </Route>

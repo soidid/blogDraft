@@ -8,7 +8,7 @@ export default React.createClass({
 
     return (
       <div>
-        Hello World
+        
         <RouteHandler {...this.props} {...this.state} />
       </div>
     );
