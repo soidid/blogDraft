@@ -5,6 +5,7 @@
 	padding: 18px;
 	background: white;
 	cursor: pointer;
+	border: 1px solid gray;
 
 }
 .Arthor:hover {

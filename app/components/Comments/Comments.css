@@ -1,6 +1,6 @@
 .Comments {
 	background: rgb(240,240,240);
-	padding-top: 50px;
+	padding: 40px 0px;
 }
 @media screen and (min-width: 400px){
     .Comments-content {
@@ -17,7 +17,7 @@
 
 }
 .Comments-tabs {
-	border-bottom: 1px solid rgb(200,200,200);
+	//border-bottom: 1px solid rgb(200,200,200);
 	
 }
 .Comments-tab {
@@ -40,6 +40,7 @@
 	
 	margin: 0 auto;
 	margin-bottom: 10px;
+
 	
 }
 .Comments-post.is-hide {
@@ -48,6 +49,8 @@
 	min-height: 0px;
 	padding: 0px;
 	overflow: hidden;
+	margin: 0px;
+	border: none;
 }
 .Comments-main {
 	height: 280px;
@@ -122,7 +125,7 @@
 .Comments-footer {
 	text-align: center;
 }
-.Comments-loadButton {
+.Comments-button {
 	border: 1px solid rgb(200,200,200);
     border-radius: 20px;
     display: inline-block;
@@ -130,6 +133,26 @@
     cursor: pointer;
     margin-top: 10px;
     color: rgb(100,100,100);
+    margin: 5px;
+}
+.Comments-button:hover {
+	color: #87B825;
+    border-color: #87B825;
+}
+.Comments-button--hightlight {
+	border: 1px solid rgb(100,100,100);
+    color: rgb(100,100,100);
+    padding: 8px 20px;
+    border-radius: 20px;
+    display: inline-block;
+    cursor: pointer;
+    margin-top: 10px;
+    margin: 5px;
+}
+.Comments-button--hightlight:hover {
+  color: black;
+  border-color: black;
+
 }
 aside { /* comment 中引用 */
 	margin-top: 15px;

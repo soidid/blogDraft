@@ -11,8 +11,8 @@ p, blockquote, h1, h2, h3, ul, ol, li, a, span {
 	width: 100%;
 	margin: 100px auto 0px auto;
 }
-.Article-authorWrapper {
-  background: rgb(230,230,230);
+.Article-authorBackground {
+  /*background: rgb(230,230,230);*/
   padding: 10px;
 }
 @media screen and (min-width: 400px){
@@ -36,7 +36,8 @@ p, blockquote, h1, h2, h3, ul, ol, li, a, span {
   margin: 20px 10px 0px 20px;
   background: white;
   //border: 3px solid rgb(140,140,140);
-  box-shadow: 3px 3px 0px rgba(200,200,200,0.4);
+  //box-shadow: 3px 3px 0px rgba(200,200,200,0.4);
+  border: 3px solid;
   border-radius: 50%;
   width: 80px;
 }
@@ -128,19 +129,6 @@ a.lightbox img {
   min-height: 150px;
   
 }
-.Article-button {
-  border: 1px solid rgb(50,50,50);
-  border-radius: 30px; 
-  display: inline-block;
-  padding: 12px 24px;
-  cursor: pointer;
-  margin-top: 10px;
-  color: rgb(50,50,50);
-}
-.Article-button:hover {
-  color: black;
-  border-color: black;
 
-}
 
 

@@ -7,7 +7,7 @@ import "./normalize.css";
 
 const routes = (
   <Route name="app" path="/" handler={Application} >
-    <Route name="article" path="/article/:articleID" handler={SingleArticle} />
+    <Route name="article" path="/article/:articleId" handler={SingleArticle} />
     <DefaultRoute handler={Home} />
   </Route>
   );

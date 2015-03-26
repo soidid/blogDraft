@@ -1,5 +1,8 @@
 import React from "react";
+//import Router, {RouteHandler, State} from "react-router";
+
 import Arthor from "../Arthor/Arthor.es6";
+import Comments from "../Comments/Comments.es6";
 
 import "./Article.css";
 
@@ -9,6 +12,12 @@ import article from "./Article.json";;
 
 export default React.createClass({
   displayName: "Article",
+
+  getInitialState(){
+       return {
+          
+       }
+  },
   
   render() {
       var data = article;
@@ -18,10 +27,11 @@ export default React.createClass({
         
       return (
       <div className="Article">
-         <div className="Article-content">
+          {this.props}
+          <div className="Article-content">
             <div dangerouslySetInnerHTML={{__html: data.cooked}}></div>
-         </div>
-         <div className="Article-authorWrapper">
+          </div>
+          <div className="Article-authorBackground">
             <div className="Article-author">
                <div className="Article-authorHeader">
                   <img className="Article-avatar"
@@ -34,11 +44,12 @@ export default React.createClass({
                <Arthor />
             </div>
             
-         </div>
-         <div className="Article-footer">
-               <div className="Article-button"
-                    onClick={this._onSetNewMax}>與我們討論這篇文章</div>
-         </div>
+          </div>
+          <Comments />
+          <div className="Article-footer">
+               
+          </div>
+         
          
       </div>
       );

@@ -1,5 +1,5 @@
 import React from "react";
-
+import {Link} from "react-router";
 export default React.createClass({
   displayName: "Home",
 
@@ -13,8 +13,7 @@ export default React.createClass({
     
    return (
       <div>
-        HOME
-        <a href="#/article/1">文章</a>
+        <Link to="article" params={{articleId: 1}}>作者已死：評論藝術作品，需要看作者臉色嗎？</Link>
       </div>
    );
   }
