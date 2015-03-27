@@ -19,7 +19,7 @@ export default React.createClass({
   },
 
   _onToggle(choice, event){
-      console.log(choice);
+      //console.log(choice);
       this.setState({
           focusTab: choice
       });
@@ -44,6 +44,16 @@ export default React.createClass({
   },
   // /////////////////// IMAGE URL ISSUE
   componentDidMount() {
+
+      
+      var rect = this.getDOMNode().getBoundingClientRect();
+      console.log(rect.top);
+
+      this.props.commentMountHandler(rect.top);
+
+
+      //////////////
+
       var trimCommentData = [];
       this.state.commentData.map((item, key)=>{
         

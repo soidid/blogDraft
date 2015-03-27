@@ -1,4 +1,4 @@
-import React from "react";
+import React from "react/addons";
 //import Router, {RouteHandler, State} from "react-router";
 
 import Arthor from "../Arthor/Arthor.es6";
@@ -16,8 +16,23 @@ export default React.createClass({
 
   getInitialState(){
        return {
-          
+          commentTop: 0
        }
+  },
+
+  _onGoToComment(){
+      //console.log("Comments");
+      //var commentNode = document.getElementByClass("Comments");
+      //console.log(commentNode);
+      window.scrollTo(0, this.state.commentTop);
+
+  },
+
+  _onCommentsMounted(top){
+      //console.log("Comments Mounted: "+top);
+      this.setState({
+         commentTop: top
+      });
   },
   
   render() {
@@ -32,12 +47,13 @@ export default React.createClass({
           <div className="Article">
             <Arthor type="widget"/>
             
-
             <div className="Article-cover">
                 <img className="Article-coverImg"
                      src="https://fbcdn-sphotos-d-a.akamaihd.net/hphotos-ak-xfp1/t31.0-8/10514156_978580618821819_5686475740468114136_o.jpg" /> 
             </div>
-            <Social />
+            
+            <Social goToCommentHandler={this._onGoToComment}/>
+
             <div className="Article-content">
               
               <div dangerouslySetInnerHTML={{__html: data.cooked}}></div>
@@ -55,7 +71,7 @@ export default React.createClass({
                <Arthor type="section"/>
             </div>   
             </div>
-            <Comments />
+            <Comments commentMountHandler={this._onCommentsMounted}/>
           
           </div> 
       </div>
