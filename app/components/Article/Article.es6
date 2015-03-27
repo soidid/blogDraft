@@ -1,7 +1,7 @@
 import React from "react/addons";
 //import Router, {RouteHandler, State} from "react-router";
 
-import Arthor from "../Arthor/Arthor.es6";
+import Author from "../Author/Author.es6";
 import Comments from "../Comments/Comments.es6";
 import Social from "../Social/Social.es6";
 
@@ -45,7 +45,7 @@ export default React.createClass({
       <div>
 
           <div className="Article">
-            <Arthor type="widget"/>
+            <Author type="widget"/>
             
             <div className="Article-cover">
                 <img className="Article-coverImg"
@@ -71,7 +71,7 @@ export default React.createClass({
                          <div className="Article-date">發表於 {data.created_at.split('T')[0]}</div>
                       </div>
                    </div>
-                   <Arthor type="section"/>
+                   <Author type="section"/>
                 </div>   
             </div>
             <Comments commentMountHandler={this._onCommentsMounted}/>

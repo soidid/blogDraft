@@ -1,12 +1,12 @@
 import React from "react/addons";
-import "./Arthor.css";
+import "./Author.css";
 import $ from "jquery";
 
 //http://community.citizenedu.tw/users/kris/activity
-import arthor from "./Arthor.json";;
+import Author from "./Author.json";;
 
 export default React.createClass({
-  displayName: "Arthor",
+  displayName: "Author",
 
   getInitialState(){
       return {
@@ -15,7 +15,7 @@ export default React.createClass({
   },
   
   componentDidMount() {
-    var ref = this.refs.ArthorWidget;
+    var ref = this.refs.AuthorWidget;
     if(!ref) return;
 
     var rect = ref.getDOMNode().getBoundingClientRect();
@@ -46,36 +46,36 @@ export default React.createClass({
     });
   },
   render() {
-      //console.log(arthor.user.bio_excerpt);
-      //console.log(arthor.user.bio_raw);
+      //console.log(Author.user.bio_excerpt);
+      //console.log(Author.user.bio_raw);
       var result = "";
       if(this.props.type === "section"){
           result = (
-              <div className="Arthor">
-                 <div dangerouslySetInnerHTML={{__html: arthor.user.bio_excerpt}}></div>
-                 <div className="Arthor-showFullBio">看完整作者介紹</div>
+              <div className="Author">
+                 <div dangerouslySetInnerHTML={{__html: Author.user.bio_excerpt}}></div>
+                 <div className="Author-showFullBio">看完整作者介紹</div>
               </div>
           )
 
       }else if(this.props.type === "widget"){
           var classSet = React.addons.classSet;
           var classes = classSet({
-              "Arthor-widget" : true,
-              "Arthor-widget--fixed": this.state.scroll
+              "Author-widget" : true,
+              "Author-widget--fixed": this.state.scroll
           });
 
           result = (
               <div className={classes}
-                   ref="ArthorWidget">
-                  <img className="Arthor-widgetAvatar"
+                   ref="AuthorWidget">
+                  <img className="Author-widgetAvatar"
                        src="http://okapi.books.com.tw/uploads/article/article10144_3.png" />
-                  <div className="Arthor-widgetInfo">
-                      <a className="Arthor-widgetLink">朱家安</a>・發表於<a className="Arthor-widgetLink">沃草烙哲學</a>
-                      <span className="Arthor-tagsSection">
-                          <span className="Arthor-tags">／</span>
-                          <a className="Arthor-tagLink">哲學</a>
-                          <span className="Arthor-tags">・</span>
-                          <a className="Arthor-tagLink">藝術</a>
+                  <div className="Author-widgetInfo">
+                      <a className="Author-widgetLink">朱家安</a>・發表於<a className="Author-widgetLink">沃草烙哲學</a>
+                      <span className="Author-tagsSection">
+                          <span className="Author-tags">／</span>
+                          <a className="Author-tagLink">哲學</a>
+                          <span className="Author-tags">・</span>
+                          <a className="Author-tagLink">藝術</a>
                       </span>
                   </div>
               </div>

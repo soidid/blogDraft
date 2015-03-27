@@ -1,4 +1,4 @@
-.Arthor {
+.Author {
 	line-height: 1.6;
 	margin-bottom: 20px;
 	box-shadow: 4px 4px 0px rgba(200,200,200,0.4);
@@ -9,10 +9,10 @@
 
 
 }
-.Arthor:hover {
+.Author:hover {
     box-shadow: 4px 4px 0px rgba(200,200,200,0.6);
 }
-.Arthor-showFullBio {
+.Author-showFullBio {
 	margin-top: 15px;
 	background: #87B825;
 	color: white;
@@ -21,29 +21,29 @@
 	cursor: pointer;
 	display: none;
 }
-.Arthor-showFullBio:hover {
+.Author-showFullBio:hover {
 	box-shadow: 4px 4px 8px rgba(0,0,0,0.12), -4px -4px 8px rgba(0,0,0,0.12);;
 }
 /* =================================================== */
 
-.Arthor-widget {
+.Author-widget {
 	text-align: center;
 	background: rgb(240,240,240);
 	padding: 4px 1px;
 	text-align: left;
 	font-size: 14px;
 }
-.Arthor-widgetLink {
+.Author-widgetLink {
 	display: inline-block;
 	border: none;
 	color: rgb(50,50,50);
 	margin: 0 1px;
 }
-.Arthor-widgetLink:hover {
+.Author-widgetLink:hover {
 	color: #87B825;
 }
 @media screen and (min-width: 400px){
-	.Arthor-widget {
+	.Author-widget {
 		background: rgba(250,250,250,0.8);
 		box-shadow: 0px 1px 0px rgba(0,0,0,0.12);
 	    z-index: 10;
@@ -53,7 +53,7 @@
 		height: 50px;
 		/*padding-top: 8px;*/
     }
-    .Arthor-widget--fixed {
+    .Author-widget--fixed {
     	background: rgba(255,255,255,0.95);
     	position: fixed;
 		top: 0;
@@ -61,11 +61,11 @@
     }
 
 }
-.Arthor-widgetAvatar {
+.Author-widgetAvatar {
 	width: 40px;
 	border-radius: 50%;
 }
-.Arthor-widgetInfo {
+.Author-widgetInfo {
 	vertical-align: top;
 	display: inline-block;
 	margin: 0 6px;
@@ -73,21 +73,21 @@
 }
 
 /* ====== 學科分類 ====== */
-.Arthor-tagsSection {
+.Author-tagsSection {
 	display: none;
 }
 @media screen and (min-width: 400px){
-	.Arthor-tagsSection {
+	.Author-tagsSection {
 		display: inline-block;
 	}
 }
-.Arthor-tags {
+.Author-tags {
 	font-size: 14px;
 }
-.Arthor-tagLink {
+.Author-tagLink {
 	font-size: 14px;
 	color: rgb(80,80,80);
 }
-.Arthor-tagLink:hover {
+.Author-tagLink:hover {
 	color: black;
 }
