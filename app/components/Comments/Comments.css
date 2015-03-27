@@ -1,6 +1,6 @@
 .Comments {
-	background: rgb(240,240,240);
-	padding: 40px 0px;
+	background: rgb(250,250,250);
+	padding: 40px 8px;
 }
 @media screen and (min-width: 400px){
     .Comments-content {
@@ -65,7 +65,7 @@
 	bottom: 0px;
 	width: 100%;
 	padding: 12px;
-	padding-left: 62px;
+	padding-left: 22px;
 	background: rgba(230,230,230,0.9);
 	//background: rgba(0,0,0,0.8);
 	//color: white;
@@ -134,7 +134,7 @@
 	border: 1px solid rgb(200,200,200);
     border-radius: 20px;
     display: inline-block;
-    padding: 8px 20px;
+    padding: 9px 20px;
     cursor: pointer;
     margin-top: 10px;
     color: rgb(100,100,100);

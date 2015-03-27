@@ -13,6 +13,7 @@ p, blockquote, h3, ul, ol, li, a, span {
   width: 100%;
   margin: 0px auto; 
   position: relative; 
+  overflow: hidden;
 }
 .Article-authorBackground {
   /*background: rgb(230,230,230);*/
@@ -28,6 +29,7 @@ p, blockquote, h3, ul, ol, li, a, span {
 .Article-content {
   background: rgba(255,255,255,0.8);
   position: relative;
+  padding: 8px;
 }
 .Article-author {
   //background: #FAFAFA;
