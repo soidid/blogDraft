@@ -17,22 +17,7 @@
     font-weight: 800;
 
 }
-.Comments-tabs {
-	//border-bottom: 1px solid rgb(200,200,200);
-	
-}
-.Comments-tab {
-   display: inline-block;
-   margin-right: 10px;
-   padding: 5px 25px;
-   cursor: pointer;
-   color: rgb(100,100,100);
-  
-}
-.Comments-tab.is-active {
-   //border-bottom: 5px solid #87B825;
-   border-bottom: 5px solid rgb(53,55,54);
-}
+
 .Comments-post {
 	border-bottom: 1px solid rgb(220,220,220);
 	position: relative;
@@ -146,17 +131,19 @@
 	color: #87B825;
     border-color: #87B825;
 }
-.Comments-button--hightlight {
+a.Comments-button--hightlight {
 	border: 1px solid rgb(100,100,100);
     color: rgb(100,100,100);
-    padding: 8px 20px;
+    padding: 3px 20px;
     border-radius: 20px;
     display: inline-block;
     cursor: pointer;
     margin-top: 10px;
     margin: 5px;
+    font-size: 16px;
+
 }
-.Comments-button--hightlight:hover {
+a.Comments-button--hightlight:hover {
   color: black;
   border-color: black;
 

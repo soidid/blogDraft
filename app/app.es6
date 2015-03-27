@@ -9,7 +9,7 @@ import "./normalize.css";
 const routes = (
   <Route name="app" path="/" handler={Application} >
     <Route name="article" path="/article/:articleId" handler={ArticlePage} />
-    <Route name="author" path="/author" handler={AuthorPage} />
+    <Route name="author" path="/author/:authorId" handler={AuthorPage} />
     <DefaultRoute handler={Home} />
   </Route>
   );

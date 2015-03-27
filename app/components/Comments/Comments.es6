@@ -1,5 +1,6 @@
 import React from "react/addons";
 import "./Comments.css";
+import Tabs from "../Tabs/Tabs.es6";
 
 //http://community.citizenedu.tw/t/topic/798/11
 import {post_stream} from "./Comments.json";
@@ -143,19 +144,8 @@ export default React.createClass({
        *   Tabs
        * ================================ */
       var tabs = [{id:'editorsPick', title: '編輯嚴選'},
-                {id:'all', title: '全部'}];
-      var classes = (this.state.focusTab === 'all')? "Comments-tab is-active" : "Comments-tab";
-    
-      var tabsItem = tabs.map((value, i)=>{
-          var classes = (this.state.focusTab === value.id)? "Comments-tab is-active" : "Comments-tab";
-          var boundleClick = this._onToggle.bind(null, value.id);
-          return (
-             <div className={classes}
-                  key={i}
-                  onClick={boundleClick}>{value.title}</div>
-          )
-      });
-
+                  {id:'all', title: '全部'}];
+     
       /* ================================ 
        *   Show More Button
        * ================================ */
@@ -163,11 +153,13 @@ export default React.createClass({
           <div className="Comments-footer">
               <div className="Comments-button"
                     onClick={this._onSetNewMax}>載入更多</div>
-              <div className="Comments-button--hightlight">加入討論</div>
+              <a className="Comments-button--hightlight">加入討論</a>
           </div>
       ): (
           <div className="Comments-footer">
-              <div className="Comments-button--hightlight">加入討論</div>
+              <a className="Comments-button--hightlight"
+                 href="http://community.citizenedu.tw/t/topic/822"
+                 target="_blank">加入討論</a>
           </div>
       );
 
@@ -175,9 +167,10 @@ export default React.createClass({
       <div className="Comments">
          <div className="Comments-content">
             <div className="Comments-title">討論</div>
-            <div className="Comments-tabs">
-               {tabsItem}  
-            </div>
+            <Tabs activeId={this.state.focusTab} 
+                      data={tabs}
+                      onClick={this._onToggle}/> 
+            
             {postsItem}
             {showMoreButtonItem}
          </div>

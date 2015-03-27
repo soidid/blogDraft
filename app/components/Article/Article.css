@@ -96,14 +96,15 @@ p, blockquote, h3, ul, ol, li, a, span {
   padding-top: 24px;
 
 }
-div.Article-name {
+a.Article-name {
   cursor: pointer;
   font-size: 22px;
   font-weight: 800;
   margin-top: 20px;
   display: inline-block;
+  border: none;
 }
-div.Article-name:hover {
+a.Article-name:hover {
   text-decoration: underline;
 }
 div.Article-date {
@@ -183,6 +184,7 @@ a.lightbox img {
   min-height: 150px;
   
 }
+
 
 
 

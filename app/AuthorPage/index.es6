@@ -1,8 +1,8 @@
 import React from "react";
 import Router, {RouteHandler, State} from "react-router";
-import Article from "../components/Article/Article.es6";
-import AppBar from "../components/AppBar/AppBar.es6";
 
+import AppBar from "../components/AppBar/AppBar.es6";
+import Author from "../components/Author/Author.es6";
 
 export default React.createClass({
   displayName: "SingleArticle",
@@ -12,7 +12,7 @@ export default React.createClass({
     return (
       <div>
         <AppBar />
-        <Article />
+        <Author type="page" />
         <RouteHandler {...this.props} {...this.state} />
       </div>
     );

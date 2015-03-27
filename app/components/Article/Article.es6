@@ -58,7 +58,6 @@ export default React.createClass({
             <Social goToCommentHandler={this._onGoToComment}/>
 
             <div className="Article-content">
-              
               <div dangerouslySetInnerHTML={{__html: data.cooked}}></div>
             </div>
             <div className="Article-authorBackground">
@@ -67,7 +66,8 @@ export default React.createClass({
                       <img className="Article-avatar"
                            src={imgURL} />
                       <div className="Article-info">
-                         <div className="Article-name">{data.name}</div> 
+                         <a className="Article-name"
+                            href="#/author/1">{data.name}</a> 
                          <div className="Article-date">發表於 {data.created_at.split('T')[0]}</div>
                       </div>
                    </div>
