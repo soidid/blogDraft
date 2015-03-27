@@ -3,6 +3,7 @@ import React from "react";
 
 import Arthor from "../Arthor/Arthor.es6";
 import Comments from "../Comments/Comments.es6";
+import Social from "../Social/Social.es6";
 
 import "./Article.css";
 
@@ -29,10 +30,19 @@ export default React.createClass({
       <div>
 
           <div className="Article">
-          <div className="Article-content">
-            <div dangerouslySetInnerHTML={{__html: data.cooked}}></div>
-          </div>
-          <div className="Article-authorBackground">
+            <Arthor type="widget"/>
+            
+
+            <div className="Article-cover">
+                <img className="Article-coverImg"
+                     src="https://fbcdn-sphotos-d-a.akamaihd.net/hphotos-ak-xfp1/t31.0-8/10514156_978580618821819_5686475740468114136_o.jpg" /> 
+            </div>
+            <Social />
+            <div className="Article-content">
+              
+              <div dangerouslySetInnerHTML={{__html: data.cooked}}></div>
+            </div>
+            <div className="Article-authorBackground">
             <div className="Article-author">
                <div className="Article-authorHeader">
                   <img className="Article-avatar"
@@ -42,15 +52,11 @@ export default React.createClass({
                      <div className="Article-date">發表於 {data.created_at.split('T')[0]}</div>
                   </div>
                </div>
-               <Arthor />
+               <Arthor type="section"/>
+            </div>   
             </div>
-            
-          </div>
-          <Comments />
-          <div className="Article-footer">
-               
-          </div>
-         
+            <Comments />
+          
           </div> 
       </div>
       );
