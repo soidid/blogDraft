@@ -49,7 +49,10 @@ export default React.createClass({
             
             <div className="Article-cover">
                 <img className="Article-coverImg"
-                     src="https://fbcdn-sphotos-d-a.akamaihd.net/hphotos-ak-xfp1/t31.0-8/10514156_978580618821819_5686475740468114136_o.jpg" /> 
+                     src="https://fbcdn-sphotos-d-a.akamaihd.net/hphotos-ak-xfp1/t31.0-8/10514156_978580618821819_5686475740468114136_o.jpg" />
+                <a className="Article-coverCopyright"
+                   href="https://www.facebook.com/ElaineeFangs"
+                   target="_blank">圖／Elainee.’s</a>
             </div>
             
             <Social goToCommentHandler={this._onGoToComment}/>
@@ -59,17 +62,17 @@ export default React.createClass({
               <div dangerouslySetInnerHTML={{__html: data.cooked}}></div>
             </div>
             <div className="Article-authorBackground">
-            <div className="Article-author">
-               <div className="Article-authorHeader">
-                  <img className="Article-avatar"
-                       src={imgURL} />
-                  <div className="Article-info">
-                     <div className="Article-name">{data.name}</div> 
-                     <div className="Article-date">發表於 {data.created_at.split('T')[0]}</div>
-                  </div>
-               </div>
-               <Arthor type="section"/>
-            </div>   
+                <div className="Article-author">
+                   <div className="Article-authorHeader">
+                      <img className="Article-avatar"
+                           src={imgURL} />
+                      <div className="Article-info">
+                         <div className="Article-name">{data.name}</div> 
+                         <div className="Article-date">發表於 {data.created_at.split('T')[0]}</div>
+                      </div>
+                   </div>
+                   <Arthor type="section"/>
+                </div>   
             </div>
             <Comments commentMountHandler={this._onCommentsMounted}/>
           

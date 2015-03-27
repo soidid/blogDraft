@@ -71,6 +71,16 @@
 	margin: 0 6px;
     padding-top: 4px;
 }
+
+/* ====== 學科分類 ====== */
+.Arthor-tagsSection {
+	display: none;
+}
+@media screen and (min-width: 400px){
+	.Arthor-tagsSection {
+		display: inline-block;
+	}
+}
 .Arthor-tags {
 	font-size: 14px;
 }

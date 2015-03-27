@@ -32,6 +32,15 @@ p, blockquote, h3, ul, ol, li, a, span {
   top: -100px;
   left: -10px;
 }
+.Article-coverCopyright {
+  color: #2F2930;
+  position: absolute;
+  bottom: 4px;
+  right: 10px;
+  cursor: pointer;
+  border: none;
+  font-size: 12px;
+}
 @media screen and (min-width: 400px){
     .Article-content,.Article-author{
 		    max-width: 600px;
