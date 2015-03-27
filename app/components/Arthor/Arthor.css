@@ -29,7 +29,7 @@
 .Arthor-widget {
 	text-align: center;
 	background: rgb(240,240,240);
-	padding: 4px 16px;
+	padding: 4px 1px;
 	text-align: left;
 	font-size: 14px;
 }
@@ -37,11 +37,10 @@
 	display: inline-block;
 	border: none;
 	color: rgb(50,50,50);
-
+	margin: 0 1px;
 }
 .Arthor-widgetLink:hover {
-	text-decoration: underline;
-    color: black;
+	color: #87B825;
 }
 @media screen and (min-width: 400px){
 	.Arthor-widget {
@@ -69,6 +68,16 @@
 .Arthor-widgetInfo {
 	vertical-align: top;
 	display: inline-block;
-	margin: 0 10px;
+	margin: 0 6px;
     padding-top: 4px;
+}
+.Arthor-tags {
+	font-size: 14px;
+}
+.Arthor-tagLink {
+	font-size: 14px;
+	color: rgb(80,80,80);
+}
+.Arthor-tagLink:hover {
+	color: black;
 }

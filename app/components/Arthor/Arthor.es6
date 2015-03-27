@@ -71,6 +71,12 @@ export default React.createClass({
                        src="http://okapi.books.com.tw/uploads/article/article10144_3.png" />
                   <div className="Arthor-widgetInfo">
                       <a className="Arthor-widgetLink">朱家安</a>・發表於<a className="Arthor-widgetLink">沃草烙哲學</a>
+                      <span>
+                          <span className="Arthor-tags">／</span>
+                          <a className="Arthor-tagLink">哲學</a>
+                          <span className="Arthor-tags">・</span>
+                          <a className="Arthor-tagLink">藝術</a>
+                      </span>
                   </div>
               </div>
           )
