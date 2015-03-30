@@ -23,8 +23,6 @@ export default React.createClass({
             <a href="/"
                className="AppBar-logo">公民學院部落格</a>
             <a href="/"
-               className="AppBar-nav">Home</a>
-            <a href="/"
                className="AppBar-nav">最新</a>
             <a href="/#/columns"
                className="AppBar-nav">專欄</a>

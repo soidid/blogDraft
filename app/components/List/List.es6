@@ -43,7 +43,7 @@ export default React.createClass({
         });
         
         result = (
-        <div className="List">
+        <div className="List List-article">
           <div className="List-content">
               <div>{nextPostItem}</div>
               <div className="List-title"></div>
@@ -70,6 +70,12 @@ export default React.createClass({
           <div className="List-indexContent">  
               {postItems}
           </div>
+
+          <div className="List-footer">
+              <div className="List-button">載入更多</div>
+          </div> 
+            
+
           
         </div>);
 

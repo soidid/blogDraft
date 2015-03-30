@@ -23,7 +23,9 @@
 	background: white;
 }
 .Tags-Tag:hover {
-	border: 1px solid #D36E6E;
-	background: #D36E6E;
+	//border: 1px solid #D36E6E;
+	border: 1px solid rgba(135,184,37,1);
+	//background: #D36E6E;
+	background: rgba(135,184,37,1);
 	color: white;
 }

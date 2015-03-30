@@ -14,6 +14,7 @@ export default React.createClass({
         <div className="AboutSite-content">
             <div className="AboutSite-title">公民學院部落格</div>
             <div className="AboutSite-info">生活中的人文閱讀，哲學、政治、社會、人類學的優質討論。</div>
+            <div className="AboutSite-meta">第一次來？</div>
         </div>
       </div>
       );
