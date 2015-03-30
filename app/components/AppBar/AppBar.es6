@@ -12,7 +12,7 @@ export default React.createClass({
       if(type === "simple"){
       	result = (
       	  <div className="AppBar">
-            <a href="/"
+            <a href="#/"
                className="AppBar-logo">公民學院部落格</a>
           </div>
         );
@@ -20,13 +20,13 @@ export default React.createClass({
       }else if(type === "nav"){
       	result = (
       	  <div className="AppBar">
-            <a href="/"
+            <a href="#/"
                className="AppBar-logo">公民學院部落格</a>
-            <a href="/"
+            <a href="#/"
                className="AppBar-nav">最新</a>
-            <a href="/#/columns"
+            <a href="#/columns"
                className="AppBar-nav">專欄</a>
-            <a href="/"
+            <a href="#/"
                className="AppBar-nav">Collections</a>
           </div>
         );

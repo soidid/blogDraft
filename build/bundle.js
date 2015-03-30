@@ -55,7 +55,7 @@
 /******/ 	
 /******/ 	
 /******/ 	var hotApplyOnUpdate = true;
-/******/ 	var hotCurrentHash = "b5afed1d435ffdf2fd85";
+/******/ 	var hotCurrentHash = "b7e69b824512a9969409";
 /******/ 	var hotCurrentModuleData = {};
 /******/ 	var hotCurrentParents = [];
 /******/ 	
@@ -697,7 +697,7 @@
 
 	var React = _interopRequire(__webpack_require__(16));
 
-	var _reactRouter = __webpack_require__(19);
+	var _reactRouter = __webpack_require__(20);
 
 	var Router = _interopRequire(_reactRouter);
 
@@ -779,7 +779,7 @@
 
 	'use strict';
 
-	var getRootInstancesFromReactMount = __webpack_require__(20);
+	var getRootInstancesFromReactMount = __webpack_require__(19);
 
 	var injectedProvider = null,
 	    didWarn = false;
@@ -896,7 +896,7 @@
 
 	var React = _interopRequire(__webpack_require__(16));
 
-	var _reactRouter = __webpack_require__(19);
+	var _reactRouter = __webpack_require__(20);
 
 	var Router = _interopRequire(_reactRouter);
 
@@ -932,16 +932,16 @@
 
 	var React = _interopRequire(__webpack_require__(16));
 
-	var _reactRouter = __webpack_require__(19);
+	var _reactRouter = __webpack_require__(20);
 
 	var Router = _interopRequire(_reactRouter);
 
 	var RouteHandler = _reactRouter.RouteHandler;
 	var State = _reactRouter.State;
 
-	var Article = _interopRequire(__webpack_require__(45));
+	var Article = _interopRequire(__webpack_require__(39));
 
-	var AppBar = _interopRequire(__webpack_require__(39));
+	var AppBar = _interopRequire(__webpack_require__(40));
 
 	module.exports = React.createClass({
 	  displayName: "SingleArticle",
@@ -975,16 +975,16 @@
 
 	var React = _interopRequire(__webpack_require__(16));
 
-	var _reactRouter = __webpack_require__(19);
+	var _reactRouter = __webpack_require__(20);
 
 	var Router = _interopRequire(_reactRouter);
 
 	var RouteHandler = _reactRouter.RouteHandler;
 	var State = _reactRouter.State;
 
-	var AppBar = _interopRequire(__webpack_require__(39));
+	var AppBar = _interopRequire(__webpack_require__(40));
 
-	var Author = _interopRequire(__webpack_require__(43));
+	var Author = _interopRequire(__webpack_require__(41));
 
 	module.exports = React.createClass({
 	  displayName: "SingleArticle",
@@ -1016,13 +1016,13 @@
 
 	var React = _interopRequire(__webpack_require__(16));
 
-	var Link = __webpack_require__(19).Link;
+	var Link = __webpack_require__(20).Link;
 
-	var AppBar = _interopRequire(__webpack_require__(39));
+	var AppBar = _interopRequire(__webpack_require__(40));
 
-	var AboutSite = _interopRequire(__webpack_require__(40));
+	var AboutSite = _interopRequire(__webpack_require__(42));
 
-	var Columns = _interopRequire(__webpack_require__(44));
+	var Columns = _interopRequire(__webpack_require__(43));
 
 	module.exports = React.createClass({
 	  displayName: "Home",
@@ -1060,15 +1060,15 @@
 
 	var React = _interopRequire(__webpack_require__(16));
 
-	var Link = __webpack_require__(19).Link;
+	var Link = __webpack_require__(20).Link;
 
-	var AppBar = _interopRequire(__webpack_require__(39));
+	var AppBar = _interopRequire(__webpack_require__(40));
 
-	var AboutSite = _interopRequire(__webpack_require__(40));
+	var AboutSite = _interopRequire(__webpack_require__(42));
 
-	var List = _interopRequire(__webpack_require__(41));
+	var List = _interopRequire(__webpack_require__(44));
 
-	var Tags = _interopRequire(__webpack_require__(42));
+	var Tags = _interopRequire(__webpack_require__(45));
 
 	module.exports = React.createClass({
 	  displayName: "Home",
@@ -1845,13 +1845,25 @@
 /* 19 */
 /***/ function(module, exports, __webpack_require__) {
 
+	'use strict';
+
+	function getRootInstancesFromReactMount(ReactMount) {
+	  return ReactMount._instancesByReactRootID || ReactMount._instancesByContainerID || [];
+	}
+
+	module.exports = getRootInstancesFromReactMount;
+
+/***/ },
+/* 20 */
+/***/ function(module, exports, __webpack_require__) {
+
 	"use strict";
 
 	exports.DefaultRoute = __webpack_require__(50);
 	exports.Link = __webpack_require__(51);
-	exports.NotFoundRoute = __webpack_require__(54);
-	exports.Redirect = __webpack_require__(52);
-	exports.Route = __webpack_require__(53);
+	exports.NotFoundRoute = __webpack_require__(52);
+	exports.Redirect = __webpack_require__(53);
+	exports.Route = __webpack_require__(54);
 	exports.RouteHandler = __webpack_require__(55);
 
 	exports.HashLocation = __webpack_require__(56);
@@ -1874,18 +1886,6 @@
 	exports.createRoutesFromReactChildren = __webpack_require__(67);
 	exports.create = __webpack_require__(68);
 	exports.run = __webpack_require__(69);
-
-/***/ },
-/* 20 */
-/***/ function(module, exports, __webpack_require__) {
-
-	'use strict';
-
-	function getRootInstancesFromReactMount(ReactMount) {
-	  return ReactMount._instancesByReactRootID || ReactMount._instancesByContainerID || [];
-	}
-
-	module.exports = getRootInstancesFromReactMount;
 
 /***/ },
 /* 21 */
@@ -8059,6 +8059,133 @@
 
 	var _interopRequire = function (obj) { return obj && obj.__esModule ? obj["default"] : obj; };
 
+	var React = _interopRequire(__webpack_require__(84));
+
+	//import Router, {RouteHandler, State} from "react-router";
+
+	var Author = _interopRequire(__webpack_require__(41));
+
+	var Comments = _interopRequire(__webpack_require__(85));
+
+	var Social = _interopRequire(__webpack_require__(86));
+
+	var List = _interopRequire(__webpack_require__(44));
+
+	__webpack_require__(87);
+
+	//http://community.citizenedu.tw/t/topic/102/10
+	//http://community.citizenedu.tw/t/topic/767/17
+
+	var article = _interopRequire(__webpack_require__(132));
+
+	;
+
+	module.exports = React.createClass({
+	    displayName: "Article",
+
+	    getInitialState: function getInitialState() {
+	        return {
+	            commentTop: 0
+	        };
+	    },
+
+	    _onGoToComment: function _onGoToComment() {
+	        //console.log("Comments");
+	        //var commentNode = document.getElementByClass("Comments");
+	        //console.log(commentNode);
+	        window.scrollTo(0, this.state.commentTop);
+	    },
+
+	    _onCommentsMounted: function _onCommentsMounted(top) {
+	        //console.log("Comments Mounted: "+top);
+	        this.setState({
+	            commentTop: top
+	        });
+	    },
+
+	    render: function render() {
+	        var data = article;
+	        var size = 120; //size=45,120
+	        var avatarTemplate = article.avatar_template.split("{size}")[0] + "/" + size + "/" + article.avatar_template.split("{size}")[1];
+	        var imgURL = "http://community.citizenedu.tw" + avatarTemplate;
+
+	        return React.createElement(
+	            "div",
+	            null,
+	            React.createElement(
+	                "div",
+	                { className: "Article" },
+	                React.createElement(Author, { type: "widget" }),
+	                React.createElement(
+	                    "div",
+	                    { className: "Article-cover" },
+	                    React.createElement("img", { className: "Article-coverImg",
+	                        src: "https://fbcdn-sphotos-d-a.akamaihd.net/hphotos-ak-xfp1/t31.0-8/10514156_978580618821819_5686475740468114136_o.jpg" }),
+	                    React.createElement(
+	                        "a",
+	                        { className: "Article-coverCopyright",
+	                            href: "https://www.facebook.com/ElaineeFangs",
+	                            target: "_blank" },
+	                        "圖／Elainee.’s"
+	                    )
+	                ),
+	                React.createElement(Social, { goToCommentHandler: this._onGoToComment }),
+	                React.createElement(
+	                    "div",
+	                    { className: "Article-content" },
+	                    React.createElement("div", { dangerouslySetInnerHTML: { __html: data.cooked } })
+	                ),
+	                React.createElement(
+	                    "div",
+	                    { className: "Article-authorBackground" },
+	                    React.createElement(
+	                        "div",
+	                        { className: "Article-author" },
+	                        React.createElement(
+	                            "div",
+	                            { className: "Article-authorHeader" },
+	                            React.createElement("img", { className: "Article-avatar",
+	                                src: imgURL }),
+	                            React.createElement(
+	                                "div",
+	                                { className: "Article-info" },
+	                                React.createElement(
+	                                    "a",
+	                                    { className: "Article-name",
+	                                        href: "#/author/1" },
+	                                    data.name
+	                                ),
+	                                React.createElement(
+	                                    "div",
+	                                    { className: "Article-date" },
+	                                    "發表於 ",
+	                                    data.created_at.split("T")[0]
+	                                )
+	                            ),
+	                            React.createElement(Author, { type: "section" })
+	                        )
+	                    )
+	                ),
+	                React.createElement(Comments, { commentMountHandler: this._onCommentsMounted }),
+	                React.createElement(List, { type: "article" })
+	            )
+	        );
+	    }
+	});
+
+	/* REACT HOT LOADER */ })(); if (true) { (function () { module.hot.dispose(function (data) { data.makeHot = module.makeHot; }); if (module.exports && module.makeHot) { var makeExportsHot = __webpack_require__(6), foundReactClasses = false; if (makeExportsHot(module, __webpack_require__(16))) { foundReactClasses = true; } var shouldAcceptModule = true && foundReactClasses; if (shouldAcceptModule) { module.hot.accept(function (err) { if (err) { console.error("Cannot not apply hot update to " + "Article.es6" + ": " + err.message); } }); } } })(); }
+	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(7)(module)))
+
+/***/ },
+/* 40 */
+/***/ function(module, exports, __webpack_require__) {
+
+	/* WEBPACK VAR INJECTION */(function(module) {/* REACT HOT LOADER */ if (true) { (function () { var ReactHotAPI = __webpack_require__(15), RootInstanceProvider = __webpack_require__(5), ReactMount = __webpack_require__(14), React = __webpack_require__(16); module.makeHot = module.hot.data ? module.hot.data.makeHot : ReactHotAPI(function () { return RootInstanceProvider.getRootInstances(ReactMount); }, React); })(); } (function () {
+
+	"use strict";
+
+	var _interopRequire = function (obj) { return obj && obj.__esModule ? obj["default"] : obj; };
+
 	var React = _interopRequire(__webpack_require__(16));
 
 	__webpack_require__(92);
@@ -8077,7 +8204,7 @@
 	        { className: "AppBar" },
 	        React.createElement(
 	          "a",
-	          { href: "/",
+	          { href: "#/",
 	            className: "AppBar-logo" },
 	          "公民學院部落格"
 	        )
@@ -8088,25 +8215,25 @@
 	        { className: "AppBar" },
 	        React.createElement(
 	          "a",
-	          { href: "/",
+	          { href: "#/",
 	            className: "AppBar-logo" },
 	          "公民學院部落格"
 	        ),
 	        React.createElement(
 	          "a",
-	          { href: "/",
+	          { href: "#/",
 	            className: "AppBar-nav" },
 	          "最新"
 	        ),
 	        React.createElement(
 	          "a",
-	          { href: "/#/columns",
+	          { href: "#/columns",
 	            className: "AppBar-nav" },
 	          "專欄"
 	        ),
 	        React.createElement(
 	          "a",
-	          { href: "/",
+	          { href: "#/",
 	            className: "AppBar-nav" },
 	          "Collections"
 	        )
@@ -8123,200 +8250,7 @@
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(7)(module)))
 
 /***/ },
-/* 40 */
-/***/ function(module, exports, __webpack_require__) {
-
-	/* WEBPACK VAR INJECTION */(function(module) {/* REACT HOT LOADER */ if (true) { (function () { var ReactHotAPI = __webpack_require__(15), RootInstanceProvider = __webpack_require__(5), ReactMount = __webpack_require__(14), React = __webpack_require__(16); module.makeHot = module.hot.data ? module.hot.data.makeHot : ReactHotAPI(function () { return RootInstanceProvider.getRootInstances(ReactMount); }, React); })(); } (function () {
-
-	"use strict";
-
-	var _interopRequire = function (obj) { return obj && obj.__esModule ? obj["default"] : obj; };
-
-	var React = _interopRequire(__webpack_require__(16));
-
-	__webpack_require__(96);
-
-	module.exports = React.createClass({
-	    displayName: "AboutSite",
-
-	    render: function render() {
-	        var imgURL = "https://fbcdn-sphotos-g-a.akamaihd.net/hphotos-ak-xap1/v/t1.0-9/1504090_922738074406074_7665839227643434653_n.jpg?oh=f0706350b9b2c39734154cbdd9bc6ae9&oe=55A7F6A8&__gda__=1437631201_97d700bf5b77f0a823a8f85f3a3fbf80";
-
-	        return React.createElement(
-	            "div",
-	            { className: "AboutSite" },
-	            React.createElement("img", { className: "AboutSite-img",
-	                src: imgURL }),
-	            React.createElement(
-	                "div",
-	                { className: "AboutSite-content" },
-	                React.createElement(
-	                    "div",
-	                    { className: "AboutSite-title" },
-	                    "公民學院部落格"
-	                ),
-	                React.createElement(
-	                    "div",
-	                    { className: "AboutSite-info" },
-	                    "生活中的人文閱讀，哲學、政治、社會、人類學的優質討論。"
-	                ),
-	                React.createElement(
-	                    "div",
-	                    { className: "AboutSite-meta" },
-	                    "第一次來？"
-	                )
-	            )
-	        );
-	    }
-	});
-
-	/* REACT HOT LOADER */ })(); if (true) { (function () { module.hot.dispose(function (data) { data.makeHot = module.makeHot; }); if (module.exports && module.makeHot) { var makeExportsHot = __webpack_require__(6), foundReactClasses = false; if (makeExportsHot(module, __webpack_require__(16))) { foundReactClasses = true; } var shouldAcceptModule = true && foundReactClasses; if (shouldAcceptModule) { module.hot.accept(function (err) { if (err) { console.error("Cannot not apply hot update to " + "AboutSite.es6" + ": " + err.message); } }); } } })(); }
-	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(7)(module)))
-
-/***/ },
 /* 41 */
-/***/ function(module, exports, __webpack_require__) {
-
-	/* WEBPACK VAR INJECTION */(function(module) {/* REACT HOT LOADER */ if (true) { (function () { var ReactHotAPI = __webpack_require__(15), RootInstanceProvider = __webpack_require__(5), ReactMount = __webpack_require__(14), React = __webpack_require__(16); module.makeHot = module.hot.data ? module.hot.data.makeHot : ReactHotAPI(function () { return RootInstanceProvider.getRootInstances(ReactMount); }, React); })(); } (function () {
-
-	"use strict";
-
-	var _interopRequire = function (obj) { return obj && obj.__esModule ? obj["default"] : obj; };
-
-	var React = _interopRequire(__webpack_require__(84));
-
-	var Tags = _interopRequire(__webpack_require__(42));
-
-	__webpack_require__(85);
-
-	//http://community.citizenedu.tw/users/kris/activity/posts
-
-	var AuthorPost = _interopRequire(__webpack_require__(132));
-
-	var NextPost = _interopRequire(__webpack_require__(133));
-
-	module.exports = React.createClass({
-	    displayName: "List",
-
-	    getInitialState: function getInitialState() {
-	        return {};
-	    },
-
-	    render: function render() {
-	        var result = React.createElement("div", null);
-	        var type = this.props.type;
-
-	        if (type === "article") {
-
-	            var nextPostItem = React.createElement(
-	                "div",
-	                { className: "List-nextItem" },
-	                React.createElement(
-	                    "div",
-	                    { className: "List-nextItemTitle" },
-	                    "下一篇文章"
-	                ),
-	                React.createElement(
-	                    "div",
-	                    { className: "List-nextPost" },
-	                    React.createElement(
-	                        "div",
-	                        { className: "List-nextTitle" },
-	                        NextPost.title,
-	                        "／朱家安"
-	                    ),
-	                    React.createElement(
-	                        "div",
-	                        { className: "List-nextPreview" },
-	                        NextPost.brief + "..."
-	                    )
-	                )
-	            );
-
-	            var postItems = AuthorPost.map(function (item, key) {
-	                return React.createElement(
-	                    "a",
-	                    { className: "List-articleItem",
-	                        key: key,
-	                        href: "#/article/1" },
-	                    React.createElement(
-	                        "div",
-	                        { className: "List-articleItemDate" },
-	                        item.date
-	                    ),
-	                    React.createElement(
-	                        "div",
-	                        { className: "List-articleItemTitle" },
-	                        item.title
-	                    )
-	                );
-	            });
-
-	            result = React.createElement(
-	                "div",
-	                { className: "List List-article" },
-	                React.createElement(
-	                    "div",
-	                    { className: "List-content" },
-	                    React.createElement(
-	                        "div",
-	                        null,
-	                        nextPostItem
-	                    ),
-	                    React.createElement("div", { className: "List-title" }),
-	                    postItems
-	                )
-	            );
-	        } else if (type === "index") {
-	            var postItems = AuthorPost.map(function (item, key) {
-	                return React.createElement(
-	                    "a",
-	                    { className: "List-indexItem",
-	                        key: key,
-	                        href: "#/article/1" },
-	                    React.createElement(
-	                        "div",
-	                        { className: "List-articleItemTitle List-boldTitle" },
-	                        item.title,
-	                        " ／朱家安"
-	                    ),
-	                    React.createElement(
-	                        "div",
-	                        { className: "List-articleItemBrief" },
-	                        item.brief
-	                    )
-	                );
-	            });
-
-	            result = React.createElement(
-	                "div",
-	                { className: "List List--index" },
-	                React.createElement(
-	                    "div",
-	                    { className: "List-indexContent" },
-	                    postItems
-	                ),
-	                React.createElement(
-	                    "div",
-	                    { className: "List-footer" },
-	                    React.createElement(
-	                        "div",
-	                        { className: "List-button" },
-	                        "載入更多"
-	                    )
-	                )
-	            );
-	        } else {}
-
-	        return result;
-	    }
-	});
-
-	/* REACT HOT LOADER */ })(); if (true) { (function () { module.hot.dispose(function (data) { data.makeHot = module.makeHot; }); if (module.exports && module.makeHot) { var makeExportsHot = __webpack_require__(6), foundReactClasses = false; if (makeExportsHot(module, __webpack_require__(16))) { foundReactClasses = true; } var shouldAcceptModule = true && foundReactClasses; if (shouldAcceptModule) { module.hot.accept(function (err) { if (err) { console.error("Cannot not apply hot update to " + "List.es6" + ": " + err.message); } }); } } })(); }
-	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(7)(module)))
-
-/***/ },
-/* 42 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(module) {/* REACT HOT LOADER */ if (true) { (function () { var ReactHotAPI = __webpack_require__(15), RootInstanceProvider = __webpack_require__(5), ReactMount = __webpack_require__(14), React = __webpack_require__(16); module.makeHot = module.hot.data ? module.hot.data.makeHot : ReactHotAPI(function () { return RootInstanceProvider.getRootInstances(ReactMount); }, React); })(); } (function () {
@@ -8329,66 +8263,17 @@
 
 	__webpack_require__(94);
 
-	var Tags = _interopRequire(__webpack_require__(134));
-
-	module.exports = React.createClass({
-	  displayName: "Tags",
-
-	  getInitialState: function getInitialState() {
-	    return {};
-	  },
-
-	  render: function render() {
-
-	    var tagsItem = Tags.map(function (item, key) {
-	      return React.createElement(
-	        "div",
-	        { className: "Tags-Tag" },
-	        item
-	      );
-	    });
-
-	    return React.createElement(
-	      "div",
-	      { className: "Tags" },
-	      React.createElement(
-	        "div",
-	        { className: "Tags-title" },
-	        "熱門標籤"
-	      ),
-	      tagsItem
-	    );
-	  }
-	});
-
-	/* REACT HOT LOADER */ })(); if (true) { (function () { module.hot.dispose(function (data) { data.makeHot = module.makeHot; }); if (module.exports && module.makeHot) { var makeExportsHot = __webpack_require__(6), foundReactClasses = false; if (makeExportsHot(module, __webpack_require__(16))) { foundReactClasses = true; } var shouldAcceptModule = true && foundReactClasses; if (shouldAcceptModule) { module.hot.accept(function (err) { if (err) { console.error("Cannot not apply hot update to " + "Tags.es6" + ": " + err.message); } }); } } })(); }
-	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(7)(module)))
-
-/***/ },
-/* 43 */
-/***/ function(module, exports, __webpack_require__) {
-
-	/* WEBPACK VAR INJECTION */(function(module) {/* REACT HOT LOADER */ if (true) { (function () { var ReactHotAPI = __webpack_require__(15), RootInstanceProvider = __webpack_require__(5), ReactMount = __webpack_require__(14), React = __webpack_require__(16); module.makeHot = module.hot.data ? module.hot.data.makeHot : ReactHotAPI(function () { return RootInstanceProvider.getRootInstances(ReactMount); }, React); })(); } (function () {
-
-	"use strict";
-
-	var _interopRequire = function (obj) { return obj && obj.__esModule ? obj["default"] : obj; };
-
-	var React = _interopRequire(__webpack_require__(84));
-
-	__webpack_require__(98);
-
 	var $ = _interopRequire(__webpack_require__(139));
 
-	var Tabs = _interopRequire(__webpack_require__(100));
+	var Tabs = _interopRequire(__webpack_require__(96));
 
 	//http://community.citizenedu.tw/users/kris/activity
 
-	var Author = _interopRequire(__webpack_require__(135));
+	var Author = _interopRequire(__webpack_require__(133));
 
 	//http://community.citizenedu.tw/users/kris/activity/posts
 
-	var AuthorPost = _interopRequire(__webpack_require__(136));
+	var AuthorPost = _interopRequire(__webpack_require__(134));
 
 	module.exports = React.createClass({
 	    displayName: "Author",
@@ -8580,7 +8465,7 @@
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(7)(module)))
 
 /***/ },
-/* 44 */
+/* 42 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(module) {/* REACT HOT LOADER */ if (true) { (function () { var ReactHotAPI = __webpack_require__(15), RootInstanceProvider = __webpack_require__(5), ReactMount = __webpack_require__(14), React = __webpack_require__(16); module.makeHot = module.hot.data ? module.hot.data.makeHot : ReactHotAPI(function () { return RootInstanceProvider.getRootInstances(ReactMount); }, React); })(); } (function () {
@@ -8591,9 +8476,60 @@
 
 	var React = _interopRequire(__webpack_require__(16));
 
-	__webpack_require__(101);
+	__webpack_require__(97);
 
-	var Columns = _interopRequire(__webpack_require__(137));
+	module.exports = React.createClass({
+	    displayName: "AboutSite",
+
+	    render: function render() {
+	        var imgURL = "https://fbcdn-sphotos-g-a.akamaihd.net/hphotos-ak-xap1/v/t1.0-9/1504090_922738074406074_7665839227643434653_n.jpg?oh=f0706350b9b2c39734154cbdd9bc6ae9&oe=55A7F6A8&__gda__=1437631201_97d700bf5b77f0a823a8f85f3a3fbf80";
+
+	        return React.createElement(
+	            "div",
+	            { className: "AboutSite" },
+	            React.createElement("img", { className: "AboutSite-img",
+	                src: imgURL }),
+	            React.createElement(
+	                "div",
+	                { className: "AboutSite-content" },
+	                React.createElement(
+	                    "div",
+	                    { className: "AboutSite-title" },
+	                    "公民學院部落格"
+	                ),
+	                React.createElement(
+	                    "div",
+	                    { className: "AboutSite-info" },
+	                    "生活中的人文閱讀，哲學、政治、社會、人類學的優質討論。"
+	                ),
+	                React.createElement(
+	                    "div",
+	                    { className: "AboutSite-meta" },
+	                    "第一次來？"
+	                )
+	            )
+	        );
+	    }
+	});
+
+	/* REACT HOT LOADER */ })(); if (true) { (function () { module.hot.dispose(function (data) { data.makeHot = module.makeHot; }); if (module.exports && module.makeHot) { var makeExportsHot = __webpack_require__(6), foundReactClasses = false; if (makeExportsHot(module, __webpack_require__(16))) { foundReactClasses = true; } var shouldAcceptModule = true && foundReactClasses; if (shouldAcceptModule) { module.hot.accept(function (err) { if (err) { console.error("Cannot not apply hot update to " + "AboutSite.es6" + ": " + err.message); } }); } } })(); }
+	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(7)(module)))
+
+/***/ },
+/* 43 */
+/***/ function(module, exports, __webpack_require__) {
+
+	/* WEBPACK VAR INJECTION */(function(module) {/* REACT HOT LOADER */ if (true) { (function () { var ReactHotAPI = __webpack_require__(15), RootInstanceProvider = __webpack_require__(5), ReactMount = __webpack_require__(14), React = __webpack_require__(16); module.makeHot = module.hot.data ? module.hot.data.makeHot : ReactHotAPI(function () { return RootInstanceProvider.getRootInstances(ReactMount); }, React); })(); } (function () {
+
+	"use strict";
+
+	var _interopRequire = function (obj) { return obj && obj.__esModule ? obj["default"] : obj; };
+
+	var React = _interopRequire(__webpack_require__(16));
+
+	__webpack_require__(99);
+
+	var Columns = _interopRequire(__webpack_require__(135));
 
 	module.exports = React.createClass({
 	    displayName: "Columns",
@@ -8627,6 +8563,148 @@
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(7)(module)))
 
 /***/ },
+/* 44 */
+/***/ function(module, exports, __webpack_require__) {
+
+	/* WEBPACK VAR INJECTION */(function(module) {/* REACT HOT LOADER */ if (true) { (function () { var ReactHotAPI = __webpack_require__(15), RootInstanceProvider = __webpack_require__(5), ReactMount = __webpack_require__(14), React = __webpack_require__(16); module.makeHot = module.hot.data ? module.hot.data.makeHot : ReactHotAPI(function () { return RootInstanceProvider.getRootInstances(ReactMount); }, React); })(); } (function () {
+
+	"use strict";
+
+	var _interopRequire = function (obj) { return obj && obj.__esModule ? obj["default"] : obj; };
+
+	var React = _interopRequire(__webpack_require__(84));
+
+	var Tags = _interopRequire(__webpack_require__(45));
+
+	__webpack_require__(89);
+
+	//http://community.citizenedu.tw/users/kris/activity/posts
+
+	var AuthorPost = _interopRequire(__webpack_require__(136));
+
+	var NextPost = _interopRequire(__webpack_require__(137));
+
+	module.exports = React.createClass({
+	    displayName: "List",
+
+	    getInitialState: function getInitialState() {
+	        return {};
+	    },
+
+	    render: function render() {
+	        var result = React.createElement("div", null);
+	        var type = this.props.type;
+
+	        if (type === "article") {
+
+	            var nextPostItem = React.createElement(
+	                "div",
+	                { className: "List-nextItem" },
+	                React.createElement(
+	                    "div",
+	                    { className: "List-nextItemTitle" },
+	                    "下一篇文章"
+	                ),
+	                React.createElement(
+	                    "div",
+	                    { className: "List-nextPost" },
+	                    React.createElement(
+	                        "div",
+	                        { className: "List-nextTitle" },
+	                        NextPost.title,
+	                        "／朱家安"
+	                    ),
+	                    React.createElement(
+	                        "div",
+	                        { className: "List-nextPreview" },
+	                        NextPost.brief + "..."
+	                    )
+	                )
+	            );
+
+	            var postItems = AuthorPost.map(function (item, key) {
+	                return React.createElement(
+	                    "a",
+	                    { className: "List-articleItem",
+	                        key: key,
+	                        href: "#/article/1" },
+	                    React.createElement(
+	                        "div",
+	                        { className: "List-articleItemDate" },
+	                        item.date
+	                    ),
+	                    React.createElement(
+	                        "div",
+	                        { className: "List-articleItemTitle" },
+	                        item.title
+	                    )
+	                );
+	            });
+
+	            result = React.createElement(
+	                "div",
+	                { className: "List List-article" },
+	                React.createElement(
+	                    "div",
+	                    { className: "List-content" },
+	                    React.createElement(
+	                        "div",
+	                        null,
+	                        nextPostItem
+	                    ),
+	                    React.createElement("div", { className: "List-title" }),
+	                    postItems
+	                )
+	            );
+	        } else if (type === "index") {
+	            var postItems = AuthorPost.map(function (item, key) {
+	                return React.createElement(
+	                    "a",
+	                    { className: "List-indexItem",
+	                        key: key,
+	                        href: "#/article/1" },
+	                    React.createElement(
+	                        "div",
+	                        { className: "List-articleItemTitle List-boldTitle" },
+	                        item.title,
+	                        " ／朱家安"
+	                    ),
+	                    React.createElement(
+	                        "div",
+	                        { className: "List-articleItemBrief" },
+	                        item.brief
+	                    )
+	                );
+	            });
+
+	            result = React.createElement(
+	                "div",
+	                { className: "List List--index" },
+	                React.createElement(
+	                    "div",
+	                    { className: "List-indexContent" },
+	                    postItems
+	                ),
+	                React.createElement(
+	                    "div",
+	                    { className: "List-footer" },
+	                    React.createElement(
+	                        "div",
+	                        { className: "List-button" },
+	                        "載入更多"
+	                    )
+	                )
+	            );
+	        } else {}
+
+	        return result;
+	    }
+	});
+
+	/* REACT HOT LOADER */ })(); if (true) { (function () { module.hot.dispose(function (data) { data.makeHot = module.makeHot; }); if (module.exports && module.makeHot) { var makeExportsHot = __webpack_require__(6), foundReactClasses = false; if (makeExportsHot(module, __webpack_require__(16))) { foundReactClasses = true; } var shouldAcceptModule = true && foundReactClasses; if (shouldAcceptModule) { module.hot.accept(function (err) { if (err) { console.error("Cannot not apply hot update to " + "List.es6" + ": " + err.message); } }); } } })(); }
+	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(7)(module)))
+
+/***/ },
 /* 45 */
 /***/ function(module, exports, __webpack_require__) {
 
@@ -8638,119 +8716,41 @@
 
 	var React = _interopRequire(__webpack_require__(84));
 
-	//import Router, {RouteHandler, State} from "react-router";
+	__webpack_require__(101);
 
-	var Author = _interopRequire(__webpack_require__(43));
-
-	var Comments = _interopRequire(__webpack_require__(87));
-
-	var Social = _interopRequire(__webpack_require__(88));
-
-	var List = _interopRequire(__webpack_require__(41));
-
-	__webpack_require__(89);
-
-	//http://community.citizenedu.tw/t/topic/102/10
-	//http://community.citizenedu.tw/t/topic/767/17
-
-	var article = _interopRequire(__webpack_require__(138));
-
-	;
+	var Tags = _interopRequire(__webpack_require__(138));
 
 	module.exports = React.createClass({
-	    displayName: "Article",
+	  displayName: "Tags",
 
-	    getInitialState: function getInitialState() {
-	        return {
-	            commentTop: 0
-	        };
-	    },
+	  getInitialState: function getInitialState() {
+	    return {};
+	  },
 
-	    _onGoToComment: function _onGoToComment() {
-	        //console.log("Comments");
-	        //var commentNode = document.getElementByClass("Comments");
-	        //console.log(commentNode);
-	        window.scrollTo(0, this.state.commentTop);
-	    },
+	  render: function render() {
 
-	    _onCommentsMounted: function _onCommentsMounted(top) {
-	        //console.log("Comments Mounted: "+top);
-	        this.setState({
-	            commentTop: top
-	        });
-	    },
+	    var tagsItem = Tags.map(function (item, key) {
+	      return React.createElement(
+	        "div",
+	        { className: "Tags-Tag" },
+	        item
+	      );
+	    });
 
-	    render: function render() {
-	        var data = article;
-	        var size = 120; //size=45,120
-	        var avatarTemplate = article.avatar_template.split("{size}")[0] + "/" + size + "/" + article.avatar_template.split("{size}")[1];
-	        var imgURL = "http://community.citizenedu.tw" + avatarTemplate;
-
-	        return React.createElement(
-	            "div",
-	            null,
-	            React.createElement(
-	                "div",
-	                { className: "Article" },
-	                React.createElement(Author, { type: "widget" }),
-	                React.createElement(
-	                    "div",
-	                    { className: "Article-cover" },
-	                    React.createElement("img", { className: "Article-coverImg",
-	                        src: "https://fbcdn-sphotos-d-a.akamaihd.net/hphotos-ak-xfp1/t31.0-8/10514156_978580618821819_5686475740468114136_o.jpg" }),
-	                    React.createElement(
-	                        "a",
-	                        { className: "Article-coverCopyright",
-	                            href: "https://www.facebook.com/ElaineeFangs",
-	                            target: "_blank" },
-	                        "圖／Elainee.’s"
-	                    )
-	                ),
-	                React.createElement(Social, { goToCommentHandler: this._onGoToComment }),
-	                React.createElement(
-	                    "div",
-	                    { className: "Article-content" },
-	                    React.createElement("div", { dangerouslySetInnerHTML: { __html: data.cooked } })
-	                ),
-	                React.createElement(
-	                    "div",
-	                    { className: "Article-authorBackground" },
-	                    React.createElement(
-	                        "div",
-	                        { className: "Article-author" },
-	                        React.createElement(
-	                            "div",
-	                            { className: "Article-authorHeader" },
-	                            React.createElement("img", { className: "Article-avatar",
-	                                src: imgURL }),
-	                            React.createElement(
-	                                "div",
-	                                { className: "Article-info" },
-	                                React.createElement(
-	                                    "a",
-	                                    { className: "Article-name",
-	                                        href: "#/author/1" },
-	                                    data.name
-	                                ),
-	                                React.createElement(
-	                                    "div",
-	                                    { className: "Article-date" },
-	                                    "發表於 ",
-	                                    data.created_at.split("T")[0]
-	                                )
-	                            ),
-	                            React.createElement(Author, { type: "section" })
-	                        )
-	                    )
-	                ),
-	                React.createElement(Comments, { commentMountHandler: this._onCommentsMounted }),
-	                React.createElement(List, { type: "article" })
-	            )
-	        );
-	    }
+	    return React.createElement(
+	      "div",
+	      { className: "Tags" },
+	      React.createElement(
+	        "div",
+	        { className: "Tags-title" },
+	        "熱門標籤"
+	      ),
+	      tagsItem
+	    );
+	  }
 	});
 
-	/* REACT HOT LOADER */ })(); if (true) { (function () { module.hot.dispose(function (data) { data.makeHot = module.makeHot; }); if (module.exports && module.makeHot) { var makeExportsHot = __webpack_require__(6), foundReactClasses = false; if (makeExportsHot(module, __webpack_require__(16))) { foundReactClasses = true; } var shouldAcceptModule = true && foundReactClasses; if (shouldAcceptModule) { module.hot.accept(function (err) { if (err) { console.error("Cannot not apply hot update to " + "Article.es6" + ": " + err.message); } }); } } })(); }
+	/* REACT HOT LOADER */ })(); if (true) { (function () { module.hot.dispose(function (data) { data.makeHot = module.makeHot; }); if (module.exports && module.makeHot) { var makeExportsHot = __webpack_require__(6), foundReactClasses = false; if (makeExportsHot(module, __webpack_require__(16))) { foundReactClasses = true; } var shouldAcceptModule = true && foundReactClasses; if (shouldAcceptModule) { module.hot.accept(function (err) { if (err) { console.error("Cannot not apply hot update to " + "Tags.es6" + ": " + err.message); } }); } } })(); }
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(7)(module)))
 
 /***/ },
@@ -9076,7 +9076,7 @@
 	"use strict";
 
 	var React = __webpack_require__(16);
-	var Configuration = __webpack_require__(120);
+	var Configuration = __webpack_require__(118);
 	var PropTypes = __webpack_require__(119);
 
 	/**
@@ -9109,7 +9109,7 @@
 	"use strict";
 
 	var React = __webpack_require__(16);
-	var classSet = __webpack_require__(118);
+	var classSet = __webpack_require__(120);
 	var assign = __webpack_require__(75);
 	var Navigation = __webpack_require__(63);
 	var State = __webpack_require__(65);
@@ -9226,7 +9226,41 @@
 	"use strict";
 
 	var React = __webpack_require__(16);
-	var Configuration = __webpack_require__(120);
+	var Configuration = __webpack_require__(118);
+	var PropTypes = __webpack_require__(119);
+
+	/**
+	 * A <NotFoundRoute> is a special kind of <Route> that
+	 * renders when the beginning of its parent's path matches
+	 * but none of its siblings do, including any <DefaultRoute>.
+	 * Only one such route may be used at any given level in the
+	 * route hierarchy.
+	 */
+	var NotFoundRoute = React.createClass({
+
+	  displayName: "NotFoundRoute",
+
+	  mixins: [Configuration],
+
+	  propTypes: {
+	    name: PropTypes.string,
+	    path: PropTypes.falsy,
+	    children: PropTypes.falsy,
+	    handler: PropTypes.func.isRequired
+	  }
+
+	});
+
+	module.exports = NotFoundRoute;
+
+/***/ },
+/* 53 */
+/***/ function(module, exports, __webpack_require__) {
+
+	"use strict";
+
+	var React = __webpack_require__(16);
+	var Configuration = __webpack_require__(118);
 	var PropTypes = __webpack_require__(119);
 
 	/**
@@ -9251,13 +9285,13 @@
 	module.exports = Redirect;
 
 /***/ },
-/* 53 */
+/* 54 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
 
 	var React = __webpack_require__(16);
-	var Configuration = __webpack_require__(120);
+	var Configuration = __webpack_require__(118);
 	var PropTypes = __webpack_require__(119);
 	var RouteHandler = __webpack_require__(55);
 	/**
@@ -9322,40 +9356,6 @@
 	});
 
 	module.exports = Route;
-
-/***/ },
-/* 54 */
-/***/ function(module, exports, __webpack_require__) {
-
-	"use strict";
-
-	var React = __webpack_require__(16);
-	var Configuration = __webpack_require__(120);
-	var PropTypes = __webpack_require__(119);
-
-	/**
-	 * A <NotFoundRoute> is a special kind of <Route> that
-	 * renders when the beginning of its parent's path matches
-	 * but none of its siblings do, including any <DefaultRoute>.
-	 * Only one such route may be used at any given level in the
-	 * route hierarchy.
-	 */
-	var NotFoundRoute = React.createClass({
-
-	  displayName: "NotFoundRoute",
-
-	  mixins: [Configuration],
-
-	  propTypes: {
-	    name: PropTypes.string,
-	    path: PropTypes.falsy,
-	    children: PropTypes.falsy,
-	    handler: PropTypes.func.isRequired
-	  }
-
-	});
-
-	module.exports = NotFoundRoute;
 
 /***/ },
 /* 55 */
@@ -10244,8 +10244,8 @@
 	var assign = __webpack_require__(75);
 	var warning = __webpack_require__(38);
 	var DefaultRouteType = __webpack_require__(50).type;
-	var NotFoundRouteType = __webpack_require__(54).type;
-	var RedirectType = __webpack_require__(52).type;
+	var NotFoundRouteType = __webpack_require__(52).type;
+	var RedirectType = __webpack_require__(53).type;
 	var Route = __webpack_require__(66);
 
 	function checkPropTypes(componentName, propTypes, props) {
@@ -12056,36 +12056,6 @@
 /* 85 */
 /***/ function(module, exports, __webpack_require__) {
 
-	// style-loader: Adds some css to the DOM by adding a <style> tag
-
-	// load the styles
-	var content = __webpack_require__(86);
-	if(typeof content === 'string') content = [[module.id, content, '']];
-	// add the styles to the DOM
-	var update = __webpack_require__(24)(content, {});
-	// Hot Module Replacement
-	if(true) {
-		// When the styles change, update the <style> tags
-		module.hot.accept(86, function() {
-			var newContent = __webpack_require__(86);
-			if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
-			update(newContent);
-		});
-		// When the module is disposed, remove the <style> tags
-		module.hot.dispose(function() { update(); });
-	}
-
-/***/ },
-/* 86 */
-/***/ function(module, exports, __webpack_require__) {
-
-	exports = module.exports = __webpack_require__(48)();
-	exports.push([module.id, ".List {\n\t//background: rgb(250,250,250);\n\tpadding-bottom: 90px;\n\n}\n.List-article {\n\tbackground: rgb(250,250,250);\n}\n\n\n/* NEXT */\n.List-nextItem {\n\tline-height: 1.4;\n\tfont-size: 14px;\n\tmargin: 10px 0 4px 0;\t\n}\n.List-nextItemTitle {\n\tbackground: rgb(200,200,200);\n\tdisplay: inline-block;\n\tpadding: 6px 14px;\n\tcolor: white;\n\tmargin: 10px 0;\t\n}\n.List-nextPost {\n\tcursor: pointer;\t\n}\n.List-nextPost:hover, .List-nextTitle:hover {\n\tcolor: #87B825;\n}\n.List-nextTitle {\n\tfont-weight: 700;\n}\n.List-nextPreview {\n\tfont-size: 16px;\n}\n.List-nextLink {\n\tdisplay: inline-block;\n\tfont-size: 16px;\n\tcolor: rgb(100,100,100);\n\tborder: none;\n\ttext-decoration: underline;\n}\n\n/* LIST */\n.List-content {\n\tpadding: 10px 5px 0px 5px;\n}\n@media screen and (min-width: 400px){\n    .List-content {\n\t\tmax-width: 600px;\n        margin: 0 auto;\n\n    }\n    .List-indexContent {\n\t\tmax-width: 600px;\n       \n    }\n}\n.List-title {\n\tpadding: 0px 5px 10px 15px;\n\tfont-weight: 700;\n\t\n\tborder-bottom: 1px solid rgb(120,120,120);\n}\n\n\n.List-articleItem {\n\tmargin: 1px;\n\tpadding: 12px 12px;\n\tcursor: pointer;\n\tcolor: rgb(80,80,80);\n\tdisplay: block;\n\tborder:none;\n\tline-height: 1.4;\n\tfont-size: 16px;\n\n}\n.List-articleItem:hover, .List-indexItem:hover {\n\tcolor: black;\n\tbackground: rgb(240,240,240);\n}\n\n.List-articleItemDate {\n\tdisplay: inline-block;\n    margin-right: 14px;\n    float: left;\n\n}\n.List-articleItemTitle {\n\toverflow: hidden;  _overflow:visible;  zoom:1;\n    \n}\n\n/* ----------------- */\n.List-boldTitle {\n\tfont-weight: 800;\n}\n.List--index {\n\theight: 100vh;\n\toverflow: scroll;\n}\n.List-indexContent {\n\tmax-width: 800px;\n\n}\n.List-indexItem {\n\tmargin-bottom: 20px;\n\tpadding: 10px 12px;\n\tcursor: pointer;\n\tcolor: rgb(80,80,80);\n\tdisplay: block;\n\tborder:none;\n\tline-height: 1.4;\n\tfont-size: 16px;\n}\n.List-articleItemBrief {\n\tcolor: rgb(100,100,100);\n}\n\n/* ----------------- */\n.List-footer {\n\tmargin: 0 auto;\n\ttext-align: center;\n}\n.List-button {\n\tborder: 1px solid rgb(220,220,220);\n\tcolor: rgb(100,100,100);\n\tcursor: pointer;\n\tpadding: 8px 20px;\n\tdisplay: inline-block;\n\tborder-radius: 20px;\n\n}\n.List-button:hover {\n   border: 1px solid rgb(50,50,50);\n   color: black;\n}\n\n\n\n", ""]);
-
-/***/ },
-/* 87 */
-/***/ function(module, exports, __webpack_require__) {
-
 	/* WEBPACK VAR INJECTION */(function(module) {/* REACT HOT LOADER */ if (true) { (function () { var ReactHotAPI = __webpack_require__(15), RootInstanceProvider = __webpack_require__(5), ReactMount = __webpack_require__(14), React = __webpack_require__(16); module.makeHot = module.hot.data ? module.hot.data.makeHot : ReactHotAPI(function () { return RootInstanceProvider.getRootInstances(ReactMount); }, React); })(); } (function () {
 
 	"use strict";
@@ -12096,7 +12066,7 @@
 
 	__webpack_require__(146);
 
-	var Tabs = _interopRequire(__webpack_require__(100));
+	var Tabs = _interopRequire(__webpack_require__(96));
 
 	//http://community.citizenedu.tw/t/topic/798/11
 
@@ -12308,7 +12278,7 @@
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(7)(module)))
 
 /***/ },
-/* 88 */
+/* 86 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(module) {/* REACT HOT LOADER */ if (true) { (function () { var ReactHotAPI = __webpack_require__(15), RootInstanceProvider = __webpack_require__(5), ReactMount = __webpack_require__(14), React = __webpack_require__(16); module.makeHot = module.hot.data ? module.hot.data.makeHot : ReactHotAPI(function () { return RootInstanceProvider.getRootInstances(ReactMount); }, React); })(); } (function () {
@@ -12319,7 +12289,7 @@
 
 	var React = _interopRequire(__webpack_require__(16));
 
-	__webpack_require__(194);
+	__webpack_require__(151);
 
 	module.exports = React.createClass({
 	    displayName: "Social",
@@ -12364,6 +12334,37 @@
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(7)(module)))
 
 /***/ },
+/* 87 */
+/***/ function(module, exports, __webpack_require__) {
+
+	// style-loader: Adds some css to the DOM by adding a <style> tag
+
+	// load the styles
+	var content = __webpack_require__(88);
+	if(typeof content === 'string') content = [[module.id, content, '']];
+	// add the styles to the DOM
+	var update = __webpack_require__(24)(content, {});
+	// Hot Module Replacement
+	if(true) {
+		// When the styles change, update the <style> tags
+		module.hot.accept(88, function() {
+			var newContent = __webpack_require__(88);
+			if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+			update(newContent);
+		});
+		// When the module is disposed, remove the <style> tags
+		module.hot.dispose(function() { update(); });
+	}
+
+/***/ },
+/* 88 */
+/***/ function(module, exports, __webpack_require__) {
+
+	exports = module.exports = __webpack_require__(48)();
+	exports.push([module.id, "@import url(http://fonts.googleapis.com/css?family=Noto+Sans:400,700);", ""]);
+	exports.push([module.id, "/** @define Article; use strict */\n\n\np, blockquote, h3, ul, ol, li, a, span {\n   font-family: 'Noto Sans', sans-serif;\n   line-height: 1.8;\n   font-size: 18px;\n   color: rgb(53,55,54);\n}\n\n.Article {\n  background: white;\n  width: 100%;\n  margin: 0px auto; \n  \n  position: relative; \n  overflow: hidden;\n\n\n}\n.Article-authorBackground {\n  /*background: rgb(230,230,230);*/\n  padding: 10px;\n}\n.Article-author {\n  padding-bottom: 30px;\n \n}\n.Article-cover {\n  width: 100%;\n  height: 150px;\n  overflow: hidden;\n  position: relative;\n}\n.Article-coverImg {\n  width: 110%;\n  position: absolute;\n  top: -100px;\n  left: -10px;\n}\n.Article-coverCopyright {\n  color: #2F2930;\n  position: absolute;\n  bottom: 4px;\n  right: 10px;\n  cursor: pointer;\n  border: none;\n  font-size: 12px;\n}\n@media screen and (min-width: 400px){\n    .Article-content,.Article-author{\n\t\t    max-width: 600px;\n        margin: 0 auto;\n    }\n    .Article-cover {\n        width: 100%;\n        height: 300px;\n    }\n    .Article-coverImg {\n        width: 110%;\n        top: -380px;\n        left: -10%;\n    }\n}\n.Article-content {\n  background: rgba(255,255,255,0.8);\n  position: relative;\n  padding: 8px;\n}\n\n@media screen and (max-width: 400px){\n  .Article-content h1:first-child {\n      margin: 0;  \n  }\n}\n.Article-author {\n  //background: #FAFAFA;\n  line-height: 1.4;\n  font-family: 'Noto Sans', sans-serif;\n  \n}\n.Article-authorHeader {\n  min-height: 0px;\n}\n.Article-avatar {\n  cursor: pointer;\n\tfloat: left;\n  margin: 20px 0px 0px 20px;\n  background: white;\n  //border: 3px solid rgb(140,140,140);\n  //box-shadow: 3px 3px 0px rgba(200,200,200,0.4);\n  border: 1px solid rgb(100,100,100);\n  border-radius: 50%;\n  width: 60px;\n}\n.Article-avatar:hover {\n  box-shadow: 3px 3px 0px rgba(200,200,200,0.7);\n}\n.Article-info {\n\toverflow:hidden;  _overflow:visible;  zoom:1; \n\tpadding-left:10px;\n  padding-top: 24px;\n\n}\na.Article-name {\n  cursor: pointer;\n  font-size: 20px;\n  font-weight: 800;\n  \n  display: inline-block;\n  border: none;\n}\na.Article-name:hover {\n  text-decoration: underline;\n}\ndiv.Article-date {\n  display: inline-block;\n  font-size: 10px;\n  font-weight: 200;\n  margin: 0 6px;\n}\n\nblockquote {\n   //border: 1px solid rgb(220,220,220);\n   //border-left: 10px solid rgba(0,0,0,0.12);\n   padding: 0px 10px;\n   font-style: italic;\n   font-weight: 700;\n   font-size: 16px;\n   color: rgb(70,70,70);\n   \n}\nh1 {\n   font-size: 28px;\n   line-height: 1.25;\n   font-weight: 900;\n   margin: 50px 0px 20px 0px;\n   border-left: 10px solid #87B825;\n   padding-left: 14px;\n   \n}\n@media screen and (min-width: 400px){\n   h1 {\n      font-size: 40px;\n   }\n}\nh2 {\n   font-size: 26px;\n   font-weight: 900;\n   margin: 16px 0px;\n}\np {\n   \n}\nol {\n   \n}\nli {\n\n}\na, a:visited {\n   color: rgb(53,55,54);\n   cursor: pointer;\n   text-decoration: none;\n   border-bottom: 1px solid rgb(120,120,120);\n}\na:hover {\n\t\n}\nhr {\n   border: none;\n   border-top: 1px solid rgb(200,200,200);\n}\n/* IMAGES */\na.lightbox {\n   text-decoration: none;\n   border: none;\n}\na.lightbox img {\n}\n.filename {\n\tfont-size: 14px;\n}\n.informations {\n\tdisplay: none;\n}\n.Article-footer {\n  text-align: center;\n  background: rgb(230,230,230);\n  min-height: 150px;\n  \n}\n\n\n\n\n", ""]);
+
+/***/ },
 /* 89 */
 /***/ function(module, exports, __webpack_require__) {
 
@@ -12391,8 +12392,7 @@
 /***/ function(module, exports, __webpack_require__) {
 
 	exports = module.exports = __webpack_require__(48)();
-	exports.push([module.id, "@import url(http://fonts.googleapis.com/css?family=Noto+Sans:400,700);", ""]);
-	exports.push([module.id, "/** @define Article; use strict */\n\n\np, blockquote, h3, ul, ol, li, a, span {\n   font-family: 'Noto Sans', sans-serif;\n   line-height: 1.8;\n   font-size: 18px;\n   color: rgb(53,55,54);\n}\n\n.Article {\n  background: white;\n  width: 100%;\n  margin: 0px auto; \n  \n  position: relative; \n  overflow: hidden;\n\n\n}\n.Article-authorBackground {\n  /*background: rgb(230,230,230);*/\n  padding: 10px;\n}\n.Article-author {\n  padding-bottom: 30px;\n \n}\n.Article-cover {\n  width: 100%;\n  height: 150px;\n  overflow: hidden;\n  position: relative;\n}\n.Article-coverImg {\n  width: 110%;\n  position: absolute;\n  top: -100px;\n  left: -10px;\n}\n.Article-coverCopyright {\n  color: #2F2930;\n  position: absolute;\n  bottom: 4px;\n  right: 10px;\n  cursor: pointer;\n  border: none;\n  font-size: 12px;\n}\n@media screen and (min-width: 400px){\n    .Article-content,.Article-author{\n\t\t    max-width: 600px;\n        margin: 0 auto;\n    }\n    .Article-cover {\n        width: 100%;\n        height: 300px;\n    }\n    .Article-coverImg {\n        width: 110%;\n        top: -380px;\n        left: -10%;\n    }\n}\n.Article-content {\n  background: rgba(255,255,255,0.8);\n  position: relative;\n  padding: 8px;\n}\n\n@media screen and (max-width: 400px){\n  .Article-content h1:first-child {\n      margin: 0;  \n  }\n}\n.Article-author {\n  //background: #FAFAFA;\n  line-height: 1.4;\n  font-family: 'Noto Sans', sans-serif;\n  \n}\n.Article-authorHeader {\n  min-height: 0px;\n}\n.Article-avatar {\n  cursor: pointer;\n\tfloat: left;\n  margin: 20px 0px 0px 20px;\n  background: white;\n  //border: 3px solid rgb(140,140,140);\n  //box-shadow: 3px 3px 0px rgba(200,200,200,0.4);\n  border: 1px solid rgb(100,100,100);\n  border-radius: 50%;\n  width: 60px;\n}\n.Article-avatar:hover {\n  box-shadow: 3px 3px 0px rgba(200,200,200,0.7);\n}\n.Article-info {\n\toverflow:hidden;  _overflow:visible;  zoom:1; \n\tpadding-left:10px;\n  padding-top: 24px;\n\n}\na.Article-name {\n  cursor: pointer;\n  font-size: 20px;\n  font-weight: 800;\n  \n  display: inline-block;\n  border: none;\n}\na.Article-name:hover {\n  text-decoration: underline;\n}\ndiv.Article-date {\n  display: inline-block;\n  font-size: 10px;\n  font-weight: 200;\n  margin: 0 6px;\n}\n\nblockquote {\n   //border: 1px solid rgb(220,220,220);\n   //border-left: 10px solid rgba(0,0,0,0.12);\n   padding: 0px 10px;\n   font-style: italic;\n   font-weight: 700;\n   font-size: 16px;\n   color: rgb(70,70,70);\n   \n}\nh1 {\n   font-size: 28px;\n   line-height: 1.25;\n   font-weight: 900;\n   margin: 50px 0px 20px 0px;\n   border-left: 10px solid #87B825;\n   padding-left: 14px;\n   \n}\n@media screen and (min-width: 400px){\n   h1 {\n      font-size: 40px;\n   }\n}\nh2 {\n   font-size: 26px;\n   font-weight: 900;\n   margin: 16px 0px;\n}\np {\n   \n}\nol {\n   \n}\nli {\n\n}\na, a:visited {\n   color: rgb(53,55,54);\n   cursor: pointer;\n   text-decoration: none;\n   border-bottom: 1px solid rgb(120,120,120);\n}\na:hover {\n\t\n}\nhr {\n   border: none;\n   border-top: 1px solid rgb(200,200,200);\n}\n/* IMAGES */\na.lightbox {\n   text-decoration: none;\n   border: none;\n}\na.lightbox img {\n}\n.filename {\n\tfont-size: 14px;\n}\n.informations {\n\tdisplay: none;\n}\n.Article-footer {\n  text-align: center;\n  background: rgb(230,230,230);\n  min-height: 150px;\n  \n}\n\n\n\n\n", ""]);
+	exports.push([module.id, ".List {\n\t//background: rgb(250,250,250);\n\tpadding-bottom: 90px;\n\n}\n.List-article {\n\tbackground: rgb(250,250,250);\n}\n\n\n/* NEXT */\n.List-nextItem {\n\tline-height: 1.4;\n\tfont-size: 14px;\n\tmargin: 10px 0 4px 0;\t\n}\n.List-nextItemTitle {\n\tbackground: rgb(200,200,200);\n\tdisplay: inline-block;\n\tpadding: 6px 14px;\n\tcolor: white;\n\tmargin: 10px 0;\t\n}\n.List-nextPost {\n\tcursor: pointer;\t\n}\n.List-nextPost:hover, .List-nextTitle:hover {\n\tcolor: #87B825;\n}\n.List-nextTitle {\n\tfont-weight: 700;\n}\n.List-nextPreview {\n\tfont-size: 16px;\n}\n.List-nextLink {\n\tdisplay: inline-block;\n\tfont-size: 16px;\n\tcolor: rgb(100,100,100);\n\tborder: none;\n\ttext-decoration: underline;\n}\n\n/* LIST */\n.List-content {\n\tpadding: 10px 5px 0px 5px;\n}\n@media screen and (min-width: 400px){\n    .List-content {\n\t\tmax-width: 600px;\n        margin: 0 auto;\n\n    }\n    .List-indexContent {\n\t\tmax-width: 600px;\n       \n    }\n}\n.List-title {\n\tpadding: 0px 5px 10px 15px;\n\tfont-weight: 700;\n\t\n\tborder-bottom: 1px solid rgb(120,120,120);\n}\n\n\n.List-articleItem {\n\tmargin: 1px;\n\tpadding: 12px 12px;\n\tcursor: pointer;\n\tcolor: rgb(80,80,80);\n\tdisplay: block;\n\tborder:none;\n\tline-height: 1.4;\n\tfont-size: 16px;\n\n}\n.List-articleItem:hover, .List-indexItem:hover {\n\tcolor: black;\n\tbackground: rgb(240,240,240);\n}\n\n.List-articleItemDate {\n\tdisplay: inline-block;\n    margin-right: 14px;\n    float: left;\n\n}\n.List-articleItemTitle {\n\toverflow: hidden;  _overflow:visible;  zoom:1;\n    \n}\n\n/* ----------------- */\n.List-boldTitle {\n\tfont-weight: 800;\n}\n.List--index {\n\theight: 100vh;\n\toverflow: scroll;\n}\n.List-indexContent {\n\tmax-width: 800px;\n\n}\n.List-indexItem {\n\tmargin-bottom: 20px;\n\tpadding: 10px 12px;\n\tcursor: pointer;\n\tcolor: rgb(80,80,80);\n\tdisplay: block;\n\tborder:none;\n\tline-height: 1.4;\n\tfont-size: 16px;\n}\n.List-articleItemBrief {\n\tcolor: rgb(100,100,100);\n}\n\n/* ----------------- */\n.List-footer {\n\tmargin: 0 auto;\n\ttext-align: center;\n}\n.List-button {\n\tborder: 1px solid rgb(220,220,220);\n\tcolor: rgb(100,100,100);\n\tcursor: pointer;\n\tpadding: 8px 20px;\n\tdisplay: inline-block;\n\tborder-radius: 20px;\n\n}\n.List-button:hover {\n   border: 1px solid rgb(50,50,50);\n   color: black;\n}\n\n\n\n", ""]);
 
 /***/ },
 /* 91 */
@@ -12505,70 +12505,10 @@
 /***/ function(module, exports, __webpack_require__) {
 
 	exports = module.exports = __webpack_require__(48)();
-	exports.push([module.id, ".Tags {\n\t//background: #D36E6E;\n\tbackground: rgb(250,250,250);\n\tfloat: right;\n\tdisplay: inline-block;\n\tvertical-align: top;\n\tpadding-left: 10px;\n\twidth: 320px;\n\theight: 100vh;\n}\n.Tags-title {\n\tborder-bottom: 1px solid rgb(220,220,220);\n\tpadding: 5px;\n\tmargin: 10px 0;\n\tcolor: rgb(120,120,120);\n}\n.Tags-Tag {\n\tpadding: 5px 10px;\n\tcursor: pointer;\n\tborder: 1px solid rgb(220,220,220);\n\tdisplay: inline-block;\n\tmargin: 4px;\n\tbackground: white;\n}\n.Tags-Tag:hover {\n\t//border: 1px solid #D36E6E;\n\tborder: 1px solid rgba(135,184,37,1);\n\t//background: #D36E6E;\n\tbackground: rgba(135,184,37,1);\n\tcolor: white;\n}", ""]);
-
-/***/ },
-/* 96 */
-/***/ function(module, exports, __webpack_require__) {
-
-	// style-loader: Adds some css to the DOM by adding a <style> tag
-
-	// load the styles
-	var content = __webpack_require__(97);
-	if(typeof content === 'string') content = [[module.id, content, '']];
-	// add the styles to the DOM
-	var update = __webpack_require__(24)(content, {});
-	// Hot Module Replacement
-	if(true) {
-		// When the styles change, update the <style> tags
-		module.hot.accept(97, function() {
-			var newContent = __webpack_require__(97);
-			if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
-			update(newContent);
-		});
-		// When the module is disposed, remove the <style> tags
-		module.hot.dispose(function() { update(); });
-	}
-
-/***/ },
-/* 97 */
-/***/ function(module, exports, __webpack_require__) {
-
-	exports = module.exports = __webpack_require__(48)();
-	exports.push([module.id, ".AboutSite {\n    width: 100%;\n    //background: #C39372;\n    background: rgba(135,184,37,1);\n    height: 100vh;\n    color: white;\n    //color: rgb(50,50,50);\n    overflow: scroll;\n}\n@media screen and (min-width: 600px){\n\t.AboutSite {\n\t\tfloat: left;\n    \twidth: 340px;\n    }\n\n}\n.AboutSite-img {\n\twidth: 100%;\n}\n.AboutSite-content {\n\tline-height: 1.6;\n\tpadding: 10px;\n}\n.AboutSite-title {\n\tfont-size: 24px;\n\tfont-weight: 800;\n}\n.AboutSite-meta {\n\tmargin-top: 20px;\n\tfont-size: 10px;\n\tdisplay: inline-block;\n\tcursor: pointer;\n}\n.AboutSite-meta:hover {\n\tborder-bottom: 1px solid;\n\n}", ""]);
-
-/***/ },
-/* 98 */
-/***/ function(module, exports, __webpack_require__) {
-
-	// style-loader: Adds some css to the DOM by adding a <style> tag
-
-	// load the styles
-	var content = __webpack_require__(99);
-	if(typeof content === 'string') content = [[module.id, content, '']];
-	// add the styles to the DOM
-	var update = __webpack_require__(24)(content, {});
-	// Hot Module Replacement
-	if(true) {
-		// When the styles change, update the <style> tags
-		module.hot.accept(99, function() {
-			var newContent = __webpack_require__(99);
-			if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
-			update(newContent);
-		});
-		// When the module is disposed, remove the <style> tags
-		module.hot.dispose(function() { update(); });
-	}
-
-/***/ },
-/* 99 */
-/***/ function(module, exports, __webpack_require__) {
-
-	exports = module.exports = __webpack_require__(48)();
 	exports.push([module.id, ".Author {\n\tline-height: 1.6;\n\tmargin-bottom: 20px;\n\tbox-shadow: 4px 4px 0px rgba(200,200,200,0.4);\n\tpadding: 0 18px;\n\tbackground: white;\n\tcursor: pointer;\n\tborder: 1px solid gray;\n\tmargin: 0 5px;\n\t\n}\n.Author p {\n\tline-height: 1.4;\n\tfont-size: 14px;\n}\n.Author img {\n\tmax-width: 100%;\n}\n.Author:hover {\n    box-shadow: 4px 4px 0px rgba(200,200,200,0.6);\n}\n.Author-showFullBio {\n\tmargin-top: 15px;\n\tbackground: #87B825;\n\tcolor: white;\n\tdisplay: inline-block;\n\tpadding: 4px 10px;\n\tcursor: pointer;\n\tdisplay: none;\n}\n.Author-showFullBio:hover {\n\tbox-shadow: 4px 4px 8px rgba(0,0,0,0.12), -4px -4px 8px rgba(0,0,0,0.12);;\n}\n/* =================================================== */\n\n.Author-widget {\n\ttext-align: center;\n\tbackground: rgb(240,240,240);\n\tpadding: 4px 1px;\n\tfont-size: 14px;\n}\n.Author-widgetLink {\n\tdisplay: inline-block;\n\tborder: none;\n\tcolor: rgb(50,50,50);\n\tmargin: 0 1px;\n}\n.Author-widgetLink:hover {\n\tcolor: #87B825;\n}\n@media screen and (min-width: 400px){\n\t.Author-widget {\n\t\tbackground: rgba(250,250,250,0.8);\n\t\tbox-shadow: 0px 1px 0px rgba(0,0,0,0.12);\n\t    z-index: 10;\n\t\tfont-size: 16px;\n\t\ttext-align: center;\n\t\twidth: 100%;\n\t\theight: 50px;\n\t\tpadding-top: 4px;\n    }\n    .Author-fixedWidget {\n    \tbackground: rgba(255,255,255,0.95);\n    \tposition: fixed;\n\t\ttop: 0;\n\t\tz-index: 100;\n    }\n\n}\n.Author-widgetAvatar {\n\twidth: 40px;\n\tborder-radius: 50%;\n}\n.Author-widgetInfo {\n\tvertical-align: top;\n\tdisplay: inline-block;\n\tmargin: 0 6px;\n    padding-top: 4px;\n}\n\n/* ====== 學科分類 ====== */\n.Author-tagsSection {\n\tdisplay: none;\n}\n@media screen and (min-width: 400px){\n\t.Author-tagsSection {\n\t\tdisplay: inline-block;\n\t}\n}\n.Author-tags {\n\tfont-size: 14px;\n}\n.Author-tagLink {\n\tfont-size: 14px;\n\tcolor: rgb(80,80,80);\n}\n.Author-tagLink:hover {\n\tcolor: black;\n}\n\n\n\n/* ==================================== */\n.Author--page {\n\twidth: 100%;\n\t//background: rgb(241,241,241);\n\tmin-height: 100vh;\n\theight: 100%;\n\tpadding-top: 50px;\n\tpadding-bottom: 80px;\n}\n@media screen and (min-width: 600px){\n\t.Author--pageContent{\n\t\twidth: 600px;\n\t\tmargin: 0 auto;\n\t}\n}\n.Author-pageTop {\n\ttext-align: center;\n\tpadding-bottom: 30px;\n}\n.Author-nameTitle {\n\tmargin-top: 10px;\n\tfont-size: 40px;\n\tfont-weight: 800;\n\ttext-align: center;\n}\n.Author-pageAvatar {\n\twidth: 120px;\n\theight: 120px;\n\tborder-radius: 50%;\n\tbox-shadow: 1px 1px 0 0 rgba(0,0,0,0.12),-1px 1px 0 0 rgba(0,0,0,0.12);\n    border: 3px solid white;\n}\n.Author-Tabs {\n\tmargin: 0 5px;\n}\n.Author-article {\n    line-height: 1.6;\n\tmargin-bottom: 20px;\n\tbox-shadow: 4px 4px 0px rgba(200,200,200,0.4);\n\tbackground: white;\n\tborder: 1px solid gray;\n\tmargin: 0 5px;\n}\n.Author-articleItem {\n\tmargin: 1px;\n\tpadding: 12px;\n\tcursor: pointer;\n\tcolor: rgb(80,80,80);\n\tdisplay: block;\n\tborder:none;\n\tline-height: 1.4;\n\tfont-size: 16px;\n}\n.Author-articleItem:hover {\n\tcolor: black;\n\tbackground: rgb(240,240,240);\n}\n.Author-articleItemDate {\n    display: inline-block;\n    margin-right: 14px;\n    float: left; \n}\n.Author-articleItemTitle {\n\toverflow: hidden;  _overflow:visible;  zoom:1;\n}", ""]);
 
 /***/ },
-/* 100 */
+/* 96 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(module) {/* REACT HOT LOADER */ if (true) { (function () { var ReactHotAPI = __webpack_require__(15), RootInstanceProvider = __webpack_require__(5), ReactMount = __webpack_require__(14), React = __webpack_require__(16); module.makeHot = module.hot.data ? module.hot.data.makeHot : ReactHotAPI(function () { return RootInstanceProvider.getRootInstances(ReactMount); }, React); })(); } (function () {
@@ -12614,6 +12554,66 @@
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(7)(module)))
 
 /***/ },
+/* 97 */
+/***/ function(module, exports, __webpack_require__) {
+
+	// style-loader: Adds some css to the DOM by adding a <style> tag
+
+	// load the styles
+	var content = __webpack_require__(98);
+	if(typeof content === 'string') content = [[module.id, content, '']];
+	// add the styles to the DOM
+	var update = __webpack_require__(24)(content, {});
+	// Hot Module Replacement
+	if(true) {
+		// When the styles change, update the <style> tags
+		module.hot.accept(98, function() {
+			var newContent = __webpack_require__(98);
+			if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+			update(newContent);
+		});
+		// When the module is disposed, remove the <style> tags
+		module.hot.dispose(function() { update(); });
+	}
+
+/***/ },
+/* 98 */
+/***/ function(module, exports, __webpack_require__) {
+
+	exports = module.exports = __webpack_require__(48)();
+	exports.push([module.id, ".AboutSite {\n    width: 100%;\n    //background: #C39372;\n    background: rgba(135,184,37,1);\n    height: 100vh;\n    color: white;\n    //color: rgb(50,50,50);\n    overflow: scroll;\n}\n@media screen and (min-width: 600px){\n\t.AboutSite {\n\t\tfloat: left;\n    \twidth: 340px;\n    }\n\n}\n.AboutSite-img {\n\twidth: 100%;\n}\n.AboutSite-content {\n\tline-height: 1.6;\n\tpadding: 10px;\n}\n.AboutSite-title {\n\tfont-size: 24px;\n\tfont-weight: 800;\n}\n.AboutSite-meta {\n\tmargin-top: 20px;\n\tfont-size: 10px;\n\tdisplay: inline-block;\n\tcursor: pointer;\n}\n.AboutSite-meta:hover {\n\tborder-bottom: 1px solid;\n\n}", ""]);
+
+/***/ },
+/* 99 */
+/***/ function(module, exports, __webpack_require__) {
+
+	// style-loader: Adds some css to the DOM by adding a <style> tag
+
+	// load the styles
+	var content = __webpack_require__(100);
+	if(typeof content === 'string') content = [[module.id, content, '']];
+	// add the styles to the DOM
+	var update = __webpack_require__(24)(content, {});
+	// Hot Module Replacement
+	if(true) {
+		// When the styles change, update the <style> tags
+		module.hot.accept(100, function() {
+			var newContent = __webpack_require__(100);
+			if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+			update(newContent);
+		});
+		// When the module is disposed, remove the <style> tags
+		module.hot.dispose(function() { update(); });
+	}
+
+/***/ },
+/* 100 */
+/***/ function(module, exports, __webpack_require__) {
+
+	exports = module.exports = __webpack_require__(48)();
+	exports.push([module.id, ".Columns {\n\tdisplay: inline-block;\n\toverflow:hidden;  _overflow:visible;  zoom:1;\n\t//background: #DABDA8;\n\tbackground: #FAFAFA;\n\tmin-height:100vh;\n\twidth: 100%;\n\n}\n\n.Column {\n\tbackground: white;\n\t//border: 1px solid #DABDA8;\n\tborder: 1px solid #FAFAFA;\n\tbox-shadow: 4px 4px 0 0 rgba(0,0,0,0.12);\n\tmargin: 5px;\n\tcursor: pointer;\n\n\tdisplay: inline-block;\n\t\n\tvertical-align: top;\n\tpadding: 8px;\n\tline-height: 1.6;\n\n\t\n\toverflow: hidden;\n\n\twidth: 100%;\n}\n@media screen and (min-width: 600px){\n    .Columns {\n    \tmax-width: 920px;\n    \theight: 200px;\n    }\n}\n@media screen and (min-width: 600px){\n    .Column {\n    \twidth: 250px;\n    \tmargin: 10px 5px;\n    \theight: 200px;\n    }\n}\n.Column:hover {\n\tbox-shadow: 4px 4px 0 0 rgba(0,0,0,0.24);\n}\n.Column-name {\n   font-size: 20px;\n   font-weight: 800;\n   color: rgb(50,50,50);\n}\n.Column:hover .Column-name {\n\t//color: #87B825;\n\tcolor: black;\n}", ""]);
+
+/***/ },
 /* 101 */
 /***/ function(module, exports, __webpack_require__) {
 
@@ -12641,7 +12641,7 @@
 /***/ function(module, exports, __webpack_require__) {
 
 	exports = module.exports = __webpack_require__(48)();
-	exports.push([module.id, ".Columns {\n\tdisplay: inline-block;\n\toverflow:hidden;  _overflow:visible;  zoom:1;\n\t//background: #DABDA8;\n\tbackground: #FAFAFA;\n\tmin-height:100vh;\n\twidth: 100%;\n\n}\n\n.Column {\n\tbackground: white;\n\t//border: 1px solid #DABDA8;\n\tborder: 1px solid #FAFAFA;\n\tbox-shadow: 4px 4px 0 0 rgba(0,0,0,0.12);\n\tmargin: 5px;\n\tcursor: pointer;\n\n\tdisplay: inline-block;\n\t\n\tvertical-align: top;\n\tpadding: 8px;\n\tline-height: 1.6;\n\n\t\n\toverflow: hidden;\n\n\twidth: 100%;\n}\n@media screen and (min-width: 600px){\n    .Columns {\n    \tmax-width: 920px;\n    \theight: 200px;\n    }\n}\n@media screen and (min-width: 600px){\n    .Column {\n    \twidth: 250px;\n    \tmargin: 10px 5px;\n    \theight: 200px;\n    }\n}\n.Column:hover {\n\tbox-shadow: 4px 4px 0 0 rgba(0,0,0,0.24);\n}\n.Column-name {\n   font-size: 20px;\n   font-weight: 800;\n   color: rgb(50,50,50);\n}\n.Column:hover .Column-name {\n\t//color: #87B825;\n\tcolor: black;\n}", ""]);
+	exports.push([module.id, ".Tags {\n\t//background: #D36E6E;\n\tbackground: rgb(250,250,250);\n\tfloat: right;\n\tdisplay: inline-block;\n\tvertical-align: top;\n\tpadding-left: 10px;\n\twidth: 320px;\n\theight: 100vh;\n}\n.Tags-title {\n\tborder-bottom: 1px solid rgb(220,220,220);\n\tpadding: 5px;\n\tmargin: 10px 0;\n\tcolor: rgb(120,120,120);\n}\n.Tags-Tag {\n\tpadding: 5px 10px;\n\tcursor: pointer;\n\tborder: 1px solid rgb(220,220,220);\n\tdisplay: inline-block;\n\tmargin: 4px;\n\tbackground: white;\n}\n.Tags-Tag:hover {\n\t//border: 1px solid #D36E6E;\n\tborder: 1px solid rgba(135,184,37,1);\n\t//background: #D36E6E;\n\tbackground: rgba(135,184,37,1);\n\tcolor: white;\n}", ""]);
 
 /***/ },
 /* 103 */
@@ -12663,8 +12663,8 @@
 
 	var DOMProperty = __webpack_require__(25);
 
-	var escapeTextForBrowser = __webpack_require__(151);
-	var memoizeStringOnly = __webpack_require__(152);
+	var escapeTextForBrowser = __webpack_require__(153);
+	var memoizeStringOnly = __webpack_require__(154);
 	var warning = __webpack_require__(38);
 
 	function shouldIgnoreValue(name, value) {
@@ -13084,9 +13084,9 @@
 
 	"use strict";
 
-	var PooledClass = __webpack_require__(153);
+	var PooledClass = __webpack_require__(155);
 
-	var traverseAllChildren = __webpack_require__(154);
+	var traverseAllChildren = __webpack_require__(156);
 	var warning = __webpack_require__(38);
 
 	var twoArgumentPooler = PooledClass.twoArgumentPooler;
@@ -13238,8 +13238,8 @@
 	"use strict";
 
 	var ReactElement = __webpack_require__(28);
-	var ReactOwner = __webpack_require__(155);
-	var ReactUpdates = __webpack_require__(156);
+	var ReactOwner = __webpack_require__(157);
+	var ReactUpdates = __webpack_require__(158);
 
 	var assign = __webpack_require__(75);
 	var invariant = __webpack_require__(36);
@@ -13689,22 +13689,22 @@
 	var ReactElement = __webpack_require__(28);
 	var ReactElementValidator = __webpack_require__(108);
 	var ReactEmptyComponent = __webpack_require__(82);
-	var ReactErrorUtils = __webpack_require__(157);
+	var ReactErrorUtils = __webpack_require__(159);
 	var ReactLegacyElement = __webpack_require__(29);
-	var ReactOwner = __webpack_require__(155);
+	var ReactOwner = __webpack_require__(157);
 	var ReactPerf = __webpack_require__(31);
-	var ReactPropTransferer = __webpack_require__(158);
-	var ReactPropTypeLocations = __webpack_require__(159);
-	var ReactPropTypeLocationNames = __webpack_require__(160);
-	var ReactUpdates = __webpack_require__(156);
+	var ReactPropTransferer = __webpack_require__(160);
+	var ReactPropTypeLocations = __webpack_require__(161);
+	var ReactPropTypeLocationNames = __webpack_require__(162);
+	var ReactUpdates = __webpack_require__(158);
 
 	var assign = __webpack_require__(75);
 	var instantiateReactComponent = __webpack_require__(35);
 	var invariant = __webpack_require__(36);
 	var keyMirror = __webpack_require__(140);
-	var keyOf = __webpack_require__(161);
+	var keyOf = __webpack_require__(163);
 	var monitorCodeUse = __webpack_require__(78);
-	var mapObject = __webpack_require__(162);
+	var mapObject = __webpack_require__(164);
 	var shouldUpdateReactComponent = __webpack_require__(37);
 	var warning = __webpack_require__(38);
 
@@ -15134,7 +15134,7 @@
 	"use strict";
 
 	var ReactElement = __webpack_require__(28);
-	var ReactPropTypeLocations = __webpack_require__(159);
+	var ReactPropTypeLocations = __webpack_require__(161);
 	var ReactCurrentOwner = __webpack_require__(27);
 
 	var monitorCodeUse = __webpack_require__(78);
@@ -15416,7 +15416,7 @@
 	var ReactElementValidator = __webpack_require__(108);
 	var ReactLegacyElement = __webpack_require__(29);
 
-	var mapObject = __webpack_require__(162);
+	var mapObject = __webpack_require__(164);
 
 	/**
 	 * Create a factory that creates HTML tag elements.
@@ -15598,10 +15598,10 @@
 
 	"use strict";
 
-	var CSSPropertyOperations = __webpack_require__(163);
+	var CSSPropertyOperations = __webpack_require__(165);
 	var DOMProperty = __webpack_require__(25);
 	var DOMPropertyOperations = __webpack_require__(103);
-	var ReactBrowserComponentMixin = __webpack_require__(164);
+	var ReactBrowserComponentMixin = __webpack_require__(166);
 	var ReactComponent = __webpack_require__(106);
 	var ReactBrowserEventEmitter = __webpack_require__(26);
 	var ReactMount = __webpack_require__(14);
@@ -15609,10 +15609,10 @@
 	var ReactPerf = __webpack_require__(31);
 
 	var assign = __webpack_require__(75);
-	var escapeTextForBrowser = __webpack_require__(151);
+	var escapeTextForBrowser = __webpack_require__(153);
 	var invariant = __webpack_require__(36);
 	var isEventSupported = __webpack_require__(76);
-	var keyOf = __webpack_require__(161);
+	var keyOf = __webpack_require__(163);
 	var monitorCodeUse = __webpack_require__(78);
 
 	var deleteListener = ReactBrowserEventEmitter.deleteListener;
@@ -16087,37 +16087,37 @@
 
 	"use strict";
 
-	var BeforeInputEventPlugin = __webpack_require__(169);
-	var ChangeEventPlugin = __webpack_require__(170);
-	var ClientReactRootIndex = __webpack_require__(171);
-	var CompositionEventPlugin = __webpack_require__(172);
-	var DefaultEventPluginOrder = __webpack_require__(173);
-	var EnterLeaveEventPlugin = __webpack_require__(174);
+	var BeforeInputEventPlugin = __webpack_require__(167);
+	var ChangeEventPlugin = __webpack_require__(168);
+	var ClientReactRootIndex = __webpack_require__(169);
+	var CompositionEventPlugin = __webpack_require__(170);
+	var DefaultEventPluginOrder = __webpack_require__(171);
+	var EnterLeaveEventPlugin = __webpack_require__(172);
 	var ExecutionEnvironment = __webpack_require__(117);
-	var HTMLDOMPropertyConfig = __webpack_require__(175);
-	var MobileSafariClickEventPlugin = __webpack_require__(176);
-	var ReactBrowserComponentMixin = __webpack_require__(164);
+	var HTMLDOMPropertyConfig = __webpack_require__(173);
+	var MobileSafariClickEventPlugin = __webpack_require__(174);
+	var ReactBrowserComponentMixin = __webpack_require__(166);
 	var ReactComponentBrowserEnvironment =
-	  __webpack_require__(177);
-	var ReactDefaultBatchingStrategy = __webpack_require__(178);
+	  __webpack_require__(175);
+	var ReactDefaultBatchingStrategy = __webpack_require__(176);
 	var ReactDOMComponent = __webpack_require__(110);
-	var ReactDOMButton = __webpack_require__(179);
-	var ReactDOMForm = __webpack_require__(180);
-	var ReactDOMImg = __webpack_require__(181);
-	var ReactDOMInput = __webpack_require__(182);
-	var ReactDOMOption = __webpack_require__(183);
-	var ReactDOMSelect = __webpack_require__(184);
-	var ReactDOMTextarea = __webpack_require__(185);
-	var ReactEventListener = __webpack_require__(186);
-	var ReactInjection = __webpack_require__(187);
+	var ReactDOMButton = __webpack_require__(177);
+	var ReactDOMForm = __webpack_require__(178);
+	var ReactDOMImg = __webpack_require__(179);
+	var ReactDOMInput = __webpack_require__(180);
+	var ReactDOMOption = __webpack_require__(181);
+	var ReactDOMSelect = __webpack_require__(182);
+	var ReactDOMTextarea = __webpack_require__(183);
+	var ReactEventListener = __webpack_require__(184);
+	var ReactInjection = __webpack_require__(185);
 	var ReactInstanceHandles = __webpack_require__(30);
 	var ReactMount = __webpack_require__(14);
-	var SelectEventPlugin = __webpack_require__(188);
-	var ServerReactRootIndex = __webpack_require__(189);
-	var SimpleEventPlugin = __webpack_require__(190);
-	var SVGDOMPropertyConfig = __webpack_require__(191);
+	var SelectEventPlugin = __webpack_require__(186);
+	var ServerReactRootIndex = __webpack_require__(187);
+	var SimpleEventPlugin = __webpack_require__(188);
+	var SVGDOMPropertyConfig = __webpack_require__(189);
 
-	var createFullPageComponent = __webpack_require__(192);
+	var createFullPageComponent = __webpack_require__(190);
 
 	function inject() {
 	  ReactInjection.EventEmitter.injectReactEventListener(
@@ -16190,7 +16190,7 @@
 	  if ("production" !== process.env.NODE_ENV) {
 	    var url = (ExecutionEnvironment.canUseDOM && window.location.href) || '';
 	    if ((/[?&]react_perf\b/).test(url)) {
-	      var ReactDefaultPerf = __webpack_require__(193);
+	      var ReactDefaultPerf = __webpack_require__(191);
 	      ReactDefaultPerf.start();
 	    }
 	  }
@@ -16221,9 +16221,9 @@
 	"use strict";
 
 	var ReactComponent = __webpack_require__(106);
-	var ReactMultiChildUpdateTypes = __webpack_require__(167);
+	var ReactMultiChildUpdateTypes = __webpack_require__(192);
 
-	var flattenChildren = __webpack_require__(168);
+	var flattenChildren = __webpack_require__(193);
 	var instantiateReactComponent = __webpack_require__(35);
 	var shouldUpdateReactComponent = __webpack_require__(37);
 
@@ -16652,7 +16652,7 @@
 	"use strict";
 
 	var ReactElement = __webpack_require__(28);
-	var ReactPropTypeLocationNames = __webpack_require__(160);
+	var ReactPropTypeLocationNames = __webpack_require__(162);
 
 	var deprecated = __webpack_require__(33);
 	var emptyFunction = __webpack_require__(83);
@@ -17011,9 +17011,9 @@
 
 	var ReactElement = __webpack_require__(28);
 	var ReactInstanceHandles = __webpack_require__(30);
-	var ReactMarkupChecksum = __webpack_require__(165);
+	var ReactMarkupChecksum = __webpack_require__(194);
 	var ReactServerRenderingTransaction =
-	  __webpack_require__(166);
+	  __webpack_require__(195);
 
 	var instantiateReactComponent = __webpack_require__(35);
 	var invariant = __webpack_require__(36);
@@ -17098,7 +17098,7 @@
 	var ReactElement = __webpack_require__(28);
 
 	var assign = __webpack_require__(75);
-	var escapeTextForBrowser = __webpack_require__(151);
+	var escapeTextForBrowser = __webpack_require__(153);
 
 	/**
 	 * Text nodes violate a couple assumptions that React makes about components:
@@ -17281,6 +17281,67 @@
 /* 118 */
 /***/ function(module, exports, __webpack_require__) {
 
+	"use strict";
+
+	var warning = __webpack_require__(38);
+	var invariant = __webpack_require__(36);
+
+	function checkPropTypes(componentName, propTypes, props) {
+	  for (var propName in propTypes) {
+	    if (propTypes.hasOwnProperty(propName)) {
+	      var error = propTypes[propName](props, propName, componentName);
+
+	      if (error instanceof Error) warning(false, error.message);
+	    }
+	  }
+	}
+
+	var Configuration = {
+
+	  statics: {
+
+	    validateProps: function validateProps(props) {
+	      checkPropTypes(this.displayName, this.propTypes, props);
+	    }
+
+	  },
+
+	  render: function render() {
+	    invariant(false, "%s elements are for router configuration only and should not be rendered", this.constructor.displayName);
+	  }
+
+	};
+
+	module.exports = Configuration;
+
+/***/ },
+/* 119 */
+/***/ function(module, exports, __webpack_require__) {
+
+	"use strict";
+
+	var assign = __webpack_require__(75);
+	var ReactPropTypes = __webpack_require__(16).PropTypes;
+
+	var PropTypes = assign({
+
+	  /**
+	   * Requires that the value of a prop be falsy.
+	   */
+	  falsy: function falsy(props, propName, componentName) {
+	    if (props[propName]) {
+	      return new Error("<" + componentName + "> may not have a \"" + propName + "\" prop");
+	    }
+	  }
+
+	}, ReactPropTypes);
+
+	module.exports = PropTypes;
+
+/***/ },
+/* 120 */
+/***/ function(module, exports, __webpack_require__) {
+
 	/**
 	 * Copyright 2013-2014, Facebook, Inc.
 	 * All rights reserved.
@@ -17321,67 +17382,6 @@
 
 
 /***/ },
-/* 119 */
-/***/ function(module, exports, __webpack_require__) {
-
-	"use strict";
-
-	var assign = __webpack_require__(75);
-	var ReactPropTypes = __webpack_require__(16).PropTypes;
-
-	var PropTypes = assign({
-
-	  /**
-	   * Requires that the value of a prop be falsy.
-	   */
-	  falsy: function falsy(props, propName, componentName) {
-	    if (props[propName]) {
-	      return new Error("<" + componentName + "> may not have a \"" + propName + "\" prop");
-	    }
-	  }
-
-	}, ReactPropTypes);
-
-	module.exports = PropTypes;
-
-/***/ },
-/* 120 */
-/***/ function(module, exports, __webpack_require__) {
-
-	"use strict";
-
-	var warning = __webpack_require__(38);
-	var invariant = __webpack_require__(36);
-
-	function checkPropTypes(componentName, propTypes, props) {
-	  for (var propName in propTypes) {
-	    if (propTypes.hasOwnProperty(propName)) {
-	      var error = propTypes[propName](props, propName, componentName);
-
-	      if (error instanceof Error) warning(false, error.message);
-	    }
-	  }
-	}
-
-	var Configuration = {
-
-	  statics: {
-
-	    validateProps: function validateProps(props) {
-	      checkPropTypes(this.displayName, this.propTypes, props);
-	    }
-
-	  },
-
-	  render: function render() {
-	    invariant(false, "%s elements are for router configuration only and should not be rendered", this.constructor.displayName);
-	  }
-
-	};
-
-	module.exports = Configuration;
-
-/***/ },
 /* 121 */
 /***/ function(module, exports, __webpack_require__) {
 
@@ -17418,8 +17418,8 @@
 	"use strict";
 
 	var invariant = __webpack_require__(36);
-	var merge = __webpack_require__(207).merge;
-	var qs = __webpack_require__(206);
+	var merge = __webpack_require__(200).merge;
+	var qs = __webpack_require__(199);
 
 	var paramCompileMatcher = /:([a-zA-Z_$][a-zA-Z0-9_$]*)|[*.()\[\]\\+|{}^$]/g;
 	var paramInjectMatcher = /:([a-zA-Z_$][a-zA-Z0-9_$?]*[?]?)|[*]/g;
@@ -18023,73 +18023,125 @@
 /* 132 */
 /***/ function(module, exports, __webpack_require__) {
 
-	module.exports = [
-		{
-			"title": "我對書卷獎的不滿",
-			"date": "2015.03.09",
-			"brief": "有些學校有書卷獎或校長獎：每學期發給每班平均成績前幾名的獎學金，以中正大學為例，前兩名各兩萬元。有些學校為了彰顯自己並非忽視「成績單分數之外的學習成果」，採取其它方法篩選得獎者，例如交由班導師決定，但主事者為了避免爭議，通常依舊會以平均分數為決定性考量。"
-		},
-		{
-			"title": "色情和藝術：被fb封鎖的裸體名畫",
-			"date": "2015.03.05",
-			"brief": "是色情還是藝術，恐怕法國法院和 Facebook 有得吵了。據外電報導，法國一名老師在 Facebook 上傳一幅由 19 世紀藝術家 Gustave Courbet 油畫作品「L’Origine du monde」（世界的起源），然而這幅描述女性陰部的畫作，竟讓老師的帳號被 Facebook 封鎖，就在老師一狀告上法院時，Facebook 卻認定自己不受法國管轄，因此連法國法院都怒了。"
-		},
-		{
-			"title": "農村行銷、櫻木花道和瀉藥",
-			"date": "2015.03.01",
-			"brief": "最近有越來越多農村彩繪：在農村的房屋牆壁上彩繪，形成特殊的公共景觀。在社區營造和社區觀光盛行的現在，不難理解為什麼牆壁彩繪會成為吸引遊客的常用手段：牆壁帶不走。牆壁是天生的拍照背景。我相信遊客的自拍一向是觀光宣傳的重要途徑，因為如果不是的話，就無法說明為什麼許多地方會放著挖空臉孔的奇怪立牌。而連那些立牌都吃得開，表示遊客真的是熱愛自拍到了極點，在這種情況下，不管牆上畫的是什麼，他們大概都無法抵抗。"
-		},
-		{
-			"title": "還是讓機器人有道德兩難好了…是嗎？",
-			"date": "2015.02.23",
-			"brief": "最近看到一個youtube影片，是關於科學家實驗讓小機器人去救小機器人1。在機器人可以移動的平面上，科學家劃定特定的「標示區域」為「洞」，接著設定一些機器人往「洞」移動，而某個機器人則要阻止其他機器人「掉進去」。"
-		},
-		{
-			"title": "震驚網友的裙子顏色",
-			"date": "2015.02.20",
-			"brief": "這裙子是什麼顏色？白/金還是藍/黑？這個問題在網路上吵成一團，Buzzfeed甚至做了投票。此外，謝伯讓也寫了篇文章3說明為什麼大家對於顏色的判斷會有歧義。我覺得我們也可以趁現在用這個例子寫篇文章介紹跟顏色感官相關的哲學。例如：有所謂「客觀」的顏色嗎？顏色就是所謂「會反射特定波常光波的表面性質」嗎？除了謝伯讓提到的「顏色恆常」之外，有其他因素影響大家對於顏色的判斷嗎？"
-		},
-		{
-			"title": "沒結婚的30歲以上女性稻草人問題和失言新聞",
-			"date": "2015.02.15",
-			"brief": "柯文哲說，如果30歲以上女生有百分之三十沒結婚，國家會不穩定，結果被罵翻了。"
-		}
-	]
-
-/***/ },
-/* 133 */
-/***/ function(module, exports, __webpack_require__) {
-
 	module.exports = {
-		"title": "大學應該停止自以為知道大學生需要什麼",
-		"date": "2015.03.15",
-		"brief": "直接的說，各大學訂定英語畢業門檻，會明列各英檢考試分數的通過標準，比如多益要幾分，托福要幾分。這幾項標準當中，「恰好」會有其中一項是「分數要求比較低的」，也就是「比較容易通過的」，也「恰好」該英檢機構會和該校合作，直接進入校園考試，這就是圖利特定廠商。"
+		"id": 1872,
+		"name": "朱家安",
+		"username": "kris",
+		"avatar_template": "/user_avatar/community.citizenedu.tw/kris/{size}/18.png",
+		"uploaded_avatar_id": 18,
+		"created_at": "2015-03-16T07:09:39.039Z",
+		"cooked": "<h1>作者已死：評論藝術作品，需要看作者臉色嗎？</h1>\n\n<p><div class=\"lightbox-wrapper\"></div> </p>\n\n<p>試想以下狀況：</p>\n\n<p>評論家針對一本小說寫了評論，認為它隱含強烈的懷疑論思想。然而，小說作者認為該評論的詮釋嚴重扭曲了他原本的創作意圖，並為文反駁。</p>\n\n<p>在文章裡，小說家強調自己根本沒有任何懷疑論的想法，並認為該評論非常不負責任：如果想知道作品背後的創作意圖，為何不打通電話來詢問作者而卻要私自揣測呢？作者還好端端活著，只要一通電話就能得到正確答案呀！就算不打電話，也可以去看他在雜誌以及網路專欄的訪談，早就談過作品真正想表達的內容。</p>\n\n<p>評論家看了作家反駁的文章，不甘示弱也寫了另一篇文回應，在文中他表示，他通常不會去看作家高談闊論自己作品的文章，他只關注作品本身告訴他什麼；如果讀者還得請作者來「指導」他讀懂作品，這不會是文學評論的正途。</p>\n\n<h2>作者意圖與詮釋</h2>\n\n<p>前例改編自筆者身邊的真實故事，事實上這種作家與評論家（或讀者與讀者之間）的爭論相當常見，網路上的電影、小說討論區甚至文學界的研究者都常為了作品的正確詮釋而爭論不休。這種現象不禁讓我們想問：究竟任意詮釋作品是否合理？有所謂的過度詮釋嗎？若有，限制詮釋的條件是什麼？到底有沒有「唯一正確」的詮釋？這一系列問題大抵上就構成了藝術哲學中一個相當棘手的議題：詮釋（interpretation）。</p>\n\n<p>從開頭的例子，我們大概可以看出作家跟評論家兩人爭論的一個重點：</p>\n\n<blockquote><p>作者意圖（authorial intention）&lt;1&gt;與作品意義（work-meaning）之間的關係究竟是什麼？</p></blockquote>\n\n<p>在前例中，作家認為一部作品說了什麼，取決於作者要透過它說什麼；評論家則認為，作品說了什麼，應該僅取決於作品內容。簡單地說：一方認為正確的詮釋是作者說了算，另一方認為是作品說了算。</p>\n\n<h2>意圖謬誤</h2>\n\n<p>在英美分析哲學的歷史中，詮釋理論的爭論始於1946年的一篇論文〈意圖謬誤〉（The Intentional Fallacy）&lt;2&gt;。〈意圖謬誤〉由文學評論家Wimsatt與哲學家Beardsley合著，它在英美藝術哲學界掀起的論戰，迄今尚未停歇。Wimsatt和Beardsley的核心主張很簡單：</p>\n\n<blockquote><p>任何由作者意圖（前提）來推出作品意義（結論）的論證，都犯了「訴諸意圖的謬誤」（以下簡稱「意圖謬誤」）。</p></blockquote>\n\n<p>舉例來說，假設我是一位評論家，讀完了一本小說後打算寫書評，動筆之前我從電視上的作者訪談得知作者在創作這本小說時，打算透過這個故事來體現懷疑論的哲學思想。於是我在評論文章中便以此為基礎，將該本小說詮釋成表達了懷疑論的思想。對於Wimsatt還有Beardsley而言，這樣的詮釋就是意圖謬誤。根據Wimsatt和Beardsley，「訴諸作者的意圖來推出作品意義」的推理，是無效的。</p>\n\n<p>他們首先用一個兩難式來證明，作者意圖與作品詮釋無關（irrelevant）：</p>\n\n<ul>\n<li>（前提一）要嘛作者成功在作品中實現了他的創作意圖，要嘛失敗了。</li>\n<li>（前提二）如果作者成功在作品中實現了他的創作意圖，那麼我們便沒有必要訴諸作者意圖（作品本身就告訴我們作者意圖）。</li>\n<li>（前提三）如果作者沒有成功在作品中實現創作意圖，我們當然也不需要訴諸作者意圖（既然失敗，這個意圖已經跟作品無關了）。</li>\n<li>（結論）不管是哪一種狀況，訴諸作者意圖都是沒有必要的。</li>\n</ul>\n\n<p>舉剛剛的例子，如果作者藉由小說表達懷疑論的哲學思想，並且成功寫出了體現懷疑論的故事，在這種情況下，讀者沒有必要去閱讀作者的訪談或去看作者的facebook來得知該作品背後有懷疑論的思想，因為故事本身就能告訴我們這點。</p>\n\n<p>然而，如果作者的嘗試失敗了，作品無法與懷疑論產生有意義的關聯，那麼就算作者在訪談中說他試圖創作一部懷疑論的小說，我們也不需要去管這個創作意圖，因為實際上寫出來的作品已經跟這個意圖毫無關係了。也就是說，無論如何，要知道作品的意義，我們只需要看作品本身，毋須訴諸作者的意圖來進行詮釋工作，因為文本就告訴我們一切。這種詮釋立場被稱為「反意圖主義」（anti-intentionalism）。你可以猜到，和這種立場相反的，自然就被叫做「意圖主義」（intentionalism）。</p>\n\n<h1>語言慣例與作品意義</h1>\n\n<p>如果我們接受了反意圖主義的兩難論證&lt;3&gt;，不禁要繼續追問「作品自己說了算」或是「文本就告訴我們一切」到底是什麼意思&lt;4&gt;。僅依賴文本來得出作品意義，所依賴的到底是什麼？對反意圖主義而言，我們的詮釋必定依據文本呈現出的一套客觀資料。這些客觀資料其實就是作品中的文字所關涉到的語言慣例（linguistic conventions）。</p>\n\n<p>文學作品由文字組成，文字的意義來自語言慣例，這包含了字典中對字詞成語的定義以及一般大眾的語言使用習慣。若沒有這些語言慣例，大部分的言談都不可能進行，更不用說看懂文學作品了。反意圖主義者認為，語言慣例是詮釋作品時不能違背的客觀資料，詮釋者必須觀察作品所使用文字的語言慣例，透過公共的語言知識來推敲作品意義。</p>\n\n<p>有些人可能會說，透過語言慣例頂多只是知道字詞或語句的表面意思（literal meaning），而難以知道正確的弦外之音，就是因為難以確定作品的隱含意義（implicit meaning），才需要知道作者意圖來破解一些模糊的文意。但反意圖主義者對於語言慣例的理解比這種批評來得廣泛和深刻。</p>\n\n<p>對反意圖主義者來說，語言慣例包括字詞的言外之意（connotation），因為它們也是字詞意義的一部分。例如當我們說「沙漠」就會聯想到「乾渴」，不會聯想到「豐饒」；「獅子」代表「勇猛」而不會是「膽小」；而像成語都有固定指涉的意義，不可濫用。針對較大的語言單位，例如語句，其暗示（suggestion）也都有跡可尋而非任意。如果有人跟你說：「今天的考試超級難！」你就可以推知對方今天參加了考試，而且可能沒有考超高分。這些都預設了語言慣例的理解&lt;5&gt;。</p>\n\n<p>當一個作品中某個段落的意義含糊時，我們通常可以透過掌握相關的語言慣例，全盤細讀作品的上下文來排除不可能的解讀並推理出正確的作品意義。反意圖主義者認為透過這樣的方式，在大部分的狀況下我們可以得到一個唯一正確的作品詮釋&lt;6&gt;。由於主張作品意義是由語言慣例所決定，反意圖主義者又被稱為「慣例主義者」（conventionalist）。</p>\n\n<h2>為什麼反意圖？</h2>\n\n<p>Beardsley進一步提出兩個論證來說明文學評論應該要採取反意圖主義的進路&lt;7&gt;。第一個是關於作者意圖的可得性（availability）。通常讀者們難以獲取關於作者意圖的證據或資料（回想你從以前到現在看過的小說，你了解幾本小說的創作意圖？），更別提許多作者都是年代久遠的古人，想問也問不到。在這種情況下，在裁定詮釋的對錯時，最可靠的證據就是文本。如果我們最後可以從文本中找到證據否決某個解讀，那麼該解讀就是錯的。</p>\n\n<p>第二個論證是關於審美的滿足感（aesthetic satisfaction）。文學詮釋的目標應該是幫助讀者深入了解作品來獲取閱讀的滿足感。例如小說或詩詞的評論文章常常可以替我們指點迷津，讓我們發出「原來這首詩有這層意思！」或是「原來這個故事表達了這個主題！」之類的讚嘆，進而使我們的閱讀經驗更加愉快。既然我們在閱讀及解讀的對象是作品，評論瞄準的應該就是作品本身，而不是外在於作品的作者以及其意圖。</p>\n\n<p>讀到這裡也許有人會說，透過作者意圖來了解作品不也能帶來閱讀的滿足感？當我們更了解作家寫作的嘗試時，常常也能夠讓閱讀體驗更有趣。嚴格說來Beardsley並沒有反對我們在詮釋作品時「參考」作者意圖的資訊，他真正反對的是這些資訊必然地決定了作品意義。參考這些資訊，可以，但我們被這些訊息所啟發的詮釋假設是對是錯，由我們在作品身上觀察到的證據來決定。這些資訊頂多帶給我們詮釋靈感，但不能決定作品意義。如果這些資訊最後證明跟作品無關，那麼就算它能帶來滿足感，也不會是詮釋活動應該要帶來的滿足。</p>\n\n<h2>小結</h2>\n\n<p>反意圖主義的精神在於給予作品自己的生命，而不是讓作品成為作者手下的傀儡。作品就像作者的孩子，出生後就是獨立自存的個體，擁有自己的思想，不受父母控制。父母或許是孩子誕生的原因，但他們沒有辦法代替孩子說話，就如同作者不能代替作品說話。在詮釋活動中，我們該理解、傾聽的不是作者，而是作品。評論者應該把作品從作者的陰影中解放出來&lt;8&gt;。</p>\n\n<h1>Notes</h1>\n\n<ol>\n<li>如何定義「意圖」（intention）也引發了不少的爭議，但可以粗略理解成作者欲在作品中實現的計畫或設計。</li>\n<li>Wimsatt Jr, William and Beardsley, Monroe C. (1946). The Intentional Fallacy. <em>Sewanee Review</em>, 54: 468-88.</li>\n<li>關於反意圖主義的兩難論證該如何「詮釋」有很大的爭議，這個論證真正證明的是訴諸作者意圖是不必要的，但沒有證明作者意圖不能決定作品意義，因為它仍承認了那些成功在作品中實現的意圖。Wimsatt與Beardsley要說的是語言慣例就能充分地（sufficiently）決定作品意義，因此考慮作者意圖是多餘的。但後來Beardsley的立場卻似乎否認作者意圖與作品意義有任何相關性。由於Beardsley是反意圖主義最重要的人物，如上理解也成為一般對意圖謬誤的標準詮釋。針對此點爭議可參閱Lyas, C. (1992). Wittgensteinian Intentions. In G. Iseminger (ed.), <em>Intention &amp; Interpretation</em>. Philadelphia: Temple University Press, 132-151.</li>\n<li>「文本」（text）、「作品」（work）二詞在反意圖主義的脈絡中沒有太深刻的區分，常常混用，這是因為Beardsley將作品等同於文本。但後來的哲學家將二詞做出了嚴格區分。此處不細論。</li>\n<li>Beardsley, M. C. (1981). <em>Aesthetics, Problems in the Philosophy of Criticism</em>. Hackett Publishing.</li>\n<li>若不能，表示文本本身就是模糊的，但反意圖主義者認為這種狀況不多。</li>\n<li>Beardsley, M. C. (1970). <em>The Possibility of Criticism</em>. Detroit: Wayne State University Press.</li>\n<li>本文只是介紹哲學立場，不代表作者立場。</li>\n</ol>",
+		"post_number": 18,
+		"post_type": 1,
+		"updated_at": "2015-03-19T08:18:36.036Z",
+		"reply_count": 0,
+		"reply_to_post_number": null,
+		"quote_count": 0,
+		"avg_time": 24,
+		"incoming_link_count": 1,
+		"reads": 14,
+		"score": 23.8,
+		"yours": false,
+		"topic_id": 767,
+		"topic_slug": "topic",
+		"topic_auto_close_at": null,
+		"display_username": "朱家安",
+		"primary_group_name": null,
+		"version": 4,
+		"can_edit": true,
+		"can_delete": true,
+		"can_recover": true,
+		"link_counts": [
+			{
+				"url": "https://www.facebook.com/citizenedu",
+				"internal": false,
+				"reflection": false,
+				"title": "沃草公民學院 - Watchout Citizenedu | Facebook",
+				"clicks": 1
+			},
+			{
+				"url": "https://www.facebook.com/pages/%E6%9E%97%E6%96%AF%E8%AB%BA-Lin-Sihyan/147719061920901",
+				"internal": false,
+				"reflection": false,
+				"title": "林斯諺　Lin Sihyan | Facebook",
+				"clicks": 1
+			},
+			{
+				"url": "http://community.citizenedu.tw/",
+				"internal": true,
+				"reflection": false,
+				"clicks": 0
+			}
+		],
+		"read": true,
+		"user_title": null,
+		"actions_summary": [
+			{
+				"id": 2,
+				"count": 1,
+				"hidden": false,
+				"can_act": true,
+				"can_defer_flags": false
+			},
+			{
+				"id": 3,
+				"count": 0,
+				"hidden": false,
+				"can_act": true,
+				"can_defer_flags": false
+			},
+			{
+				"id": 4,
+				"count": 0,
+				"hidden": false,
+				"can_act": true,
+				"can_defer_flags": false
+			},
+			{
+				"id": 5,
+				"count": 0,
+				"hidden": true,
+				"can_act": true,
+				"can_defer_flags": false
+			},
+			{
+				"id": 6,
+				"count": 0,
+				"hidden": false,
+				"can_act": true,
+				"can_defer_flags": false
+			},
+			{
+				"id": 7,
+				"count": 0,
+				"hidden": false,
+				"can_act": true,
+				"can_defer_flags": false
+			},
+			{
+				"id": 8,
+				"count": 0,
+				"hidden": false,
+				"can_act": true,
+				"can_defer_flags": false
+			}
+		],
+		"moderator": true,
+		"admin": true,
+		"staff": true,
+		"user_id": 4,
+		"hidden": false,
+		"hidden_reason_id": null,
+		"trust_level": 4,
+		"deleted_at": null,
+		"user_deleted": false,
+		"edit_reason": "",
+		"can_view_edit_history": true,
+		"wiki": false
 	}
 
 /***/ },
-/* 134 */
-/***/ function(module, exports, __webpack_require__) {
-
-	module.exports = [
-		"歷史學",
-		"政治學",
-		"人類學",
-		"哲學",
-		"社會學",
-		"語言學",
-		"宗教學",
-		"傳播學",
-		"勞工",
-		"環境",
-		"階級",
-		"性別",
-		"教育",
-		"國會",
-		"選舉"
-	]
-
-/***/ },
-/* 135 */
+/* 133 */
 /***/ function(module, exports, __webpack_require__) {
 
 	module.exports = {
@@ -18323,7 +18375,7 @@
 	}
 
 /***/ },
-/* 136 */
+/* 134 */
 /***/ function(module, exports, __webpack_require__) {
 
 	module.exports = [
@@ -18365,7 +18417,7 @@
 	]
 
 /***/ },
-/* 137 */
+/* 135 */
 /***/ function(module, exports, __webpack_require__) {
 
 	module.exports = [
@@ -18392,125 +18444,73 @@
 	]
 
 /***/ },
-/* 138 */
+/* 136 */
+/***/ function(module, exports, __webpack_require__) {
+
+	module.exports = [
+		{
+			"title": "我對書卷獎的不滿",
+			"date": "2015.03.09",
+			"brief": "有些學校有書卷獎或校長獎：每學期發給每班平均成績前幾名的獎學金，以中正大學為例，前兩名各兩萬元。有些學校為了彰顯自己並非忽視「成績單分數之外的學習成果」，採取其它方法篩選得獎者，例如交由班導師決定，但主事者為了避免爭議，通常依舊會以平均分數為決定性考量。"
+		},
+		{
+			"title": "色情和藝術：被fb封鎖的裸體名畫",
+			"date": "2015.03.05",
+			"brief": "是色情還是藝術，恐怕法國法院和 Facebook 有得吵了。據外電報導，法國一名老師在 Facebook 上傳一幅由 19 世紀藝術家 Gustave Courbet 油畫作品「L’Origine du monde」（世界的起源），然而這幅描述女性陰部的畫作，竟讓老師的帳號被 Facebook 封鎖，就在老師一狀告上法院時，Facebook 卻認定自己不受法國管轄，因此連法國法院都怒了。"
+		},
+		{
+			"title": "農村行銷、櫻木花道和瀉藥",
+			"date": "2015.03.01",
+			"brief": "最近有越來越多農村彩繪：在農村的房屋牆壁上彩繪，形成特殊的公共景觀。在社區營造和社區觀光盛行的現在，不難理解為什麼牆壁彩繪會成為吸引遊客的常用手段：牆壁帶不走。牆壁是天生的拍照背景。我相信遊客的自拍一向是觀光宣傳的重要途徑，因為如果不是的話，就無法說明為什麼許多地方會放著挖空臉孔的奇怪立牌。而連那些立牌都吃得開，表示遊客真的是熱愛自拍到了極點，在這種情況下，不管牆上畫的是什麼，他們大概都無法抵抗。"
+		},
+		{
+			"title": "還是讓機器人有道德兩難好了…是嗎？",
+			"date": "2015.02.23",
+			"brief": "最近看到一個youtube影片，是關於科學家實驗讓小機器人去救小機器人1。在機器人可以移動的平面上，科學家劃定特定的「標示區域」為「洞」，接著設定一些機器人往「洞」移動，而某個機器人則要阻止其他機器人「掉進去」。"
+		},
+		{
+			"title": "震驚網友的裙子顏色",
+			"date": "2015.02.20",
+			"brief": "這裙子是什麼顏色？白/金還是藍/黑？這個問題在網路上吵成一團，Buzzfeed甚至做了投票。此外，謝伯讓也寫了篇文章3說明為什麼大家對於顏色的判斷會有歧義。我覺得我們也可以趁現在用這個例子寫篇文章介紹跟顏色感官相關的哲學。例如：有所謂「客觀」的顏色嗎？顏色就是所謂「會反射特定波常光波的表面性質」嗎？除了謝伯讓提到的「顏色恆常」之外，有其他因素影響大家對於顏色的判斷嗎？"
+		},
+		{
+			"title": "沒結婚的30歲以上女性稻草人問題和失言新聞",
+			"date": "2015.02.15",
+			"brief": "柯文哲說，如果30歲以上女生有百分之三十沒結婚，國家會不穩定，結果被罵翻了。"
+		}
+	]
+
+/***/ },
+/* 137 */
 /***/ function(module, exports, __webpack_require__) {
 
 	module.exports = {
-		"id": 1872,
-		"name": "朱家安",
-		"username": "kris",
-		"avatar_template": "/user_avatar/community.citizenedu.tw/kris/{size}/18.png",
-		"uploaded_avatar_id": 18,
-		"created_at": "2015-03-16T07:09:39.039Z",
-		"cooked": "<h1>作者已死：評論藝術作品，需要看作者臉色嗎？</h1>\n\n<p><div class=\"lightbox-wrapper\"></div> </p>\n\n<p>試想以下狀況：</p>\n\n<p>評論家針對一本小說寫了評論，認為它隱含強烈的懷疑論思想。然而，小說作者認為該評論的詮釋嚴重扭曲了他原本的創作意圖，並為文反駁。</p>\n\n<p>在文章裡，小說家強調自己根本沒有任何懷疑論的想法，並認為該評論非常不負責任：如果想知道作品背後的創作意圖，為何不打通電話來詢問作者而卻要私自揣測呢？作者還好端端活著，只要一通電話就能得到正確答案呀！就算不打電話，也可以去看他在雜誌以及網路專欄的訪談，早就談過作品真正想表達的內容。</p>\n\n<p>評論家看了作家反駁的文章，不甘示弱也寫了另一篇文回應，在文中他表示，他通常不會去看作家高談闊論自己作品的文章，他只關注作品本身告訴他什麼；如果讀者還得請作者來「指導」他讀懂作品，這不會是文學評論的正途。</p>\n\n<h2>作者意圖與詮釋</h2>\n\n<p>前例改編自筆者身邊的真實故事，事實上這種作家與評論家（或讀者與讀者之間）的爭論相當常見，網路上的電影、小說討論區甚至文學界的研究者都常為了作品的正確詮釋而爭論不休。這種現象不禁讓我們想問：究竟任意詮釋作品是否合理？有所謂的過度詮釋嗎？若有，限制詮釋的條件是什麼？到底有沒有「唯一正確」的詮釋？這一系列問題大抵上就構成了藝術哲學中一個相當棘手的議題：詮釋（interpretation）。</p>\n\n<p>從開頭的例子，我們大概可以看出作家跟評論家兩人爭論的一個重點：</p>\n\n<blockquote><p>作者意圖（authorial intention）&lt;1&gt;與作品意義（work-meaning）之間的關係究竟是什麼？</p></blockquote>\n\n<p>在前例中，作家認為一部作品說了什麼，取決於作者要透過它說什麼；評論家則認為，作品說了什麼，應該僅取決於作品內容。簡單地說：一方認為正確的詮釋是作者說了算，另一方認為是作品說了算。</p>\n\n<h2>意圖謬誤</h2>\n\n<p>在英美分析哲學的歷史中，詮釋理論的爭論始於1946年的一篇論文〈意圖謬誤〉（The Intentional Fallacy）&lt;2&gt;。〈意圖謬誤〉由文學評論家Wimsatt與哲學家Beardsley合著，它在英美藝術哲學界掀起的論戰，迄今尚未停歇。Wimsatt和Beardsley的核心主張很簡單：</p>\n\n<blockquote><p>任何由作者意圖（前提）來推出作品意義（結論）的論證，都犯了「訴諸意圖的謬誤」（以下簡稱「意圖謬誤」）。</p></blockquote>\n\n<p>舉例來說，假設我是一位評論家，讀完了一本小說後打算寫書評，動筆之前我從電視上的作者訪談得知作者在創作這本小說時，打算透過這個故事來體現懷疑論的哲學思想。於是我在評論文章中便以此為基礎，將該本小說詮釋成表達了懷疑論的思想。對於Wimsatt還有Beardsley而言，這樣的詮釋就是意圖謬誤。根據Wimsatt和Beardsley，「訴諸作者的意圖來推出作品意義」的推理，是無效的。</p>\n\n<p>他們首先用一個兩難式來證明，作者意圖與作品詮釋無關（irrelevant）：</p>\n\n<ul>\n<li>（前提一）要嘛作者成功在作品中實現了他的創作意圖，要嘛失敗了。</li>\n<li>（前提二）如果作者成功在作品中實現了他的創作意圖，那麼我們便沒有必要訴諸作者意圖（作品本身就告訴我們作者意圖）。</li>\n<li>（前提三）如果作者沒有成功在作品中實現創作意圖，我們當然也不需要訴諸作者意圖（既然失敗，這個意圖已經跟作品無關了）。</li>\n<li>（結論）不管是哪一種狀況，訴諸作者意圖都是沒有必要的。</li>\n</ul>\n\n<p>舉剛剛的例子，如果作者藉由小說表達懷疑論的哲學思想，並且成功寫出了體現懷疑論的故事，在這種情況下，讀者沒有必要去閱讀作者的訪談或去看作者的facebook來得知該作品背後有懷疑論的思想，因為故事本身就能告訴我們這點。</p>\n\n<p>然而，如果作者的嘗試失敗了，作品無法與懷疑論產生有意義的關聯，那麼就算作者在訪談中說他試圖創作一部懷疑論的小說，我們也不需要去管這個創作意圖，因為實際上寫出來的作品已經跟這個意圖毫無關係了。也就是說，無論如何，要知道作品的意義，我們只需要看作品本身，毋須訴諸作者的意圖來進行詮釋工作，因為文本就告訴我們一切。這種詮釋立場被稱為「反意圖主義」（anti-intentionalism）。你可以猜到，和這種立場相反的，自然就被叫做「意圖主義」（intentionalism）。</p>\n\n<h1>語言慣例與作品意義</h1>\n\n<p>如果我們接受了反意圖主義的兩難論證&lt;3&gt;，不禁要繼續追問「作品自己說了算」或是「文本就告訴我們一切」到底是什麼意思&lt;4&gt;。僅依賴文本來得出作品意義，所依賴的到底是什麼？對反意圖主義而言，我們的詮釋必定依據文本呈現出的一套客觀資料。這些客觀資料其實就是作品中的文字所關涉到的語言慣例（linguistic conventions）。</p>\n\n<p>文學作品由文字組成，文字的意義來自語言慣例，這包含了字典中對字詞成語的定義以及一般大眾的語言使用習慣。若沒有這些語言慣例，大部分的言談都不可能進行，更不用說看懂文學作品了。反意圖主義者認為，語言慣例是詮釋作品時不能違背的客觀資料，詮釋者必須觀察作品所使用文字的語言慣例，透過公共的語言知識來推敲作品意義。</p>\n\n<p>有些人可能會說，透過語言慣例頂多只是知道字詞或語句的表面意思（literal meaning），而難以知道正確的弦外之音，就是因為難以確定作品的隱含意義（implicit meaning），才需要知道作者意圖來破解一些模糊的文意。但反意圖主義者對於語言慣例的理解比這種批評來得廣泛和深刻。</p>\n\n<p>對反意圖主義者來說，語言慣例包括字詞的言外之意（connotation），因為它們也是字詞意義的一部分。例如當我們說「沙漠」就會聯想到「乾渴」，不會聯想到「豐饒」；「獅子」代表「勇猛」而不會是「膽小」；而像成語都有固定指涉的意義，不可濫用。針對較大的語言單位，例如語句，其暗示（suggestion）也都有跡可尋而非任意。如果有人跟你說：「今天的考試超級難！」你就可以推知對方今天參加了考試，而且可能沒有考超高分。這些都預設了語言慣例的理解&lt;5&gt;。</p>\n\n<p>當一個作品中某個段落的意義含糊時，我們通常可以透過掌握相關的語言慣例，全盤細讀作品的上下文來排除不可能的解讀並推理出正確的作品意義。反意圖主義者認為透過這樣的方式，在大部分的狀況下我們可以得到一個唯一正確的作品詮釋&lt;6&gt;。由於主張作品意義是由語言慣例所決定，反意圖主義者又被稱為「慣例主義者」（conventionalist）。</p>\n\n<h2>為什麼反意圖？</h2>\n\n<p>Beardsley進一步提出兩個論證來說明文學評論應該要採取反意圖主義的進路&lt;7&gt;。第一個是關於作者意圖的可得性（availability）。通常讀者們難以獲取關於作者意圖的證據或資料（回想你從以前到現在看過的小說，你了解幾本小說的創作意圖？），更別提許多作者都是年代久遠的古人，想問也問不到。在這種情況下，在裁定詮釋的對錯時，最可靠的證據就是文本。如果我們最後可以從文本中找到證據否決某個解讀，那麼該解讀就是錯的。</p>\n\n<p>第二個論證是關於審美的滿足感（aesthetic satisfaction）。文學詮釋的目標應該是幫助讀者深入了解作品來獲取閱讀的滿足感。例如小說或詩詞的評論文章常常可以替我們指點迷津，讓我們發出「原來這首詩有這層意思！」或是「原來這個故事表達了這個主題！」之類的讚嘆，進而使我們的閱讀經驗更加愉快。既然我們在閱讀及解讀的對象是作品，評論瞄準的應該就是作品本身，而不是外在於作品的作者以及其意圖。</p>\n\n<p>讀到這裡也許有人會說，透過作者意圖來了解作品不也能帶來閱讀的滿足感？當我們更了解作家寫作的嘗試時，常常也能夠讓閱讀體驗更有趣。嚴格說來Beardsley並沒有反對我們在詮釋作品時「參考」作者意圖的資訊，他真正反對的是這些資訊必然地決定了作品意義。參考這些資訊，可以，但我們被這些訊息所啟發的詮釋假設是對是錯，由我們在作品身上觀察到的證據來決定。這些資訊頂多帶給我們詮釋靈感，但不能決定作品意義。如果這些資訊最後證明跟作品無關，那麼就算它能帶來滿足感，也不會是詮釋活動應該要帶來的滿足。</p>\n\n<h2>小結</h2>\n\n<p>反意圖主義的精神在於給予作品自己的生命，而不是讓作品成為作者手下的傀儡。作品就像作者的孩子，出生後就是獨立自存的個體，擁有自己的思想，不受父母控制。父母或許是孩子誕生的原因，但他們沒有辦法代替孩子說話，就如同作者不能代替作品說話。在詮釋活動中，我們該理解、傾聽的不是作者，而是作品。評論者應該把作品從作者的陰影中解放出來&lt;8&gt;。</p>\n\n<h1>Notes</h1>\n\n<ol>\n<li>如何定義「意圖」（intention）也引發了不少的爭議，但可以粗略理解成作者欲在作品中實現的計畫或設計。</li>\n<li>Wimsatt Jr, William and Beardsley, Monroe C. (1946). The Intentional Fallacy. <em>Sewanee Review</em>, 54: 468-88.</li>\n<li>關於反意圖主義的兩難論證該如何「詮釋」有很大的爭議，這個論證真正證明的是訴諸作者意圖是不必要的，但沒有證明作者意圖不能決定作品意義，因為它仍承認了那些成功在作品中實現的意圖。Wimsatt與Beardsley要說的是語言慣例就能充分地（sufficiently）決定作品意義，因此考慮作者意圖是多餘的。但後來Beardsley的立場卻似乎否認作者意圖與作品意義有任何相關性。由於Beardsley是反意圖主義最重要的人物，如上理解也成為一般對意圖謬誤的標準詮釋。針對此點爭議可參閱Lyas, C. (1992). Wittgensteinian Intentions. In G. Iseminger (ed.), <em>Intention &amp; Interpretation</em>. Philadelphia: Temple University Press, 132-151.</li>\n<li>「文本」（text）、「作品」（work）二詞在反意圖主義的脈絡中沒有太深刻的區分，常常混用，這是因為Beardsley將作品等同於文本。但後來的哲學家將二詞做出了嚴格區分。此處不細論。</li>\n<li>Beardsley, M. C. (1981). <em>Aesthetics, Problems in the Philosophy of Criticism</em>. Hackett Publishing.</li>\n<li>若不能，表示文本本身就是模糊的，但反意圖主義者認為這種狀況不多。</li>\n<li>Beardsley, M. C. (1970). <em>The Possibility of Criticism</em>. Detroit: Wayne State University Press.</li>\n<li>本文只是介紹哲學立場，不代表作者立場。</li>\n</ol>",
-		"post_number": 18,
-		"post_type": 1,
-		"updated_at": "2015-03-19T08:18:36.036Z",
-		"reply_count": 0,
-		"reply_to_post_number": null,
-		"quote_count": 0,
-		"avg_time": 24,
-		"incoming_link_count": 1,
-		"reads": 14,
-		"score": 23.8,
-		"yours": false,
-		"topic_id": 767,
-		"topic_slug": "topic",
-		"topic_auto_close_at": null,
-		"display_username": "朱家安",
-		"primary_group_name": null,
-		"version": 4,
-		"can_edit": true,
-		"can_delete": true,
-		"can_recover": true,
-		"link_counts": [
-			{
-				"url": "https://www.facebook.com/citizenedu",
-				"internal": false,
-				"reflection": false,
-				"title": "沃草公民學院 - Watchout Citizenedu | Facebook",
-				"clicks": 1
-			},
-			{
-				"url": "https://www.facebook.com/pages/%E6%9E%97%E6%96%AF%E8%AB%BA-Lin-Sihyan/147719061920901",
-				"internal": false,
-				"reflection": false,
-				"title": "林斯諺　Lin Sihyan | Facebook",
-				"clicks": 1
-			},
-			{
-				"url": "http://community.citizenedu.tw/",
-				"internal": true,
-				"reflection": false,
-				"clicks": 0
-			}
-		],
-		"read": true,
-		"user_title": null,
-		"actions_summary": [
-			{
-				"id": 2,
-				"count": 1,
-				"hidden": false,
-				"can_act": true,
-				"can_defer_flags": false
-			},
-			{
-				"id": 3,
-				"count": 0,
-				"hidden": false,
-				"can_act": true,
-				"can_defer_flags": false
-			},
-			{
-				"id": 4,
-				"count": 0,
-				"hidden": false,
-				"can_act": true,
-				"can_defer_flags": false
-			},
-			{
-				"id": 5,
-				"count": 0,
-				"hidden": true,
-				"can_act": true,
-				"can_defer_flags": false
-			},
-			{
-				"id": 6,
-				"count": 0,
-				"hidden": false,
-				"can_act": true,
-				"can_defer_flags": false
-			},
-			{
-				"id": 7,
-				"count": 0,
-				"hidden": false,
-				"can_act": true,
-				"can_defer_flags": false
-			},
-			{
-				"id": 8,
-				"count": 0,
-				"hidden": false,
-				"can_act": true,
-				"can_defer_flags": false
-			}
-		],
-		"moderator": true,
-		"admin": true,
-		"staff": true,
-		"user_id": 4,
-		"hidden": false,
-		"hidden_reason_id": null,
-		"trust_level": 4,
-		"deleted_at": null,
-		"user_deleted": false,
-		"edit_reason": "",
-		"can_view_edit_history": true,
-		"wiki": false
+		"title": "大學應該停止自以為知道大學生需要什麼",
+		"date": "2015.03.15",
+		"brief": "直接的說，各大學訂定英語畢業門檻，會明列各英檢考試分數的通過標準，比如多益要幾分，托福要幾分。這幾項標準當中，「恰好」會有其中一項是「分數要求比較低的」，也就是「比較容易通過的」，也「恰好」該英檢機構會和該校合作，直接進入校園考試，這就是圖利特定廠商。"
 	}
+
+/***/ },
+/* 138 */
+/***/ function(module, exports, __webpack_require__) {
+
+	module.exports = [
+		"歷史學",
+		"政治學",
+		"人類學",
+		"哲學",
+		"社會學",
+		"語言學",
+		"宗教學",
+		"傳播學",
+		"勞工",
+		"環境",
+		"階級",
+		"性別",
+		"教育",
+		"國會",
+		"選舉"
+	]
 
 /***/ },
 /* 139 */
@@ -27985,17 +27985,17 @@
 
 	"use strict";
 
-	var LinkedStateMixin = __webpack_require__(199);
+	var LinkedStateMixin = __webpack_require__(201);
 	var React = __webpack_require__(47);
 	var ReactComponentWithPureRenderMixin =
-	  __webpack_require__(200);
-	var ReactCSSTransitionGroup = __webpack_require__(201);
-	var ReactTransitionGroup = __webpack_require__(202);
-	var ReactUpdates = __webpack_require__(156);
+	  __webpack_require__(202);
+	var ReactCSSTransitionGroup = __webpack_require__(203);
+	var ReactTransitionGroup = __webpack_require__(204);
+	var ReactUpdates = __webpack_require__(158);
 
-	var cx = __webpack_require__(118);
-	var cloneWithProps = __webpack_require__(203);
-	var update = __webpack_require__(204);
+	var cx = __webpack_require__(120);
+	var cloneWithProps = __webpack_require__(205);
+	var update = __webpack_require__(206);
 
 	React.addons = {
 	  CSSTransitionGroup: ReactCSSTransitionGroup,
@@ -28010,8 +28010,8 @@
 	};
 
 	if ("production" !== process.env.NODE_ENV) {
-	  React.addons.Perf = __webpack_require__(193);
-	  React.addons.TestUtils = __webpack_require__(205);
+	  React.addons.Perf = __webpack_require__(191);
+	  React.addons.TestUtils = __webpack_require__(207);
 	}
 
 	module.exports = React;
@@ -29684,6 +29684,36 @@
 /* 151 */
 /***/ function(module, exports, __webpack_require__) {
 
+	// style-loader: Adds some css to the DOM by adding a <style> tag
+
+	// load the styles
+	var content = __webpack_require__(152);
+	if(typeof content === 'string') content = [[module.id, content, '']];
+	// add the styles to the DOM
+	var update = __webpack_require__(24)(content, {});
+	// Hot Module Replacement
+	if(true) {
+		// When the styles change, update the <style> tags
+		module.hot.accept(152, function() {
+			var newContent = __webpack_require__(152);
+			if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+			update(newContent);
+		});
+		// When the module is disposed, remove the <style> tags
+		module.hot.dispose(function() { update(); });
+	}
+
+/***/ },
+/* 152 */
+/***/ function(module, exports, __webpack_require__) {
+
+	exports = module.exports = __webpack_require__(48)();
+	exports.push([module.id, "/* MOBILE */\n.Social {\n\tposition: fixed;\n\tbottom: 0;\n\twidth: 100%;\n\theight: 50px;\n\tz-index: 10;\n\tbox-shadow: 0 -2px 8px rgba(0,0,0,0.12);\n}\n.Social-socialSets {\n\tdisplay: inline-block;\n\tvertical-align: top;\n\twidth: 100%;\n}\n.Social-social {\n\tbackground: #F1F1F1;\n\tdisplay: inline-block;\n\tborder-right: 1px solid rgb(220,220,220);\n\twidth: 50%;\n\theight: 50px;\n\tpadding-top: 16px;\n\ttext-align: center;\n\tcursor: pointer;\n\n}\n\n\n\n/* WEB */\n@media screen and (min-width: 400px){\n\t.Social {\n\t   position: relative;\n\t   margin: 0 auto;\n\t   width: 600px;\n\t   vertical-align: bottom;\n\t   height: 0px;\n    }\n    .Social-socialSets {\n       text-align: left;\n       position: absolute;\n       top: 25px;\n       left: 40px;\n       width: auto;\n    }\n    .Social-social {\n    \tdisplay: inline-block;\n    \twidth: auto;\n    \theight: auto;\n    \tpadding: 0 20px 0 0 ;\n    \tmargin-right: 20px;\n\t    background: none;\n\t    text-align: left;\n\t    color: rgb(50,50,50);\n    }\n    \n}", ""]);
+
+/***/ },
+/* 153 */
+/***/ function(module, exports, __webpack_require__) {
+
 	/**
 	 * Copyright 2013-2014, Facebook, Inc.
 	 * All rights reserved.
@@ -29726,7 +29756,7 @@
 
 
 /***/ },
-/* 152 */
+/* 154 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/**
@@ -29764,7 +29794,7 @@
 
 
 /***/ },
-/* 153 */
+/* 155 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(process) {/**
@@ -29883,7 +29913,7 @@
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(49)))
 
 /***/ },
-/* 154 */
+/* 156 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(process) {/**
@@ -30069,7 +30099,7 @@
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(49)))
 
 /***/ },
-/* 155 */
+/* 157 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(process) {/**
@@ -30228,7 +30258,7 @@
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(49)))
 
 /***/ },
-/* 156 */
+/* 158 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(process) {/**
@@ -30245,7 +30275,7 @@
 	"use strict";
 
 	var CallbackQueue = __webpack_require__(210);
-	var PooledClass = __webpack_require__(153);
+	var PooledClass = __webpack_require__(155);
 	var ReactCurrentOwner = __webpack_require__(27);
 	var ReactPerf = __webpack_require__(31);
 	var Transaction = __webpack_require__(211);
@@ -30521,7 +30551,7 @@
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(49)))
 
 /***/ },
-/* 157 */
+/* 159 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/**
@@ -30557,7 +30587,7 @@
 
 
 /***/ },
-/* 158 */
+/* 160 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(process) {/**
@@ -30727,7 +30757,7 @@
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(49)))
 
 /***/ },
-/* 159 */
+/* 161 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/**
@@ -30755,7 +30785,7 @@
 
 
 /***/ },
-/* 160 */
+/* 162 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(process) {/**
@@ -30786,7 +30816,7 @@
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(49)))
 
 /***/ },
-/* 161 */
+/* 163 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/**
@@ -30826,7 +30856,7 @@
 
 
 /***/ },
-/* 162 */
+/* 164 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/**
@@ -30883,7 +30913,7 @@
 
 
 /***/ },
-/* 163 */
+/* 165 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(process) {/**
@@ -30906,7 +30936,7 @@
 	var camelizeStyleName = __webpack_require__(214);
 	var dangerousStyleValue = __webpack_require__(215);
 	var hyphenateStyleName = __webpack_require__(216);
-	var memoizeStringOnly = __webpack_require__(152);
+	var memoizeStringOnly = __webpack_require__(154);
 	var warning = __webpack_require__(38);
 
 	var processStyleName = memoizeStringOnly(function(styleName) {
@@ -31021,7 +31051,7 @@
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(49)))
 
 /***/ },
-/* 164 */
+/* 166 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(process) {/**
@@ -31067,285 +31097,7 @@
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(49)))
 
 /***/ },
-/* 165 */
-/***/ function(module, exports, __webpack_require__) {
-
-	/**
-	 * Copyright 2013-2014, Facebook, Inc.
-	 * All rights reserved.
-	 *
-	 * This source code is licensed under the BSD-style license found in the
-	 * LICENSE file in the root directory of this source tree. An additional grant
-	 * of patent rights can be found in the PATENTS file in the same directory.
-	 *
-	 * @providesModule ReactMarkupChecksum
-	 */
-
-	"use strict";
-
-	var adler32 = __webpack_require__(218);
-
-	var ReactMarkupChecksum = {
-	  CHECKSUM_ATTR_NAME: 'data-react-checksum',
-
-	  /**
-	   * @param {string} markup Markup string
-	   * @return {string} Markup string with checksum attribute attached
-	   */
-	  addChecksumToMarkup: function(markup) {
-	    var checksum = adler32(markup);
-	    return markup.replace(
-	      '>',
-	      ' ' + ReactMarkupChecksum.CHECKSUM_ATTR_NAME + '="' + checksum + '">'
-	    );
-	  },
-
-	  /**
-	   * @param {string} markup to use
-	   * @param {DOMElement} element root React element
-	   * @returns {boolean} whether or not the markup is the same
-	   */
-	  canReuseMarkup: function(markup, element) {
-	    var existingChecksum = element.getAttribute(
-	      ReactMarkupChecksum.CHECKSUM_ATTR_NAME
-	    );
-	    existingChecksum = existingChecksum && parseInt(existingChecksum, 10);
-	    var markupChecksum = adler32(markup);
-	    return markupChecksum === existingChecksum;
-	  }
-	};
-
-	module.exports = ReactMarkupChecksum;
-
-
-/***/ },
-/* 166 */
-/***/ function(module, exports, __webpack_require__) {
-
-	/**
-	 * Copyright 2014, Facebook, Inc.
-	 * All rights reserved.
-	 *
-	 * This source code is licensed under the BSD-style license found in the
-	 * LICENSE file in the root directory of this source tree. An additional grant
-	 * of patent rights can be found in the PATENTS file in the same directory.
-	 *
-	 * @providesModule ReactServerRenderingTransaction
-	 * @typechecks
-	 */
-
-	"use strict";
-
-	var PooledClass = __webpack_require__(153);
-	var CallbackQueue = __webpack_require__(210);
-	var ReactPutListenerQueue = __webpack_require__(217);
-	var Transaction = __webpack_require__(211);
-
-	var assign = __webpack_require__(75);
-	var emptyFunction = __webpack_require__(83);
-
-	/**
-	 * Provides a `CallbackQueue` queue for collecting `onDOMReady` callbacks
-	 * during the performing of the transaction.
-	 */
-	var ON_DOM_READY_QUEUEING = {
-	  /**
-	   * Initializes the internal `onDOMReady` queue.
-	   */
-	  initialize: function() {
-	    this.reactMountReady.reset();
-	  },
-
-	  close: emptyFunction
-	};
-
-	var PUT_LISTENER_QUEUEING = {
-	  initialize: function() {
-	    this.putListenerQueue.reset();
-	  },
-
-	  close: emptyFunction
-	};
-
-	/**
-	 * Executed within the scope of the `Transaction` instance. Consider these as
-	 * being member methods, but with an implied ordering while being isolated from
-	 * each other.
-	 */
-	var TRANSACTION_WRAPPERS = [
-	  PUT_LISTENER_QUEUEING,
-	  ON_DOM_READY_QUEUEING
-	];
-
-	/**
-	 * @class ReactServerRenderingTransaction
-	 * @param {boolean} renderToStaticMarkup
-	 */
-	function ReactServerRenderingTransaction(renderToStaticMarkup) {
-	  this.reinitializeTransaction();
-	  this.renderToStaticMarkup = renderToStaticMarkup;
-	  this.reactMountReady = CallbackQueue.getPooled(null);
-	  this.putListenerQueue = ReactPutListenerQueue.getPooled();
-	}
-
-	var Mixin = {
-	  /**
-	   * @see Transaction
-	   * @abstract
-	   * @final
-	   * @return {array} Empty list of operation wrap proceedures.
-	   */
-	  getTransactionWrappers: function() {
-	    return TRANSACTION_WRAPPERS;
-	  },
-
-	  /**
-	   * @return {object} The queue to collect `onDOMReady` callbacks with.
-	   */
-	  getReactMountReady: function() {
-	    return this.reactMountReady;
-	  },
-
-	  getPutListenerQueue: function() {
-	    return this.putListenerQueue;
-	  },
-
-	  /**
-	   * `PooledClass` looks for this, and will invoke this before allowing this
-	   * instance to be resused.
-	   */
-	  destructor: function() {
-	    CallbackQueue.release(this.reactMountReady);
-	    this.reactMountReady = null;
-
-	    ReactPutListenerQueue.release(this.putListenerQueue);
-	    this.putListenerQueue = null;
-	  }
-	};
-
-
-	assign(
-	  ReactServerRenderingTransaction.prototype,
-	  Transaction.Mixin,
-	  Mixin
-	);
-
-	PooledClass.addPoolingTo(ReactServerRenderingTransaction);
-
-	module.exports = ReactServerRenderingTransaction;
-
-
-/***/ },
 /* 167 */
-/***/ function(module, exports, __webpack_require__) {
-
-	/**
-	 * Copyright 2013-2014, Facebook, Inc.
-	 * All rights reserved.
-	 *
-	 * This source code is licensed under the BSD-style license found in the
-	 * LICENSE file in the root directory of this source tree. An additional grant
-	 * of patent rights can be found in the PATENTS file in the same directory.
-	 *
-	 * @providesModule ReactMultiChildUpdateTypes
-	 */
-
-	"use strict";
-
-	var keyMirror = __webpack_require__(140);
-
-	/**
-	 * When a component's children are updated, a series of update configuration
-	 * objects are created in order to batch and serialize the required changes.
-	 *
-	 * Enumerates all the possible types of update configurations.
-	 *
-	 * @internal
-	 */
-	var ReactMultiChildUpdateTypes = keyMirror({
-	  INSERT_MARKUP: null,
-	  MOVE_EXISTING: null,
-	  REMOVE_NODE: null,
-	  TEXT_CONTENT: null
-	});
-
-	module.exports = ReactMultiChildUpdateTypes;
-
-
-/***/ },
-/* 168 */
-/***/ function(module, exports, __webpack_require__) {
-
-	/* WEBPACK VAR INJECTION */(function(process) {/**
-	 * Copyright 2013-2014, Facebook, Inc.
-	 * All rights reserved.
-	 *
-	 * This source code is licensed under the BSD-style license found in the
-	 * LICENSE file in the root directory of this source tree. An additional grant
-	 * of patent rights can be found in the PATENTS file in the same directory.
-	 *
-	 * @providesModule flattenChildren
-	 */
-
-	"use strict";
-
-	var ReactTextComponent = __webpack_require__(115);
-
-	var traverseAllChildren = __webpack_require__(154);
-	var warning = __webpack_require__(38);
-
-	/**
-	 * @param {function} traverseContext Context passed through traversal.
-	 * @param {?ReactComponent} child React child component.
-	 * @param {!string} name String name of key path to child.
-	 */
-	function flattenSingleChildIntoContext(traverseContext, child, name) {
-	  // We found a component instance.
-	  var result = traverseContext;
-	  var keyUnique = !result.hasOwnProperty(name);
-	  ("production" !== process.env.NODE_ENV ? warning(
-	    keyUnique,
-	    'flattenChildren(...): Encountered two children with the same key, ' +
-	    '`%s`. Child keys must be unique; when two children share a key, only ' +
-	    'the first child will be used.',
-	    name
-	  ) : null);
-	  if (keyUnique && child != null) {
-	    var type = typeof child;
-	    var normalizedValue;
-
-	    if (type === 'string') {
-	      normalizedValue = ReactTextComponent(child);
-	    } else if (type === 'number') {
-	      normalizedValue = ReactTextComponent('' + child);
-	    } else {
-	      normalizedValue = child;
-	    }
-
-	    result[name] = normalizedValue;
-	  }
-	}
-
-	/**
-	 * Flattens children that are typically specified as `props.children`. Any null
-	 * children will not be included in the resulting object.
-	 * @return {!object} flattened children keyed by name.
-	 */
-	function flattenChildren(children) {
-	  if (children == null) {
-	    return children;
-	  }
-	  var result = {};
-	  traverseAllChildren(children, flattenSingleChildIntoContext, result);
-	  return result;
-	}
-
-	module.exports = flattenChildren;
-
-	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(49)))
-
-/***/ },
-/* 169 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/**
@@ -31363,11 +31115,11 @@
 	"use strict";
 
 	var EventConstants = __webpack_require__(70);
-	var EventPropagators = __webpack_require__(219);
+	var EventPropagators = __webpack_require__(217);
 	var ExecutionEnvironment = __webpack_require__(117);
-	var SyntheticInputEvent = __webpack_require__(220);
+	var SyntheticInputEvent = __webpack_require__(218);
 
-	var keyOf = __webpack_require__(161);
+	var keyOf = __webpack_require__(163);
 
 	var canUseTextInputEvent = (
 	  ExecutionEnvironment.canUseDOM &&
@@ -31571,7 +31323,7 @@
 
 
 /***/ },
-/* 170 */
+/* 168 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/**
@@ -31589,14 +31341,14 @@
 
 	var EventConstants = __webpack_require__(70);
 	var EventPluginHub = __webpack_require__(71);
-	var EventPropagators = __webpack_require__(219);
+	var EventPropagators = __webpack_require__(217);
 	var ExecutionEnvironment = __webpack_require__(117);
-	var ReactUpdates = __webpack_require__(156);
-	var SyntheticEvent = __webpack_require__(221);
+	var ReactUpdates = __webpack_require__(158);
+	var SyntheticEvent = __webpack_require__(219);
 
 	var isEventSupported = __webpack_require__(76);
-	var isTextInputElement = __webpack_require__(222);
-	var keyOf = __webpack_require__(161);
+	var isTextInputElement = __webpack_require__(220);
+	var keyOf = __webpack_require__(163);
 
 	var topLevelTypes = EventConstants.topLevelTypes;
 
@@ -31957,7 +31709,7 @@
 
 
 /***/ },
-/* 171 */
+/* 169 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/**
@@ -31986,7 +31738,7 @@
 
 
 /***/ },
-/* 172 */
+/* 170 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/**
@@ -32004,13 +31756,13 @@
 	"use strict";
 
 	var EventConstants = __webpack_require__(70);
-	var EventPropagators = __webpack_require__(219);
+	var EventPropagators = __webpack_require__(217);
 	var ExecutionEnvironment = __webpack_require__(117);
-	var ReactInputSelection = __webpack_require__(223);
-	var SyntheticCompositionEvent = __webpack_require__(224);
+	var ReactInputSelection = __webpack_require__(221);
+	var SyntheticCompositionEvent = __webpack_require__(222);
 
-	var getTextContentAccessor = __webpack_require__(225);
-	var keyOf = __webpack_require__(161);
+	var getTextContentAccessor = __webpack_require__(223);
+	var keyOf = __webpack_require__(163);
 
 	var END_KEYCODES = [9, 13, 27, 32]; // Tab, Return, Esc, Space
 	var START_KEYCODE = 229;
@@ -32249,7 +32001,7 @@
 
 
 /***/ },
-/* 173 */
+/* 171 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/**
@@ -32265,7 +32017,7 @@
 
 	"use strict";
 
-	 var keyOf = __webpack_require__(161);
+	 var keyOf = __webpack_require__(163);
 
 	/**
 	 * Module that is injectable into `EventPluginHub`, that specifies a
@@ -32293,7 +32045,7 @@
 
 
 /***/ },
-/* 174 */
+/* 172 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/**
@@ -32311,11 +32063,11 @@
 	"use strict";
 
 	var EventConstants = __webpack_require__(70);
-	var EventPropagators = __webpack_require__(219);
-	var SyntheticMouseEvent = __webpack_require__(226);
+	var EventPropagators = __webpack_require__(217);
+	var SyntheticMouseEvent = __webpack_require__(224);
 
 	var ReactMount = __webpack_require__(14);
-	var keyOf = __webpack_require__(161);
+	var keyOf = __webpack_require__(163);
 
 	var topLevelTypes = EventConstants.topLevelTypes;
 	var getFirstReactDOM = ReactMount.getFirstReactDOM;
@@ -32437,7 +32189,7 @@
 
 
 /***/ },
-/* 175 */
+/* 173 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/**
@@ -32633,7 +32385,7 @@
 
 
 /***/ },
-/* 176 */
+/* 174 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/**
@@ -32695,7 +32447,7 @@
 
 
 /***/ },
-/* 177 */
+/* 175 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(process) {/**
@@ -32713,15 +32465,15 @@
 
 	"use strict";
 
-	var ReactDOMIDOperations = __webpack_require__(227);
-	var ReactMarkupChecksum = __webpack_require__(165);
+	var ReactDOMIDOperations = __webpack_require__(225);
+	var ReactMarkupChecksum = __webpack_require__(194);
 	var ReactMount = __webpack_require__(14);
 	var ReactPerf = __webpack_require__(31);
-	var ReactReconcileTransaction = __webpack_require__(228);
+	var ReactReconcileTransaction = __webpack_require__(226);
 
 	var getReactRootElementInContainer = __webpack_require__(34);
 	var invariant = __webpack_require__(36);
-	var setInnerHTML = __webpack_require__(229);
+	var setInnerHTML = __webpack_require__(227);
 
 
 	var ELEMENT_NODE_TYPE = 1;
@@ -32820,7 +32572,7 @@
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(49)))
 
 /***/ },
-/* 178 */
+/* 176 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/**
@@ -32836,7 +32588,7 @@
 
 	"use strict";
 
-	var ReactUpdates = __webpack_require__(156);
+	var ReactUpdates = __webpack_require__(158);
 	var Transaction = __webpack_require__(211);
 
 	var assign = __webpack_require__(75);
@@ -32897,7 +32649,7 @@
 
 
 /***/ },
-/* 179 */
+/* 177 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/**
@@ -32913,8 +32665,8 @@
 
 	"use strict";
 
-	var AutoFocusMixin = __webpack_require__(230);
-	var ReactBrowserComponentMixin = __webpack_require__(164);
+	var AutoFocusMixin = __webpack_require__(228);
+	var ReactBrowserComponentMixin = __webpack_require__(166);
 	var ReactCompositeComponent = __webpack_require__(107);
 	var ReactElement = __webpack_require__(28);
 	var ReactDOM = __webpack_require__(109);
@@ -32966,7 +32718,7 @@
 
 
 /***/ },
-/* 180 */
+/* 178 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/**
@@ -32983,8 +32735,8 @@
 	"use strict";
 
 	var EventConstants = __webpack_require__(70);
-	var LocalEventTrapMixin = __webpack_require__(231);
-	var ReactBrowserComponentMixin = __webpack_require__(164);
+	var LocalEventTrapMixin = __webpack_require__(229);
+	var ReactBrowserComponentMixin = __webpack_require__(166);
 	var ReactCompositeComponent = __webpack_require__(107);
 	var ReactElement = __webpack_require__(28);
 	var ReactDOM = __webpack_require__(109);
@@ -33020,7 +32772,7 @@
 
 
 /***/ },
-/* 181 */
+/* 179 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/**
@@ -33037,8 +32789,8 @@
 	"use strict";
 
 	var EventConstants = __webpack_require__(70);
-	var LocalEventTrapMixin = __webpack_require__(231);
-	var ReactBrowserComponentMixin = __webpack_require__(164);
+	var LocalEventTrapMixin = __webpack_require__(229);
+	var ReactBrowserComponentMixin = __webpack_require__(166);
 	var ReactCompositeComponent = __webpack_require__(107);
 	var ReactElement = __webpack_require__(28);
 	var ReactDOM = __webpack_require__(109);
@@ -33072,7 +32824,7 @@
 
 
 /***/ },
-/* 182 */
+/* 180 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(process) {/**
@@ -33088,15 +32840,15 @@
 
 	"use strict";
 
-	var AutoFocusMixin = __webpack_require__(230);
+	var AutoFocusMixin = __webpack_require__(228);
 	var DOMPropertyOperations = __webpack_require__(103);
-	var LinkedValueUtils = __webpack_require__(232);
-	var ReactBrowserComponentMixin = __webpack_require__(164);
+	var LinkedValueUtils = __webpack_require__(230);
+	var ReactBrowserComponentMixin = __webpack_require__(166);
 	var ReactCompositeComponent = __webpack_require__(107);
 	var ReactElement = __webpack_require__(28);
 	var ReactDOM = __webpack_require__(109);
 	var ReactMount = __webpack_require__(14);
-	var ReactUpdates = __webpack_require__(156);
+	var ReactUpdates = __webpack_require__(158);
 
 	var assign = __webpack_require__(75);
 	var invariant = __webpack_require__(36);
@@ -33253,7 +33005,7 @@
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(49)))
 
 /***/ },
-/* 183 */
+/* 181 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(process) {/**
@@ -33269,7 +33021,7 @@
 
 	"use strict";
 
-	var ReactBrowserComponentMixin = __webpack_require__(164);
+	var ReactBrowserComponentMixin = __webpack_require__(166);
 	var ReactCompositeComponent = __webpack_require__(107);
 	var ReactElement = __webpack_require__(28);
 	var ReactDOM = __webpack_require__(109);
@@ -33309,7 +33061,7 @@
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(49)))
 
 /***/ },
-/* 184 */
+/* 182 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/**
@@ -33325,13 +33077,13 @@
 
 	"use strict";
 
-	var AutoFocusMixin = __webpack_require__(230);
-	var LinkedValueUtils = __webpack_require__(232);
-	var ReactBrowserComponentMixin = __webpack_require__(164);
+	var AutoFocusMixin = __webpack_require__(228);
+	var LinkedValueUtils = __webpack_require__(230);
+	var ReactBrowserComponentMixin = __webpack_require__(166);
 	var ReactCompositeComponent = __webpack_require__(107);
 	var ReactElement = __webpack_require__(28);
 	var ReactDOM = __webpack_require__(109);
-	var ReactUpdates = __webpack_require__(156);
+	var ReactUpdates = __webpack_require__(158);
 
 	var assign = __webpack_require__(75);
 
@@ -33497,7 +33249,7 @@
 
 
 /***/ },
-/* 185 */
+/* 183 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(process) {/**
@@ -33513,14 +33265,14 @@
 
 	"use strict";
 
-	var AutoFocusMixin = __webpack_require__(230);
+	var AutoFocusMixin = __webpack_require__(228);
 	var DOMPropertyOperations = __webpack_require__(103);
-	var LinkedValueUtils = __webpack_require__(232);
-	var ReactBrowserComponentMixin = __webpack_require__(164);
+	var LinkedValueUtils = __webpack_require__(230);
+	var ReactBrowserComponentMixin = __webpack_require__(166);
 	var ReactCompositeComponent = __webpack_require__(107);
 	var ReactElement = __webpack_require__(28);
 	var ReactDOM = __webpack_require__(109);
-	var ReactUpdates = __webpack_require__(156);
+	var ReactUpdates = __webpack_require__(158);
 
 	var assign = __webpack_require__(75);
 	var invariant = __webpack_require__(36);
@@ -33641,7 +33393,7 @@
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(49)))
 
 /***/ },
-/* 186 */
+/* 184 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/**
@@ -33658,15 +33410,15 @@
 
 	"use strict";
 
-	var EventListener = __webpack_require__(233);
+	var EventListener = __webpack_require__(231);
 	var ExecutionEnvironment = __webpack_require__(117);
-	var PooledClass = __webpack_require__(153);
+	var PooledClass = __webpack_require__(155);
 	var ReactInstanceHandles = __webpack_require__(30);
 	var ReactMount = __webpack_require__(14);
-	var ReactUpdates = __webpack_require__(156);
+	var ReactUpdates = __webpack_require__(158);
 
 	var assign = __webpack_require__(75);
-	var getEventTarget = __webpack_require__(234);
+	var getEventTarget = __webpack_require__(232);
 	var getUnboundedScrollPosition = __webpack_require__(143);
 
 	/**
@@ -33829,7 +33581,7 @@
 
 
 /***/ },
-/* 187 */
+/* 185 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/**
@@ -33854,7 +33606,7 @@
 	var ReactNativeComponent = __webpack_require__(81);
 	var ReactPerf = __webpack_require__(31);
 	var ReactRootIndex = __webpack_require__(79);
-	var ReactUpdates = __webpack_require__(156);
+	var ReactUpdates = __webpack_require__(158);
 
 	var ReactInjection = {
 	  Component: ReactComponent.injection,
@@ -33873,7 +33625,7 @@
 
 
 /***/ },
-/* 188 */
+/* 186 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/**
@@ -33890,14 +33642,14 @@
 	"use strict";
 
 	var EventConstants = __webpack_require__(70);
-	var EventPropagators = __webpack_require__(219);
-	var ReactInputSelection = __webpack_require__(223);
-	var SyntheticEvent = __webpack_require__(221);
+	var EventPropagators = __webpack_require__(217);
+	var ReactInputSelection = __webpack_require__(221);
+	var SyntheticEvent = __webpack_require__(219);
 
-	var getActiveElement = __webpack_require__(235);
-	var isTextInputElement = __webpack_require__(222);
-	var keyOf = __webpack_require__(161);
-	var shallowEqual = __webpack_require__(236);
+	var getActiveElement = __webpack_require__(233);
+	var isTextInputElement = __webpack_require__(220);
+	var keyOf = __webpack_require__(163);
+	var shallowEqual = __webpack_require__(234);
 
 	var topLevelTypes = EventConstants.topLevelTypes;
 
@@ -34072,7 +33824,7 @@
 
 
 /***/ },
-/* 189 */
+/* 187 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/**
@@ -34107,7 +33859,7 @@
 
 
 /***/ },
-/* 190 */
+/* 188 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(process) {/**
@@ -34125,21 +33877,21 @@
 
 	var EventConstants = __webpack_require__(70);
 	var EventPluginUtils = __webpack_require__(104);
-	var EventPropagators = __webpack_require__(219);
-	var SyntheticClipboardEvent = __webpack_require__(237);
-	var SyntheticEvent = __webpack_require__(221);
-	var SyntheticFocusEvent = __webpack_require__(238);
-	var SyntheticKeyboardEvent = __webpack_require__(239);
-	var SyntheticMouseEvent = __webpack_require__(226);
-	var SyntheticDragEvent = __webpack_require__(240);
-	var SyntheticTouchEvent = __webpack_require__(241);
-	var SyntheticUIEvent = __webpack_require__(242);
-	var SyntheticWheelEvent = __webpack_require__(243);
+	var EventPropagators = __webpack_require__(217);
+	var SyntheticClipboardEvent = __webpack_require__(235);
+	var SyntheticEvent = __webpack_require__(219);
+	var SyntheticFocusEvent = __webpack_require__(236);
+	var SyntheticKeyboardEvent = __webpack_require__(237);
+	var SyntheticMouseEvent = __webpack_require__(224);
+	var SyntheticDragEvent = __webpack_require__(238);
+	var SyntheticTouchEvent = __webpack_require__(239);
+	var SyntheticUIEvent = __webpack_require__(240);
+	var SyntheticWheelEvent = __webpack_require__(241);
 
-	var getEventCharCode = __webpack_require__(244);
+	var getEventCharCode = __webpack_require__(242);
 
 	var invariant = __webpack_require__(36);
-	var keyOf = __webpack_require__(161);
+	var keyOf = __webpack_require__(163);
 	var warning = __webpack_require__(38);
 
 	var topLevelTypes = EventConstants.topLevelTypes;
@@ -34538,7 +34290,7 @@
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(49)))
 
 /***/ },
-/* 191 */
+/* 189 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/**
@@ -34634,7 +34386,7 @@
 
 
 /***/ },
-/* 192 */
+/* 190 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(process) {/**
@@ -34698,7 +34450,7 @@
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(49)))
 
 /***/ },
-/* 193 */
+/* 191 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/**
@@ -34716,11 +34468,11 @@
 	"use strict";
 
 	var DOMProperty = __webpack_require__(25);
-	var ReactDefaultPerfAnalysis = __webpack_require__(245);
+	var ReactDefaultPerfAnalysis = __webpack_require__(243);
 	var ReactMount = __webpack_require__(14);
 	var ReactPerf = __webpack_require__(31);
 
-	var performanceNow = __webpack_require__(246);
+	var performanceNow = __webpack_require__(244);
 
 	function roundFloat(val) {
 	  return Math.floor(val * 100) / 100;
@@ -34962,34 +34714,282 @@
 
 
 /***/ },
+/* 192 */
+/***/ function(module, exports, __webpack_require__) {
+
+	/**
+	 * Copyright 2013-2014, Facebook, Inc.
+	 * All rights reserved.
+	 *
+	 * This source code is licensed under the BSD-style license found in the
+	 * LICENSE file in the root directory of this source tree. An additional grant
+	 * of patent rights can be found in the PATENTS file in the same directory.
+	 *
+	 * @providesModule ReactMultiChildUpdateTypes
+	 */
+
+	"use strict";
+
+	var keyMirror = __webpack_require__(140);
+
+	/**
+	 * When a component's children are updated, a series of update configuration
+	 * objects are created in order to batch and serialize the required changes.
+	 *
+	 * Enumerates all the possible types of update configurations.
+	 *
+	 * @internal
+	 */
+	var ReactMultiChildUpdateTypes = keyMirror({
+	  INSERT_MARKUP: null,
+	  MOVE_EXISTING: null,
+	  REMOVE_NODE: null,
+	  TEXT_CONTENT: null
+	});
+
+	module.exports = ReactMultiChildUpdateTypes;
+
+
+/***/ },
+/* 193 */
+/***/ function(module, exports, __webpack_require__) {
+
+	/* WEBPACK VAR INJECTION */(function(process) {/**
+	 * Copyright 2013-2014, Facebook, Inc.
+	 * All rights reserved.
+	 *
+	 * This source code is licensed under the BSD-style license found in the
+	 * LICENSE file in the root directory of this source tree. An additional grant
+	 * of patent rights can be found in the PATENTS file in the same directory.
+	 *
+	 * @providesModule flattenChildren
+	 */
+
+	"use strict";
+
+	var ReactTextComponent = __webpack_require__(115);
+
+	var traverseAllChildren = __webpack_require__(156);
+	var warning = __webpack_require__(38);
+
+	/**
+	 * @param {function} traverseContext Context passed through traversal.
+	 * @param {?ReactComponent} child React child component.
+	 * @param {!string} name String name of key path to child.
+	 */
+	function flattenSingleChildIntoContext(traverseContext, child, name) {
+	  // We found a component instance.
+	  var result = traverseContext;
+	  var keyUnique = !result.hasOwnProperty(name);
+	  ("production" !== process.env.NODE_ENV ? warning(
+	    keyUnique,
+	    'flattenChildren(...): Encountered two children with the same key, ' +
+	    '`%s`. Child keys must be unique; when two children share a key, only ' +
+	    'the first child will be used.',
+	    name
+	  ) : null);
+	  if (keyUnique && child != null) {
+	    var type = typeof child;
+	    var normalizedValue;
+
+	    if (type === 'string') {
+	      normalizedValue = ReactTextComponent(child);
+	    } else if (type === 'number') {
+	      normalizedValue = ReactTextComponent('' + child);
+	    } else {
+	      normalizedValue = child;
+	    }
+
+	    result[name] = normalizedValue;
+	  }
+	}
+
+	/**
+	 * Flattens children that are typically specified as `props.children`. Any null
+	 * children will not be included in the resulting object.
+	 * @return {!object} flattened children keyed by name.
+	 */
+	function flattenChildren(children) {
+	  if (children == null) {
+	    return children;
+	  }
+	  var result = {};
+	  traverseAllChildren(children, flattenSingleChildIntoContext, result);
+	  return result;
+	}
+
+	module.exports = flattenChildren;
+
+	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(49)))
+
+/***/ },
 /* 194 */
 /***/ function(module, exports, __webpack_require__) {
 
-	// style-loader: Adds some css to the DOM by adding a <style> tag
+	/**
+	 * Copyright 2013-2014, Facebook, Inc.
+	 * All rights reserved.
+	 *
+	 * This source code is licensed under the BSD-style license found in the
+	 * LICENSE file in the root directory of this source tree. An additional grant
+	 * of patent rights can be found in the PATENTS file in the same directory.
+	 *
+	 * @providesModule ReactMarkupChecksum
+	 */
 
-	// load the styles
-	var content = __webpack_require__(195);
-	if(typeof content === 'string') content = [[module.id, content, '']];
-	// add the styles to the DOM
-	var update = __webpack_require__(24)(content, {});
-	// Hot Module Replacement
-	if(true) {
-		// When the styles change, update the <style> tags
-		module.hot.accept(195, function() {
-			var newContent = __webpack_require__(195);
-			if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
-			update(newContent);
-		});
-		// When the module is disposed, remove the <style> tags
-		module.hot.dispose(function() { update(); });
-	}
+	"use strict";
+
+	var adler32 = __webpack_require__(245);
+
+	var ReactMarkupChecksum = {
+	  CHECKSUM_ATTR_NAME: 'data-react-checksum',
+
+	  /**
+	   * @param {string} markup Markup string
+	   * @return {string} Markup string with checksum attribute attached
+	   */
+	  addChecksumToMarkup: function(markup) {
+	    var checksum = adler32(markup);
+	    return markup.replace(
+	      '>',
+	      ' ' + ReactMarkupChecksum.CHECKSUM_ATTR_NAME + '="' + checksum + '">'
+	    );
+	  },
+
+	  /**
+	   * @param {string} markup to use
+	   * @param {DOMElement} element root React element
+	   * @returns {boolean} whether or not the markup is the same
+	   */
+	  canReuseMarkup: function(markup, element) {
+	    var existingChecksum = element.getAttribute(
+	      ReactMarkupChecksum.CHECKSUM_ATTR_NAME
+	    );
+	    existingChecksum = existingChecksum && parseInt(existingChecksum, 10);
+	    var markupChecksum = adler32(markup);
+	    return markupChecksum === existingChecksum;
+	  }
+	};
+
+	module.exports = ReactMarkupChecksum;
+
 
 /***/ },
 /* 195 */
 /***/ function(module, exports, __webpack_require__) {
 
-	exports = module.exports = __webpack_require__(48)();
-	exports.push([module.id, "/* MOBILE */\n.Social {\n\tposition: fixed;\n\tbottom: 0;\n\twidth: 100%;\n\theight: 50px;\n\tz-index: 10;\n\tbox-shadow: 0 -2px 8px rgba(0,0,0,0.12);\n}\n.Social-socialSets {\n\tdisplay: inline-block;\n\tvertical-align: top;\n\twidth: 100%;\n}\n.Social-social {\n\tbackground: #F1F1F1;\n\tdisplay: inline-block;\n\tborder-right: 1px solid rgb(220,220,220);\n\twidth: 50%;\n\theight: 50px;\n\tpadding-top: 16px;\n\ttext-align: center;\n\tcursor: pointer;\n\n}\n\n\n\n/* WEB */\n@media screen and (min-width: 400px){\n\t.Social {\n\t   position: relative;\n\t   margin: 0 auto;\n\t   width: 600px;\n\t   vertical-align: bottom;\n\t   height: 0px;\n    }\n    .Social-socialSets {\n       text-align: left;\n       position: absolute;\n       top: 25px;\n       left: 40px;\n       width: auto;\n    }\n    .Social-social {\n    \tdisplay: inline-block;\n    \twidth: auto;\n    \theight: auto;\n    \tpadding: 0 20px 0 0 ;\n    \tmargin-right: 20px;\n\t    background: none;\n\t    text-align: left;\n\t    color: rgb(50,50,50);\n    }\n    \n}", ""]);
+	/**
+	 * Copyright 2014, Facebook, Inc.
+	 * All rights reserved.
+	 *
+	 * This source code is licensed under the BSD-style license found in the
+	 * LICENSE file in the root directory of this source tree. An additional grant
+	 * of patent rights can be found in the PATENTS file in the same directory.
+	 *
+	 * @providesModule ReactServerRenderingTransaction
+	 * @typechecks
+	 */
+
+	"use strict";
+
+	var PooledClass = __webpack_require__(155);
+	var CallbackQueue = __webpack_require__(210);
+	var ReactPutListenerQueue = __webpack_require__(246);
+	var Transaction = __webpack_require__(211);
+
+	var assign = __webpack_require__(75);
+	var emptyFunction = __webpack_require__(83);
+
+	/**
+	 * Provides a `CallbackQueue` queue for collecting `onDOMReady` callbacks
+	 * during the performing of the transaction.
+	 */
+	var ON_DOM_READY_QUEUEING = {
+	  /**
+	   * Initializes the internal `onDOMReady` queue.
+	   */
+	  initialize: function() {
+	    this.reactMountReady.reset();
+	  },
+
+	  close: emptyFunction
+	};
+
+	var PUT_LISTENER_QUEUEING = {
+	  initialize: function() {
+	    this.putListenerQueue.reset();
+	  },
+
+	  close: emptyFunction
+	};
+
+	/**
+	 * Executed within the scope of the `Transaction` instance. Consider these as
+	 * being member methods, but with an implied ordering while being isolated from
+	 * each other.
+	 */
+	var TRANSACTION_WRAPPERS = [
+	  PUT_LISTENER_QUEUEING,
+	  ON_DOM_READY_QUEUEING
+	];
+
+	/**
+	 * @class ReactServerRenderingTransaction
+	 * @param {boolean} renderToStaticMarkup
+	 */
+	function ReactServerRenderingTransaction(renderToStaticMarkup) {
+	  this.reinitializeTransaction();
+	  this.renderToStaticMarkup = renderToStaticMarkup;
+	  this.reactMountReady = CallbackQueue.getPooled(null);
+	  this.putListenerQueue = ReactPutListenerQueue.getPooled();
+	}
+
+	var Mixin = {
+	  /**
+	   * @see Transaction
+	   * @abstract
+	   * @final
+	   * @return {array} Empty list of operation wrap proceedures.
+	   */
+	  getTransactionWrappers: function() {
+	    return TRANSACTION_WRAPPERS;
+	  },
+
+	  /**
+	   * @return {object} The queue to collect `onDOMReady` callbacks with.
+	   */
+	  getReactMountReady: function() {
+	    return this.reactMountReady;
+	  },
+
+	  getPutListenerQueue: function() {
+	    return this.putListenerQueue;
+	  },
+
+	  /**
+	   * `PooledClass` looks for this, and will invoke this before allowing this
+	   * instance to be resused.
+	   */
+	  destructor: function() {
+	    CallbackQueue.release(this.reactMountReady);
+	    this.reactMountReady = null;
+
+	    ReactPutListenerQueue.release(this.putListenerQueue);
+	    this.putListenerQueue = null;
+	  }
+	};
+
+
+	assign(
+	  ReactServerRenderingTransaction.prototype,
+	  Transaction.Mixin,
+	  Mixin
+	);
+
+	PooledClass.addPoolingTo(ReactServerRenderingTransaction);
+
+	module.exports = ReactServerRenderingTransaction;
+
 
 /***/ },
 /* 196 */
@@ -35048,6 +35048,151 @@
 /* 199 */
 /***/ function(module, exports, __webpack_require__) {
 
+	module.exports = __webpack_require__(253);
+
+
+/***/ },
+/* 200 */
+/***/ function(module, exports, __webpack_require__) {
+
+	// Load modules
+
+
+	// Declare internals
+
+	var internals = {};
+
+
+	exports.arrayToObject = function (source) {
+
+	    var obj = {};
+	    for (var i = 0, il = source.length; i < il; ++i) {
+	        if (typeof source[i] !== 'undefined') {
+
+	            obj[i] = source[i];
+	        }
+	    }
+
+	    return obj;
+	};
+
+
+	exports.merge = function (target, source) {
+
+	    if (!source) {
+	        return target;
+	    }
+
+	    if (typeof source !== 'object') {
+	        if (Array.isArray(target)) {
+	            target.push(source);
+	        }
+	        else {
+	            target[source] = true;
+	        }
+
+	        return target;
+	    }
+
+	    if (typeof target !== 'object') {
+	        target = [target].concat(source);
+	        return target;
+	    }
+
+	    if (Array.isArray(target) &&
+	        !Array.isArray(source)) {
+
+	        target = exports.arrayToObject(target);
+	    }
+
+	    var keys = Object.keys(source);
+	    for (var k = 0, kl = keys.length; k < kl; ++k) {
+	        var key = keys[k];
+	        var value = source[key];
+
+	        if (!target[key]) {
+	            target[key] = value;
+	        }
+	        else {
+	            target[key] = exports.merge(target[key], value);
+	        }
+	    }
+
+	    return target;
+	};
+
+
+	exports.decode = function (str) {
+
+	    try {
+	        return decodeURIComponent(str.replace(/\+/g, ' '));
+	    } catch (e) {
+	        return str;
+	    }
+	};
+
+
+	exports.compact = function (obj, refs) {
+
+	    if (typeof obj !== 'object' ||
+	        obj === null) {
+
+	        return obj;
+	    }
+
+	    refs = refs || [];
+	    var lookup = refs.indexOf(obj);
+	    if (lookup !== -1) {
+	        return refs[lookup];
+	    }
+
+	    refs.push(obj);
+
+	    if (Array.isArray(obj)) {
+	        var compacted = [];
+
+	        for (var i = 0, il = obj.length; i < il; ++i) {
+	            if (typeof obj[i] !== 'undefined') {
+	                compacted.push(obj[i]);
+	            }
+	        }
+
+	        return compacted;
+	    }
+
+	    var keys = Object.keys(obj);
+	    for (i = 0, il = keys.length; i < il; ++i) {
+	        var key = keys[i];
+	        obj[key] = exports.compact(obj[key], refs);
+	    }
+
+	    return obj;
+	};
+
+
+	exports.isRegExp = function (obj) {
+	    return Object.prototype.toString.call(obj) === '[object RegExp]';
+	};
+
+
+	exports.isBuffer = function (obj) {
+
+	    if (obj === null ||
+	        typeof obj === 'undefined') {
+
+	        return false;
+	    }
+
+	    return !!(obj.constructor &&
+	        obj.constructor.isBuffer &&
+	        obj.constructor.isBuffer(obj));
+	};
+
+
+/***/ },
+/* 201 */
+/***/ function(module, exports, __webpack_require__) {
+
 	/**
 	 * Copyright 2013-2014, Facebook, Inc.
 	 * All rights reserved.
@@ -35090,7 +35235,7 @@
 
 
 /***/ },
-/* 200 */
+/* 202 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/**
@@ -35106,7 +35251,7 @@
 
 	"use strict";
 
-	var shallowEqual = __webpack_require__(236);
+	var shallowEqual = __webpack_require__(234);
 
 	/**
 	 * If your React component's render function is "pure", e.g. it will render the
@@ -35143,7 +35288,7 @@
 
 
 /***/ },
-/* 201 */
+/* 203 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/**
@@ -35165,7 +35310,7 @@
 	var assign = __webpack_require__(75);
 
 	var ReactTransitionGroup = React.createFactory(
-	  __webpack_require__(202)
+	  __webpack_require__(204)
 	);
 	var ReactCSSTransitionGroupChild = React.createFactory(
 	  __webpack_require__(249)
@@ -35214,7 +35359,7 @@
 
 
 /***/ },
-/* 202 */
+/* 204 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/**
@@ -35234,7 +35379,7 @@
 	var ReactTransitionChildMapping = __webpack_require__(250);
 
 	var assign = __webpack_require__(75);
-	var cloneWithProps = __webpack_require__(203);
+	var cloneWithProps = __webpack_require__(205);
 	var emptyFunction = __webpack_require__(83);
 
 	var ReactTransitionGroup = React.createClass({
@@ -35407,7 +35552,7 @@
 
 
 /***/ },
-/* 203 */
+/* 205 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(process) {/**
@@ -35425,9 +35570,9 @@
 	"use strict";
 
 	var ReactElement = __webpack_require__(28);
-	var ReactPropTransferer = __webpack_require__(158);
+	var ReactPropTransferer = __webpack_require__(160);
 
-	var keyOf = __webpack_require__(161);
+	var keyOf = __webpack_require__(163);
 	var warning = __webpack_require__(38);
 
 	var CHILDREN_PROP = keyOf({children: null});
@@ -35469,7 +35614,7 @@
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(49)))
 
 /***/ },
-/* 204 */
+/* 206 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(process) {/**
@@ -35486,7 +35631,7 @@
 	"use strict";
 
 	var assign = __webpack_require__(75);
-	var keyOf = __webpack_require__(161);
+	var keyOf = __webpack_require__(163);
 	var invariant = __webpack_require__(36);
 
 	function shallowCopy(x) {
@@ -35640,7 +35785,7 @@
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(49)))
 
 /***/ },
-/* 205 */
+/* 207 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/**
@@ -35658,14 +35803,14 @@
 
 	var EventConstants = __webpack_require__(70);
 	var EventPluginHub = __webpack_require__(71);
-	var EventPropagators = __webpack_require__(219);
+	var EventPropagators = __webpack_require__(217);
 	var React = __webpack_require__(47);
 	var ReactElement = __webpack_require__(28);
 	var ReactBrowserEventEmitter = __webpack_require__(26);
 	var ReactMount = __webpack_require__(14);
 	var ReactTextComponent = __webpack_require__(115);
-	var ReactUpdates = __webpack_require__(156);
-	var SyntheticEvent = __webpack_require__(221);
+	var ReactUpdates = __webpack_require__(158);
+	var SyntheticEvent = __webpack_require__(219);
 
 	var assign = __webpack_require__(75);
 
@@ -36056,151 +36201,6 @@
 
 
 /***/ },
-/* 206 */
-/***/ function(module, exports, __webpack_require__) {
-
-	module.exports = __webpack_require__(261);
-
-
-/***/ },
-/* 207 */
-/***/ function(module, exports, __webpack_require__) {
-
-	// Load modules
-
-
-	// Declare internals
-
-	var internals = {};
-
-
-	exports.arrayToObject = function (source) {
-
-	    var obj = {};
-	    for (var i = 0, il = source.length; i < il; ++i) {
-	        if (typeof source[i] !== 'undefined') {
-
-	            obj[i] = source[i];
-	        }
-	    }
-
-	    return obj;
-	};
-
-
-	exports.merge = function (target, source) {
-
-	    if (!source) {
-	        return target;
-	    }
-
-	    if (typeof source !== 'object') {
-	        if (Array.isArray(target)) {
-	            target.push(source);
-	        }
-	        else {
-	            target[source] = true;
-	        }
-
-	        return target;
-	    }
-
-	    if (typeof target !== 'object') {
-	        target = [target].concat(source);
-	        return target;
-	    }
-
-	    if (Array.isArray(target) &&
-	        !Array.isArray(source)) {
-
-	        target = exports.arrayToObject(target);
-	    }
-
-	    var keys = Object.keys(source);
-	    for (var k = 0, kl = keys.length; k < kl; ++k) {
-	        var key = keys[k];
-	        var value = source[key];
-
-	        if (!target[key]) {
-	            target[key] = value;
-	        }
-	        else {
-	            target[key] = exports.merge(target[key], value);
-	        }
-	    }
-
-	    return target;
-	};
-
-
-	exports.decode = function (str) {
-
-	    try {
-	        return decodeURIComponent(str.replace(/\+/g, ' '));
-	    } catch (e) {
-	        return str;
-	    }
-	};
-
-
-	exports.compact = function (obj, refs) {
-
-	    if (typeof obj !== 'object' ||
-	        obj === null) {
-
-	        return obj;
-	    }
-
-	    refs = refs || [];
-	    var lookup = refs.indexOf(obj);
-	    if (lookup !== -1) {
-	        return refs[lookup];
-	    }
-
-	    refs.push(obj);
-
-	    if (Array.isArray(obj)) {
-	        var compacted = [];
-
-	        for (var i = 0, il = obj.length; i < il; ++i) {
-	            if (typeof obj[i] !== 'undefined') {
-	                compacted.push(obj[i]);
-	            }
-	        }
-
-	        return compacted;
-	    }
-
-	    var keys = Object.keys(obj);
-	    for (i = 0, il = keys.length; i < il; ++i) {
-	        var key = keys[i];
-	        obj[key] = exports.compact(obj[key], refs);
-	    }
-
-	    return obj;
-	};
-
-
-	exports.isRegExp = function (obj) {
-	    return Object.prototype.toString.call(obj) === '[object RegExp]';
-	};
-
-
-	exports.isBuffer = function (obj) {
-
-	    if (obj === null ||
-	        typeof obj === 'undefined') {
-
-	        return false;
-	    }
-
-	    return !!(obj.constructor &&
-	        obj.constructor.isBuffer &&
-	        obj.constructor.isBuffer(obj));
-	};
-
-
-/***/ },
 /* 208 */
 /***/ function(module, exports, __webpack_require__) {
 
@@ -36286,7 +36286,7 @@
 
 	"use strict";
 
-	var PooledClass = __webpack_require__(153);
+	var PooledClass = __webpack_require__(155);
 
 	var assign = __webpack_require__(75);
 	var invariant = __webpack_require__(36);
@@ -36802,7 +36802,7 @@
 
 	"use strict";
 
-	var camelize = __webpack_require__(253);
+	var camelize = __webpack_require__(254);
 
 	var msPattern = /^-ms-/;
 
@@ -36910,7 +36910,7 @@
 
 	"use strict";
 
-	var hyphenate = __webpack_require__(254);
+	var hyphenate = __webpack_require__(255);
 
 	var msPattern = /^ms-/;
 
@@ -36939,104 +36939,6 @@
 
 /***/ },
 /* 217 */
-/***/ function(module, exports, __webpack_require__) {
-
-	/**
-	 * Copyright 2013-2014, Facebook, Inc.
-	 * All rights reserved.
-	 *
-	 * This source code is licensed under the BSD-style license found in the
-	 * LICENSE file in the root directory of this source tree. An additional grant
-	 * of patent rights can be found in the PATENTS file in the same directory.
-	 *
-	 * @providesModule ReactPutListenerQueue
-	 */
-
-	"use strict";
-
-	var PooledClass = __webpack_require__(153);
-	var ReactBrowserEventEmitter = __webpack_require__(26);
-
-	var assign = __webpack_require__(75);
-
-	function ReactPutListenerQueue() {
-	  this.listenersToPut = [];
-	}
-
-	assign(ReactPutListenerQueue.prototype, {
-	  enqueuePutListener: function(rootNodeID, propKey, propValue) {
-	    this.listenersToPut.push({
-	      rootNodeID: rootNodeID,
-	      propKey: propKey,
-	      propValue: propValue
-	    });
-	  },
-
-	  putListeners: function() {
-	    for (var i = 0; i < this.listenersToPut.length; i++) {
-	      var listenerToPut = this.listenersToPut[i];
-	      ReactBrowserEventEmitter.putListener(
-	        listenerToPut.rootNodeID,
-	        listenerToPut.propKey,
-	        listenerToPut.propValue
-	      );
-	    }
-	  },
-
-	  reset: function() {
-	    this.listenersToPut.length = 0;
-	  },
-
-	  destructor: function() {
-	    this.reset();
-	  }
-	});
-
-	PooledClass.addPoolingTo(ReactPutListenerQueue);
-
-	module.exports = ReactPutListenerQueue;
-
-
-/***/ },
-/* 218 */
-/***/ function(module, exports, __webpack_require__) {
-
-	/**
-	 * Copyright 2013-2014, Facebook, Inc.
-	 * All rights reserved.
-	 *
-	 * This source code is licensed under the BSD-style license found in the
-	 * LICENSE file in the root directory of this source tree. An additional grant
-	 * of patent rights can be found in the PATENTS file in the same directory.
-	 *
-	 * @providesModule adler32
-	 */
-
-	/* jslint bitwise:true */
-
-	"use strict";
-
-	var MOD = 65521;
-
-	// This is a clean-room implementation of adler32 designed for detecting
-	// if markup is not what we expect it to be. It does not need to be
-	// cryptographically strong, only reasonably good at detecting if markup
-	// generated on the server is different than that on the client.
-	function adler32(data) {
-	  var a = 1;
-	  var b = 0;
-	  for (var i = 0; i < data.length; i++) {
-	    a = (a + data.charCodeAt(i)) % MOD;
-	    b = (b + a) % MOD;
-	  }
-	  return a | (b << 16);
-	}
-
-	module.exports = adler32;
-
-
-/***/ },
-/* 219 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(process) {/**
@@ -37181,7 +37083,7 @@
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(49)))
 
 /***/ },
-/* 220 */
+/* 218 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/**
@@ -37198,7 +37100,7 @@
 
 	"use strict";
 
-	var SyntheticEvent = __webpack_require__(221);
+	var SyntheticEvent = __webpack_require__(219);
 
 	/**
 	 * @interface Event
@@ -37232,7 +37134,7 @@
 
 
 /***/ },
-/* 221 */
+/* 219 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/**
@@ -37249,11 +37151,11 @@
 
 	"use strict";
 
-	var PooledClass = __webpack_require__(153);
+	var PooledClass = __webpack_require__(155);
 
 	var assign = __webpack_require__(75);
 	var emptyFunction = __webpack_require__(83);
-	var getEventTarget = __webpack_require__(234);
+	var getEventTarget = __webpack_require__(232);
 
 	/**
 	 * @interface Event
@@ -37394,7 +37296,7 @@
 
 
 /***/ },
-/* 222 */
+/* 220 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/**
@@ -37442,7 +37344,7 @@
 
 
 /***/ },
-/* 223 */
+/* 221 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/**
@@ -37458,11 +37360,11 @@
 
 	"use strict";
 
-	var ReactDOMSelection = __webpack_require__(255);
+	var ReactDOMSelection = __webpack_require__(256);
 
 	var containsNode = __webpack_require__(32);
-	var focusNode = __webpack_require__(256);
-	var getActiveElement = __webpack_require__(235);
+	var focusNode = __webpack_require__(257);
+	var getActiveElement = __webpack_require__(233);
 
 	function isInDocument(node) {
 	  return containsNode(document.documentElement, node);
@@ -37582,7 +37484,7 @@
 
 
 /***/ },
-/* 224 */
+/* 222 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/**
@@ -37599,7 +37501,7 @@
 
 	"use strict";
 
-	var SyntheticEvent = __webpack_require__(221);
+	var SyntheticEvent = __webpack_require__(219);
 
 	/**
 	 * @interface Event
@@ -37632,7 +37534,7 @@
 
 
 /***/ },
-/* 225 */
+/* 223 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/**
@@ -37673,7 +37575,7 @@
 
 
 /***/ },
-/* 226 */
+/* 224 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/**
@@ -37690,10 +37592,10 @@
 
 	"use strict";
 
-	var SyntheticUIEvent = __webpack_require__(242);
+	var SyntheticUIEvent = __webpack_require__(240);
 	var ViewportMetrics = __webpack_require__(74);
 
-	var getEventModifierState = __webpack_require__(257);
+	var getEventModifierState = __webpack_require__(258);
 
 	/**
 	 * @interface MouseEvent
@@ -37760,7 +37662,7 @@
 
 
 /***/ },
-/* 227 */
+/* 225 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(process) {/**
@@ -37779,14 +37681,14 @@
 
 	"use strict";
 
-	var CSSPropertyOperations = __webpack_require__(163);
-	var DOMChildrenOperations = __webpack_require__(258);
+	var CSSPropertyOperations = __webpack_require__(165);
+	var DOMChildrenOperations = __webpack_require__(259);
 	var DOMPropertyOperations = __webpack_require__(103);
 	var ReactMount = __webpack_require__(14);
 	var ReactPerf = __webpack_require__(31);
 
 	var invariant = __webpack_require__(36);
-	var setInnerHTML = __webpack_require__(229);
+	var setInnerHTML = __webpack_require__(227);
 
 	/**
 	 * Errors for properties that should not be updated with `updatePropertyById()`.
@@ -37949,7 +37851,7 @@
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(49)))
 
 /***/ },
-/* 228 */
+/* 226 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/**
@@ -37967,10 +37869,10 @@
 	"use strict";
 
 	var CallbackQueue = __webpack_require__(210);
-	var PooledClass = __webpack_require__(153);
+	var PooledClass = __webpack_require__(155);
 	var ReactBrowserEventEmitter = __webpack_require__(26);
-	var ReactInputSelection = __webpack_require__(223);
-	var ReactPutListenerQueue = __webpack_require__(217);
+	var ReactInputSelection = __webpack_require__(221);
+	var ReactPutListenerQueue = __webpack_require__(246);
 	var Transaction = __webpack_require__(211);
 
 	var assign = __webpack_require__(75);
@@ -38129,7 +38031,7 @@
 
 
 /***/ },
-/* 229 */
+/* 227 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/**
@@ -38211,7 +38113,7 @@
 
 
 /***/ },
-/* 230 */
+/* 228 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/**
@@ -38228,7 +38130,7 @@
 
 	"use strict";
 
-	var focusNode = __webpack_require__(256);
+	var focusNode = __webpack_require__(257);
 
 	var AutoFocusMixin = {
 	  componentDidMount: function() {
@@ -38242,7 +38144,7 @@
 
 
 /***/ },
-/* 231 */
+/* 229 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(process) {/**
@@ -38295,7 +38197,7 @@
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(49)))
 
 /***/ },
-/* 232 */
+/* 230 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(process) {/**
@@ -38454,7 +38356,7 @@
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(49)))
 
 /***/ },
-/* 233 */
+/* 231 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(process) {/**
@@ -38547,7 +38449,7 @@
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(49)))
 
 /***/ },
-/* 234 */
+/* 232 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/**
@@ -38582,7 +38484,7 @@
 
 
 /***/ },
-/* 235 */
+/* 233 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/**
@@ -38615,7 +38517,7 @@
 
 
 /***/ },
-/* 236 */
+/* 234 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/**
@@ -38663,7 +38565,7 @@
 
 
 /***/ },
-/* 237 */
+/* 235 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/**
@@ -38680,7 +38582,7 @@
 
 	"use strict";
 
-	var SyntheticEvent = __webpack_require__(221);
+	var SyntheticEvent = __webpack_require__(219);
 
 	/**
 	 * @interface Event
@@ -38713,7 +38615,7 @@
 
 
 /***/ },
-/* 238 */
+/* 236 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/**
@@ -38730,7 +38632,7 @@
 
 	"use strict";
 
-	var SyntheticUIEvent = __webpack_require__(242);
+	var SyntheticUIEvent = __webpack_require__(240);
 
 	/**
 	 * @interface FocusEvent
@@ -38756,7 +38658,7 @@
 
 
 /***/ },
-/* 239 */
+/* 237 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/**
@@ -38773,11 +38675,11 @@
 
 	"use strict";
 
-	var SyntheticUIEvent = __webpack_require__(242);
+	var SyntheticUIEvent = __webpack_require__(240);
 
-	var getEventCharCode = __webpack_require__(244);
-	var getEventKey = __webpack_require__(259);
-	var getEventModifierState = __webpack_require__(257);
+	var getEventCharCode = __webpack_require__(242);
+	var getEventKey = __webpack_require__(260);
+	var getEventModifierState = __webpack_require__(258);
 
 	/**
 	 * @interface KeyboardEvent
@@ -38847,7 +38749,7 @@
 
 
 /***/ },
-/* 240 */
+/* 238 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/**
@@ -38864,7 +38766,7 @@
 
 	"use strict";
 
-	var SyntheticMouseEvent = __webpack_require__(226);
+	var SyntheticMouseEvent = __webpack_require__(224);
 
 	/**
 	 * @interface DragEvent
@@ -38890,7 +38792,7 @@
 
 
 /***/ },
-/* 241 */
+/* 239 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/**
@@ -38907,9 +38809,9 @@
 
 	"use strict";
 
-	var SyntheticUIEvent = __webpack_require__(242);
+	var SyntheticUIEvent = __webpack_require__(240);
 
-	var getEventModifierState = __webpack_require__(257);
+	var getEventModifierState = __webpack_require__(258);
 
 	/**
 	 * @interface TouchEvent
@@ -38942,7 +38844,7 @@
 
 
 /***/ },
-/* 242 */
+/* 240 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/**
@@ -38959,9 +38861,9 @@
 
 	"use strict";
 
-	var SyntheticEvent = __webpack_require__(221);
+	var SyntheticEvent = __webpack_require__(219);
 
-	var getEventTarget = __webpack_require__(234);
+	var getEventTarget = __webpack_require__(232);
 
 	/**
 	 * @interface UIEvent
@@ -39008,7 +38910,7 @@
 
 
 /***/ },
-/* 243 */
+/* 241 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/**
@@ -39025,7 +38927,7 @@
 
 	"use strict";
 
-	var SyntheticMouseEvent = __webpack_require__(226);
+	var SyntheticMouseEvent = __webpack_require__(224);
 
 	/**
 	 * @interface WheelEvent
@@ -39073,7 +38975,7 @@
 
 
 /***/ },
-/* 244 */
+/* 242 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/**
@@ -39129,7 +39031,7 @@
 
 
 /***/ },
-/* 245 */
+/* 243 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/**
@@ -39339,7 +39241,7 @@
 
 
 /***/ },
-/* 246 */
+/* 244 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/**
@@ -39354,7 +39256,7 @@
 	 * @typechecks
 	 */
 
-	var performance = __webpack_require__(260);
+	var performance = __webpack_require__(261);
 
 	/**
 	 * Detect if we can use `window.performance.now()` and gracefully fallback to
@@ -39368,6 +39270,104 @@
 	var performanceNow = performance.now.bind(performance);
 
 	module.exports = performanceNow;
+
+
+/***/ },
+/* 245 */
+/***/ function(module, exports, __webpack_require__) {
+
+	/**
+	 * Copyright 2013-2014, Facebook, Inc.
+	 * All rights reserved.
+	 *
+	 * This source code is licensed under the BSD-style license found in the
+	 * LICENSE file in the root directory of this source tree. An additional grant
+	 * of patent rights can be found in the PATENTS file in the same directory.
+	 *
+	 * @providesModule adler32
+	 */
+
+	/* jslint bitwise:true */
+
+	"use strict";
+
+	var MOD = 65521;
+
+	// This is a clean-room implementation of adler32 designed for detecting
+	// if markup is not what we expect it to be. It does not need to be
+	// cryptographically strong, only reasonably good at detecting if markup
+	// generated on the server is different than that on the client.
+	function adler32(data) {
+	  var a = 1;
+	  var b = 0;
+	  for (var i = 0; i < data.length; i++) {
+	    a = (a + data.charCodeAt(i)) % MOD;
+	    b = (b + a) % MOD;
+	  }
+	  return a | (b << 16);
+	}
+
+	module.exports = adler32;
+
+
+/***/ },
+/* 246 */
+/***/ function(module, exports, __webpack_require__) {
+
+	/**
+	 * Copyright 2013-2014, Facebook, Inc.
+	 * All rights reserved.
+	 *
+	 * This source code is licensed under the BSD-style license found in the
+	 * LICENSE file in the root directory of this source tree. An additional grant
+	 * of patent rights can be found in the PATENTS file in the same directory.
+	 *
+	 * @providesModule ReactPutListenerQueue
+	 */
+
+	"use strict";
+
+	var PooledClass = __webpack_require__(155);
+	var ReactBrowserEventEmitter = __webpack_require__(26);
+
+	var assign = __webpack_require__(75);
+
+	function ReactPutListenerQueue() {
+	  this.listenersToPut = [];
+	}
+
+	assign(ReactPutListenerQueue.prototype, {
+	  enqueuePutListener: function(rootNodeID, propKey, propValue) {
+	    this.listenersToPut.push({
+	      rootNodeID: rootNodeID,
+	      propKey: propKey,
+	      propValue: propValue
+	    });
+	  },
+
+	  putListeners: function() {
+	    for (var i = 0; i < this.listenersToPut.length; i++) {
+	      var listenerToPut = this.listenersToPut[i];
+	      ReactBrowserEventEmitter.putListener(
+	        listenerToPut.rootNodeID,
+	        listenerToPut.propKey,
+	        listenerToPut.propValue
+	      );
+	    }
+	  },
+
+	  reset: function() {
+	    this.listenersToPut.length = 0;
+	  },
+
+	  destructor: function() {
+	    this.reset();
+	  }
+	});
+
+	PooledClass.addPoolingTo(ReactPutListenerQueue);
+
+	module.exports = ReactPutListenerQueue;
 
 
 /***/ },
@@ -39901,6 +39901,27 @@
 /* 253 */
 /***/ function(module, exports, __webpack_require__) {
 
+	// Load modules
+
+	var Stringify = __webpack_require__(264);
+	var Parse = __webpack_require__(265);
+
+
+	// Declare internals
+
+	var internals = {};
+
+
+	module.exports = {
+	    stringify: Stringify,
+	    parse: Parse
+	};
+
+
+/***/ },
+/* 254 */
+/***/ function(module, exports, __webpack_require__) {
+
 	/**
 	 * Copyright 2013-2014, Facebook, Inc.
 	 * All rights reserved.
@@ -39934,7 +39955,7 @@
 
 
 /***/ },
-/* 254 */
+/* 255 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/**
@@ -39971,7 +39992,7 @@
 
 
 /***/ },
-/* 255 */
+/* 256 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/**
@@ -39989,8 +40010,8 @@
 
 	var ExecutionEnvironment = __webpack_require__(117);
 
-	var getNodeForCharacterOffset = __webpack_require__(264);
-	var getTextContentAccessor = __webpack_require__(225);
+	var getNodeForCharacterOffset = __webpack_require__(266);
+	var getTextContentAccessor = __webpack_require__(223);
 
 	/**
 	 * While `isCollapsed` is available on the Selection object and `collapsed`
@@ -40184,7 +40205,7 @@
 
 
 /***/ },
-/* 256 */
+/* 257 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/**
@@ -40217,7 +40238,7 @@
 
 
 /***/ },
-/* 257 */
+/* 258 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/**
@@ -40268,7 +40289,7 @@
 
 
 /***/ },
-/* 258 */
+/* 259 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(process) {/**
@@ -40285,10 +40306,10 @@
 
 	"use strict";
 
-	var Danger = __webpack_require__(265);
-	var ReactMultiChildUpdateTypes = __webpack_require__(167);
+	var Danger = __webpack_require__(267);
+	var ReactMultiChildUpdateTypes = __webpack_require__(192);
 
-	var getTextContentAccessor = __webpack_require__(225);
+	var getTextContentAccessor = __webpack_require__(223);
 	var invariant = __webpack_require__(36);
 
 	/**
@@ -40446,7 +40467,7 @@
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(49)))
 
 /***/ },
-/* 259 */
+/* 260 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/**
@@ -40463,7 +40484,7 @@
 
 	"use strict";
 
-	var getEventCharCode = __webpack_require__(244);
+	var getEventCharCode = __webpack_require__(242);
 
 	/**
 	 * Normalization of deprecated HTML5 `key` values
@@ -40555,7 +40576,7 @@
 
 
 /***/ },
-/* 260 */
+/* 261 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/**
@@ -40584,27 +40605,6 @@
 	}
 
 	module.exports = performance || {};
-
-
-/***/ },
-/* 261 */
-/***/ function(module, exports, __webpack_require__) {
-
-	// Load modules
-
-	var Stringify = __webpack_require__(266);
-	var Parse = __webpack_require__(267);
-
-
-	// Declare internals
-
-	var internals = {};
-
-
-	module.exports = {
-	    stringify: Stringify,
-	    parse: Parse
-	};
 
 
 /***/ },
@@ -40841,6 +40841,252 @@
 /* 264 */
 /***/ function(module, exports, __webpack_require__) {
 
+	// Load modules
+
+	var Utils = __webpack_require__(200);
+
+
+	// Declare internals
+
+	var internals = {
+	    delimiter: '&',
+	    indices: true
+	};
+
+
+	internals.stringify = function (obj, prefix, options) {
+
+	    if (Utils.isBuffer(obj)) {
+	        obj = obj.toString();
+	    }
+	    else if (obj instanceof Date) {
+	        obj = obj.toISOString();
+	    }
+	    else if (obj === null) {
+	        obj = '';
+	    }
+
+	    if (typeof obj === 'string' ||
+	        typeof obj === 'number' ||
+	        typeof obj === 'boolean') {
+
+	        return [encodeURIComponent(prefix) + '=' + encodeURIComponent(obj)];
+	    }
+
+	    var values = [];
+
+	    if (typeof obj === 'undefined') {
+	        return values;
+	    }
+
+	    var objKeys = Object.keys(obj);
+	    for (var i = 0, il = objKeys.length; i < il; ++i) {
+	        var key = objKeys[i];
+	        if (!options.indices &&
+	            Array.isArray(obj)) {
+
+	            values = values.concat(internals.stringify(obj[key], prefix, options));
+	        }
+	        else {
+	            values = values.concat(internals.stringify(obj[key], prefix + '[' + key + ']', options));
+	        }
+	    }
+
+	    return values;
+	};
+
+
+	module.exports = function (obj, options) {
+
+	    options = options || {};
+	    var delimiter = typeof options.delimiter === 'undefined' ? internals.delimiter : options.delimiter;
+	    options.indices = typeof options.indices === 'boolean' ? options.indices : internals.indices;
+
+	    var keys = [];
+
+	    if (typeof obj !== 'object' ||
+	        obj === null) {
+
+	        return '';
+	    }
+
+	    var objKeys = Object.keys(obj);
+	    for (var i = 0, il = objKeys.length; i < il; ++i) {
+	        var key = objKeys[i];
+	        keys = keys.concat(internals.stringify(obj[key], key, options));
+	    }
+
+	    return keys.join(delimiter);
+	};
+
+
+/***/ },
+/* 265 */
+/***/ function(module, exports, __webpack_require__) {
+
+	// Load modules
+
+	var Utils = __webpack_require__(200);
+
+
+	// Declare internals
+
+	var internals = {
+	    delimiter: '&',
+	    depth: 5,
+	    arrayLimit: 20,
+	    parameterLimit: 1000
+	};
+
+
+	internals.parseValues = function (str, options) {
+
+	    var obj = {};
+	    var parts = str.split(options.delimiter, options.parameterLimit === Infinity ? undefined : options.parameterLimit);
+
+	    for (var i = 0, il = parts.length; i < il; ++i) {
+	        var part = parts[i];
+	        var pos = part.indexOf(']=') === -1 ? part.indexOf('=') : part.indexOf(']=') + 1;
+
+	        if (pos === -1) {
+	            obj[Utils.decode(part)] = '';
+	        }
+	        else {
+	            var key = Utils.decode(part.slice(0, pos));
+	            var val = Utils.decode(part.slice(pos + 1));
+
+	            if (!obj.hasOwnProperty(key)) {
+	                obj[key] = val;
+	            }
+	            else {
+	                obj[key] = [].concat(obj[key]).concat(val);
+	            }
+	        }
+	    }
+
+	    return obj;
+	};
+
+
+	internals.parseObject = function (chain, val, options) {
+
+	    if (!chain.length) {
+	        return val;
+	    }
+
+	    var root = chain.shift();
+
+	    var obj = {};
+	    if (root === '[]') {
+	        obj = [];
+	        obj = obj.concat(internals.parseObject(chain, val, options));
+	    }
+	    else {
+	        var cleanRoot = root[0] === '[' && root[root.length - 1] === ']' ? root.slice(1, root.length - 1) : root;
+	        var index = parseInt(cleanRoot, 10);
+	        var indexString = '' + index;
+	        if (!isNaN(index) &&
+	            root !== cleanRoot &&
+	            indexString === cleanRoot &&
+	            index >= 0 &&
+	            index <= options.arrayLimit) {
+
+	            obj = [];
+	            obj[index] = internals.parseObject(chain, val, options);
+	        }
+	        else {
+	            obj[cleanRoot] = internals.parseObject(chain, val, options);
+	        }
+	    }
+
+	    return obj;
+	};
+
+
+	internals.parseKeys = function (key, val, options) {
+
+	    if (!key) {
+	        return;
+	    }
+
+	    // The regex chunks
+
+	    var parent = /^([^\[\]]*)/;
+	    var child = /(\[[^\[\]]*\])/g;
+
+	    // Get the parent
+
+	    var segment = parent.exec(key);
+
+	    // Don't allow them to overwrite object prototype properties
+
+	    if (Object.prototype.hasOwnProperty(segment[1])) {
+	        return;
+	    }
+
+	    // Stash the parent if it exists
+
+	    var keys = [];
+	    if (segment[1]) {
+	        keys.push(segment[1]);
+	    }
+
+	    // Loop through children appending to the array until we hit depth
+
+	    var i = 0;
+	    while ((segment = child.exec(key)) !== null && i < options.depth) {
+
+	        ++i;
+	        if (!Object.prototype.hasOwnProperty(segment[1].replace(/\[|\]/g, ''))) {
+	            keys.push(segment[1]);
+	        }
+	    }
+
+	    // If there's a remainder, just add whatever is left
+
+	    if (segment) {
+	        keys.push('[' + key.slice(segment.index) + ']');
+	    }
+
+	    return internals.parseObject(keys, val, options);
+	};
+
+
+	module.exports = function (str, options) {
+
+	    if (str === '' ||
+	        str === null ||
+	        typeof str === 'undefined') {
+
+	        return {};
+	    }
+
+	    options = options || {};
+	    options.delimiter = typeof options.delimiter === 'string' || Utils.isRegExp(options.delimiter) ? options.delimiter : internals.delimiter;
+	    options.depth = typeof options.depth === 'number' ? options.depth : internals.depth;
+	    options.arrayLimit = typeof options.arrayLimit === 'number' ? options.arrayLimit : internals.arrayLimit;
+	    options.parameterLimit = typeof options.parameterLimit === 'number' ? options.parameterLimit : internals.parameterLimit;
+
+	    var tempObj = typeof str === 'string' ? internals.parseValues(str, options) : str;
+	    var obj = {};
+
+	    // Iterate over the keys and setup the new object
+
+	    var keys = Object.keys(tempObj);
+	    for (var i = 0, il = keys.length; i < il; ++i) {
+	        var key = keys[i];
+	        var newObj = internals.parseKeys(key, tempObj[key], options);
+	        obj = Utils.merge(obj, newObj);
+	    }
+
+	    return Utils.compact(obj);
+	};
+
+
+/***/ },
+/* 266 */
+/***/ function(module, exports, __webpack_require__) {
+
 	/**
 	 * Copyright 2013-2014, Facebook, Inc.
 	 * All rights reserved.
@@ -40917,7 +41163,7 @@
 
 
 /***/ },
-/* 265 */
+/* 267 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(process) {/**
@@ -41104,252 +41350,6 @@
 	module.exports = Danger;
 
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(49)))
-
-/***/ },
-/* 266 */
-/***/ function(module, exports, __webpack_require__) {
-
-	// Load modules
-
-	var Utils = __webpack_require__(207);
-
-
-	// Declare internals
-
-	var internals = {
-	    delimiter: '&',
-	    indices: true
-	};
-
-
-	internals.stringify = function (obj, prefix, options) {
-
-	    if (Utils.isBuffer(obj)) {
-	        obj = obj.toString();
-	    }
-	    else if (obj instanceof Date) {
-	        obj = obj.toISOString();
-	    }
-	    else if (obj === null) {
-	        obj = '';
-	    }
-
-	    if (typeof obj === 'string' ||
-	        typeof obj === 'number' ||
-	        typeof obj === 'boolean') {
-
-	        return [encodeURIComponent(prefix) + '=' + encodeURIComponent(obj)];
-	    }
-
-	    var values = [];
-
-	    if (typeof obj === 'undefined') {
-	        return values;
-	    }
-
-	    var objKeys = Object.keys(obj);
-	    for (var i = 0, il = objKeys.length; i < il; ++i) {
-	        var key = objKeys[i];
-	        if (!options.indices &&
-	            Array.isArray(obj)) {
-
-	            values = values.concat(internals.stringify(obj[key], prefix, options));
-	        }
-	        else {
-	            values = values.concat(internals.stringify(obj[key], prefix + '[' + key + ']', options));
-	        }
-	    }
-
-	    return values;
-	};
-
-
-	module.exports = function (obj, options) {
-
-	    options = options || {};
-	    var delimiter = typeof options.delimiter === 'undefined' ? internals.delimiter : options.delimiter;
-	    options.indices = typeof options.indices === 'boolean' ? options.indices : internals.indices;
-
-	    var keys = [];
-
-	    if (typeof obj !== 'object' ||
-	        obj === null) {
-
-	        return '';
-	    }
-
-	    var objKeys = Object.keys(obj);
-	    for (var i = 0, il = objKeys.length; i < il; ++i) {
-	        var key = objKeys[i];
-	        keys = keys.concat(internals.stringify(obj[key], key, options));
-	    }
-
-	    return keys.join(delimiter);
-	};
-
-
-/***/ },
-/* 267 */
-/***/ function(module, exports, __webpack_require__) {
-
-	// Load modules
-
-	var Utils = __webpack_require__(207);
-
-
-	// Declare internals
-
-	var internals = {
-	    delimiter: '&',
-	    depth: 5,
-	    arrayLimit: 20,
-	    parameterLimit: 1000
-	};
-
-
-	internals.parseValues = function (str, options) {
-
-	    var obj = {};
-	    var parts = str.split(options.delimiter, options.parameterLimit === Infinity ? undefined : options.parameterLimit);
-
-	    for (var i = 0, il = parts.length; i < il; ++i) {
-	        var part = parts[i];
-	        var pos = part.indexOf(']=') === -1 ? part.indexOf('=') : part.indexOf(']=') + 1;
-
-	        if (pos === -1) {
-	            obj[Utils.decode(part)] = '';
-	        }
-	        else {
-	            var key = Utils.decode(part.slice(0, pos));
-	            var val = Utils.decode(part.slice(pos + 1));
-
-	            if (!obj.hasOwnProperty(key)) {
-	                obj[key] = val;
-	            }
-	            else {
-	                obj[key] = [].concat(obj[key]).concat(val);
-	            }
-	        }
-	    }
-
-	    return obj;
-	};
-
-
-	internals.parseObject = function (chain, val, options) {
-
-	    if (!chain.length) {
-	        return val;
-	    }
-
-	    var root = chain.shift();
-
-	    var obj = {};
-	    if (root === '[]') {
-	        obj = [];
-	        obj = obj.concat(internals.parseObject(chain, val, options));
-	    }
-	    else {
-	        var cleanRoot = root[0] === '[' && root[root.length - 1] === ']' ? root.slice(1, root.length - 1) : root;
-	        var index = parseInt(cleanRoot, 10);
-	        var indexString = '' + index;
-	        if (!isNaN(index) &&
-	            root !== cleanRoot &&
-	            indexString === cleanRoot &&
-	            index >= 0 &&
-	            index <= options.arrayLimit) {
-
-	            obj = [];
-	            obj[index] = internals.parseObject(chain, val, options);
-	        }
-	        else {
-	            obj[cleanRoot] = internals.parseObject(chain, val, options);
-	        }
-	    }
-
-	    return obj;
-	};
-
-
-	internals.parseKeys = function (key, val, options) {
-
-	    if (!key) {
-	        return;
-	    }
-
-	    // The regex chunks
-
-	    var parent = /^([^\[\]]*)/;
-	    var child = /(\[[^\[\]]*\])/g;
-
-	    // Get the parent
-
-	    var segment = parent.exec(key);
-
-	    // Don't allow them to overwrite object prototype properties
-
-	    if (Object.prototype.hasOwnProperty(segment[1])) {
-	        return;
-	    }
-
-	    // Stash the parent if it exists
-
-	    var keys = [];
-	    if (segment[1]) {
-	        keys.push(segment[1]);
-	    }
-
-	    // Loop through children appending to the array until we hit depth
-
-	    var i = 0;
-	    while ((segment = child.exec(key)) !== null && i < options.depth) {
-
-	        ++i;
-	        if (!Object.prototype.hasOwnProperty(segment[1].replace(/\[|\]/g, ''))) {
-	            keys.push(segment[1]);
-	        }
-	    }
-
-	    // If there's a remainder, just add whatever is left
-
-	    if (segment) {
-	        keys.push('[' + key.slice(segment.index) + ']');
-	    }
-
-	    return internals.parseObject(keys, val, options);
-	};
-
-
-	module.exports = function (str, options) {
-
-	    if (str === '' ||
-	        str === null ||
-	        typeof str === 'undefined') {
-
-	        return {};
-	    }
-
-	    options = options || {};
-	    options.delimiter = typeof options.delimiter === 'string' || Utils.isRegExp(options.delimiter) ? options.delimiter : internals.delimiter;
-	    options.depth = typeof options.depth === 'number' ? options.depth : internals.depth;
-	    options.arrayLimit = typeof options.arrayLimit === 'number' ? options.arrayLimit : internals.arrayLimit;
-	    options.parameterLimit = typeof options.parameterLimit === 'number' ? options.parameterLimit : internals.parameterLimit;
-
-	    var tempObj = typeof str === 'string' ? internals.parseValues(str, options) : str;
-	    var obj = {};
-
-	    // Iterate over the keys and setup the new object
-
-	    var keys = Object.keys(tempObj);
-	    for (var i = 0, il = keys.length; i < il; ++i) {
-	        var key = keys[i];
-	        var newObj = internals.parseKeys(key, tempObj[key], options);
-	        obj = Utils.merge(obj, newObj);
-	    }
-
-	    return Utils.compact(obj);
-	};
-
 
 /***/ },
 /* 268 */
