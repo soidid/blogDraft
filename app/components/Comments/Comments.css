@@ -1,7 +1,7 @@
 .Comments {
 	background: rgb(250,250,250);
 	padding: 40px 8px;
-	padding-bottom: 90px;
+	
 }
 @media screen and (min-width: 400px){
     .Comments-content {

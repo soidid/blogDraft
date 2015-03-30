@@ -4,6 +4,7 @@ import React from "react/addons";
 import Author from "../Author/Author.es6";
 import Comments from "../Comments/Comments.es6";
 import Social from "../Social/Social.es6";
+import List from "../List/List.es6";
 
 import "./Article.css";
 
@@ -66,15 +67,19 @@ export default React.createClass({
                       <img className="Article-avatar"
                            src={imgURL} />
                       <div className="Article-info">
-                         <a className="Article-name"
+                          <a className="Article-name"
                             href="#/author/1">{data.name}</a> 
-                         <div className="Article-date">發表於 {data.created_at.split('T')[0]}</div>
+                          <div className="Article-date">發表於 {data.created_at.split('T')[0]}</div>
+                          
                       </div>
+                      <Author type="section"/>
                    </div>
-                   <Author type="section"/>
+                  
                 </div>   
             </div>
+
             <Comments commentMountHandler={this._onCommentsMounted}/>
+            <List />
           
           </div> 
       </div>

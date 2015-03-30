@@ -2,12 +2,16 @@
 	line-height: 1.6;
 	margin-bottom: 20px;
 	box-shadow: 4px 4px 0px rgba(200,200,200,0.4);
-	padding: 18px;
+	padding: 0 18px;
 	background: white;
 	cursor: pointer;
 	border: 1px solid gray;
 	margin: 0 5px;
 	
+}
+.Author p {
+	line-height: 1.4;
+	font-size: 14px;
 }
 .Author img {
 	max-width: 100%;

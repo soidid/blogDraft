@@ -15,10 +15,16 @@ p, blockquote, h3, ul, ol, li, a, span {
   
   position: relative; 
   overflow: hidden;
+
+
 }
 .Article-authorBackground {
   /*background: rgb(230,230,230);*/
   padding: 10px;
+}
+.Article-author {
+  padding-bottom: 30px;
+ 
 }
 .Article-cover {
   width: 100%;
@@ -74,18 +80,18 @@ p, blockquote, h3, ul, ol, li, a, span {
   
 }
 .Article-authorHeader {
-  min-height: 120px;
+  min-height: 0px;
 }
 .Article-avatar {
   cursor: pointer;
 	float: left;
-  margin: 20px 10px 0px 20px;
+  margin: 20px 0px 0px 20px;
   background: white;
   //border: 3px solid rgb(140,140,140);
   //box-shadow: 3px 3px 0px rgba(200,200,200,0.4);
-  border: 3px solid;
+  border: 1px solid rgb(100,100,100);
   border-radius: 50%;
-  width: 80px;
+  width: 60px;
 }
 .Article-avatar:hover {
   box-shadow: 3px 3px 0px rgba(200,200,200,0.7);
@@ -98,9 +104,9 @@ p, blockquote, h3, ul, ol, li, a, span {
 }
 a.Article-name {
   cursor: pointer;
-  font-size: 22px;
+  font-size: 20px;
   font-weight: 800;
-  margin-top: 20px;
+  
   display: inline-block;
   border: none;
 }
