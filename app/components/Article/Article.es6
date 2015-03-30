@@ -79,7 +79,7 @@ export default React.createClass({
             </div>
 
             <Comments commentMountHandler={this._onCommentsMounted}/>
-            <List />
+            <List type="article"/>
           
           </div> 
       </div>

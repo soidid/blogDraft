@@ -14,3 +14,13 @@ a.AppBar-logo {
 a.AppBar-logo:hover {
 	color: #87B825;
 }
+a.AppBar-nav {
+	border: none;
+	margin: 0 5px;
+	font-size: 14px;
+	font-weight: 800;
+}
+a.AppBar-nav:hover {
+	border-bottom: 2px solid;
+	//color: #87B825;
+}

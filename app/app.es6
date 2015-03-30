@@ -3,6 +3,7 @@ import Router, {Route, DefaultRoute} from "react-router";
 import Application from "./Application";
 import ArticlePage from "./ArticlePage";
 import AuthorPage from "./AuthorPage";
+import ColumnPage from "./ColumnPage";
 import Home from "./Home";
 import "./normalize.css";
 
@@ -10,6 +11,7 @@ const routes = (
   <Route name="app" path="/" handler={Application} >
     <Route name="article" path="/article/:articleId" handler={ArticlePage} />
     <Route name="author" path="/author/:authorId" handler={AuthorPage} />
+    <Route name="columns" path="/columns" handler={ColumnPage} />
     <DefaultRoute handler={Home} />
   </Route>
   );

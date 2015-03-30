@@ -1,0 +1,25 @@
+.AboutSite {
+    width: 100%;
+    background: #C39372;
+    height: 100vh;
+    color: white;
+    overflow: scroll;
+}
+@media screen and (min-width: 600px){
+	.AboutSite {
+		float: left;
+    	width: 340px;
+    }
+
+}
+.AboutSite-img {
+	width: 100%;
+}
+.AboutSite-content {
+	line-height: 1.6;
+	padding: 10px;
+}
+.AboutSite-title {
+	font-size: 24px;
+	font-weight: 800;
+}

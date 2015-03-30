@@ -11,7 +11,7 @@ export default React.createClass({
 
     return (
       <div>
-        <AppBar />
+        <AppBar type="simple"/>
         <Article />
         <RouteHandler {...this.props} {...this.state} />
       </div>

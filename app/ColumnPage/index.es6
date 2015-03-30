@@ -2,8 +2,7 @@ import React from "react";
 import {Link} from "react-router";
 import AppBar from "../components/AppBar/AppBar.es6";
 import AboutSite from "../components/AboutSite/AboutSite.es6";
-import List from "../components/List/List.es6";
-import Tags from "../components/Tags/Tags.es6";
+import Columns from "../components/Columns/Columns.es6";
 
 export default React.createClass({
   displayName: "Home",
@@ -20,9 +19,8 @@ export default React.createClass({
       <div>
         <AppBar type="nav"/>
         <AboutSite />
-        <Tags />
-        <List type="index"/>
-         
+        <Columns />
+        
       </div>
     );
   }
