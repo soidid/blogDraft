@@ -25,7 +25,7 @@ export default React.createClass({
     console.log(window.innerWidth);
     var result = "";
 
-    if(window.innerWidth > 600){
+    if(window.innerWidth > 1000){
         result = (
         <div>
             <AppBar type="nav"/>

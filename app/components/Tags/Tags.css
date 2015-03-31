@@ -9,7 +9,8 @@
 	padding-bottom: 80px;
 	
 }
-@media screen and (min-width: 600px){
+
+@media screen and (min-width: 1000px){
 	.Tags {
 		float: right;
     	width: 320px;
