@@ -2,7 +2,7 @@
     width: 100%;
     //background: #C39372;
     background: rgba(135,184,37,1);
-    height: 100vh;
+    
     color: white;
     //color: rgb(50,50,50);
     overflow: scroll;
@@ -11,6 +11,7 @@
 	.AboutSite {
 		float: left;
     	width: 340px;
+    	height: 100vh;
     }
 
 }

@@ -22,16 +22,35 @@ export default React.createClass({
   },
 
   render() {
+    console.log(window.innerWidth);
+    var result = "";
+
+    if(window.innerWidth > 600){
+        result = (
+        <div>
+            <AppBar type="nav"/>
+            <AboutSite />
+            <Tags changeTagHandler={this._onChangeTag}/>
+            <List type="index"
+                  tag={this.state.tag}/>
+        </div>);
+        
+    }else{
+        result = (
+        <div>
+            <AppBar type="nav"/>
+            <AboutSite />
+            <List type="index"
+                  tag={this.state.tag}/>
+            <Tags changeTagHandler={this._onChangeTag}/>
+        
+        </div>);
+    }
     
     return (
-      <div>
-        <AppBar type="nav"/>
-        <AboutSite />
-        <Tags changeTagHandler={this._onChangeTag}/>
-        <List type="index"
-              tag={this.state.tag}/>
-         
-      </div>
+      
+        result
+      
     );
   }
 });
