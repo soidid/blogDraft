@@ -7,6 +7,7 @@ import ColumnPage from "./ColumnPage";
 import CollectionPage from "./CollectionPage";
 import Home from "./Home";
 import "./normalize.css";
+import "./main.css";
 
 const routes = (
   <Route name="app" path="/" handler={Application} >

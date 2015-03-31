@@ -6,15 +6,21 @@
     color: white;
     //color: rgb(50,50,50);
     overflow: scroll;
+    flex: 1;   
 }
 @media screen and (min-width: 600px){
 	.AboutSite {
 		float: left;
     	width: 340px;
     	height: 100vh;
+    	overflow: scroll;
+    	flex: none;
+
     }
+    
 
 }
+
 .AboutSite-img {
 	width: 100%;
 }

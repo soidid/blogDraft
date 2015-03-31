@@ -3,8 +3,10 @@
 	overflow:hidden;  _overflow:visible;  zoom:1;
 	//background: #DABDA8;
 	background: #FAFAFA;
-	min-height:100vh;
+	//min-height:100vh;
 	width: 100%;
+
+	flex: none;
 
 }
 
@@ -25,15 +27,16 @@
 	
 	overflow: hidden;
 
-	width: 100%;
+	
 }
 @media screen and (min-width: 600px){
     .Columns {
-    	max-width: 920px;
-    	height: 200px;
+    	flex: 2;
+    	
+    	height: 100vh;
+    	overflow: scroll;
+    	padding: 0 10px;
     }
-}
-@media screen and (min-width: 600px){
     .Column {
     	width: 250px;
     	margin: 10px 5px;
