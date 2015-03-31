@@ -15,9 +15,12 @@ export default React.createClass({
   render() {
       
       var tagsItem = Tags.map((item, key)=>{
-         return (
-            <div className="Tags-Tag">{item}</div>
-         )
+          var boundClick = this.props.changeTagHandler.bind(null, item);
+          return (
+            <div className="Tags-Tag"
+                 onClick={boundClick}
+                 key={key}>{item}</div>
+          )
       });
       
       return (

@@ -4,6 +4,7 @@ import Application from "./Application";
 import ArticlePage from "./ArticlePage";
 import AuthorPage from "./AuthorPage";
 import ColumnPage from "./ColumnPage";
+import CollectionPage from "./CollectionPage";
 import Home from "./Home";
 import "./normalize.css";
 
@@ -12,6 +13,7 @@ const routes = (
     <Route name="article" path="/article/:articleId" handler={ArticlePage} />
     <Route name="author" path="/author/:authorId" handler={AuthorPage} />
     <Route name="columns" path="/columns" handler={ColumnPage} />
+    <Route name="collections" path="/collections" handler={CollectionPage} />
     <DefaultRoute handler={Home} />
   </Route>
   );

@@ -63,20 +63,23 @@ export default React.createClass({
                 </a>
             )
         });
+        var filterItem =  (this.props.tag) ? 
+          <div className="List-filter">
+              <div className="List-filterMeta">標籤</div>
+              <div className="List-filterTitle">{this.props.tag}</div>
+          </div> :"";
         
         result = (
-        <div className="List List--index">
-
-          <div className="List-indexContent">  
-              {postItems}
-          </div>
-
-          <div className="List-footer">
-              <div className="List-button">載入更多</div>
-          </div> 
-            
-
+          <div className="List List--index">
+              {filterItem}
           
+              <div className="List-indexContent">  
+                  {postItems}
+              </div>
+
+              <div className="List-footer">
+                  <div className="List-button">載入更多</div>
+              </div> 
         </div>);
 
      }else{

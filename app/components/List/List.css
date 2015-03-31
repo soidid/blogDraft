@@ -136,5 +136,24 @@
    color: black;
 }
 
+/* ----------------- */
+
+/* ----------------- */
+.List-filter {
+    line-height: 1.4;
+    padding: 10px;
+    border-bottom: 1px solid rgb(220,220,220);
+    //text-align: center;
+
+}
+.List-filterMeta {
+	font-size: 14px;
+}
+.List-filterTitle {
+	margin-top: 4px;
+	font-size: 18px;
+	font-weight: 800;
+}
+
 
 

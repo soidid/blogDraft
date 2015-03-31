@@ -26,7 +26,7 @@ export default React.createClass({
                className="AppBar-nav">最新</a>
             <a href="#/columns"
                className="AppBar-nav">專欄</a>
-            <a href="#/"
+            <a href="#/collections"
                className="AppBar-nav">Collections</a>
           </div>
         );

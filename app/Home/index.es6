@@ -10,8 +10,15 @@ export default React.createClass({
 
   getInitialState () {
     return {
-      count: 0
+      tag: ""
     };
+  },
+
+  _onChangeTag (i, event){
+    console.log(i);
+    this.setState({
+      tag: i
+    });
   },
 
   render() {
@@ -20,8 +27,9 @@ export default React.createClass({
       <div>
         <AppBar type="nav"/>
         <AboutSite />
-        <Tags />
-        <List type="index"/>
+        <Tags changeTagHandler={this._onChangeTag}/>
+        <List type="index"
+              tag={this.state.tag}/>
          
       </div>
     );
