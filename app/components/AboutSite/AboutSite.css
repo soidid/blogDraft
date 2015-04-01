@@ -15,12 +15,15 @@
     	overflow: scroll;
     	flex: 0 0 340px;
     }
-    
-
 }
-
 .AboutSite-img {
-	width: 100%;
+	display: none;
+}
+@media screen and (min-width: 600px){
+    .AboutSite-img { 
+        display: block;   
+        width: 100%;    
+    }
 }
 .AboutSite-content {
 	line-height: 1.6;

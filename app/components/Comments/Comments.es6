@@ -12,7 +12,7 @@ export default React.createClass({
   
   getInitialState(){
       return {
-         focusTab: 'editorsPick',//all
+         focusTab: 'all',//all, editorsPick
          max: 3,
          commentData: post_stream.posts,
          expandedCommentId:{}
@@ -95,6 +95,7 @@ export default React.createClass({
        *   Comments
        * ================================ */
       var { focusTab, max, commentData, expandedCommentId } =  this.state;
+      var noComment = true;
       
       //console.log(commentData);
 
@@ -104,6 +105,7 @@ export default React.createClass({
         return (focusTab === 'editorsPick') ? (item.post_type === 2) : item;
       })
       .map((item, key)=>{
+          noComment  = false;
           var size = 120;
           var avatarTemplate = item.avatar_template.split('{size}')[0]+"/"+size+"/"+item.avatar_template.split('{size}')[1];
           var imgURL = "http://community.citizenedu.tw"+avatarTemplate;
@@ -122,6 +124,21 @@ export default React.createClass({
           var expandButtomItem = (expandedCommentId[item.id]) ? 
           "" :  (<div className="Comments-expandButton"
                       onClick= {bouncClick}>Read more</div>);
+          
+          
+
+          /* =====================================
+           *  Content
+           * ===================================== */
+
+          var regex = /(<([^>]+)>)/ig;
+          var commentContentItem = (true) ?    
+          //var commentContentItem = (expandedCommentId[item.id]) ? 
+          <div dangerouslySetInnerHTML={{__html: item.cooked}}></div>
+            : 
+          <div>
+              <p>{item.cooked.replace(regex, '').substring(0,150)+"..."}</p>
+          </div>
           return (
             <div className={commentClasses}
                  key={key}>
@@ -133,7 +150,7 @@ export default React.createClass({
                      id={"CommentMain"+item.id}>
                     <div className="Comments-author">{item.name}</div> 
                     <div className="Comments-date">{"・發表於  "+item.created_at.split('T')[0]}</div>
-                    <div dangerouslySetInnerHTML={{__html: item.cooked}}></div>
+                    {commentContentItem}
                 </div>
                 {expandButtomItem}
             </div>
@@ -145,11 +162,15 @@ export default React.createClass({
        * ================================ */
       var tabs = [{id:'editorsPick', title: '編輯嚴選'},
                   {id:'all', title: '全部'}];
+
+      <Tabs activeId={this.state.focusTab} 
+            data={tabs}
+            onClick={this._onToggle}/> 
      
       /* ================================ 
        *   Show More Button
        * ================================ */
-      var showMoreButtonItem = (postsItem.length > max) ? (
+      var showMoreButtonItem = (postsItem.length > max && !noComment) ? (
           <div className="Comments-footer">
               <div className="Comments-button"
                     onClick={this._onSetNewMax}>載入更多</div>
@@ -163,15 +184,16 @@ export default React.createClass({
           </div>
       );
 
+    var content = (noComment) ? <div className="Comments-noPost">
+      現在沒有討論
+      
+    </div> : postsItem;
+
     return (
       <div className="Comments">
          <div className="Comments-content">
             <div className="Comments-title">討論</div>
-            <Tabs activeId={this.state.focusTab} 
-                      data={tabs}
-                      onClick={this._onToggle}/> 
-            
-            {postsItem}
+            {content}
             {showMoreButtonItem}
          </div>
       </div>

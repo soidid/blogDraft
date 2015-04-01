@@ -22,22 +22,23 @@ export default React.createClass({
 
       if(type === "article"){
 
-        var nextPostItem = <div className="List-nextItem">
-          <div className="List-nextItemTitle">下一篇文章</div>
-            <div className="List-nextPost">
-              <div className="List-nextTitle">{NextPost.title}／朱家安</div>
-              <div className="List-nextPreview">{ NextPost.brief+"..."}</div>
+        // var nextPostItem = <div className="List-nextItem">
+        //   <div className="List-nextItemTitle">下一篇文章</div>
+        //     <div className="List-nextPost">
+        //       <div className="List-nextTitle">{NextPost.title}／朱家安</div>
+        //       <div className="List-nextPreview">{ NextPost.brief+"..."}</div>
               
-            </div>
-        </div>;
+        //     </div>
+        // </div>;
   
         var postItems = AuthorPost.map((item, key)=>{
+            var title = item.author+"："+item.title;
             return(
                 <a className="List-articleItem"
                    key={key}
                    href="#/article/1"  >
                      <div className="List-articleItemDate">{item.date}</div>
-                     <div className="List-articleItemTitle">{item.title}</div>
+                     <div className="List-articleItemTitle">{title}</div>
                 </a>
             )
         });
@@ -45,8 +46,8 @@ export default React.createClass({
         result = (
         <div className="List List-article">
           <div className="List-content">
-              <div>{nextPostItem}</div>
-              <div className="List-title"></div>
+              
+              <div className="List-title">其他哲學類的文章</div>
               {postItems}
           </div>
         </div>);
@@ -57,7 +58,7 @@ export default React.createClass({
                 <a className="List-indexItem"
                    key={key}
                    href="#/article/1"  >
-                     <div className="List-articleItemTitle List-boldTitle">{item.title} ／朱家安</div>
+                     <div className="List-articleItemTitle List-boldTitle">朱家安：{item.title}</div>
                      <div className="List-articleItemBrief">{item.brief}</div>
                      
                 </a>

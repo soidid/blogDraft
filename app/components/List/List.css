@@ -57,13 +57,15 @@
     }
 }
 .List-title {
-	padding: 0px 5px 10px 15px;
+	padding: 0px 12px;
 	font-weight: 700;
-	
-	border-bottom: 1px solid rgb(120,120,120);
+	//border-bottom: 1px solid rgb(120,120,120);
 }
-
-
+@media all and (min-width: 400px){
+	.List-title {
+		padding: 0px 5px 10px 15px;
+    }
+}
 .List-articleItem {
 	margin: 1px;
 	padding: 12px 12px;
@@ -79,12 +81,19 @@
 	color: black;
 	background: rgb(240,240,240);
 }
-
 .List-articleItemDate {
-	display: inline-block;
-    margin-right: 14px;
-    float: left;
-
+   display: inline-block;
+   background: rgb(220,220,220);
+   padding: 0 4px;
+   margin: 5px 0;
+}
+@media all and (min-width: 400px){
+	.List-articleItemDate {
+	   display: inline-block;
+       float: left;
+       background: none;
+       margin: 0 14px 0 0;
+    }
 }
 .List-articleItemTitle {
 	overflow: hidden;  _overflow:visible;  zoom:1;
