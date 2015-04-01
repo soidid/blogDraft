@@ -7,13 +7,18 @@
 	padding-left: 10px;
 	width: 100%;
 	padding-bottom: 80px;
+	order: 3;
 	
 }
+@media screen and (min-width: 600px){
+	.Tags {
+		flex: 1 100%;
+    }
 
+}
 @media screen and (min-width: 1000px){
 	.Tags {
-		float: right;
-    	width: 320px;
+		flex: 0 0 320px;
     	height: 100vh;
     }
 

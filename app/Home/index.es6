@@ -22,34 +22,20 @@ export default React.createClass({
   },
 
   render() {
-    console.log(window.innerWidth);
-    var result = "";
-
-    if(window.innerWidth > 1000){
-        result = (
-        <div>
-            <AppBar type="nav"/>
-            <AboutSite />
-            <Tags changeTagHandler={this._onChangeTag}/>
-            <List type="index"
-                  tag={this.state.tag}/>
-        </div>);
-        
-    }else{
-        result = (
-        <div>
-            <AppBar type="nav"/>
-            <AboutSite />
-            <List type="index"
-                  tag={this.state.tag}/>
-            <Tags changeTagHandler={this._onChangeTag}/>
-        
-        </div>);
-    }
+   
     
     return (
       
-        result
+        <div>
+            <AppBar type="nav"/>
+            <div className="flexWrapper">
+              <AboutSite />
+              <List type="index"
+                    tag={this.state.tag}/>
+              <Tags changeTagHandler={this._onChangeTag}/>
+            </div>
+        
+        </div>
       
     );
   }
