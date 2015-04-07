@@ -55,7 +55,7 @@
 /******/ 	
 /******/ 	
 /******/ 	var hotApplyOnUpdate = true;
-/******/ 	var hotCurrentHash = "a3e5c51880852e43f3a0";
+/******/ 	var hotCurrentHash = "aa9e0f223d25eeb2fe27";
 /******/ 	var hotCurrentModuleData = {};
 /******/ 	var hotCurrentParents = [];
 /******/ 	
@@ -8283,7 +8283,7 @@
 	                                React.createElement(
 	                                    "div",
 	                                    { className: "Article-date" },
-	                                    "發表於 ",
+	                                    " ",
 	                                    data.created_at.split("T")[0]
 	                                )
 	                            ),
@@ -8331,7 +8331,7 @@
 	          "a",
 	          { href: "#/",
 	            className: "AppBar-logo" },
-	          "公民學院部落格"
+	          "沃草公民學院"
 	        )
 	      );
 	    } else if (type === "nav") {
@@ -8342,7 +8342,7 @@
 	          "a",
 	          { href: "#/",
 	            className: "AppBar-logo" },
-	          "公民學院部落格"
+	          "沃草公民學院"
 	        ),
 	        React.createElement(
 	          "a",
@@ -8360,7 +8360,7 @@
 	          "a",
 	          { href: "#/collections",
 	            className: "AppBar-nav" },
-	          "Collections"
+	          "套餐"
 	        )
 	      );
 	    } else {}
@@ -8492,7 +8492,7 @@
 	                            href: "#/author/1" },
 	                        "朱家安"
 	                    ),
-	                    "・發表於",
+	                    "・",
 	                    React.createElement(
 	                        "a",
 	                        { className: "Author-widgetLink" },
@@ -8660,7 +8660,7 @@
 	                React.createElement(
 	                    "div",
 	                    { className: "AboutSite-info" },
-	                    "生活中的人文閱讀，哲學、政治、社會、人類學的優質討論。"
+	                    "生活中的人文閱讀：歷史、哲學、政治、社會、人類學..."
 	                ),
 	                React.createElement(
 	                    "div",
@@ -11081,7 +11081,7 @@
 
 	"use strict";
 
-	var keyMirror = __webpack_require__(144);
+	var keyMirror = __webpack_require__(146);
 
 	var PropagationPhases = keyMirror({bubbled: null, captured: null});
 
@@ -11160,8 +11160,8 @@
 	var EventPluginRegistry = __webpack_require__(75);
 	var EventPluginUtils = __webpack_require__(107);
 
-	var accumulateInto = __webpack_require__(145);
-	var forEachAccumulated = __webpack_require__(146);
+	var accumulateInto = __webpack_require__(144);
+	var forEachAccumulated = __webpack_require__(145);
 	var invariant = __webpack_require__(39);
 
 	/**
@@ -12470,7 +12470,7 @@
 	        /* ================================ 
 	         *   Tabs
 	         * ================================ */
-	        var tabs = [{ id: "editorsPick", title: "編輯嚴選" }, { id: "all", title: "全部" }];
+	        var tabs = [{ id: "editorsPick", title: "編輯嚴選留言" }, { id: "all", title: "全部" }];
 
 	        React.createElement(Tabs, { activeId: this.state.focusTab,
 	            data: tabs,
@@ -12491,7 +12491,7 @@
 	            React.createElement(
 	                "a",
 	                { className: "Comments-button--hightlight" },
-	                "加入討論"
+	                "我要留言"
 	            )
 	        ) : React.createElement(
 	            "div",
@@ -12501,7 +12501,7 @@
 	                { className: "Comments-button--hightlight",
 	                    href: "http://community.citizenedu.tw/t/topic/822",
 	                    target: "_blank" },
-	                "加入討論"
+	                "我要留言"
 	            )
 	        );
 
@@ -13498,7 +13498,7 @@
 
 	var assign = __webpack_require__(78);
 	var invariant = __webpack_require__(39);
-	var keyMirror = __webpack_require__(144);
+	var keyMirror = __webpack_require__(146);
 
 	/**
 	 * Every React component is in one of these life cycles.
@@ -13956,7 +13956,7 @@
 	var assign = __webpack_require__(78);
 	var instantiateReactComponent = __webpack_require__(38);
 	var invariant = __webpack_require__(39);
-	var keyMirror = __webpack_require__(144);
+	var keyMirror = __webpack_require__(146);
 	var keyOf = __webpack_require__(167);
 	var monitorCodeUse = __webpack_require__(81);
 	var mapObject = __webpack_require__(168);
@@ -28030,64 +28030,6 @@
 /***/ function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(process) {/**
-	 * Copyright 2013-2014, Facebook, Inc.
-	 * All rights reserved.
-	 *
-	 * This source code is licensed under the BSD-style license found in the
-	 * LICENSE file in the root directory of this source tree. An additional grant
-	 * of patent rights can be found in the PATENTS file in the same directory.
-	 *
-	 * @providesModule keyMirror
-	 * @typechecks static-only
-	 */
-
-	"use strict";
-
-	var invariant = __webpack_require__(39);
-
-	/**
-	 * Constructs an enumeration with keys equal to their value.
-	 *
-	 * For example:
-	 *
-	 *   var COLORS = keyMirror({blue: null, red: null});
-	 *   var myColor = COLORS.blue;
-	 *   var isColorValid = !!COLORS[myColor];
-	 *
-	 * The last line could not be performed if the values of the generated enum were
-	 * not equal to their keys.
-	 *
-	 *   Input:  {key1: val1, key2: val2}
-	 *   Output: {key1: key1, key2: key2}
-	 *
-	 * @param {object} obj
-	 * @return {object}
-	 */
-	var keyMirror = function(obj) {
-	  var ret = {};
-	  var key;
-	  ("production" !== process.env.NODE_ENV ? invariant(
-	    obj instanceof Object && !Array.isArray(obj),
-	    'keyMirror(...): Argument must be an object.'
-	  ) : invariant(obj instanceof Object && !Array.isArray(obj)));
-	  for (key in obj) {
-	    if (!obj.hasOwnProperty(key)) {
-	      continue;
-	    }
-	    ret[key] = key;
-	  }
-	  return ret;
-	};
-
-	module.exports = keyMirror;
-
-	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(52)))
-
-/***/ },
-/* 145 */
-/***/ function(module, exports, __webpack_require__) {
-
-	/* WEBPACK VAR INJECTION */(function(process) {/**
 	 * Copyright 2014, Facebook, Inc.
 	 * All rights reserved.
 	 *
@@ -28153,7 +28095,7 @@
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(52)))
 
 /***/ },
-/* 146 */
+/* 145 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/**
@@ -28186,6 +28128,64 @@
 
 	module.exports = forEachAccumulated;
 
+
+/***/ },
+/* 146 */
+/***/ function(module, exports, __webpack_require__) {
+
+	/* WEBPACK VAR INJECTION */(function(process) {/**
+	 * Copyright 2013-2014, Facebook, Inc.
+	 * All rights reserved.
+	 *
+	 * This source code is licensed under the BSD-style license found in the
+	 * LICENSE file in the root directory of this source tree. An additional grant
+	 * of patent rights can be found in the PATENTS file in the same directory.
+	 *
+	 * @providesModule keyMirror
+	 * @typechecks static-only
+	 */
+
+	"use strict";
+
+	var invariant = __webpack_require__(39);
+
+	/**
+	 * Constructs an enumeration with keys equal to their value.
+	 *
+	 * For example:
+	 *
+	 *   var COLORS = keyMirror({blue: null, red: null});
+	 *   var myColor = COLORS.blue;
+	 *   var isColorValid = !!COLORS[myColor];
+	 *
+	 * The last line could not be performed if the values of the generated enum were
+	 * not equal to their keys.
+	 *
+	 *   Input:  {key1: val1, key2: val2}
+	 *   Output: {key1: key1, key2: key2}
+	 *
+	 * @param {object} obj
+	 * @return {object}
+	 */
+	var keyMirror = function(obj) {
+	  var ret = {};
+	  var key;
+	  ("production" !== process.env.NODE_ENV ? invariant(
+	    obj instanceof Object && !Array.isArray(obj),
+	    'keyMirror(...): Argument must be an object.'
+	  ) : invariant(obj instanceof Object && !Array.isArray(obj)));
+	  for (key in obj) {
+	    if (!obj.hasOwnProperty(key)) {
+	      continue;
+	    }
+	    ret[key] = key;
+	  }
+	  return ret;
+	};
+
+	module.exports = keyMirror;
+
+	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(52)))
 
 /***/ },
 /* 147 */
@@ -31075,7 +31075,7 @@
 
 	"use strict";
 
-	var keyMirror = __webpack_require__(144);
+	var keyMirror = __webpack_require__(146);
 
 	var ReactPropTypeLocations = keyMirror({
 	  prop: null,
@@ -32973,7 +32973,7 @@
 	var ReactElement = __webpack_require__(31);
 	var ReactDOM = __webpack_require__(112);
 
-	var keyMirror = __webpack_require__(144);
+	var keyMirror = __webpack_require__(146);
 
 	// Store a reference to the <button> `ReactDOMComponent`. TODO: use string
 	var button = ReactElement.createFactory(ReactDOM.button.type);
@@ -35032,7 +35032,7 @@
 
 	"use strict";
 
-	var keyMirror = __webpack_require__(144);
+	var keyMirror = __webpack_require__(146);
 
 	/**
 	 * When a component's children are updated, a series of update configuration
@@ -37259,8 +37259,8 @@
 	var EventConstants = __webpack_require__(73);
 	var EventPluginHub = __webpack_require__(74);
 
-	var accumulateInto = __webpack_require__(145);
-	var forEachAccumulated = __webpack_require__(146);
+	var accumulateInto = __webpack_require__(144);
+	var forEachAccumulated = __webpack_require__(145);
 
 	var PropagationPhases = EventConstants.PropagationPhases;
 	var getListener = EventPluginHub.getListener;
@@ -38464,8 +38464,8 @@
 
 	var ReactBrowserEventEmitter = __webpack_require__(29);
 
-	var accumulateInto = __webpack_require__(145);
-	var forEachAccumulated = __webpack_require__(146);
+	var accumulateInto = __webpack_require__(144);
+	var forEachAccumulated = __webpack_require__(145);
 	var invariant = __webpack_require__(39);
 
 	function remove(event) {
