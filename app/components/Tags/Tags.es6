@@ -13,11 +13,15 @@ export default React.createClass({
   },
 
   render() {
-      
+      var classSet = React.addons.classSet;
       var tagsItem = Tags.map((item, key)=>{
           var boundClick = this.props.changeTagHandler.bind(null, item);
+          var tagClasses = classSet({
+            "Tags-Tag": true,
+            "is-active" : this.props.tag == item
+          })
           return (
-            <div className="Tags-Tag"
+            <div className={tagClasses}
                  onClick={boundClick}
                  key={key}>{item}</div>
           )

@@ -37,7 +37,7 @@
 	margin: 4px;
 	background: white;
 }
-.Tags-Tag:hover {
+.Tags-Tag:hover, .Tags-Tag.is-active {
 	//border: 1px solid #D36E6E;
 	border: 1px solid rgba(135,184,37,1);
 	//background: #D36E6E;

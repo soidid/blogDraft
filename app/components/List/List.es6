@@ -1,6 +1,6 @@
 import React from "react/addons";
 import Tags from "../Tags/Tags.es6";
-
+import $ from "jquery";
 import "./List.css";
 
 //http://community.citizenedu.tw/users/kris/activity/posts
@@ -12,13 +12,49 @@ export default React.createClass({
 
   getInitialState(){
        return {
+          scroll: false
           
        }
+  },
+
+  componentDidMount() {
+    var ref = this.refs.List;
+    if(!ref){
+      console.log("No ref");
+      return;
+    }
+
+    var rect = ref.getDOMNode().getBoundingClientRect();
+    var top = rect.top
+    var scroll = this.state.scroll;
+    
+    var _this = this;
+    var cb = function(value){
+        //console.log("callback:"+value);
+        _this.setState({
+            scroll: value
+        });
+    };
+
+    $(window).scroll(function(event){
+         console.log("s"+$(this).scrollTop());
+        // console.log(bottom);
+        // console.log($(this).scrollTop() < bottom );
+        // console.log(scroll);
+
+        if( $(this).scrollTop() > top){
+            cb(true);
+        }
+        if( $(this).scrollTop() < top){
+            cb(false);
+        }
+    });
   },
 
   render() {
       var result = <div></div>;
       var type = this.props.type;
+      var classSet = React.addons.classSet;
 
       if(type === "article"){
 
@@ -44,7 +80,7 @@ export default React.createClass({
         });
         
         result = (
-        <div className="List List-article">
+        <div className="List List-article" ref="List">
           <div className="List-content">
               
               <div className="List-title">其他哲學類的文章</div>
@@ -64,14 +100,20 @@ export default React.createClass({
                 </a>
             )
         });
+        var listFilterClasses = classSet({
+           "List-filter" : true,
+           "is-fixed" : this.state.scroll && window.innerWidth <= 600
+        });
+        console.log(this.state.scroll);
+        console.log(listFilterClasses);
         var filterItem =  (this.props.tag) ? 
-          <div className="List-filter">
+          <div className={listFilterClasses}>
               <div className="List-filterMeta">標籤</div>
               <div className="List-filterTitle">{this.props.tag}</div>
           </div> :"";
         
         result = (
-          <div className="List List--index">
+          <div className="List List--index" ref="List">
               {filterItem}
           
               <div className="List-indexContent">  

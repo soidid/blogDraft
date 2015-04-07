@@ -32,7 +32,8 @@ export default React.createClass({
               <AboutSite />
               <List type="index"
                     tag={this.state.tag}/>
-              <Tags changeTagHandler={this._onChangeTag}/>
+              <Tags changeTagHandler={this._onChangeTag}
+                    tag={this.state.tag}/>
             </div>
         
         </div>
