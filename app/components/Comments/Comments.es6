@@ -160,7 +160,7 @@ export default React.createClass({
       /* ================================ 
        *   Tabs
        * ================================ */
-      var tabs = [{id:'editorsPick', title: '編輯嚴選'},
+      var tabs = [{id:'editorsPick', title: '編輯嚴選留言'},
                   {id:'all', title: '全部'}];
 
       <Tabs activeId={this.state.focusTab} 
@@ -174,13 +174,13 @@ export default React.createClass({
           <div className="Comments-footer">
               <div className="Comments-button"
                     onClick={this._onSetNewMax}>載入更多</div>
-              <a className="Comments-button--hightlight">加入討論</a>
+              <a className="Comments-button--hightlight">我要留言</a>
           </div>
       ): (
           <div className="Comments-footer">
               <a className="Comments-button--hightlight"
                  href="http://community.citizenedu.tw/t/topic/822"
-                 target="_blank">加入討論</a>
+                 target="_blank">我要留言</a>
           </div>
       );
 

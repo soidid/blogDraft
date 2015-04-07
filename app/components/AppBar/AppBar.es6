@@ -13,7 +13,7 @@ export default React.createClass({
       	result = (
       	  <div className="AppBar">
             <a href="#/"
-               className="AppBar-logo">公民學院部落格</a>
+               className="AppBar-logo">沃草公民學院</a>
           </div>
         );
 
@@ -21,13 +21,13 @@ export default React.createClass({
       	result = (
       	  <div className="AppBar">
             <a href="#/"
-               className="AppBar-logo">公民學院部落格</a>
+               className="AppBar-logo">沃草公民學院</a>
             <a href="#/"
                className="AppBar-nav">最新</a>
             <a href="#/columns"
                className="AppBar-nav">專欄</a>
             <a href="#/collections"
-               className="AppBar-nav">Collections</a>
+               className="AppBar-nav">套餐</a>
           </div>
         );
 

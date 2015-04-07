@@ -69,7 +69,7 @@ export default React.createClass({
                       <div className="Article-info">
                           <a className="Article-name"
                             href="#/author/1">{data.name}</a> 
-                          <div className="Article-date">發表於 {data.created_at.split('T')[0]}</div>
+                          <div className="Article-date"> {data.created_at.split('T')[0]}</div>
                           
                       </div>
                       <Author type="section"/>
