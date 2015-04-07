@@ -55,7 +55,7 @@
 /******/ 	
 /******/ 	
 /******/ 	var hotApplyOnUpdate = true;
-/******/ 	var hotCurrentHash = "aa9e0f223d25eeb2fe27";
+/******/ 	var hotCurrentHash = "9f897cb6e1de26eaf1ff";
 /******/ 	var hotCurrentModuleData = {};
 /******/ 	var hotCurrentParents = [];
 /******/ 	
@@ -532,13 +532,85 @@
 /* 0 */
 /***/ function(module, exports, __webpack_require__) {
 
-	__webpack_require__(2);
 	__webpack_require__(1);
+	__webpack_require__(2);
 	module.exports = __webpack_require__(3);
 
 
 /***/ },
 /* 1 */
+/***/ function(module, exports, __webpack_require__) {
+
+	/* WEBPACK VAR INJECTION */(function(__resourceQuery) {var io = __webpack_require__(8);
+	var scriptElements = document.getElementsByTagName("script");
+	io = io.connect(true ?
+		__resourceQuery.substr(1) :
+		scriptElements[scriptElements.length-1].getAttribute("src").replace(/\/[^\/]+$/, "")
+	);
+
+	var hot = false;
+	var initial = true;
+	var currentHash = "";
+
+	io.on("hot", function() {
+		hot = true;
+		console.log("[WDS] Hot Module Replacement enabled.");
+	});
+
+	io.on("invalid", function() {
+		console.log("[WDS] App updated. Recompiling...");
+	});
+
+	io.on("hash", function(hash) {
+		currentHash = hash;
+	});
+
+	io.on("ok", function() {
+		if(initial) return initial = false;
+		reloadApp();
+	});
+
+	io.on("warnings", function(warnings) {
+		console.log("[WDS] Warnings while compiling.");
+		for(var i = 0; i < warnings.length; i++)
+			console.warn(warnings[i]);
+		if(initial) return initial = false;
+		reloadApp();
+	});
+
+	io.on("errors", function(errors) {
+		console.log("[WDS] Errors while compiling.");
+		for(var i = 0; i < errors.length; i++)
+			console.error(errors[i]);
+		if(initial) return initial = false;
+		reloadApp();
+	});
+
+	io.on("proxy-error", function(errors) {
+		console.log("[WDS] Proxy error.");
+		for(var i = 0; i < errors.length; i++)
+			console.error(errors[i]);
+		if(initial) return initial = false;
+		reloadApp();
+	});
+
+	io.on("disconnect", function() {
+		console.error("[WDS] Disconnected!");
+	});
+
+	function reloadApp() {
+		if(hot) {
+			console.log("[WDS] App hot update...");
+			window.postMessage("webpackHotUpdate" + currentHash, "*");
+		} else {
+			console.log("[WDS] App updated. Reloading...");
+			window.location.reload();
+		}
+	}
+	/* WEBPACK VAR INJECTION */}.call(exports, "?http://localhost:2992"))
+
+/***/ },
+/* 2 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/*
@@ -612,78 +684,6 @@
 		throw new Error("[HMR] Hot Module Replacement is disabled.");
 	}
 
-
-/***/ },
-/* 2 */
-/***/ function(module, exports, __webpack_require__) {
-
-	/* WEBPACK VAR INJECTION */(function(__resourceQuery) {var io = __webpack_require__(8);
-	var scriptElements = document.getElementsByTagName("script");
-	io = io.connect(true ?
-		__resourceQuery.substr(1) :
-		scriptElements[scriptElements.length-1].getAttribute("src").replace(/\/[^\/]+$/, "")
-	);
-
-	var hot = false;
-	var initial = true;
-	var currentHash = "";
-
-	io.on("hot", function() {
-		hot = true;
-		console.log("[WDS] Hot Module Replacement enabled.");
-	});
-
-	io.on("invalid", function() {
-		console.log("[WDS] App updated. Recompiling...");
-	});
-
-	io.on("hash", function(hash) {
-		currentHash = hash;
-	});
-
-	io.on("ok", function() {
-		if(initial) return initial = false;
-		reloadApp();
-	});
-
-	io.on("warnings", function(warnings) {
-		console.log("[WDS] Warnings while compiling.");
-		for(var i = 0; i < warnings.length; i++)
-			console.warn(warnings[i]);
-		if(initial) return initial = false;
-		reloadApp();
-	});
-
-	io.on("errors", function(errors) {
-		console.log("[WDS] Errors while compiling.");
-		for(var i = 0; i < errors.length; i++)
-			console.error(errors[i]);
-		if(initial) return initial = false;
-		reloadApp();
-	});
-
-	io.on("proxy-error", function(errors) {
-		console.log("[WDS] Proxy error.");
-		for(var i = 0; i < errors.length; i++)
-			console.error(errors[i]);
-		if(initial) return initial = false;
-		reloadApp();
-	});
-
-	io.on("disconnect", function() {
-		console.error("[WDS] Disconnected!");
-	});
-
-	function reloadApp() {
-		if(hot) {
-			console.log("[WDS] App hot update...");
-			window.postMessage("webpackHotUpdate" + currentHash, "*");
-		} else {
-			console.log("[WDS] App updated. Reloading...");
-			window.location.reload();
-		}
-	}
-	/* WEBPACK VAR INJECTION */}.call(exports, "?http://localhost:2992"))
 
 /***/ },
 /* 3 */
@@ -1027,7 +1027,7 @@
 
 	var AboutSite = _interopRequire(__webpack_require__(45));
 
-	var Columns = _interopRequire(__webpack_require__(46));
+	var Columns = _interopRequire(__webpack_require__(48));
 
 	module.exports = React.createClass({
 	  displayName: "ColumnPage",
@@ -1089,11 +1089,11 @@
 
 	var AboutSite = _interopRequire(__webpack_require__(45));
 
-	var List = _interopRequire(__webpack_require__(47));
+	var List = _interopRequire(__webpack_require__(46));
 
-	var Tags = _interopRequire(__webpack_require__(48));
+	var Tags = _interopRequire(__webpack_require__(47));
 
-	var Columns = _interopRequire(__webpack_require__(46));
+	var Columns = _interopRequire(__webpack_require__(48));
 
 	module.exports = React.createClass({
 	    displayName: "CollectionPage",
@@ -1148,9 +1148,9 @@
 
 	var AboutSite = _interopRequire(__webpack_require__(45));
 
-	var List = _interopRequire(__webpack_require__(47));
+	var List = _interopRequire(__webpack_require__(46));
 
-	var Tags = _interopRequire(__webpack_require__(48));
+	var Tags = _interopRequire(__webpack_require__(47));
 
 	module.exports = React.createClass({
 	  displayName: "Home",
@@ -8194,7 +8194,7 @@
 
 	var Social = _interopRequire(__webpack_require__(89));
 
-	var List = _interopRequire(__webpack_require__(47));
+	var List = _interopRequire(__webpack_require__(46));
 
 	__webpack_require__(90);
 
@@ -8685,70 +8685,9 @@
 
 	var _interopRequire = function (obj) { return obj && obj.__esModule ? obj["default"] : obj; };
 
-	var React = _interopRequire(__webpack_require__(17));
-
-	__webpack_require__(102);
-
-	var Columns = _interopRequire(__webpack_require__(138));
-
-	var Collections = _interopRequire(__webpack_require__(139));
-
-	module.exports = React.createClass({
-	    displayName: "Columns",
-
-	    render: function render() {
-	        var data = this.props.type === "column" ? Columns : Collections;
-	        var columnItems = data.map(function (item, key) {
-	            return React.createElement(
-	                "div",
-	                { className: "Column",
-	                    key: key },
-	                React.createElement(
-	                    "div",
-	                    { className: "Column-header" },
-	                    React.createElement(
-	                        "div",
-	                        { className: "Column-name" },
-	                        item.name
-	                    ),
-	                    React.createElement(
-	                        "div",
-	                        { className: "Column-articleCount" },
-	                        item.articleCount
-	                    )
-	                ),
-	                React.createElement(
-	                    "div",
-	                    { className: "Column-intro" },
-	                    item.intro
-	                )
-	            );
-	        });
-
-	        return React.createElement(
-	            "div",
-	            { className: "Columns" },
-	            columnItems
-	        );
-	    }
-	});
-
-	/* REACT HOT LOADER */ })(); if (true) { (function () { module.hot.dispose(function (data) { data.makeHot = module.makeHot; }); if (module.exports && module.makeHot) { var makeExportsHot = __webpack_require__(6), foundReactClasses = false; if (makeExportsHot(module, __webpack_require__(17))) { foundReactClasses = true; } var shouldAcceptModule = true && foundReactClasses; if (shouldAcceptModule) { module.hot.accept(function (err) { if (err) { console.error("Cannot not apply hot update to " + "Columns.es6" + ": " + err.message); } }); } } })(); }
-	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(7)(module)))
-
-/***/ },
-/* 47 */
-/***/ function(module, exports, __webpack_require__) {
-
-	/* WEBPACK VAR INJECTION */(function(module) {/* REACT HOT LOADER */ if (true) { (function () { var ReactHotAPI = __webpack_require__(16), RootInstanceProvider = __webpack_require__(5), ReactMount = __webpack_require__(15), React = __webpack_require__(17); module.makeHot = module.hot.data ? module.hot.data.makeHot : ReactHotAPI(function () { return RootInstanceProvider.getRootInstances(ReactMount); }, React); })(); } (function () {
-
-	"use strict";
-
-	var _interopRequire = function (obj) { return obj && obj.__esModule ? obj["default"] : obj; };
-
 	var React = _interopRequire(__webpack_require__(87));
 
-	var Tags = _interopRequire(__webpack_require__(48));
+	var Tags = _interopRequire(__webpack_require__(47));
 
 	var $ = _interopRequire(__webpack_require__(143));
 
@@ -8756,9 +8695,9 @@
 
 	//http://community.citizenedu.tw/users/kris/activity/posts
 
-	var AuthorPost = _interopRequire(__webpack_require__(140));
+	var AuthorPost = _interopRequire(__webpack_require__(138));
 
-	var NextPost = _interopRequire(__webpack_require__(141));
+	var NextPost = _interopRequire(__webpack_require__(139));
 
 	module.exports = React.createClass({
 	    displayName: "List",
@@ -8924,7 +8863,7 @@
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(7)(module)))
 
 /***/ },
-/* 48 */
+/* 47 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(module) {/* REACT HOT LOADER */ if (true) { (function () { var ReactHotAPI = __webpack_require__(16), RootInstanceProvider = __webpack_require__(5), ReactMount = __webpack_require__(15), React = __webpack_require__(17); module.makeHot = module.hot.data ? module.hot.data.makeHot : ReactHotAPI(function () { return RootInstanceProvider.getRootInstances(ReactMount); }, React); })(); } (function () {
@@ -8935,9 +8874,9 @@
 
 	var React = _interopRequire(__webpack_require__(87));
 
-	__webpack_require__(104);
+	__webpack_require__(102);
 
-	var Tags = _interopRequire(__webpack_require__(142));
+	var Tags = _interopRequire(__webpack_require__(140));
 
 	module.exports = React.createClass({
 	  displayName: "Tags",
@@ -8979,6 +8918,67 @@
 	});
 
 	/* REACT HOT LOADER */ })(); if (true) { (function () { module.hot.dispose(function (data) { data.makeHot = module.makeHot; }); if (module.exports && module.makeHot) { var makeExportsHot = __webpack_require__(6), foundReactClasses = false; if (makeExportsHot(module, __webpack_require__(17))) { foundReactClasses = true; } var shouldAcceptModule = true && foundReactClasses; if (shouldAcceptModule) { module.hot.accept(function (err) { if (err) { console.error("Cannot not apply hot update to " + "Tags.es6" + ": " + err.message); } }); } } })(); }
+	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(7)(module)))
+
+/***/ },
+/* 48 */
+/***/ function(module, exports, __webpack_require__) {
+
+	/* WEBPACK VAR INJECTION */(function(module) {/* REACT HOT LOADER */ if (true) { (function () { var ReactHotAPI = __webpack_require__(16), RootInstanceProvider = __webpack_require__(5), ReactMount = __webpack_require__(15), React = __webpack_require__(17); module.makeHot = module.hot.data ? module.hot.data.makeHot : ReactHotAPI(function () { return RootInstanceProvider.getRootInstances(ReactMount); }, React); })(); } (function () {
+
+	"use strict";
+
+	var _interopRequire = function (obj) { return obj && obj.__esModule ? obj["default"] : obj; };
+
+	var React = _interopRequire(__webpack_require__(17));
+
+	__webpack_require__(104);
+
+	var Columns = _interopRequire(__webpack_require__(141));
+
+	var Collections = _interopRequire(__webpack_require__(142));
+
+	module.exports = React.createClass({
+	    displayName: "Columns",
+
+	    render: function render() {
+	        var data = this.props.type === "column" ? Columns : Collections;
+	        var columnItems = data.map(function (item, key) {
+	            return React.createElement(
+	                "div",
+	                { className: "Column",
+	                    key: key },
+	                React.createElement(
+	                    "div",
+	                    { className: "Column-header" },
+	                    React.createElement(
+	                        "div",
+	                        { className: "Column-name" },
+	                        item.name
+	                    ),
+	                    React.createElement(
+	                        "div",
+	                        { className: "Column-articleCount" },
+	                        item.articleCount
+	                    )
+	                ),
+	                React.createElement(
+	                    "div",
+	                    { className: "Column-intro" },
+	                    item.intro
+	                )
+	            );
+	        });
+
+	        return React.createElement(
+	            "div",
+	            { className: "Columns" },
+	            columnItems
+	        );
+	    }
+	});
+
+	/* REACT HOT LOADER */ })(); if (true) { (function () { module.hot.dispose(function (data) { data.makeHot = module.makeHot; }); if (module.exports && module.makeHot) { var makeExportsHot = __webpack_require__(6), foundReactClasses = false; if (makeExportsHot(module, __webpack_require__(17))) { foundReactClasses = true; } var shouldAcceptModule = true && foundReactClasses; if (shouldAcceptModule) { module.hot.accept(function (err) { if (err) { console.error("Cannot not apply hot update to " + "Columns.es6" + ": " + err.message); } }); } } })(); }
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(7)(module)))
 
 /***/ },
@@ -11081,7 +11081,7 @@
 
 	"use strict";
 
-	var keyMirror = __webpack_require__(146);
+	var keyMirror = __webpack_require__(144);
 
 	var PropagationPhases = keyMirror({bubbled: null, captured: null});
 
@@ -11160,8 +11160,8 @@
 	var EventPluginRegistry = __webpack_require__(75);
 	var EventPluginUtils = __webpack_require__(107);
 
-	var accumulateInto = __webpack_require__(144);
-	var forEachAccumulated = __webpack_require__(145);
+	var accumulateInto = __webpack_require__(145);
+	var forEachAccumulated = __webpack_require__(146);
 	var invariant = __webpack_require__(39);
 
 	/**
@@ -12866,7 +12866,7 @@
 /***/ function(module, exports, __webpack_require__) {
 
 	exports = module.exports = __webpack_require__(51)();
-	exports.push([module.id, ".Columns {\n\tdisplay: inline-block;\n\toverflow:hidden;  _overflow:visible;  zoom:1;\n\t//background: #DABDA8;\n\tbackground: #FAFAFA;\n\t//min-height:100vh;\n\twidth: 100%;\n\n\tflex: 1;\n\torder: 2;\n\n}\n\n.Column {\n\tbackground: white;\n\t//border: 1px solid #DABDA8;\n\tborder: 1px solid #FAFAFA;\n\tbox-shadow: 4px 4px 0 0 rgba(0,0,0,0.12);\n\tmargin: 5px;\n\tcursor: pointer;\n\n\tdisplay: inline-block;\n\t\n\tvertical-align: top;\n\tpadding: 8px 8px 8px 16px;\n\tline-height: 1.6;\n\n\t\n\toverflow: hidden;\n\n\t\n}\n@media screen and (min-width: 600px){\n    .Columns {\n    \tflex: 2;\n    \t\n    \theight: 100vh;\n    \toverflow: scroll;\n    \tpadding: 0 10px;\n    }\n    .Column {\n    \twidth: 250px;\n    \tmargin: 10px 5px;\n    \theight: 200px;\n    }\n}\n.Column:hover {\n\tbox-shadow: 4px 4px 0 0 rgba(0,0,0,0.24);\n}\n.Column-header {\n\t\n}\n.Column-name {\n   font-size: 20px;\n   font-weight: 800;\n   color: rgb(50,50,50);\n   display: inline-block;\n\n}\n.Column-articleCount {\n\tfont-size: 12px;\n\tfont-weight: 800;\n\t//background: rgb(135,184,37);\n\t//color: white;\n\n\tbackground: rgb(230,230,230);\n\tcolor: rgb(53,55,54);\n\t\n\tdisplay: inline-block;\n\tborder-radius: 50%;\n\t\n\tpadding-top: 4px;\n\twidth: 24px;\n\theight: 24px;\n\ttext-align: center;\n\tvertical-align: top;\n\tmargin: 3px 4px 0px 4px;\n\n}\n.Column:hover .Column-name {\n\t//color: #87B825;\n\tcolor: black;\n}", ""]);
+	exports.push([module.id, ".Tags {\n\t//background: #D36E6E;\n\tbackground: rgb(250,250,250);\n\t\n\tdisplay: inline-block;\n\tvertical-align: top;\n\tpadding-left: 10px;\n\twidth: 100%;\n\tpadding-bottom: 80px;\n\torder: 3;\n\t\n}\n@media screen and (min-width: 600px){\n\t.Tags {\n\t\tflex: 1 100%;\n    }\n\n}\n@media screen and (min-width: 1000px){\n\t.Tags {\n\t\tflex: 0 0 320px;\n    \theight: 100vh;\n    }\n\n}\n.Tags-title {\n\tborder-bottom: 1px solid rgb(220,220,220);\n\tpadding: 5px;\n\tmargin: 10px 0;\n\tcolor: rgb(120,120,120);\n}\n.Tags-Tag {\n\tpadding: 5px 10px;\n\tcursor: pointer;\n\tborder: 1px solid rgb(220,220,220);\n\tdisplay: inline-block;\n\tmargin: 4px;\n\tbackground: white;\n}\n.Tags-Tag:hover, .Tags-Tag.is-active {\n\t//border: 1px solid #D36E6E;\n\tborder: 1px solid rgba(135,184,37,1);\n\t//background: #D36E6E;\n\tbackground: rgba(135,184,37,1);\n\tcolor: white;\n}", ""]);
 
 /***/ },
 /* 104 */
@@ -12896,7 +12896,7 @@
 /***/ function(module, exports, __webpack_require__) {
 
 	exports = module.exports = __webpack_require__(51)();
-	exports.push([module.id, ".Tags {\n\t//background: #D36E6E;\n\tbackground: rgb(250,250,250);\n\t\n\tdisplay: inline-block;\n\tvertical-align: top;\n\tpadding-left: 10px;\n\twidth: 100%;\n\tpadding-bottom: 80px;\n\torder: 3;\n\t\n}\n@media screen and (min-width: 600px){\n\t.Tags {\n\t\tflex: 1 100%;\n    }\n\n}\n@media screen and (min-width: 1000px){\n\t.Tags {\n\t\tflex: 0 0 320px;\n    \theight: 100vh;\n    }\n\n}\n.Tags-title {\n\tborder-bottom: 1px solid rgb(220,220,220);\n\tpadding: 5px;\n\tmargin: 10px 0;\n\tcolor: rgb(120,120,120);\n}\n.Tags-Tag {\n\tpadding: 5px 10px;\n\tcursor: pointer;\n\tborder: 1px solid rgb(220,220,220);\n\tdisplay: inline-block;\n\tmargin: 4px;\n\tbackground: white;\n}\n.Tags-Tag:hover, .Tags-Tag.is-active {\n\t//border: 1px solid #D36E6E;\n\tborder: 1px solid rgba(135,184,37,1);\n\t//background: #D36E6E;\n\tbackground: rgba(135,184,37,1);\n\tcolor: white;\n}", ""]);
+	exports.push([module.id, ".Columns {\n\tdisplay: inline-block;\n\toverflow:hidden;  _overflow:visible;  zoom:1;\n\t//background: #DABDA8;\n\tbackground: #FAFAFA;\n\t//min-height:100vh;\n\twidth: 100%;\n\n\tflex: 1;\n\torder: 2;\n\n}\n\n.Column {\n\tbackground: white;\n\t//border: 1px solid #DABDA8;\n\tborder: 1px solid #FAFAFA;\n\tbox-shadow: 4px 4px 0 0 rgba(0,0,0,0.12);\n\tmargin: 5px;\n\tcursor: pointer;\n\n\tdisplay: inline-block;\n\t\n\tvertical-align: top;\n\tpadding: 8px 8px 8px 16px;\n\tline-height: 1.6;\n\n\t\n\toverflow: hidden;\n\n\t\n}\n@media screen and (min-width: 600px){\n    .Columns {\n    \tflex: 2;\n    \t\n    \theight: 100vh;\n    \toverflow: scroll;\n    \tpadding: 0 10px;\n    }\n    .Column {\n    \twidth: 250px;\n    \tmargin: 10px 5px;\n    \theight: 200px;\n    }\n}\n.Column:hover {\n\tbox-shadow: 4px 4px 0 0 rgba(0,0,0,0.24);\n}\n.Column-header {\n\t\n}\n.Column-name {\n   font-size: 20px;\n   font-weight: 800;\n   color: rgb(50,50,50);\n   display: inline-block;\n\n}\n.Column-articleCount {\n\tfont-size: 12px;\n\tfont-weight: 800;\n\t//background: rgb(135,184,37);\n\t//color: white;\n\n\tbackground: rgb(230,230,230);\n\tcolor: rgb(53,55,54);\n\t\n\tdisplay: inline-block;\n\tborder-radius: 50%;\n\t\n\tpadding-top: 4px;\n\twidth: 24px;\n\theight: 24px;\n\ttext-align: center;\n\tvertical-align: top;\n\tmargin: 3px 4px 0px 4px;\n\n}\n.Column:hover .Column-name {\n\t//color: #87B825;\n\tcolor: black;\n}", ""]);
 
 /***/ },
 /* 106 */
@@ -13498,7 +13498,7 @@
 
 	var assign = __webpack_require__(78);
 	var invariant = __webpack_require__(39);
-	var keyMirror = __webpack_require__(146);
+	var keyMirror = __webpack_require__(144);
 
 	/**
 	 * Every React component is in one of these life cycles.
@@ -13956,7 +13956,7 @@
 	var assign = __webpack_require__(78);
 	var instantiateReactComponent = __webpack_require__(38);
 	var invariant = __webpack_require__(39);
-	var keyMirror = __webpack_require__(146);
+	var keyMirror = __webpack_require__(144);
 	var keyOf = __webpack_require__(167);
 	var monitorCodeUse = __webpack_require__(81);
 	var mapObject = __webpack_require__(168);
@@ -18677,6 +18677,81 @@
 
 	module.exports = [
 		{
+			"title": "我對書卷獎的不滿",
+			"author": "朱家安",
+			"date": "2015.03.09",
+			"brief": "有些學校有書卷獎或校長獎：每學期發給每班平均成績前幾名的獎學金，以中正大學為例，前兩名各兩萬元。有些學校為了彰顯自己並非忽視「成績單分數之外的學習成果」，採取其它方法篩選得獎者，例如交由班導師決定，但主事者為了避免爭議，通常依舊會以平均分數為決定性考量。"
+		},
+		{
+			"title": "色情和藝術：被fb封鎖的裸體名畫",
+			"author": "馮一凡",
+			"date": "2015.03.05",
+			"brief": "是色情還是藝術，恐怕法國法院和 Facebook 有得吵了。據外電報導，法國一名老師在 Facebook 上傳一幅由 19 世紀藝術家 Gustave Courbet 油畫作品「L’Origine du monde」（世界的起源），然而這幅描述女性陰部的畫作，竟讓老師的帳號被 Facebook 封鎖，就在老師一狀告上法院時，Facebook 卻認定自己不受法國管轄，因此連法國法院都怒了。"
+		},
+		{
+			"title": "農村行銷、櫻木花道和瀉藥",
+			"author": "洪偉",
+			"date": "2015.03.01",
+			"brief": "最近有越來越多農村彩繪：在農村的房屋牆壁上彩繪，形成特殊的公共景觀。在社區營造和社區觀光盛行的現在，不難理解為什麼牆壁彩繪會成為吸引遊客的常用手段：牆壁帶不走。牆壁是天生的拍照背景。我相信遊客的自拍一向是觀光宣傳的重要途徑，因為如果不是的話，就無法說明為什麼許多地方會放著挖空臉孔的奇怪立牌。而連那些立牌都吃得開，表示遊客真的是熱愛自拍到了極點，在這種情況下，不管牆上畫的是什麼，他們大概都無法抵抗。"
+		},
+		{
+			"title": "還是讓機器人有道德兩難好了…是嗎？",
+			"author": "賴天恆",
+			"date": "2015.02.23",
+			"brief": "最近看到一個youtube影片，是關於科學家實驗讓小機器人去救小機器人1。在機器人可以移動的平面上，科學家劃定特定的「標示區域」為「洞」，接著設定一些機器人往「洞」移動，而某個機器人則要阻止其他機器人「掉進去」。"
+		},
+		{
+			"title": "震驚網友的裙子顏色",
+			"author": "王人俊",
+			"date": "2015.02.20",
+			"brief": "這裙子是什麼顏色？白/金還是藍/黑？這個問題在網路上吵成一團，Buzzfeed甚至做了投票。此外，謝伯讓也寫了篇文章3說明為什麼大家對於顏色的判斷會有歧義。我覺得我們也可以趁現在用這個例子寫篇文章介紹跟顏色感官相關的哲學。例如：有所謂「客觀」的顏色嗎？顏色就是所謂「會反射特定波常光波的表面性質」嗎？除了謝伯讓提到的「顏色恆常」之外，有其他因素影響大家對於顏色的判斷嗎？"
+		},
+		{
+			"title": "沒結婚的30歲以上女性稻草人問題和失言新聞",
+			"author": "朱家安",
+			"date": "2015.02.15",
+			"brief": "柯文哲說，如果30歲以上女生有百分之三十沒結婚，國家會不穩定，結果被罵翻了。"
+		}
+	]
+
+/***/ },
+/* 139 */
+/***/ function(module, exports, __webpack_require__) {
+
+	module.exports = {
+		"title": "大學應該停止自以為知道大學生需要什麼",
+		"date": "2015.03.15",
+		"brief": "直接的說，各大學訂定英語畢業門檻，會明列各英檢考試分數的通過標準，比如多益要幾分，托福要幾分。這幾項標準當中，「恰好」會有其中一項是「分數要求比較低的」，也就是「比較容易通過的」，也「恰好」該英檢機構會和該校合作，直接進入校園考試，這就是圖利特定廠商。"
+	}
+
+/***/ },
+/* 140 */
+/***/ function(module, exports, __webpack_require__) {
+
+	module.exports = [
+		"歷史學",
+		"政治學",
+		"人類學",
+		"哲學",
+		"社會學",
+		"語言學",
+		"宗教學",
+		"傳播學",
+		"勞工",
+		"環境",
+		"階級",
+		"性別",
+		"教育",
+		"國會",
+		"選舉"
+	]
+
+/***/ },
+/* 141 */
+/***/ function(module, exports, __webpack_require__) {
+
+	module.exports = [
+		{
 			"name": "沃草烙哲學",
 			"articleCount": 10,
 			"intro": "「沃草烙哲學」希望透過互助合作，推廣人文普及寫作，豐富中文世界裡的思辨素材，鼓勵關於普及寫作技術和題材的網路討論。以開放、自由的社群經營來完成上述目標。"
@@ -18729,89 +18804,15 @@
 	]
 
 /***/ },
-/* 139 */
+/* 142 */
 /***/ function(module, exports, __webpack_require__) {
 
 	module.exports = [
 		{
 			"name": "哲學入門 10 篇",
+			"articleCount": 10,
 			"intro": "「沃草烙哲學」希望透過互助合作，推廣人文普及寫作，豐富中文世界裡的思辨素材，鼓勵關於普及寫作技術和題材的網路討論。以開放、自由的社群經營來完成上述目標。"
 		}
-	]
-
-/***/ },
-/* 140 */
-/***/ function(module, exports, __webpack_require__) {
-
-	module.exports = [
-		{
-			"title": "我對書卷獎的不滿",
-			"author": "朱家安",
-			"date": "2015.03.09",
-			"brief": "有些學校有書卷獎或校長獎：每學期發給每班平均成績前幾名的獎學金，以中正大學為例，前兩名各兩萬元。有些學校為了彰顯自己並非忽視「成績單分數之外的學習成果」，採取其它方法篩選得獎者，例如交由班導師決定，但主事者為了避免爭議，通常依舊會以平均分數為決定性考量。"
-		},
-		{
-			"title": "色情和藝術：被fb封鎖的裸體名畫",
-			"author": "馮一凡",
-			"date": "2015.03.05",
-			"brief": "是色情還是藝術，恐怕法國法院和 Facebook 有得吵了。據外電報導，法國一名老師在 Facebook 上傳一幅由 19 世紀藝術家 Gustave Courbet 油畫作品「L’Origine du monde」（世界的起源），然而這幅描述女性陰部的畫作，竟讓老師的帳號被 Facebook 封鎖，就在老師一狀告上法院時，Facebook 卻認定自己不受法國管轄，因此連法國法院都怒了。"
-		},
-		{
-			"title": "農村行銷、櫻木花道和瀉藥",
-			"author": "洪偉",
-			"date": "2015.03.01",
-			"brief": "最近有越來越多農村彩繪：在農村的房屋牆壁上彩繪，形成特殊的公共景觀。在社區營造和社區觀光盛行的現在，不難理解為什麼牆壁彩繪會成為吸引遊客的常用手段：牆壁帶不走。牆壁是天生的拍照背景。我相信遊客的自拍一向是觀光宣傳的重要途徑，因為如果不是的話，就無法說明為什麼許多地方會放著挖空臉孔的奇怪立牌。而連那些立牌都吃得開，表示遊客真的是熱愛自拍到了極點，在這種情況下，不管牆上畫的是什麼，他們大概都無法抵抗。"
-		},
-		{
-			"title": "還是讓機器人有道德兩難好了…是嗎？",
-			"author": "賴天恆",
-			"date": "2015.02.23",
-			"brief": "最近看到一個youtube影片，是關於科學家實驗讓小機器人去救小機器人1。在機器人可以移動的平面上，科學家劃定特定的「標示區域」為「洞」，接著設定一些機器人往「洞」移動，而某個機器人則要阻止其他機器人「掉進去」。"
-		},
-		{
-			"title": "震驚網友的裙子顏色",
-			"author": "王人俊",
-			"date": "2015.02.20",
-			"brief": "這裙子是什麼顏色？白/金還是藍/黑？這個問題在網路上吵成一團，Buzzfeed甚至做了投票。此外，謝伯讓也寫了篇文章3說明為什麼大家對於顏色的判斷會有歧義。我覺得我們也可以趁現在用這個例子寫篇文章介紹跟顏色感官相關的哲學。例如：有所謂「客觀」的顏色嗎？顏色就是所謂「會反射特定波常光波的表面性質」嗎？除了謝伯讓提到的「顏色恆常」之外，有其他因素影響大家對於顏色的判斷嗎？"
-		},
-		{
-			"title": "沒結婚的30歲以上女性稻草人問題和失言新聞",
-			"author": "朱家安",
-			"date": "2015.02.15",
-			"brief": "柯文哲說，如果30歲以上女生有百分之三十沒結婚，國家會不穩定，結果被罵翻了。"
-		}
-	]
-
-/***/ },
-/* 141 */
-/***/ function(module, exports, __webpack_require__) {
-
-	module.exports = {
-		"title": "大學應該停止自以為知道大學生需要什麼",
-		"date": "2015.03.15",
-		"brief": "直接的說，各大學訂定英語畢業門檻，會明列各英檢考試分數的通過標準，比如多益要幾分，托福要幾分。這幾項標準當中，「恰好」會有其中一項是「分數要求比較低的」，也就是「比較容易通過的」，也「恰好」該英檢機構會和該校合作，直接進入校園考試，這就是圖利特定廠商。"
-	}
-
-/***/ },
-/* 142 */
-/***/ function(module, exports, __webpack_require__) {
-
-	module.exports = [
-		"歷史學",
-		"政治學",
-		"人類學",
-		"哲學",
-		"社會學",
-		"語言學",
-		"宗教學",
-		"傳播學",
-		"勞工",
-		"環境",
-		"階級",
-		"性別",
-		"教育",
-		"國會",
-		"選舉"
 	]
 
 /***/ },
@@ -28030,6 +28031,64 @@
 /***/ function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(process) {/**
+	 * Copyright 2013-2014, Facebook, Inc.
+	 * All rights reserved.
+	 *
+	 * This source code is licensed under the BSD-style license found in the
+	 * LICENSE file in the root directory of this source tree. An additional grant
+	 * of patent rights can be found in the PATENTS file in the same directory.
+	 *
+	 * @providesModule keyMirror
+	 * @typechecks static-only
+	 */
+
+	"use strict";
+
+	var invariant = __webpack_require__(39);
+
+	/**
+	 * Constructs an enumeration with keys equal to their value.
+	 *
+	 * For example:
+	 *
+	 *   var COLORS = keyMirror({blue: null, red: null});
+	 *   var myColor = COLORS.blue;
+	 *   var isColorValid = !!COLORS[myColor];
+	 *
+	 * The last line could not be performed if the values of the generated enum were
+	 * not equal to their keys.
+	 *
+	 *   Input:  {key1: val1, key2: val2}
+	 *   Output: {key1: key1, key2: key2}
+	 *
+	 * @param {object} obj
+	 * @return {object}
+	 */
+	var keyMirror = function(obj) {
+	  var ret = {};
+	  var key;
+	  ("production" !== process.env.NODE_ENV ? invariant(
+	    obj instanceof Object && !Array.isArray(obj),
+	    'keyMirror(...): Argument must be an object.'
+	  ) : invariant(obj instanceof Object && !Array.isArray(obj)));
+	  for (key in obj) {
+	    if (!obj.hasOwnProperty(key)) {
+	      continue;
+	    }
+	    ret[key] = key;
+	  }
+	  return ret;
+	};
+
+	module.exports = keyMirror;
+
+	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(52)))
+
+/***/ },
+/* 145 */
+/***/ function(module, exports, __webpack_require__) {
+
+	/* WEBPACK VAR INJECTION */(function(process) {/**
 	 * Copyright 2014, Facebook, Inc.
 	 * All rights reserved.
 	 *
@@ -28095,7 +28154,7 @@
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(52)))
 
 /***/ },
-/* 145 */
+/* 146 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/**
@@ -28128,64 +28187,6 @@
 
 	module.exports = forEachAccumulated;
 
-
-/***/ },
-/* 146 */
-/***/ function(module, exports, __webpack_require__) {
-
-	/* WEBPACK VAR INJECTION */(function(process) {/**
-	 * Copyright 2013-2014, Facebook, Inc.
-	 * All rights reserved.
-	 *
-	 * This source code is licensed under the BSD-style license found in the
-	 * LICENSE file in the root directory of this source tree. An additional grant
-	 * of patent rights can be found in the PATENTS file in the same directory.
-	 *
-	 * @providesModule keyMirror
-	 * @typechecks static-only
-	 */
-
-	"use strict";
-
-	var invariant = __webpack_require__(39);
-
-	/**
-	 * Constructs an enumeration with keys equal to their value.
-	 *
-	 * For example:
-	 *
-	 *   var COLORS = keyMirror({blue: null, red: null});
-	 *   var myColor = COLORS.blue;
-	 *   var isColorValid = !!COLORS[myColor];
-	 *
-	 * The last line could not be performed if the values of the generated enum were
-	 * not equal to their keys.
-	 *
-	 *   Input:  {key1: val1, key2: val2}
-	 *   Output: {key1: key1, key2: key2}
-	 *
-	 * @param {object} obj
-	 * @return {object}
-	 */
-	var keyMirror = function(obj) {
-	  var ret = {};
-	  var key;
-	  ("production" !== process.env.NODE_ENV ? invariant(
-	    obj instanceof Object && !Array.isArray(obj),
-	    'keyMirror(...): Argument must be an object.'
-	  ) : invariant(obj instanceof Object && !Array.isArray(obj)));
-	  for (key in obj) {
-	    if (!obj.hasOwnProperty(key)) {
-	      continue;
-	    }
-	    ret[key] = key;
-	  }
-	  return ret;
-	};
-
-	module.exports = keyMirror;
-
-	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(52)))
 
 /***/ },
 /* 147 */
@@ -31075,7 +31076,7 @@
 
 	"use strict";
 
-	var keyMirror = __webpack_require__(146);
+	var keyMirror = __webpack_require__(144);
 
 	var ReactPropTypeLocations = keyMirror({
 	  prop: null,
@@ -32973,7 +32974,7 @@
 	var ReactElement = __webpack_require__(31);
 	var ReactDOM = __webpack_require__(112);
 
-	var keyMirror = __webpack_require__(146);
+	var keyMirror = __webpack_require__(144);
 
 	// Store a reference to the <button> `ReactDOMComponent`. TODO: use string
 	var button = ReactElement.createFactory(ReactDOM.button.type);
@@ -35032,7 +35033,7 @@
 
 	"use strict";
 
-	var keyMirror = __webpack_require__(146);
+	var keyMirror = __webpack_require__(144);
 
 	/**
 	 * When a component's children are updated, a series of update configuration
@@ -37259,8 +37260,8 @@
 	var EventConstants = __webpack_require__(73);
 	var EventPluginHub = __webpack_require__(74);
 
-	var accumulateInto = __webpack_require__(144);
-	var forEachAccumulated = __webpack_require__(145);
+	var accumulateInto = __webpack_require__(145);
+	var forEachAccumulated = __webpack_require__(146);
 
 	var PropagationPhases = EventConstants.PropagationPhases;
 	var getListener = EventPluginHub.getListener;
@@ -38464,8 +38465,8 @@
 
 	var ReactBrowserEventEmitter = __webpack_require__(29);
 
-	var accumulateInto = __webpack_require__(144);
-	var forEachAccumulated = __webpack_require__(145);
+	var accumulateInto = __webpack_require__(145);
+	var forEachAccumulated = __webpack_require__(146);
 	var invariant = __webpack_require__(39);
 
 	function remove(event) {
