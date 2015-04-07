@@ -12,7 +12,12 @@ export default React.createClass({
           return (
           	  <div className="Column"
                    key={key}>
-             	  <div className="Column-name">{item.name}</div>
+                
+             	  <div className="Column-header">
+                  <div className="Column-name">{item.name}</div>
+                  <div className="Column-articleCount">{item.articleCount}</div>
+
+                </div>
              	  <div className="Column-intro">{item.intro}</div>
               </div>
           )

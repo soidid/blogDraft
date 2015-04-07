@@ -55,7 +55,7 @@
 /******/ 	
 /******/ 	
 /******/ 	var hotApplyOnUpdate = true;
-/******/ 	var hotCurrentHash = "121ff39a48029bab5772";
+/******/ 	var hotCurrentHash = "a3e5c51880852e43f3a0";
 /******/ 	var hotCurrentModuleData = {};
 /******/ 	var hotCurrentParents = [];
 /******/ 	
@@ -944,9 +944,9 @@
 	var RouteHandler = _reactRouter.RouteHandler;
 	var State = _reactRouter.State;
 
-	var Article = _interopRequire(__webpack_require__(44));
+	var Article = _interopRequire(__webpack_require__(42));
 
-	var AppBar = _interopRequire(__webpack_require__(42));
+	var AppBar = _interopRequire(__webpack_require__(43));
 
 	module.exports = React.createClass({
 	  displayName: "SingleArticle",
@@ -987,9 +987,9 @@
 	var RouteHandler = _reactRouter.RouteHandler;
 	var State = _reactRouter.State;
 
-	var AppBar = _interopRequire(__webpack_require__(42));
+	var AppBar = _interopRequire(__webpack_require__(43));
 
-	var Author = _interopRequire(__webpack_require__(43));
+	var Author = _interopRequire(__webpack_require__(44));
 
 	module.exports = React.createClass({
 	  displayName: "SingleArticle",
@@ -1023,7 +1023,7 @@
 
 	var Link = __webpack_require__(23).Link;
 
-	var AppBar = _interopRequire(__webpack_require__(42));
+	var AppBar = _interopRequire(__webpack_require__(43));
 
 	var AboutSite = _interopRequire(__webpack_require__(45));
 
@@ -1085,7 +1085,7 @@
 
 	var Link = __webpack_require__(23).Link;
 
-	var AppBar = _interopRequire(__webpack_require__(42));
+	var AppBar = _interopRequire(__webpack_require__(43));
 
 	var AboutSite = _interopRequire(__webpack_require__(45));
 
@@ -1144,7 +1144,7 @@
 
 	var Link = __webpack_require__(23).Link;
 
-	var AppBar = _interopRequire(__webpack_require__(42));
+	var AppBar = _interopRequire(__webpack_require__(43));
 
 	var AboutSite = _interopRequire(__webpack_require__(45));
 
@@ -1180,7 +1180,8 @@
 	        React.createElement(AboutSite, null),
 	        React.createElement(List, { type: "index",
 	          tag: this.state.tag }),
-	        React.createElement(Tags, { changeTagHandler: this._onChangeTag })
+	        React.createElement(Tags, { changeTagHandler: this._onChangeTag,
+	          tag: this.state.tag })
 	      )
 	    );
 	  }
@@ -8183,6 +8184,133 @@
 
 	var _interopRequire = function (obj) { return obj && obj.__esModule ? obj["default"] : obj; };
 
+	var React = _interopRequire(__webpack_require__(87));
+
+	//import Router, {RouteHandler, State} from "react-router";
+
+	var Author = _interopRequire(__webpack_require__(44));
+
+	var Comments = _interopRequire(__webpack_require__(88));
+
+	var Social = _interopRequire(__webpack_require__(89));
+
+	var List = _interopRequire(__webpack_require__(47));
+
+	__webpack_require__(90);
+
+	//http://community.citizenedu.tw/t/topic/102/10
+	//http://community.citizenedu.tw/t/topic/767/17
+
+	var article = _interopRequire(__webpack_require__(135));
+
+	;
+
+	module.exports = React.createClass({
+	    displayName: "Article",
+
+	    getInitialState: function getInitialState() {
+	        return {
+	            commentTop: 0
+	        };
+	    },
+
+	    _onGoToComment: function _onGoToComment() {
+	        //console.log("Comments");
+	        //var commentNode = document.getElementByClass("Comments");
+	        //console.log(commentNode);
+	        window.scrollTo(0, this.state.commentTop);
+	    },
+
+	    _onCommentsMounted: function _onCommentsMounted(top) {
+	        //console.log("Comments Mounted: "+top);
+	        this.setState({
+	            commentTop: top
+	        });
+	    },
+
+	    render: function render() {
+	        var data = article;
+	        var size = 120; //size=45,120
+	        var avatarTemplate = article.avatar_template.split("{size}")[0] + "/" + size + "/" + article.avatar_template.split("{size}")[1];
+	        var imgURL = "http://community.citizenedu.tw" + avatarTemplate;
+
+	        return React.createElement(
+	            "div",
+	            null,
+	            React.createElement(
+	                "div",
+	                { className: "Article" },
+	                React.createElement(Author, { type: "widget" }),
+	                React.createElement(
+	                    "div",
+	                    { className: "Article-cover" },
+	                    React.createElement("img", { className: "Article-coverImg",
+	                        src: "https://fbcdn-sphotos-d-a.akamaihd.net/hphotos-ak-xfp1/t31.0-8/10514156_978580618821819_5686475740468114136_o.jpg" }),
+	                    React.createElement(
+	                        "a",
+	                        { className: "Article-coverCopyright",
+	                            href: "https://www.facebook.com/ElaineeFangs",
+	                            target: "_blank" },
+	                        "圖／Elainee.’s"
+	                    )
+	                ),
+	                React.createElement(Social, { goToCommentHandler: this._onGoToComment }),
+	                React.createElement(
+	                    "div",
+	                    { className: "Article-content" },
+	                    React.createElement("div", { dangerouslySetInnerHTML: { __html: data.cooked } })
+	                ),
+	                React.createElement(
+	                    "div",
+	                    { className: "Article-authorBackground" },
+	                    React.createElement(
+	                        "div",
+	                        { className: "Article-author" },
+	                        React.createElement(
+	                            "div",
+	                            { className: "Article-authorHeader" },
+	                            React.createElement("img", { className: "Article-avatar",
+	                                src: imgURL }),
+	                            React.createElement(
+	                                "div",
+	                                { className: "Article-info" },
+	                                React.createElement(
+	                                    "a",
+	                                    { className: "Article-name",
+	                                        href: "#/author/1" },
+	                                    data.name
+	                                ),
+	                                React.createElement(
+	                                    "div",
+	                                    { className: "Article-date" },
+	                                    "發表於 ",
+	                                    data.created_at.split("T")[0]
+	                                )
+	                            ),
+	                            React.createElement(Author, { type: "section" })
+	                        )
+	                    )
+	                ),
+	                React.createElement(Comments, { commentMountHandler: this._onCommentsMounted }),
+	                React.createElement(List, { type: "article" })
+	            )
+	        );
+	    }
+	});
+
+	/* REACT HOT LOADER */ })(); if (true) { (function () { module.hot.dispose(function (data) { data.makeHot = module.makeHot; }); if (module.exports && module.makeHot) { var makeExportsHot = __webpack_require__(6), foundReactClasses = false; if (makeExportsHot(module, __webpack_require__(17))) { foundReactClasses = true; } var shouldAcceptModule = true && foundReactClasses; if (shouldAcceptModule) { module.hot.accept(function (err) { if (err) { console.error("Cannot not apply hot update to " + "Article.es6" + ": " + err.message); } }); } } })(); }
+	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(7)(module)))
+
+/***/ },
+/* 43 */
+/***/ function(module, exports, __webpack_require__) {
+
+	/* WEBPACK VAR INJECTION */(function(module) {/* REACT HOT LOADER */ if (true) { (function () { var ReactHotAPI = __webpack_require__(16), RootInstanceProvider = __webpack_require__(5), ReactMount = __webpack_require__(15), React = __webpack_require__(17); module.makeHot = module.hot.data ? module.hot.data.makeHot : ReactHotAPI(function () { return RootInstanceProvider.getRootInstances(ReactMount); }, React); })(); } (function () {
+
+	"use strict";
+
+	var _interopRequire = function (obj) { return obj && obj.__esModule ? obj["default"] : obj; };
+
 	var React = _interopRequire(__webpack_require__(17));
 
 	__webpack_require__(95);
@@ -8247,7 +8375,7 @@
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(7)(module)))
 
 /***/ },
-/* 43 */
+/* 44 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(module) {/* REACT HOT LOADER */ if (true) { (function () { var ReactHotAPI = __webpack_require__(16), RootInstanceProvider = __webpack_require__(5), ReactMount = __webpack_require__(15), React = __webpack_require__(17); module.makeHot = module.hot.data ? module.hot.data.makeHot : ReactHotAPI(function () { return RootInstanceProvider.getRootInstances(ReactMount); }, React); })(); } (function () {
@@ -8266,11 +8394,11 @@
 
 	//http://community.citizenedu.tw/users/kris/activity
 
-	var Author = _interopRequire(__webpack_require__(135));
+	var Author = _interopRequire(__webpack_require__(136));
 
 	//http://community.citizenedu.tw/users/kris/activity/posts
 
-	var AuthorPost = _interopRequire(__webpack_require__(136));
+	var AuthorPost = _interopRequire(__webpack_require__(137));
 
 	module.exports = React.createClass({
 	    displayName: "Author",
@@ -8497,133 +8625,6 @@
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(7)(module)))
 
 /***/ },
-/* 44 */
-/***/ function(module, exports, __webpack_require__) {
-
-	/* WEBPACK VAR INJECTION */(function(module) {/* REACT HOT LOADER */ if (true) { (function () { var ReactHotAPI = __webpack_require__(16), RootInstanceProvider = __webpack_require__(5), ReactMount = __webpack_require__(15), React = __webpack_require__(17); module.makeHot = module.hot.data ? module.hot.data.makeHot : ReactHotAPI(function () { return RootInstanceProvider.getRootInstances(ReactMount); }, React); })(); } (function () {
-
-	"use strict";
-
-	var _interopRequire = function (obj) { return obj && obj.__esModule ? obj["default"] : obj; };
-
-	var React = _interopRequire(__webpack_require__(87));
-
-	//import Router, {RouteHandler, State} from "react-router";
-
-	var Author = _interopRequire(__webpack_require__(43));
-
-	var Comments = _interopRequire(__webpack_require__(88));
-
-	var Social = _interopRequire(__webpack_require__(89));
-
-	var List = _interopRequire(__webpack_require__(47));
-
-	__webpack_require__(90);
-
-	//http://community.citizenedu.tw/t/topic/102/10
-	//http://community.citizenedu.tw/t/topic/767/17
-
-	var article = _interopRequire(__webpack_require__(137));
-
-	;
-
-	module.exports = React.createClass({
-	    displayName: "Article",
-
-	    getInitialState: function getInitialState() {
-	        return {
-	            commentTop: 0
-	        };
-	    },
-
-	    _onGoToComment: function _onGoToComment() {
-	        //console.log("Comments");
-	        //var commentNode = document.getElementByClass("Comments");
-	        //console.log(commentNode);
-	        window.scrollTo(0, this.state.commentTop);
-	    },
-
-	    _onCommentsMounted: function _onCommentsMounted(top) {
-	        //console.log("Comments Mounted: "+top);
-	        this.setState({
-	            commentTop: top
-	        });
-	    },
-
-	    render: function render() {
-	        var data = article;
-	        var size = 120; //size=45,120
-	        var avatarTemplate = article.avatar_template.split("{size}")[0] + "/" + size + "/" + article.avatar_template.split("{size}")[1];
-	        var imgURL = "http://community.citizenedu.tw" + avatarTemplate;
-
-	        return React.createElement(
-	            "div",
-	            null,
-	            React.createElement(
-	                "div",
-	                { className: "Article" },
-	                React.createElement(Author, { type: "widget" }),
-	                React.createElement(
-	                    "div",
-	                    { className: "Article-cover" },
-	                    React.createElement("img", { className: "Article-coverImg",
-	                        src: "https://fbcdn-sphotos-d-a.akamaihd.net/hphotos-ak-xfp1/t31.0-8/10514156_978580618821819_5686475740468114136_o.jpg" }),
-	                    React.createElement(
-	                        "a",
-	                        { className: "Article-coverCopyright",
-	                            href: "https://www.facebook.com/ElaineeFangs",
-	                            target: "_blank" },
-	                        "圖／Elainee.’s"
-	                    )
-	                ),
-	                React.createElement(Social, { goToCommentHandler: this._onGoToComment }),
-	                React.createElement(
-	                    "div",
-	                    { className: "Article-content" },
-	                    React.createElement("div", { dangerouslySetInnerHTML: { __html: data.cooked } })
-	                ),
-	                React.createElement(
-	                    "div",
-	                    { className: "Article-authorBackground" },
-	                    React.createElement(
-	                        "div",
-	                        { className: "Article-author" },
-	                        React.createElement(
-	                            "div",
-	                            { className: "Article-authorHeader" },
-	                            React.createElement("img", { className: "Article-avatar",
-	                                src: imgURL }),
-	                            React.createElement(
-	                                "div",
-	                                { className: "Article-info" },
-	                                React.createElement(
-	                                    "a",
-	                                    { className: "Article-name",
-	                                        href: "#/author/1" },
-	                                    data.name
-	                                ),
-	                                React.createElement(
-	                                    "div",
-	                                    { className: "Article-date" },
-	                                    "發表於 ",
-	                                    data.created_at.split("T")[0]
-	                                )
-	                            ),
-	                            React.createElement(Author, { type: "section" })
-	                        )
-	                    )
-	                ),
-	                React.createElement(Comments, { commentMountHandler: this._onCommentsMounted }),
-	                React.createElement(List, { type: "article" })
-	            )
-	        );
-	    }
-	});
-
-	/* REACT HOT LOADER */ })(); if (true) { (function () { module.hot.dispose(function (data) { data.makeHot = module.makeHot; }); if (module.exports && module.makeHot) { var makeExportsHot = __webpack_require__(6), foundReactClasses = false; if (makeExportsHot(module, __webpack_require__(17))) { foundReactClasses = true; } var shouldAcceptModule = true && foundReactClasses; if (shouldAcceptModule) { module.hot.accept(function (err) { if (err) { console.error("Cannot not apply hot update to " + "Article.es6" + ": " + err.message); } }); } } })(); }
-	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(7)(module)))
-
-/***/ },
 /* 45 */
 /***/ function(module, exports, __webpack_require__) {
 
@@ -8704,8 +8705,17 @@
 	                    key: key },
 	                React.createElement(
 	                    "div",
-	                    { className: "Column-name" },
-	                    item.name
+	                    { className: "Column-header" },
+	                    React.createElement(
+	                        "div",
+	                        { className: "Column-name" },
+	                        item.name
+	                    ),
+	                    React.createElement(
+	                        "div",
+	                        { className: "Column-articleCount" },
+	                        item.articleCount
+	                    )
 	                ),
 	                React.createElement(
 	                    "div",
@@ -8740,6 +8750,8 @@
 
 	var Tags = _interopRequire(__webpack_require__(48));
 
+	var $ = _interopRequire(__webpack_require__(143));
+
 	__webpack_require__(92);
 
 	//http://community.citizenedu.tw/users/kris/activity/posts
@@ -8752,12 +8764,50 @@
 	    displayName: "List",
 
 	    getInitialState: function getInitialState() {
-	        return {};
+	        return {
+	            scroll: false
+
+	        };
+	    },
+
+	    componentDidMount: function componentDidMount() {
+	        var ref = this.refs.List;
+	        if (!ref) {
+	            console.log("No ref");
+	            return;
+	        }
+
+	        var rect = ref.getDOMNode().getBoundingClientRect();
+	        var top = rect.top;
+	        var scroll = this.state.scroll;
+
+	        var _this = this;
+	        var cb = function cb(value) {
+	            //console.log("callback:"+value);
+	            _this.setState({
+	                scroll: value
+	            });
+	        };
+
+	        $(window).scroll(function (event) {
+	            console.log("s" + $(this).scrollTop());
+	            // console.log(bottom);
+	            // console.log($(this).scrollTop() < bottom );
+	            // console.log(scroll);
+
+	            if ($(this).scrollTop() > top) {
+	                cb(true);
+	            }
+	            if ($(this).scrollTop() < top) {
+	                cb(false);
+	            }
+	        });
 	    },
 
 	    render: function render() {
 	        var result = React.createElement("div", null);
 	        var type = this.props.type;
+	        var classSet = React.addons.classSet;
 
 	        if (type === "article") {
 
@@ -8792,7 +8842,7 @@
 
 	            result = React.createElement(
 	                "div",
-	                { className: "List List-article" },
+	                { className: "List List-article", ref: "List" },
 	                React.createElement(
 	                    "div",
 	                    { className: "List-content" },
@@ -8824,9 +8874,15 @@
 	                    )
 	                );
 	            });
+	            var listFilterClasses = classSet({
+	                "List-filter": true,
+	                "is-fixed": this.state.scroll && window.innerWidth <= 600
+	            });
+	            console.log(this.state.scroll);
+	            console.log(listFilterClasses);
 	            var filterItem = this.props.tag ? React.createElement(
 	                "div",
-	                { className: "List-filter" },
+	                { className: listFilterClasses },
 	                React.createElement(
 	                    "div",
 	                    { className: "List-filterMeta" },
@@ -8841,7 +8897,7 @@
 
 	            result = React.createElement(
 	                "div",
-	                { className: "List List--index" },
+	                { className: "List List--index", ref: "List" },
 	                filterItem,
 	                React.createElement(
 	                    "div",
@@ -8893,11 +8949,16 @@
 	  render: function render() {
 	    var _this = this;
 
+	    var classSet = React.addons.classSet;
 	    var tagsItem = Tags.map(function (item, key) {
 	      var boundClick = _this.props.changeTagHandler.bind(null, item);
+	      var tagClasses = classSet({
+	        "Tags-Tag": true,
+	        "is-active": _this.props.tag == item
+	      });
 	      return React.createElement(
 	        "div",
-	        { className: "Tags-Tag",
+	        { className: tagClasses,
 	          onClick: boundClick,
 	          key: key },
 	        item
@@ -12586,7 +12647,7 @@
 /***/ function(module, exports, __webpack_require__) {
 
 	exports = module.exports = __webpack_require__(51)();
-	exports.push([module.id, ".List {\n\t//background: rgb(250,250,250);\n\tpadding-bottom: 90px;\n\n}\n.List-article {\n\tbackground: rgb(250,250,250);\n}\n\n\n/* NEXT */\n.List-nextItem {\n\tline-height: 1.4;\n\tfont-size: 14px;\n\tmargin: 10px 0 4px 0;\t\n}\n.List-nextItemTitle {\n\tbackground: rgb(200,200,200);\n\tdisplay: inline-block;\n\tpadding: 6px 14px;\n\tcolor: white;\n\tmargin: 10px 0;\t\n}\n.List-nextPost {\n\tcursor: pointer;\t\n}\n.List-nextPost:hover, .List-nextTitle:hover {\n\tcolor: #87B825;\n}\n.List-nextTitle {\n\tfont-weight: 700;\n}\n.List-nextPreview {\n\tfont-size: 16px;\n}\n.List-nextLink {\n\tdisplay: inline-block;\n\tfont-size: 16px;\n\tcolor: rgb(100,100,100);\n\tborder: none;\n\ttext-decoration: underline;\n}\n\n/* LIST */\n.List-content {\n\tpadding: 10px 5px 0px 5px;\n}\n@media screen and (min-width: 400px){\n    .List-content {\n\t\tmax-width: 600px;\n        margin: 0 auto;\n\n    }\n    .List-indexContent {\n\t\tmax-width: 600px;\n       \n    }\n}\n.List-title {\n\tpadding: 0px 12px;\n\tfont-weight: 700;\n\t//border-bottom: 1px solid rgb(120,120,120);\n}\n@media all and (min-width: 400px){\n\t.List-title {\n\t\tpadding: 0px 5px 10px 15px;\n    }\n}\n.List-articleItem {\n\tmargin: 1px;\n\tpadding: 12px 12px;\n\tcursor: pointer;\n\tcolor: rgb(80,80,80);\n\tdisplay: block;\n\tborder:none;\n\tline-height: 1.4;\n\tfont-size: 16px;\n\n}\n.List-articleItem:hover, .List-indexItem:hover {\n\tcolor: black;\n\tbackground: rgb(240,240,240);\n}\n.List-articleItemDate {\n   display: inline-block;\n   background: rgb(220,220,220);\n   padding: 0 4px;\n   margin: 5px 0;\n}\n@media all and (min-width: 400px){\n\t.List-articleItemDate {\n\t   display: inline-block;\n       float: left;\n       background: none;\n       margin: 0 14px 0 0;\n    }\n}\n.List-articleItemTitle {\n\toverflow: hidden;  _overflow:visible;  zoom:1;\n    \n}\n\n/* ----------------- */\n.List-boldTitle {\n\tfont-weight: 800;\n}\n.List--index {\n\tflex: 1;\n\torder: 2;\n}\n@media screen and (min-width: 600px){\n    .List--index {\n    \theight: 100vh;\n    \toverflow: scroll;\n    }\n}\n\n\n\n.List-indexContent {\n\tmax-width: 800px;\n\n}\n.List-indexItem {\n\tmargin-bottom: 20px;\n\tpadding: 10px 12px;\n\tcursor: pointer;\n\tcolor: rgb(80,80,80);\n\tdisplay: block;\n\tborder:none;\n\tline-height: 1.4;\n\tfont-size: 16px;\n}\n.List-articleItemBrief {\n\tcolor: rgb(100,100,100);\n}\n\n/* ----------------- */\n.List-footer {\n\tmargin: 0 auto;\n\ttext-align: center;\n}\n.List-button {\n\tborder: 1px solid rgb(220,220,220);\n\tcolor: rgb(100,100,100);\n\tcursor: pointer;\n\tpadding: 8px 20px;\n\tdisplay: inline-block;\n\tborder-radius: 20px;\n\n}\n.List-button:hover {\n   border: 1px solid rgb(50,50,50);\n   color: black;\n}\n\n/* ----------------- */\n\n/* ----------------- */\n.List-filter {\n    line-height: 1.4;\n    padding: 10px;\n    border-bottom: 1px solid rgb(220,220,220);\n    //text-align: center;\n\n}\n.List-filterMeta {\n\tfont-size: 14px;\n}\n.List-filterTitle {\n\tmargin-top: 4px;\n\tfont-size: 18px;\n\tfont-weight: 800;\n}\n\n\n\n", ""]);
+	exports.push([module.id, ".List {\n\t//background: rgb(250,250,250);\n\tpadding-bottom: 90px;\n\tposition: relative;\n\n}\n.List-article {\n\tbackground: rgb(250,250,250);\n}\n\n\n/* NEXT */\n.List-nextItem {\n\tline-height: 1.4;\n\tfont-size: 14px;\n\tmargin: 10px 0 4px 0;\t\n}\n.List-nextItemTitle {\n\tbackground: rgb(200,200,200);\n\tdisplay: inline-block;\n\tpadding: 6px 14px;\n\tcolor: white;\n\tmargin: 10px 0;\t\n}\n.List-nextPost {\n\tcursor: pointer;\t\n}\n.List-nextPost:hover, .List-nextTitle:hover {\n\tcolor: #87B825;\n}\n.List-nextTitle {\n\tfont-weight: 700;\n}\n.List-nextPreview {\n\tfont-size: 16px;\n}\n.List-nextLink {\n\tdisplay: inline-block;\n\tfont-size: 16px;\n\tcolor: rgb(100,100,100);\n\tborder: none;\n\ttext-decoration: underline;\n}\n\n/* LIST */\n.List-content {\n\tpadding: 10px 5px 0px 5px;\n}\n@media screen and (min-width: 400px){\n    .List-content {\n\t\tmax-width: 600px;\n        margin: 0 auto;\n\n    }\n    .List-indexContent {\n\t\tmax-width: 600px;\n       \n    }\n}\n.List-title {\n\tpadding: 0px 12px;\n\tfont-weight: 700;\n\t//border-bottom: 1px solid rgb(120,120,120);\n}\n@media all and (min-width: 400px){\n\t.List-title {\n\t\tpadding: 0px 5px 10px 15px;\n    }\n}\n.List-articleItem {\n\tmargin: 1px;\n\tpadding: 12px 12px;\n\tcursor: pointer;\n\tcolor: rgb(80,80,80);\n\tdisplay: block;\n\tborder:none;\n\tline-height: 1.4;\n\tfont-size: 16px;\n\n}\n.List-articleItem:hover, .List-indexItem:hover {\n\tcolor: black;\n\tbackground: rgb(240,240,240);\n}\n.List-articleItemDate {\n   display: inline-block;\n   background: rgb(220,220,220);\n   padding: 0 4px;\n   margin: 5px 0;\n}\n@media all and (min-width: 400px){\n\t.List-articleItemDate {\n\t   display: inline-block;\n       float: left;\n       background: none;\n       margin: 0 14px 0 0;\n    }\n}\n.List-articleItemTitle {\n\toverflow: hidden;  _overflow:visible;  zoom:1;\n    \n}\n\n/* ----------------- */\n.List-boldTitle {\n\tfont-weight: 800;\n}\n.List--index {\n\tflex: 1;\n\torder: 2;\n}\n@media screen and (min-width: 600px){\n    .List--index {\n    \theight: 100vh;\n    \toverflow: scroll;\n    }\n}\n\n\n\n.List-indexContent {\n\tmax-width: 800px;\n\n}\n.List-indexItem {\n\tmargin-bottom: 20px;\n\tpadding: 10px 12px;\n\tcursor: pointer;\n\tcolor: rgb(80,80,80);\n\tdisplay: block;\n\tborder:none;\n\tline-height: 1.4;\n\tfont-size: 16px;\n}\n.List-articleItemBrief {\n\tcolor: rgb(100,100,100);\n}\n\n/* ----------------- */\n.List-footer {\n\tmargin: 0 auto;\n\ttext-align: center;\n}\n.List-button {\n\tborder: 1px solid rgb(220,220,220);\n\tcolor: rgb(100,100,100);\n\tcursor: pointer;\n\tpadding: 8px 20px;\n\tdisplay: inline-block;\n\tborder-radius: 20px;\n\n}\n.List-button:hover {\n   border: 1px solid rgb(50,50,50);\n   color: black;\n}\n\n/* ----------------- */\n\n/* ----------------- */\n.List-filter {\n    line-height: 1.4;\n    padding: 10px;\n    border-bottom: 1px solid rgb(220,220,220);\n    //text-align: center;\n\n}\n\n.List-filter.is-fixed {\n\tposition: fixed;\n\ttop: 0;\n\twidth: 100%;\n\tbackground: rgba(255,255,255,0.8);\n}\n.List-filterMeta {\n\tfont-size: 14px;\n}\n.List-filterTitle {\n\tmargin-top: 4px;\n\tfont-size: 18px;\n\tfont-weight: 800;\n}\n\n\n\n", ""]);
 
 /***/ },
 /* 94 */
@@ -12805,7 +12866,7 @@
 /***/ function(module, exports, __webpack_require__) {
 
 	exports = module.exports = __webpack_require__(51)();
-	exports.push([module.id, ".Columns {\n\tdisplay: inline-block;\n\toverflow:hidden;  _overflow:visible;  zoom:1;\n\t//background: #DABDA8;\n\tbackground: #FAFAFA;\n\t//min-height:100vh;\n\twidth: 100%;\n\n\tflex: 1;\n\torder: 2;\n\n}\n\n.Column {\n\tbackground: white;\n\t//border: 1px solid #DABDA8;\n\tborder: 1px solid #FAFAFA;\n\tbox-shadow: 4px 4px 0 0 rgba(0,0,0,0.12);\n\tmargin: 5px;\n\tcursor: pointer;\n\n\tdisplay: inline-block;\n\t\n\tvertical-align: top;\n\tpadding: 8px;\n\tline-height: 1.6;\n\n\t\n\toverflow: hidden;\n\n\t\n}\n@media screen and (min-width: 600px){\n    .Columns {\n    \tflex: 2;\n    \t\n    \theight: 100vh;\n    \toverflow: scroll;\n    \tpadding: 0 10px;\n    }\n    .Column {\n    \twidth: 250px;\n    \tmargin: 10px 5px;\n    \theight: 200px;\n    }\n}\n.Column:hover {\n\tbox-shadow: 4px 4px 0 0 rgba(0,0,0,0.24);\n}\n.Column-name {\n   font-size: 20px;\n   font-weight: 800;\n   color: rgb(50,50,50);\n}\n.Column:hover .Column-name {\n\t//color: #87B825;\n\tcolor: black;\n}", ""]);
+	exports.push([module.id, ".Columns {\n\tdisplay: inline-block;\n\toverflow:hidden;  _overflow:visible;  zoom:1;\n\t//background: #DABDA8;\n\tbackground: #FAFAFA;\n\t//min-height:100vh;\n\twidth: 100%;\n\n\tflex: 1;\n\torder: 2;\n\n}\n\n.Column {\n\tbackground: white;\n\t//border: 1px solid #DABDA8;\n\tborder: 1px solid #FAFAFA;\n\tbox-shadow: 4px 4px 0 0 rgba(0,0,0,0.12);\n\tmargin: 5px;\n\tcursor: pointer;\n\n\tdisplay: inline-block;\n\t\n\tvertical-align: top;\n\tpadding: 8px 8px 8px 16px;\n\tline-height: 1.6;\n\n\t\n\toverflow: hidden;\n\n\t\n}\n@media screen and (min-width: 600px){\n    .Columns {\n    \tflex: 2;\n    \t\n    \theight: 100vh;\n    \toverflow: scroll;\n    \tpadding: 0 10px;\n    }\n    .Column {\n    \twidth: 250px;\n    \tmargin: 10px 5px;\n    \theight: 200px;\n    }\n}\n.Column:hover {\n\tbox-shadow: 4px 4px 0 0 rgba(0,0,0,0.24);\n}\n.Column-header {\n\t\n}\n.Column-name {\n   font-size: 20px;\n   font-weight: 800;\n   color: rgb(50,50,50);\n   display: inline-block;\n\n}\n.Column-articleCount {\n\tfont-size: 12px;\n\tfont-weight: 800;\n\t//background: rgb(135,184,37);\n\t//color: white;\n\n\tbackground: rgb(230,230,230);\n\tcolor: rgb(53,55,54);\n\t\n\tdisplay: inline-block;\n\tborder-radius: 50%;\n\t\n\tpadding-top: 4px;\n\twidth: 24px;\n\theight: 24px;\n\ttext-align: center;\n\tvertical-align: top;\n\tmargin: 3px 4px 0px 4px;\n\n}\n.Column:hover .Column-name {\n\t//color: #87B825;\n\tcolor: black;\n}", ""]);
 
 /***/ },
 /* 104 */
@@ -12835,7 +12896,7 @@
 /***/ function(module, exports, __webpack_require__) {
 
 	exports = module.exports = __webpack_require__(51)();
-	exports.push([module.id, ".Tags {\n\t//background: #D36E6E;\n\tbackground: rgb(250,250,250);\n\t\n\tdisplay: inline-block;\n\tvertical-align: top;\n\tpadding-left: 10px;\n\twidth: 100%;\n\tpadding-bottom: 80px;\n\torder: 3;\n\t\n}\n@media screen and (min-width: 600px){\n\t.Tags {\n\t\tflex: 1 100%;\n    }\n\n}\n@media screen and (min-width: 1000px){\n\t.Tags {\n\t\tflex: 0 0 320px;\n    \theight: 100vh;\n    }\n\n}\n.Tags-title {\n\tborder-bottom: 1px solid rgb(220,220,220);\n\tpadding: 5px;\n\tmargin: 10px 0;\n\tcolor: rgb(120,120,120);\n}\n.Tags-Tag {\n\tpadding: 5px 10px;\n\tcursor: pointer;\n\tborder: 1px solid rgb(220,220,220);\n\tdisplay: inline-block;\n\tmargin: 4px;\n\tbackground: white;\n}\n.Tags-Tag:hover {\n\t//border: 1px solid #D36E6E;\n\tborder: 1px solid rgba(135,184,37,1);\n\t//background: #D36E6E;\n\tbackground: rgba(135,184,37,1);\n\tcolor: white;\n}", ""]);
+	exports.push([module.id, ".Tags {\n\t//background: #D36E6E;\n\tbackground: rgb(250,250,250);\n\t\n\tdisplay: inline-block;\n\tvertical-align: top;\n\tpadding-left: 10px;\n\twidth: 100%;\n\tpadding-bottom: 80px;\n\torder: 3;\n\t\n}\n@media screen and (min-width: 600px){\n\t.Tags {\n\t\tflex: 1 100%;\n    }\n\n}\n@media screen and (min-width: 1000px){\n\t.Tags {\n\t\tflex: 0 0 320px;\n    \theight: 100vh;\n    }\n\n}\n.Tags-title {\n\tborder-bottom: 1px solid rgb(220,220,220);\n\tpadding: 5px;\n\tmargin: 10px 0;\n\tcolor: rgb(120,120,120);\n}\n.Tags-Tag {\n\tpadding: 5px 10px;\n\tcursor: pointer;\n\tborder: 1px solid rgb(220,220,220);\n\tdisplay: inline-block;\n\tmargin: 4px;\n\tbackground: white;\n}\n.Tags-Tag:hover, .Tags-Tag.is-active {\n\t//border: 1px solid #D36E6E;\n\tborder: 1px solid rgba(135,184,37,1);\n\t//background: #D36E6E;\n\tbackground: rgba(135,184,37,1);\n\tcolor: white;\n}", ""]);
 
 /***/ },
 /* 106 */
@@ -18218,6 +18279,127 @@
 /***/ function(module, exports, __webpack_require__) {
 
 	module.exports = {
+		"id": 1872,
+		"name": "朱家安",
+		"username": "kris",
+		"avatar_template": "/user_avatar/community.citizenedu.tw/kris/{size}/18.png",
+		"uploaded_avatar_id": 18,
+		"created_at": "2015-03-16T07:09:39.039Z",
+		"cooked": "<h1>作者已死：評論藝術作品，需要看作者臉色嗎？</h1>\n\n<p><div class=\"lightbox-wrapper\"></div> </p>\n\n<p>試想以下狀況：</p>\n\n<p>評論家針對一本小說寫了評論，認為它隱含強烈的懷疑論思想。然而，小說作者認為該評論的詮釋嚴重扭曲了他原本的創作意圖，並為文反駁。</p>\n\n<p>在文章裡，小說家強調自己根本沒有任何懷疑論的想法，並認為該評論非常不負責任：如果想知道作品背後的創作意圖，為何不打通電話來詢問作者而卻要私自揣測呢？作者還好端端活著，只要一通電話就能得到正確答案呀！就算不打電話，也可以去看他在雜誌以及網路專欄的訪談，早就談過作品真正想表達的內容。</p>\n\n<p>評論家看了作家反駁的文章，不甘示弱也寫了另一篇文回應，在文中他表示，他通常不會去看作家高談闊論自己作品的文章，他只關注作品本身告訴他什麼；如果讀者還得請作者來「指導」他讀懂作品，這不會是文學評論的正途。</p>\n\n<h2>作者意圖與詮釋</h2>\n\n<p>前例改編自筆者身邊的真實故事，事實上這種作家與評論家（或讀者與讀者之間）的爭論相當常見，網路上的電影、小說討論區甚至文學界的研究者都常為了作品的正確詮釋而爭論不休。這種現象不禁讓我們想問：究竟任意詮釋作品是否合理？有所謂的過度詮釋嗎？若有，限制詮釋的條件是什麼？到底有沒有「唯一正確」的詮釋？這一系列問題大抵上就構成了藝術哲學中一個相當棘手的議題：詮釋（interpretation）。</p>\n\n<p>從開頭的例子，我們大概可以看出作家跟評論家兩人爭論的一個重點：</p>\n\n<blockquote><p>作者意圖（authorial intention）&lt;1&gt;與作品意義（work-meaning）之間的關係究竟是什麼？</p></blockquote>\n\n<p>在前例中，作家認為一部作品說了什麼，取決於作者要透過它說什麼；評論家則認為，作品說了什麼，應該僅取決於作品內容。簡單地說：一方認為正確的詮釋是作者說了算，另一方認為是作品說了算。</p>\n\n<h2>意圖謬誤</h2>\n\n<p>在英美分析哲學的歷史中，詮釋理論的爭論始於1946年的一篇論文〈意圖謬誤〉（The Intentional Fallacy）&lt;2&gt;。〈意圖謬誤〉由文學評論家Wimsatt與哲學家Beardsley合著，它在英美藝術哲學界掀起的論戰，迄今尚未停歇。Wimsatt和Beardsley的核心主張很簡單：</p>\n\n<blockquote><p>任何由作者意圖（前提）來推出作品意義（結論）的論證，都犯了「訴諸意圖的謬誤」（以下簡稱「意圖謬誤」）。</p></blockquote>\n\n<p>舉例來說，假設我是一位評論家，讀完了一本小說後打算寫書評，動筆之前我從電視上的作者訪談得知作者在創作這本小說時，打算透過這個故事來體現懷疑論的哲學思想。於是我在評論文章中便以此為基礎，將該本小說詮釋成表達了懷疑論的思想。對於Wimsatt還有Beardsley而言，這樣的詮釋就是意圖謬誤。根據Wimsatt和Beardsley，「訴諸作者的意圖來推出作品意義」的推理，是無效的。</p>\n\n<p>他們首先用一個兩難式來證明，作者意圖與作品詮釋無關（irrelevant）：</p>\n\n<ul>\n<li>（前提一）要嘛作者成功在作品中實現了他的創作意圖，要嘛失敗了。</li>\n<li>（前提二）如果作者成功在作品中實現了他的創作意圖，那麼我們便沒有必要訴諸作者意圖（作品本身就告訴我們作者意圖）。</li>\n<li>（前提三）如果作者沒有成功在作品中實現創作意圖，我們當然也不需要訴諸作者意圖（既然失敗，這個意圖已經跟作品無關了）。</li>\n<li>（結論）不管是哪一種狀況，訴諸作者意圖都是沒有必要的。</li>\n</ul>\n\n<p>舉剛剛的例子，如果作者藉由小說表達懷疑論的哲學思想，並且成功寫出了體現懷疑論的故事，在這種情況下，讀者沒有必要去閱讀作者的訪談或去看作者的facebook來得知該作品背後有懷疑論的思想，因為故事本身就能告訴我們這點。</p>\n\n<p>然而，如果作者的嘗試失敗了，作品無法與懷疑論產生有意義的關聯，那麼就算作者在訪談中說他試圖創作一部懷疑論的小說，我們也不需要去管這個創作意圖，因為實際上寫出來的作品已經跟這個意圖毫無關係了。也就是說，無論如何，要知道作品的意義，我們只需要看作品本身，毋須訴諸作者的意圖來進行詮釋工作，因為文本就告訴我們一切。這種詮釋立場被稱為「反意圖主義」（anti-intentionalism）。你可以猜到，和這種立場相反的，自然就被叫做「意圖主義」（intentionalism）。</p>\n\n<h1>語言慣例與作品意義</h1>\n\n<p>如果我們接受了反意圖主義的兩難論證&lt;3&gt;，不禁要繼續追問「作品自己說了算」或是「文本就告訴我們一切」到底是什麼意思&lt;4&gt;。僅依賴文本來得出作品意義，所依賴的到底是什麼？對反意圖主義而言，我們的詮釋必定依據文本呈現出的一套客觀資料。這些客觀資料其實就是作品中的文字所關涉到的語言慣例（linguistic conventions）。</p>\n\n<p>文學作品由文字組成，文字的意義來自語言慣例，這包含了字典中對字詞成語的定義以及一般大眾的語言使用習慣。若沒有這些語言慣例，大部分的言談都不可能進行，更不用說看懂文學作品了。反意圖主義者認為，語言慣例是詮釋作品時不能違背的客觀資料，詮釋者必須觀察作品所使用文字的語言慣例，透過公共的語言知識來推敲作品意義。</p>\n\n<p>有些人可能會說，透過語言慣例頂多只是知道字詞或語句的表面意思（literal meaning），而難以知道正確的弦外之音，就是因為難以確定作品的隱含意義（implicit meaning），才需要知道作者意圖來破解一些模糊的文意。但反意圖主義者對於語言慣例的理解比這種批評來得廣泛和深刻。</p>\n\n<p>對反意圖主義者來說，語言慣例包括字詞的言外之意（connotation），因為它們也是字詞意義的一部分。例如當我們說「沙漠」就會聯想到「乾渴」，不會聯想到「豐饒」；「獅子」代表「勇猛」而不會是「膽小」；而像成語都有固定指涉的意義，不可濫用。針對較大的語言單位，例如語句，其暗示（suggestion）也都有跡可尋而非任意。如果有人跟你說：「今天的考試超級難！」你就可以推知對方今天參加了考試，而且可能沒有考超高分。這些都預設了語言慣例的理解&lt;5&gt;。</p>\n\n<p>當一個作品中某個段落的意義含糊時，我們通常可以透過掌握相關的語言慣例，全盤細讀作品的上下文來排除不可能的解讀並推理出正確的作品意義。反意圖主義者認為透過這樣的方式，在大部分的狀況下我們可以得到一個唯一正確的作品詮釋&lt;6&gt;。由於主張作品意義是由語言慣例所決定，反意圖主義者又被稱為「慣例主義者」（conventionalist）。</p>\n\n<h2>為什麼反意圖？</h2>\n\n<p>Beardsley進一步提出兩個論證來說明文學評論應該要採取反意圖主義的進路&lt;7&gt;。第一個是關於作者意圖的可得性（availability）。通常讀者們難以獲取關於作者意圖的證據或資料（回想你從以前到現在看過的小說，你了解幾本小說的創作意圖？），更別提許多作者都是年代久遠的古人，想問也問不到。在這種情況下，在裁定詮釋的對錯時，最可靠的證據就是文本。如果我們最後可以從文本中找到證據否決某個解讀，那麼該解讀就是錯的。</p>\n\n<p>第二個論證是關於審美的滿足感（aesthetic satisfaction）。文學詮釋的目標應該是幫助讀者深入了解作品來獲取閱讀的滿足感。例如小說或詩詞的評論文章常常可以替我們指點迷津，讓我們發出「原來這首詩有這層意思！」或是「原來這個故事表達了這個主題！」之類的讚嘆，進而使我們的閱讀經驗更加愉快。既然我們在閱讀及解讀的對象是作品，評論瞄準的應該就是作品本身，而不是外在於作品的作者以及其意圖。</p>\n\n<p>讀到這裡也許有人會說，透過作者意圖來了解作品不也能帶來閱讀的滿足感？當我們更了解作家寫作的嘗試時，常常也能夠讓閱讀體驗更有趣。嚴格說來Beardsley並沒有反對我們在詮釋作品時「參考」作者意圖的資訊，他真正反對的是這些資訊必然地決定了作品意義。參考這些資訊，可以，但我們被這些訊息所啟發的詮釋假設是對是錯，由我們在作品身上觀察到的證據來決定。這些資訊頂多帶給我們詮釋靈感，但不能決定作品意義。如果這些資訊最後證明跟作品無關，那麼就算它能帶來滿足感，也不會是詮釋活動應該要帶來的滿足。</p>\n\n<h2>小結</h2>\n\n<p>反意圖主義的精神在於給予作品自己的生命，而不是讓作品成為作者手下的傀儡。作品就像作者的孩子，出生後就是獨立自存的個體，擁有自己的思想，不受父母控制。父母或許是孩子誕生的原因，但他們沒有辦法代替孩子說話，就如同作者不能代替作品說話。在詮釋活動中，我們該理解、傾聽的不是作者，而是作品。評論者應該把作品從作者的陰影中解放出來&lt;8&gt;。</p>\n\n<h1>Notes</h1>\n\n<ol>\n<li>如何定義「意圖」（intention）也引發了不少的爭議，但可以粗略理解成作者欲在作品中實現的計畫或設計。</li>\n<li>Wimsatt Jr, William and Beardsley, Monroe C. (1946). The Intentional Fallacy. <em>Sewanee Review</em>, 54: 468-88.</li>\n<li>關於反意圖主義的兩難論證該如何「詮釋」有很大的爭議，這個論證真正證明的是訴諸作者意圖是不必要的，但沒有證明作者意圖不能決定作品意義，因為它仍承認了那些成功在作品中實現的意圖。Wimsatt與Beardsley要說的是語言慣例就能充分地（sufficiently）決定作品意義，因此考慮作者意圖是多餘的。但後來Beardsley的立場卻似乎否認作者意圖與作品意義有任何相關性。由於Beardsley是反意圖主義最重要的人物，如上理解也成為一般對意圖謬誤的標準詮釋。針對此點爭議可參閱Lyas, C. (1992). Wittgensteinian Intentions. In G. Iseminger (ed.), <em>Intention &amp; Interpretation</em>. Philadelphia: Temple University Press, 132-151.</li>\n<li>「文本」（text）、「作品」（work）二詞在反意圖主義的脈絡中沒有太深刻的區分，常常混用，這是因為Beardsley將作品等同於文本。但後來的哲學家將二詞做出了嚴格區分。此處不細論。</li>\n<li>Beardsley, M. C. (1981). <em>Aesthetics, Problems in the Philosophy of Criticism</em>. Hackett Publishing.</li>\n<li>若不能，表示文本本身就是模糊的，但反意圖主義者認為這種狀況不多。</li>\n<li>Beardsley, M. C. (1970). <em>The Possibility of Criticism</em>. Detroit: Wayne State University Press.</li>\n<li>本文只是介紹哲學立場，不代表作者立場。</li>\n</ol>",
+		"post_number": 18,
+		"post_type": 1,
+		"updated_at": "2015-03-19T08:18:36.036Z",
+		"reply_count": 0,
+		"reply_to_post_number": null,
+		"quote_count": 0,
+		"avg_time": 24,
+		"incoming_link_count": 1,
+		"reads": 14,
+		"score": 23.8,
+		"yours": false,
+		"topic_id": 767,
+		"topic_slug": "topic",
+		"topic_auto_close_at": null,
+		"display_username": "朱家安",
+		"primary_group_name": null,
+		"version": 4,
+		"can_edit": true,
+		"can_delete": true,
+		"can_recover": true,
+		"link_counts": [
+			{
+				"url": "https://www.facebook.com/citizenedu",
+				"internal": false,
+				"reflection": false,
+				"title": "沃草公民學院 - Watchout Citizenedu | Facebook",
+				"clicks": 1
+			},
+			{
+				"url": "https://www.facebook.com/pages/%E6%9E%97%E6%96%AF%E8%AB%BA-Lin-Sihyan/147719061920901",
+				"internal": false,
+				"reflection": false,
+				"title": "林斯諺　Lin Sihyan | Facebook",
+				"clicks": 1
+			},
+			{
+				"url": "http://community.citizenedu.tw/",
+				"internal": true,
+				"reflection": false,
+				"clicks": 0
+			}
+		],
+		"read": true,
+		"user_title": null,
+		"actions_summary": [
+			{
+				"id": 2,
+				"count": 1,
+				"hidden": false,
+				"can_act": true,
+				"can_defer_flags": false
+			},
+			{
+				"id": 3,
+				"count": 0,
+				"hidden": false,
+				"can_act": true,
+				"can_defer_flags": false
+			},
+			{
+				"id": 4,
+				"count": 0,
+				"hidden": false,
+				"can_act": true,
+				"can_defer_flags": false
+			},
+			{
+				"id": 5,
+				"count": 0,
+				"hidden": true,
+				"can_act": true,
+				"can_defer_flags": false
+			},
+			{
+				"id": 6,
+				"count": 0,
+				"hidden": false,
+				"can_act": true,
+				"can_defer_flags": false
+			},
+			{
+				"id": 7,
+				"count": 0,
+				"hidden": false,
+				"can_act": true,
+				"can_defer_flags": false
+			},
+			{
+				"id": 8,
+				"count": 0,
+				"hidden": false,
+				"can_act": true,
+				"can_defer_flags": false
+			}
+		],
+		"moderator": true,
+		"admin": true,
+		"staff": true,
+		"user_id": 4,
+		"hidden": false,
+		"hidden_reason_id": null,
+		"trust_level": 4,
+		"deleted_at": null,
+		"user_deleted": false,
+		"edit_reason": "",
+		"can_view_edit_history": true,
+		"wiki": false
+	}
+
+/***/ },
+/* 136 */
+/***/ function(module, exports, __webpack_require__) {
+
+	module.exports = {
 		"user_badges": [
 			{
 				"id": 4,
@@ -18448,7 +18630,7 @@
 	}
 
 /***/ },
-/* 136 */
+/* 137 */
 /***/ function(module, exports, __webpack_require__) {
 
 	module.exports = [
@@ -18490,169 +18672,58 @@
 	]
 
 /***/ },
-/* 137 */
-/***/ function(module, exports, __webpack_require__) {
-
-	module.exports = {
-		"id": 1872,
-		"name": "朱家安",
-		"username": "kris",
-		"avatar_template": "/user_avatar/community.citizenedu.tw/kris/{size}/18.png",
-		"uploaded_avatar_id": 18,
-		"created_at": "2015-03-16T07:09:39.039Z",
-		"cooked": "<h1>作者已死：評論藝術作品，需要看作者臉色嗎？</h1>\n\n<p><div class=\"lightbox-wrapper\"></div> </p>\n\n<p>試想以下狀況：</p>\n\n<p>評論家針對一本小說寫了評論，認為它隱含強烈的懷疑論思想。然而，小說作者認為該評論的詮釋嚴重扭曲了他原本的創作意圖，並為文反駁。</p>\n\n<p>在文章裡，小說家強調自己根本沒有任何懷疑論的想法，並認為該評論非常不負責任：如果想知道作品背後的創作意圖，為何不打通電話來詢問作者而卻要私自揣測呢？作者還好端端活著，只要一通電話就能得到正確答案呀！就算不打電話，也可以去看他在雜誌以及網路專欄的訪談，早就談過作品真正想表達的內容。</p>\n\n<p>評論家看了作家反駁的文章，不甘示弱也寫了另一篇文回應，在文中他表示，他通常不會去看作家高談闊論自己作品的文章，他只關注作品本身告訴他什麼；如果讀者還得請作者來「指導」他讀懂作品，這不會是文學評論的正途。</p>\n\n<h2>作者意圖與詮釋</h2>\n\n<p>前例改編自筆者身邊的真實故事，事實上這種作家與評論家（或讀者與讀者之間）的爭論相當常見，網路上的電影、小說討論區甚至文學界的研究者都常為了作品的正確詮釋而爭論不休。這種現象不禁讓我們想問：究竟任意詮釋作品是否合理？有所謂的過度詮釋嗎？若有，限制詮釋的條件是什麼？到底有沒有「唯一正確」的詮釋？這一系列問題大抵上就構成了藝術哲學中一個相當棘手的議題：詮釋（interpretation）。</p>\n\n<p>從開頭的例子，我們大概可以看出作家跟評論家兩人爭論的一個重點：</p>\n\n<blockquote><p>作者意圖（authorial intention）&lt;1&gt;與作品意義（work-meaning）之間的關係究竟是什麼？</p></blockquote>\n\n<p>在前例中，作家認為一部作品說了什麼，取決於作者要透過它說什麼；評論家則認為，作品說了什麼，應該僅取決於作品內容。簡單地說：一方認為正確的詮釋是作者說了算，另一方認為是作品說了算。</p>\n\n<h2>意圖謬誤</h2>\n\n<p>在英美分析哲學的歷史中，詮釋理論的爭論始於1946年的一篇論文〈意圖謬誤〉（The Intentional Fallacy）&lt;2&gt;。〈意圖謬誤〉由文學評論家Wimsatt與哲學家Beardsley合著，它在英美藝術哲學界掀起的論戰，迄今尚未停歇。Wimsatt和Beardsley的核心主張很簡單：</p>\n\n<blockquote><p>任何由作者意圖（前提）來推出作品意義（結論）的論證，都犯了「訴諸意圖的謬誤」（以下簡稱「意圖謬誤」）。</p></blockquote>\n\n<p>舉例來說，假設我是一位評論家，讀完了一本小說後打算寫書評，動筆之前我從電視上的作者訪談得知作者在創作這本小說時，打算透過這個故事來體現懷疑論的哲學思想。於是我在評論文章中便以此為基礎，將該本小說詮釋成表達了懷疑論的思想。對於Wimsatt還有Beardsley而言，這樣的詮釋就是意圖謬誤。根據Wimsatt和Beardsley，「訴諸作者的意圖來推出作品意義」的推理，是無效的。</p>\n\n<p>他們首先用一個兩難式來證明，作者意圖與作品詮釋無關（irrelevant）：</p>\n\n<ul>\n<li>（前提一）要嘛作者成功在作品中實現了他的創作意圖，要嘛失敗了。</li>\n<li>（前提二）如果作者成功在作品中實現了他的創作意圖，那麼我們便沒有必要訴諸作者意圖（作品本身就告訴我們作者意圖）。</li>\n<li>（前提三）如果作者沒有成功在作品中實現創作意圖，我們當然也不需要訴諸作者意圖（既然失敗，這個意圖已經跟作品無關了）。</li>\n<li>（結論）不管是哪一種狀況，訴諸作者意圖都是沒有必要的。</li>\n</ul>\n\n<p>舉剛剛的例子，如果作者藉由小說表達懷疑論的哲學思想，並且成功寫出了體現懷疑論的故事，在這種情況下，讀者沒有必要去閱讀作者的訪談或去看作者的facebook來得知該作品背後有懷疑論的思想，因為故事本身就能告訴我們這點。</p>\n\n<p>然而，如果作者的嘗試失敗了，作品無法與懷疑論產生有意義的關聯，那麼就算作者在訪談中說他試圖創作一部懷疑論的小說，我們也不需要去管這個創作意圖，因為實際上寫出來的作品已經跟這個意圖毫無關係了。也就是說，無論如何，要知道作品的意義，我們只需要看作品本身，毋須訴諸作者的意圖來進行詮釋工作，因為文本就告訴我們一切。這種詮釋立場被稱為「反意圖主義」（anti-intentionalism）。你可以猜到，和這種立場相反的，自然就被叫做「意圖主義」（intentionalism）。</p>\n\n<h1>語言慣例與作品意義</h1>\n\n<p>如果我們接受了反意圖主義的兩難論證&lt;3&gt;，不禁要繼續追問「作品自己說了算」或是「文本就告訴我們一切」到底是什麼意思&lt;4&gt;。僅依賴文本來得出作品意義，所依賴的到底是什麼？對反意圖主義而言，我們的詮釋必定依據文本呈現出的一套客觀資料。這些客觀資料其實就是作品中的文字所關涉到的語言慣例（linguistic conventions）。</p>\n\n<p>文學作品由文字組成，文字的意義來自語言慣例，這包含了字典中對字詞成語的定義以及一般大眾的語言使用習慣。若沒有這些語言慣例，大部分的言談都不可能進行，更不用說看懂文學作品了。反意圖主義者認為，語言慣例是詮釋作品時不能違背的客觀資料，詮釋者必須觀察作品所使用文字的語言慣例，透過公共的語言知識來推敲作品意義。</p>\n\n<p>有些人可能會說，透過語言慣例頂多只是知道字詞或語句的表面意思（literal meaning），而難以知道正確的弦外之音，就是因為難以確定作品的隱含意義（implicit meaning），才需要知道作者意圖來破解一些模糊的文意。但反意圖主義者對於語言慣例的理解比這種批評來得廣泛和深刻。</p>\n\n<p>對反意圖主義者來說，語言慣例包括字詞的言外之意（connotation），因為它們也是字詞意義的一部分。例如當我們說「沙漠」就會聯想到「乾渴」，不會聯想到「豐饒」；「獅子」代表「勇猛」而不會是「膽小」；而像成語都有固定指涉的意義，不可濫用。針對較大的語言單位，例如語句，其暗示（suggestion）也都有跡可尋而非任意。如果有人跟你說：「今天的考試超級難！」你就可以推知對方今天參加了考試，而且可能沒有考超高分。這些都預設了語言慣例的理解&lt;5&gt;。</p>\n\n<p>當一個作品中某個段落的意義含糊時，我們通常可以透過掌握相關的語言慣例，全盤細讀作品的上下文來排除不可能的解讀並推理出正確的作品意義。反意圖主義者認為透過這樣的方式，在大部分的狀況下我們可以得到一個唯一正確的作品詮釋&lt;6&gt;。由於主張作品意義是由語言慣例所決定，反意圖主義者又被稱為「慣例主義者」（conventionalist）。</p>\n\n<h2>為什麼反意圖？</h2>\n\n<p>Beardsley進一步提出兩個論證來說明文學評論應該要採取反意圖主義的進路&lt;7&gt;。第一個是關於作者意圖的可得性（availability）。通常讀者們難以獲取關於作者意圖的證據或資料（回想你從以前到現在看過的小說，你了解幾本小說的創作意圖？），更別提許多作者都是年代久遠的古人，想問也問不到。在這種情況下，在裁定詮釋的對錯時，最可靠的證據就是文本。如果我們最後可以從文本中找到證據否決某個解讀，那麼該解讀就是錯的。</p>\n\n<p>第二個論證是關於審美的滿足感（aesthetic satisfaction）。文學詮釋的目標應該是幫助讀者深入了解作品來獲取閱讀的滿足感。例如小說或詩詞的評論文章常常可以替我們指點迷津，讓我們發出「原來這首詩有這層意思！」或是「原來這個故事表達了這個主題！」之類的讚嘆，進而使我們的閱讀經驗更加愉快。既然我們在閱讀及解讀的對象是作品，評論瞄準的應該就是作品本身，而不是外在於作品的作者以及其意圖。</p>\n\n<p>讀到這裡也許有人會說，透過作者意圖來了解作品不也能帶來閱讀的滿足感？當我們更了解作家寫作的嘗試時，常常也能夠讓閱讀體驗更有趣。嚴格說來Beardsley並沒有反對我們在詮釋作品時「參考」作者意圖的資訊，他真正反對的是這些資訊必然地決定了作品意義。參考這些資訊，可以，但我們被這些訊息所啟發的詮釋假設是對是錯，由我們在作品身上觀察到的證據來決定。這些資訊頂多帶給我們詮釋靈感，但不能決定作品意義。如果這些資訊最後證明跟作品無關，那麼就算它能帶來滿足感，也不會是詮釋活動應該要帶來的滿足。</p>\n\n<h2>小結</h2>\n\n<p>反意圖主義的精神在於給予作品自己的生命，而不是讓作品成為作者手下的傀儡。作品就像作者的孩子，出生後就是獨立自存的個體，擁有自己的思想，不受父母控制。父母或許是孩子誕生的原因，但他們沒有辦法代替孩子說話，就如同作者不能代替作品說話。在詮釋活動中，我們該理解、傾聽的不是作者，而是作品。評論者應該把作品從作者的陰影中解放出來&lt;8&gt;。</p>\n\n<h1>Notes</h1>\n\n<ol>\n<li>如何定義「意圖」（intention）也引發了不少的爭議，但可以粗略理解成作者欲在作品中實現的計畫或設計。</li>\n<li>Wimsatt Jr, William and Beardsley, Monroe C. (1946). The Intentional Fallacy. <em>Sewanee Review</em>, 54: 468-88.</li>\n<li>關於反意圖主義的兩難論證該如何「詮釋」有很大的爭議，這個論證真正證明的是訴諸作者意圖是不必要的，但沒有證明作者意圖不能決定作品意義，因為它仍承認了那些成功在作品中實現的意圖。Wimsatt與Beardsley要說的是語言慣例就能充分地（sufficiently）決定作品意義，因此考慮作者意圖是多餘的。但後來Beardsley的立場卻似乎否認作者意圖與作品意義有任何相關性。由於Beardsley是反意圖主義最重要的人物，如上理解也成為一般對意圖謬誤的標準詮釋。針對此點爭議可參閱Lyas, C. (1992). Wittgensteinian Intentions. In G. Iseminger (ed.), <em>Intention &amp; Interpretation</em>. Philadelphia: Temple University Press, 132-151.</li>\n<li>「文本」（text）、「作品」（work）二詞在反意圖主義的脈絡中沒有太深刻的區分，常常混用，這是因為Beardsley將作品等同於文本。但後來的哲學家將二詞做出了嚴格區分。此處不細論。</li>\n<li>Beardsley, M. C. (1981). <em>Aesthetics, Problems in the Philosophy of Criticism</em>. Hackett Publishing.</li>\n<li>若不能，表示文本本身就是模糊的，但反意圖主義者認為這種狀況不多。</li>\n<li>Beardsley, M. C. (1970). <em>The Possibility of Criticism</em>. Detroit: Wayne State University Press.</li>\n<li>本文只是介紹哲學立場，不代表作者立場。</li>\n</ol>",
-		"post_number": 18,
-		"post_type": 1,
-		"updated_at": "2015-03-19T08:18:36.036Z",
-		"reply_count": 0,
-		"reply_to_post_number": null,
-		"quote_count": 0,
-		"avg_time": 24,
-		"incoming_link_count": 1,
-		"reads": 14,
-		"score": 23.8,
-		"yours": false,
-		"topic_id": 767,
-		"topic_slug": "topic",
-		"topic_auto_close_at": null,
-		"display_username": "朱家安",
-		"primary_group_name": null,
-		"version": 4,
-		"can_edit": true,
-		"can_delete": true,
-		"can_recover": true,
-		"link_counts": [
-			{
-				"url": "https://www.facebook.com/citizenedu",
-				"internal": false,
-				"reflection": false,
-				"title": "沃草公民學院 - Watchout Citizenedu | Facebook",
-				"clicks": 1
-			},
-			{
-				"url": "https://www.facebook.com/pages/%E6%9E%97%E6%96%AF%E8%AB%BA-Lin-Sihyan/147719061920901",
-				"internal": false,
-				"reflection": false,
-				"title": "林斯諺　Lin Sihyan | Facebook",
-				"clicks": 1
-			},
-			{
-				"url": "http://community.citizenedu.tw/",
-				"internal": true,
-				"reflection": false,
-				"clicks": 0
-			}
-		],
-		"read": true,
-		"user_title": null,
-		"actions_summary": [
-			{
-				"id": 2,
-				"count": 1,
-				"hidden": false,
-				"can_act": true,
-				"can_defer_flags": false
-			},
-			{
-				"id": 3,
-				"count": 0,
-				"hidden": false,
-				"can_act": true,
-				"can_defer_flags": false
-			},
-			{
-				"id": 4,
-				"count": 0,
-				"hidden": false,
-				"can_act": true,
-				"can_defer_flags": false
-			},
-			{
-				"id": 5,
-				"count": 0,
-				"hidden": true,
-				"can_act": true,
-				"can_defer_flags": false
-			},
-			{
-				"id": 6,
-				"count": 0,
-				"hidden": false,
-				"can_act": true,
-				"can_defer_flags": false
-			},
-			{
-				"id": 7,
-				"count": 0,
-				"hidden": false,
-				"can_act": true,
-				"can_defer_flags": false
-			},
-			{
-				"id": 8,
-				"count": 0,
-				"hidden": false,
-				"can_act": true,
-				"can_defer_flags": false
-			}
-		],
-		"moderator": true,
-		"admin": true,
-		"staff": true,
-		"user_id": 4,
-		"hidden": false,
-		"hidden_reason_id": null,
-		"trust_level": 4,
-		"deleted_at": null,
-		"user_deleted": false,
-		"edit_reason": "",
-		"can_view_edit_history": true,
-		"wiki": false
-	}
-
-/***/ },
 /* 138 */
 /***/ function(module, exports, __webpack_require__) {
 
 	module.exports = [
 		{
 			"name": "沃草烙哲學",
+			"articleCount": 10,
 			"intro": "「沃草烙哲學」希望透過互助合作，推廣人文普及寫作，豐富中文世界裡的思辨素材，鼓勵關於普及寫作技術和題材的網路討論。以開放、自由的社群經營來完成上述目標。"
 		},
 		{
 			"name": "菜市場政治學",
+			"articleCount": 4,
 			"intro": "我們是一群政治學的研究者/實踐者。我們想讓大家知道，「政治思辨」不是遙不可及的，容易了解的政治哲學文章，你我在菜市場搬個板凳就可以開聊。"
 		},
 		{
 			"name": "芭樂人類學",
+			"articleCount": 39,
 			"intro": "芭樂人類學創始於2009年11月，以台灣青壯人類學家為主的共筆部落格 ，五十多位輪值寫手多任教於大學及學術機構，從人類學觀點探索日常生活、文化況味、社會張力、與世界百態。"
 		},
 		{
 			"name": "巷子口社會學",
+			"articleCount": 8,
 			"intro": "街頭巷尾，是一般人最常出入的地方，也構築了基本的社區。在這裡，我們看看台灣的日常生活社會如何運行。"
 		},
 		{
 			"name": "歷史學柑仔店",
+			"articleCount": 76,
 			"intro": "我們是一群嘗試從臺灣思考歷史的書寫的史學界夥伴。我們成立了一個「歷史學柑仔店（kám-á-tiàm）」部落格。"
 		},
 		{
 			"name": "沃草烙哲學",
+			"articleCount": 8,
 			"intro": "「沃草烙哲學」希望透過互助合作，推廣人文普及寫作，豐富中文世界裡的思辨素材，鼓勵關於普及寫作技術和題材的網路討論。以開放、自由的社群經營來完成上述目標。"
 		},
 		{
 			"name": "菜市場政治學",
+			"articleCount": 26,
 			"intro": "我們是一群政治學的研究者/實踐者。我們想讓大家知道，「政治思辨」不是遙不可及的，容易了解的政治哲學文章，你我在菜市場搬個板凳就可以開聊。"
 		},
 		{
 			"name": "芭樂人類學",
+			"articleCount": 38,
 			"intro": "芭樂人類學創始於2009年11月，以台灣青壯人類學家為主的共筆部落格 ，五十多位輪值寫手多任教於大學及學術機構，從人類學觀點探索日常生活、文化況味、社會張力、與世界百態。"
 		},
 		{
 			"name": "巷子口社會學",
+			"articleCount": 32,
 			"intro": "街頭巷尾，是一般人最常出入的地方，也構築了基本的社區。在這裡，我們看看台灣的日常生活社會如何運行。"
 		},
 		{
 			"name": "歷史學柑仔店",
+			"articleCount": 54,
 			"intro": "我們是一群嘗試從臺灣思考歷史的書寫的史學界夥伴。我們成立了一個「歷史學柑仔店（kám-á-tiàm）」部落格。"
 		}
 	]
@@ -31348,7 +31419,7 @@
 	var EventConstants = __webpack_require__(73);
 	var EventPropagators = __webpack_require__(221);
 	var ExecutionEnvironment = __webpack_require__(120);
-	var SyntheticInputEvent = __webpack_require__(224);
+	var SyntheticInputEvent = __webpack_require__(222);
 
 	var keyOf = __webpack_require__(167);
 
@@ -31575,10 +31646,10 @@
 	var EventPropagators = __webpack_require__(221);
 	var ExecutionEnvironment = __webpack_require__(120);
 	var ReactUpdates = __webpack_require__(162);
-	var SyntheticEvent = __webpack_require__(222);
+	var SyntheticEvent = __webpack_require__(223);
 
 	var isEventSupported = __webpack_require__(79);
-	var isTextInputElement = __webpack_require__(223);
+	var isTextInputElement = __webpack_require__(224);
 	var keyOf = __webpack_require__(167);
 
 	var topLevelTypes = EventConstants.topLevelTypes;
@@ -33875,10 +33946,10 @@
 	var EventConstants = __webpack_require__(73);
 	var EventPropagators = __webpack_require__(221);
 	var ReactInputSelection = __webpack_require__(225);
-	var SyntheticEvent = __webpack_require__(222);
+	var SyntheticEvent = __webpack_require__(223);
 
 	var getActiveElement = __webpack_require__(237);
-	var isTextInputElement = __webpack_require__(223);
+	var isTextInputElement = __webpack_require__(224);
 	var keyOf = __webpack_require__(167);
 	var shallowEqual = __webpack_require__(238);
 
@@ -34110,7 +34181,7 @@
 	var EventPluginUtils = __webpack_require__(107);
 	var EventPropagators = __webpack_require__(221);
 	var SyntheticClipboardEvent = __webpack_require__(239);
-	var SyntheticEvent = __webpack_require__(222);
+	var SyntheticEvent = __webpack_require__(223);
 	var SyntheticFocusEvent = __webpack_require__(240);
 	var SyntheticKeyboardEvent = __webpack_require__(241);
 	var SyntheticMouseEvent = __webpack_require__(228);
@@ -36041,7 +36112,7 @@
 	var ReactMount = __webpack_require__(15);
 	var ReactTextComponent = __webpack_require__(118);
 	var ReactUpdates = __webpack_require__(162);
-	var SyntheticEvent = __webpack_require__(222);
+	var SyntheticEvent = __webpack_require__(223);
 
 	var assign = __webpack_require__(78);
 
@@ -37318,6 +37389,57 @@
 /***/ function(module, exports, __webpack_require__) {
 
 	/**
+	 * Copyright 2013 Facebook, Inc.
+	 * All rights reserved.
+	 *
+	 * This source code is licensed under the BSD-style license found in the
+	 * LICENSE file in the root directory of this source tree. An additional grant
+	 * of patent rights can be found in the PATENTS file in the same directory.
+	 *
+	 * @providesModule SyntheticInputEvent
+	 * @typechecks static-only
+	 */
+
+	"use strict";
+
+	var SyntheticEvent = __webpack_require__(223);
+
+	/**
+	 * @interface Event
+	 * @see http://www.w3.org/TR/2013/WD-DOM-Level-3-Events-20131105
+	 *      /#events-inputevents
+	 */
+	var InputEventInterface = {
+	  data: null
+	};
+
+	/**
+	 * @param {object} dispatchConfig Configuration used to dispatch this event.
+	 * @param {string} dispatchMarker Marker identifying the event target.
+	 * @param {object} nativeEvent Native browser event.
+	 * @extends {SyntheticUIEvent}
+	 */
+	function SyntheticInputEvent(
+	  dispatchConfig,
+	  dispatchMarker,
+	  nativeEvent) {
+	  SyntheticEvent.call(this, dispatchConfig, dispatchMarker, nativeEvent);
+	}
+
+	SyntheticEvent.augmentClass(
+	  SyntheticInputEvent,
+	  InputEventInterface
+	);
+
+	module.exports = SyntheticInputEvent;
+
+
+
+/***/ },
+/* 223 */
+/***/ function(module, exports, __webpack_require__) {
+
+	/**
 	 * Copyright 2013-2014, Facebook, Inc.
 	 * All rights reserved.
 	 *
@@ -37476,7 +37598,7 @@
 
 
 /***/ },
-/* 223 */
+/* 224 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/**
@@ -37521,57 +37643,6 @@
 	}
 
 	module.exports = isTextInputElement;
-
-
-/***/ },
-/* 224 */
-/***/ function(module, exports, __webpack_require__) {
-
-	/**
-	 * Copyright 2013 Facebook, Inc.
-	 * All rights reserved.
-	 *
-	 * This source code is licensed under the BSD-style license found in the
-	 * LICENSE file in the root directory of this source tree. An additional grant
-	 * of patent rights can be found in the PATENTS file in the same directory.
-	 *
-	 * @providesModule SyntheticInputEvent
-	 * @typechecks static-only
-	 */
-
-	"use strict";
-
-	var SyntheticEvent = __webpack_require__(222);
-
-	/**
-	 * @interface Event
-	 * @see http://www.w3.org/TR/2013/WD-DOM-Level-3-Events-20131105
-	 *      /#events-inputevents
-	 */
-	var InputEventInterface = {
-	  data: null
-	};
-
-	/**
-	 * @param {object} dispatchConfig Configuration used to dispatch this event.
-	 * @param {string} dispatchMarker Marker identifying the event target.
-	 * @param {object} nativeEvent Native browser event.
-	 * @extends {SyntheticUIEvent}
-	 */
-	function SyntheticInputEvent(
-	  dispatchConfig,
-	  dispatchMarker,
-	  nativeEvent) {
-	  SyntheticEvent.call(this, dispatchConfig, dispatchMarker, nativeEvent);
-	}
-
-	SyntheticEvent.augmentClass(
-	  SyntheticInputEvent,
-	  InputEventInterface
-	);
-
-	module.exports = SyntheticInputEvent;
-
 
 
 /***/ },
@@ -37732,7 +37803,7 @@
 
 	"use strict";
 
-	var SyntheticEvent = __webpack_require__(222);
+	var SyntheticEvent = __webpack_require__(223);
 
 	/**
 	 * @interface Event
@@ -38813,7 +38884,7 @@
 
 	"use strict";
 
-	var SyntheticEvent = __webpack_require__(222);
+	var SyntheticEvent = __webpack_require__(223);
 
 	/**
 	 * @interface Event
@@ -39092,7 +39163,7 @@
 
 	"use strict";
 
-	var SyntheticEvent = __webpack_require__(222);
+	var SyntheticEvent = __webpack_require__(223);
 
 	var getEventTarget = __webpack_require__(236);
 
