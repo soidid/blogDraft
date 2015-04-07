@@ -9,16 +9,32 @@
         margin: 0 auto;
     }
 }
+.Comments-header {
+   margin: 30px 0px 0px 0px;
+   border-bottom: 1px solid rgb(120,120,120);
+   padding-left: 10px;
+   padding-bottom: 10px;
+}
 .Comments-title {
 	/*padding: 4px 10px;
     border-left: 5px solid;*/
-    margin: 30px 0px 0px 0px;
     font-size: 40px;
     font-weight: 800;
-    border-bottom: 1px solid rgb(120,120,120);
-    padding-left: 10px;
-    padding-bottom: 10px;
+    display: inline-block;
+}
+a.Comments-goSeeAll, a.Comments-goSeeAll:visited {
+	font-size: 14px;
+	display: inline-block;
+	margin: 0 10px;
+    cursor: pointer;
+    border: none;
+    padding-bottom: 2px;
+    color: rgb(50,50,50);
+    line-height: 1;
 
+}
+a.Comments-goSeeAll:hover {
+	border-bottom: 1px solid rgb(100,100,100);
 }
 .Comments-noPost {
 	padding: 10px;
@@ -37,7 +53,6 @@
 	//background: white;
 	//box-shadow: 2px 2px 3px rgba(0,0,0,.12);
 
-
 }
 .Comments-post:hover {
 	//box-shadow: 2px 2px 4px rgba(0,0,0,.24);
@@ -51,20 +66,17 @@
 	margin: 0px;
 	border: none;
 }
-
 .Comments-main {
-	max-height: 250px;
 	overflow:hidden;  _overflow:visible;  zoom:1; 
-	padding: 10px 10px 0px 10px;
+	padding: 10px 10px 10px 10px;
 }
 @media all and (min-width: 400px){
 	.Comments-main {
 	   //padding: 10px 30px 0px 30px;
     }
 }
-.Comments-main.is-expanded {
-	height: auto;
-	padding-bottom: 10px;
+.Comments-main.is-folded {
+	max-height: 190px;
 }
 .Comments-expandButton {
 	padding: 10px 20px 10px 12px;
@@ -194,6 +206,16 @@ aside blockquote {
     margin: 0px;
     padding: 0px;
 }
+/*
+blockquote {
+   //border: 1px solid rgb(220,220,220);
+   //border-left: 10px solid rgba(0,0,0,0.12);
+   padding: 0px 10px;
+   //font-style: italic;
+   font-weight: 700;
+   font-size: 16px;
+   color: rgb(70,70,70);
+}*/
 aside blockquote > * {
 	color: rgb(100,100,100);	
 }
@@ -219,6 +241,21 @@ aside blockquote:before {
     top: 14px;
     left: -14px;
     color: #87B825;
+}
+.Comments-post.is-folded {
+	position: relative;
+}
+.Comments-post.is-folded blockquote {
+   max-height: 35px;
+   overflow-y: hidden;
+   display: inline-block;
+}
+.Comments-post.is-folded blockquote:after {
+  content: '...';
+  position: absolute;
+  top: 25px;
+  right: 30px;
+  color: rgb(100,100,100);
 }
 /*aside blockquote:after {
 	content: close-quote;

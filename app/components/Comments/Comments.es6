@@ -113,11 +113,12 @@ export default React.createClass({
           var classSet = React.addons.classSet;
           var commentClasses = classSet({
               "Comments-post": true,
-              "is-hide": key > this.state.max
+              "is-hide": key > this.state.max,
+              "is-folded" : !expandedCommentId[item.id]
           });
           var mainClasses = classSet({
               "Comments-main": true,
-              "is-expanded": expandedCommentId[item.id]
+              "is-folded": !expandedCommentId[item.id]
           });
 
           var bouncClick = this._onReadMore.bind(null, item);
@@ -132,6 +133,8 @@ export default React.createClass({
            * ===================================== */
 
           var regex = /(<([^>]+)>)/ig;
+
+
           var commentContentItem = (true) ?    
           //var commentContentItem = (expandedCommentId[item.id]) ? 
           <div dangerouslySetInnerHTML={{__html: item.cooked}}></div>
@@ -157,16 +160,7 @@ export default React.createClass({
           )
       });
 
-      /* ================================ 
-       *   Tabs
-       * ================================ */
-      var tabs = [{id:'editorsPick', title: '編輯嚴選留言'},
-                  {id:'all', title: '全部'}];
-
-      <Tabs activeId={this.state.focusTab} 
-            data={tabs}
-            onClick={this._onToggle}/> 
-     
+      
       /* ================================ 
        *   Show More Button
        * ================================ */
@@ -192,7 +186,13 @@ export default React.createClass({
     return (
       <div className="Comments">
          <div className="Comments-content">
-            <div className="Comments-title">討論</div>
+            <div className="Comments-header">
+              <div className="Comments-title">編輯嚴選留言</div>
+              <a className="Comments-goSeeAll"
+                 href="//google.com.tw"
+                 target="_blank">看全部留言</a>
+            </div>
+
             {content}
             {showMoreButtonItem}
          </div>
