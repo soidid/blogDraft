@@ -124,12 +124,12 @@ export default React.createClass({
 
           var authorBio = (this.state.showFullBio) ? 
           <div dangerouslySetInnerHTML={{__html: Author.user.bio_raw}} /> :
-          <p>我相信，當我們以淺白、易懂、清晰的探討方式進入哲學，避免那些晦澀、神秘、模糊的用詞，哲學思維內含的邏輯和批判能力才能發揮最大效用，協助我們解析論述和議題，察覺錯謬和悖論，在複雜的情境中做出正確的抉擇。</p>;
+          <p>我相信，當我們以<a href="//google.com.tw/search?q=淺白">淺白</a>、易懂、清晰的探討方式進入哲學，避免那些晦澀、神秘、模糊的用詞，哲學思維內含的邏輯和批判能力才能發揮最大效用，協助我們解析論述和議題，察覺錯謬和悖論，在複雜的情境中做出正確的抉擇。</p>;
           
-          var authorBioBUtton = (this.state.showFullBio) ?
-          "":
-          <div className="Author-showFullBio"
-               onClick={this._onShowFullBio}>看完整介紹</div>;
+          // var authorBioBUtton = (this.state.showFullBio) ?
+          // "":
+          // <div className="Author-showFullBio"
+          //      onClick={this._onShowFullBio}>看完整介紹</div>;
           
           result = (
           <div className="Author--page">
@@ -142,7 +142,6 @@ export default React.createClass({
                       </div>
                       <div className="Author-bio">
                           {authorBio}
-                          {authorBioBUtton}
                       </div>
                   </div>
               </div>
