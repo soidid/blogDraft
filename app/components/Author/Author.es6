@@ -14,7 +14,8 @@ export default React.createClass({
   getInitialState(){
       return {
          scroll: false,
-         focusTab: 'article'
+         focusTab: 'article',
+         showFullBio: false
       }
   },
 
@@ -22,6 +23,13 @@ export default React.createClass({
       this.setState({
           focusTab: choice
       });
+  },
+
+  _onShowFullBio(){
+      this.setState({
+          showFullBio: true
+      });
+
   },
   
   componentDidMount() {
@@ -58,12 +66,13 @@ export default React.createClass({
   render() {
       //console.log(Author.user.bio_excerpt);
       //console.log(Author.user.bio_raw);
+      //
       var result = "";
       if(this.props.type === "section"){
           result = (
               <div className="Author">
                  <div dangerouslySetInnerHTML={{__html: Author.user.bio_excerpt}}></div>
-                 <div className="Author-showFullBio">看完整作者介紹</div>
+                 <div className="Author-gotoBio">作者個人頁面</div>
               </div>
           )
 
@@ -110,27 +119,42 @@ export default React.createClass({
               )
           });
 
-          var mainBody = (this.state.focusTab === 'article') ?
-              <div className="Author-article">{postItems}</div>:
-              <div className="Author"><div dangerouslySetInnerHTML={{__html: Author.user.bio_raw}} /></div>;
 
+          var authorBio = (this.state.showFullBio) ? 
+          <div dangerouslySetInnerHTML={{__html: Author.user.bio_raw}} /> :
+          <p>我相信，當我們以淺白、易懂、清晰的探討方式進入哲學，避免那些晦澀、神秘、模糊的用詞，哲學思維內含的邏輯和批判能力才能發揮最大效用，協助我們解析論述和議題，察覺錯謬和悖論，在複雜的情境中做出正確的抉擇。</p>;
+          
+          var authorBioBUtton = (this.state.showFullBio) ?
+          "":
+          <div className="Author-showFullBio"
+               onClick={this._onShowFullBio}>看完整介紹</div>;
+          
           result = (
-              <div className="Author--page">
+          <div className="Author--page">
+              <div className="Author--pageBio">
                   <div className="Author--pageContent">
                       <div className="Author-pageTop">
                           <img className="Author-pageAvatar"
                             src="http://okapi.books.com.tw/uploads/photo/photo10142.jpg" />
                           <div className="Author-nameTitle">{Author.user.name}</div>
                       </div>
-                      
-                      <div className="Author-Tabs">
-                          <Tabs activeId={this.state.focusTab} 
-                                data={tabs}
-                                onClick={this._onToggle} /> 
+                      <div className="Author-bio">
+                          {authorBio}
+                          {authorBioBUtton}
                       </div>
-                      {mainBody}
                   </div>
               </div>
+              <div className="Author--pageMain">
+                  <div className="Author--pageContent">
+                        <div className="Author-articleTitleWrapper">
+                          <div className="Author-articleTitle">最新文章</div>
+                        </div>
+                        <div className="Author-article">
+                            {postItems}
+                        </div>
+                   </div>       
+              </div>
+          </div>
           );
 
       }else{

@@ -55,7 +55,7 @@
 /******/ 	
 /******/ 	
 /******/ 	var hotApplyOnUpdate = true;
-/******/ 	var hotCurrentHash = "10817f747bc03b437fc4";
+/******/ 	var hotCurrentHash = "121ff39a48029bab5772";
 /******/ 	var hotCurrentModuleData = {};
 /******/ 	var hotCurrentParents = [];
 /******/ 	
@@ -697,7 +697,7 @@
 
 	var React = _interopRequire(__webpack_require__(17));
 
-	var _reactRouter = __webpack_require__(22);
+	var _reactRouter = __webpack_require__(23);
 
 	var Router = _interopRequire(_reactRouter);
 
@@ -784,7 +784,7 @@
 
 	'use strict';
 
-	var getRootInstancesFromReactMount = __webpack_require__(23);
+	var getRootInstancesFromReactMount = __webpack_require__(22);
 
 	var injectedProvider = null,
 	    didWarn = false;
@@ -830,8 +830,8 @@
 
 	'use strict';
 
-	var isReactClassish = __webpack_require__(25),
-	    isReactElementish = __webpack_require__(26);
+	var isReactClassish = __webpack_require__(24),
+	    isReactElementish = __webpack_require__(25);
 
 	function makeExportsHot(m, React) {
 	  if (isReactElementish(m.exports)) {
@@ -884,7 +884,7 @@
 /* 8 */
 /***/ function(module, exports, __webpack_require__) {
 
-	module.exports = __webpack_require__(24);
+	module.exports = __webpack_require__(26);
 
 
 /***/ },
@@ -901,7 +901,7 @@
 
 	var React = _interopRequire(__webpack_require__(17));
 
-	var _reactRouter = __webpack_require__(22);
+	var _reactRouter = __webpack_require__(23);
 
 	var Router = _interopRequire(_reactRouter);
 
@@ -937,16 +937,16 @@
 
 	var React = _interopRequire(__webpack_require__(17));
 
-	var _reactRouter = __webpack_require__(22);
+	var _reactRouter = __webpack_require__(23);
 
 	var Router = _interopRequire(_reactRouter);
 
 	var RouteHandler = _reactRouter.RouteHandler;
 	var State = _reactRouter.State;
 
-	var Article = _interopRequire(__webpack_require__(42));
+	var Article = _interopRequire(__webpack_require__(44));
 
-	var AppBar = _interopRequire(__webpack_require__(43));
+	var AppBar = _interopRequire(__webpack_require__(42));
 
 	module.exports = React.createClass({
 	  displayName: "SingleArticle",
@@ -980,16 +980,16 @@
 
 	var React = _interopRequire(__webpack_require__(17));
 
-	var _reactRouter = __webpack_require__(22);
+	var _reactRouter = __webpack_require__(23);
 
 	var Router = _interopRequire(_reactRouter);
 
 	var RouteHandler = _reactRouter.RouteHandler;
 	var State = _reactRouter.State;
 
-	var AppBar = _interopRequire(__webpack_require__(43));
+	var AppBar = _interopRequire(__webpack_require__(42));
 
-	var Author = _interopRequire(__webpack_require__(46));
+	var Author = _interopRequire(__webpack_require__(43));
 
 	module.exports = React.createClass({
 	  displayName: "SingleArticle",
@@ -1021,13 +1021,13 @@
 
 	var React = _interopRequire(__webpack_require__(17));
 
-	var Link = __webpack_require__(22).Link;
+	var Link = __webpack_require__(23).Link;
 
-	var AppBar = _interopRequire(__webpack_require__(43));
+	var AppBar = _interopRequire(__webpack_require__(42));
 
-	var AboutSite = _interopRequire(__webpack_require__(44));
+	var AboutSite = _interopRequire(__webpack_require__(45));
 
-	var Columns = _interopRequire(__webpack_require__(45));
+	var Columns = _interopRequire(__webpack_require__(46));
 
 	module.exports = React.createClass({
 	  displayName: "ColumnPage",
@@ -1083,17 +1083,17 @@
 
 	var React = _interopRequire(__webpack_require__(17));
 
-	var Link = __webpack_require__(22).Link;
+	var Link = __webpack_require__(23).Link;
 
-	var AppBar = _interopRequire(__webpack_require__(43));
+	var AppBar = _interopRequire(__webpack_require__(42));
 
-	var AboutSite = _interopRequire(__webpack_require__(44));
+	var AboutSite = _interopRequire(__webpack_require__(45));
 
 	var List = _interopRequire(__webpack_require__(47));
 
 	var Tags = _interopRequire(__webpack_require__(48));
 
-	var Columns = _interopRequire(__webpack_require__(45));
+	var Columns = _interopRequire(__webpack_require__(46));
 
 	module.exports = React.createClass({
 	    displayName: "CollectionPage",
@@ -1142,11 +1142,11 @@
 
 	var React = _interopRequire(__webpack_require__(17));
 
-	var Link = __webpack_require__(22).Link;
+	var Link = __webpack_require__(23).Link;
 
-	var AppBar = _interopRequire(__webpack_require__(43));
+	var AppBar = _interopRequire(__webpack_require__(42));
 
-	var AboutSite = _interopRequire(__webpack_require__(44));
+	var AboutSite = _interopRequire(__webpack_require__(45));
 
 	var List = _interopRequire(__webpack_require__(47));
 
@@ -1169,32 +1169,20 @@
 	  },
 
 	  render: function render() {
-	    console.log(window.innerWidth);
-	    var result = "";
 
-	    if (window.innerWidth > 1000) {
-	      result = React.createElement(
+	    return React.createElement(
+	      "div",
+	      null,
+	      React.createElement(AppBar, { type: "nav" }),
+	      React.createElement(
 	        "div",
-	        null,
-	        React.createElement(AppBar, { type: "nav" }),
-	        React.createElement(AboutSite, null),
-	        React.createElement(Tags, { changeTagHandler: this._onChangeTag }),
-	        React.createElement(List, { type: "index",
-	          tag: this.state.tag })
-	      );
-	    } else {
-	      result = React.createElement(
-	        "div",
-	        null,
-	        React.createElement(AppBar, { type: "nav" }),
+	        { className: "flexWrapper" },
 	        React.createElement(AboutSite, null),
 	        React.createElement(List, { type: "index",
 	          tag: this.state.tag }),
 	        React.createElement(Tags, { changeTagHandler: this._onChangeTag })
-	      );
-	    }
-
-	    return result;
+	      )
+	    );
 	  }
 	});
 
@@ -1900,7 +1888,7 @@
 
 	module.exports = ReactMount;
 
-	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(62)))
+	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(52)))
 
 /***/ },
 /* 16 */
@@ -1975,25 +1963,37 @@
 /***/ function(module, exports, __webpack_require__) {
 
 	exports = module.exports = __webpack_require__(51)();
-	exports.push([module.id, ".flexWrapper {\n\tdisplay: flex;\n\tbackground: #FAFAFA;\n}", ""]);
+	exports.push([module.id, ".flexWrapper {\n\tdisplay: flex;\n\tflex-flow: column wrap;\n\tbackground: #FAFAFA;\n}\n@media all and (min-width: 600px) {\n\t.flexWrapper {\n\t\tflex-flow: row wrap;\n\t}\n}", ""]);
 
 /***/ },
 /* 22 */
 /***/ function(module, exports, __webpack_require__) {
 
+	'use strict';
+
+	function getRootInstancesFromReactMount(ReactMount) {
+	  return ReactMount._instancesByReactRootID || ReactMount._instancesByContainerID || [];
+	}
+
+	module.exports = getRootInstancesFromReactMount;
+
+/***/ },
+/* 23 */
+/***/ function(module, exports, __webpack_require__) {
+
 	"use strict";
 
-	exports.DefaultRoute = __webpack_require__(52);
-	exports.Link = __webpack_require__(53);
-	exports.NotFoundRoute = __webpack_require__(54);
-	exports.Redirect = __webpack_require__(55);
-	exports.Route = __webpack_require__(56);
-	exports.RouteHandler = __webpack_require__(57);
+	exports.DefaultRoute = __webpack_require__(53);
+	exports.Link = __webpack_require__(54);
+	exports.NotFoundRoute = __webpack_require__(55);
+	exports.Redirect = __webpack_require__(56);
+	exports.Route = __webpack_require__(57);
+	exports.RouteHandler = __webpack_require__(58);
 
-	exports.HashLocation = __webpack_require__(58);
-	exports.HistoryLocation = __webpack_require__(59);
-	exports.RefreshLocation = __webpack_require__(60);
-	exports.StaticLocation = __webpack_require__(61);
+	exports.HashLocation = __webpack_require__(59);
+	exports.HistoryLocation = __webpack_require__(60);
+	exports.RefreshLocation = __webpack_require__(61);
+	exports.StaticLocation = __webpack_require__(62);
 
 	exports.ImitateBrowserBehavior = __webpack_require__(63);
 	exports.ScrollToTopBehavior = __webpack_require__(64);
@@ -2012,19 +2012,74 @@
 	exports.run = __webpack_require__(72);
 
 /***/ },
-/* 23 */
+/* 24 */
 /***/ function(module, exports, __webpack_require__) {
 
-	'use strict';
+	function hasRender(Class) {
+	  var prototype = Class.prototype;
+	  if (!prototype) {
+	    return false;
+	  }
 
-	function getRootInstancesFromReactMount(ReactMount) {
-	  return ReactMount._instancesByReactRootID || ReactMount._instancesByContainerID || [];
+	  return typeof prototype.render === 'function';
 	}
 
-	module.exports = getRootInstancesFromReactMount;
+	function descendsFromReactComponent(Class, React) {
+	  if (!React.Component) {
+	    return false;
+	  }
+
+	  var Base = Object.getPrototypeOf(Class);
+	  while (Base) {
+	    if (Base === React.Component) {
+	      return true;
+	    }
+
+	    Base = Object.getPrototypeOf(Base);
+	  }
+
+	  return false;
+	}
+
+	function isReactClassish(Class, React) {
+	  if (typeof Class !== 'function') {
+	    return false;
+	  }
+
+	  // React 0.13
+	  if (hasRender(Class) || descendsFromReactComponent(Class, React)) {
+	    return true;
+	  }
+
+	  // React 0.12 and earlier
+	  if (Class.type && hasRender(Class.type)) {
+	    return true;
+	  }
+
+	  return false;
+	}
+
+	module.exports = isReactClassish;
 
 /***/ },
-/* 24 */
+/* 25 */
+/***/ function(module, exports, __webpack_require__) {
+
+	var isReactClassish = __webpack_require__(24);
+
+	function isReactElementish(obj) {
+	  if (!obj) {
+	    return false;
+	  }
+
+	  return Object.prototype.toString.call(obj.props) === '[object Object]' &&
+	         isReactClassish(obj.type);
+	}
+
+	module.exports = isReactElementish;
+
+/***/ },
+/* 26 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(module) {/*! Socket.IO.js build:0.9.10, development. Copyright(c) 2011 LearnBoost <dev@learnboost.com> MIT Licensed */
@@ -5892,73 +5947,6 @@
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(7)(module)))
 
 /***/ },
-/* 25 */
-/***/ function(module, exports, __webpack_require__) {
-
-	function hasRender(Class) {
-	  var prototype = Class.prototype;
-	  if (!prototype) {
-	    return false;
-	  }
-
-	  return typeof prototype.render === 'function';
-	}
-
-	function descendsFromReactComponent(Class, React) {
-	  if (!React.Component) {
-	    return false;
-	  }
-
-	  var Base = Object.getPrototypeOf(Class);
-	  while (Base) {
-	    if (Base === React.Component) {
-	      return true;
-	    }
-
-	    Base = Object.getPrototypeOf(Base);
-	  }
-
-	  return false;
-	}
-
-	function isReactClassish(Class, React) {
-	  if (typeof Class !== 'function') {
-	    return false;
-	  }
-
-	  // React 0.13
-	  if (hasRender(Class) || descendsFromReactComponent(Class, React)) {
-	    return true;
-	  }
-
-	  // React 0.12 and earlier
-	  if (Class.type && hasRender(Class.type)) {
-	    return true;
-	  }
-
-	  return false;
-	}
-
-	module.exports = isReactClassish;
-
-/***/ },
-/* 26 */
-/***/ function(module, exports, __webpack_require__) {
-
-	var isReactClassish = __webpack_require__(25);
-
-	function isReactElementish(obj) {
-	  if (!obj) {
-	    return false;
-	  }
-
-	  return Object.prototype.toString.call(obj.props) === '[object Object]' &&
-	         isReactClassish(obj.type);
-	}
-
-	module.exports = isReactElementish;
-
-/***/ },
 /* 27 */
 /***/ function(module, exports, __webpack_require__) {
 
@@ -6454,7 +6442,7 @@
 
 	module.exports = DOMProperty;
 
-	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(62)))
+	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(52)))
 
 /***/ },
 /* 29 */
@@ -7100,7 +7088,7 @@
 
 	module.exports = ReactElement;
 
-	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(62)))
+	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(52)))
 
 /***/ },
 /* 32 */
@@ -7122,7 +7110,7 @@
 	var ReactCurrentOwner = __webpack_require__(30);
 
 	var invariant = __webpack_require__(39);
-	var monitorCodeUse = __webpack_require__(82);
+	var monitorCodeUse = __webpack_require__(81);
 	var warning = __webpack_require__(41);
 
 	var legacyFactoryLogs = {};
@@ -7350,7 +7338,7 @@
 
 	module.exports = ReactLegacyElementFactory;
 
-	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(62)))
+	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(52)))
 
 /***/ },
 /* 33 */
@@ -7370,7 +7358,7 @@
 
 	"use strict";
 
-	var ReactRootIndex = __webpack_require__(81);
+	var ReactRootIndex = __webpack_require__(82);
 
 	var invariant = __webpack_require__(39);
 
@@ -7688,7 +7676,7 @@
 
 	module.exports = ReactInstanceHandles;
 
-	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(62)))
+	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(52)))
 
 /***/ },
 /* 34 */
@@ -7775,7 +7763,7 @@
 
 	module.exports = ReactPerf;
 
-	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(62)))
+	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(52)))
 
 /***/ },
 /* 35 */
@@ -7877,7 +7865,7 @@
 
 	module.exports = deprecated;
 
-	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(62)))
+	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(52)))
 
 /***/ },
 /* 37 */
@@ -8033,7 +8021,7 @@
 
 	module.exports = instantiateReactComponent;
 
-	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(62)))
+	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(52)))
 
 /***/ },
 /* 39 */
@@ -8093,7 +8081,7 @@
 
 	module.exports = invariant;
 
-	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(62)))
+	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(52)))
 
 /***/ },
 /* 40 */
@@ -8183,10 +8171,333 @@
 
 	module.exports = warning;
 
-	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(62)))
+	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(52)))
 
 /***/ },
 /* 42 */
+/***/ function(module, exports, __webpack_require__) {
+
+	/* WEBPACK VAR INJECTION */(function(module) {/* REACT HOT LOADER */ if (true) { (function () { var ReactHotAPI = __webpack_require__(16), RootInstanceProvider = __webpack_require__(5), ReactMount = __webpack_require__(15), React = __webpack_require__(17); module.makeHot = module.hot.data ? module.hot.data.makeHot : ReactHotAPI(function () { return RootInstanceProvider.getRootInstances(ReactMount); }, React); })(); } (function () {
+
+	"use strict";
+
+	var _interopRequire = function (obj) { return obj && obj.__esModule ? obj["default"] : obj; };
+
+	var React = _interopRequire(__webpack_require__(17));
+
+	__webpack_require__(95);
+
+	module.exports = React.createClass({
+	  displayName: "AppBar",
+
+	  render: function render() {
+
+	    var result = React.createElement("div", null);
+	    var type = this.props.type;
+
+	    if (type === "simple") {
+	      result = React.createElement(
+	        "div",
+	        { className: "AppBar" },
+	        React.createElement(
+	          "a",
+	          { href: "#/",
+	            className: "AppBar-logo" },
+	          "公民學院部落格"
+	        )
+	      );
+	    } else if (type === "nav") {
+	      result = React.createElement(
+	        "div",
+	        { className: "AppBar" },
+	        React.createElement(
+	          "a",
+	          { href: "#/",
+	            className: "AppBar-logo" },
+	          "公民學院部落格"
+	        ),
+	        React.createElement(
+	          "a",
+	          { href: "#/",
+	            className: "AppBar-nav" },
+	          "最新"
+	        ),
+	        React.createElement(
+	          "a",
+	          { href: "#/columns",
+	            className: "AppBar-nav" },
+	          "專欄"
+	        ),
+	        React.createElement(
+	          "a",
+	          { href: "#/collections",
+	            className: "AppBar-nav" },
+	          "Collections"
+	        )
+	      );
+	    } else {}
+
+	    return result;
+	  }
+	});
+
+	//
+
+	/* REACT HOT LOADER */ })(); if (true) { (function () { module.hot.dispose(function (data) { data.makeHot = module.makeHot; }); if (module.exports && module.makeHot) { var makeExportsHot = __webpack_require__(6), foundReactClasses = false; if (makeExportsHot(module, __webpack_require__(17))) { foundReactClasses = true; } var shouldAcceptModule = true && foundReactClasses; if (shouldAcceptModule) { module.hot.accept(function (err) { if (err) { console.error("Cannot not apply hot update to " + "AppBar.es6" + ": " + err.message); } }); } } })(); }
+	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(7)(module)))
+
+/***/ },
+/* 43 */
+/***/ function(module, exports, __webpack_require__) {
+
+	/* WEBPACK VAR INJECTION */(function(module) {/* REACT HOT LOADER */ if (true) { (function () { var ReactHotAPI = __webpack_require__(16), RootInstanceProvider = __webpack_require__(5), ReactMount = __webpack_require__(15), React = __webpack_require__(17); module.makeHot = module.hot.data ? module.hot.data.makeHot : ReactHotAPI(function () { return RootInstanceProvider.getRootInstances(ReactMount); }, React); })(); } (function () {
+
+	"use strict";
+
+	var _interopRequire = function (obj) { return obj && obj.__esModule ? obj["default"] : obj; };
+
+	var React = _interopRequire(__webpack_require__(87));
+
+	__webpack_require__(97);
+
+	var $ = _interopRequire(__webpack_require__(143));
+
+	var Tabs = _interopRequire(__webpack_require__(99));
+
+	//http://community.citizenedu.tw/users/kris/activity
+
+	var Author = _interopRequire(__webpack_require__(135));
+
+	//http://community.citizenedu.tw/users/kris/activity/posts
+
+	var AuthorPost = _interopRequire(__webpack_require__(136));
+
+	module.exports = React.createClass({
+	    displayName: "Author",
+
+	    getInitialState: function getInitialState() {
+	        return {
+	            scroll: false,
+	            focusTab: "article",
+	            showFullBio: false
+	        };
+	    },
+
+	    _onToggle: function _onToggle(choice, event) {
+	        this.setState({
+	            focusTab: choice
+	        });
+	    },
+
+	    _onShowFullBio: function _onShowFullBio() {
+	        this.setState({
+	            showFullBio: true
+	        });
+	    },
+
+	    componentDidMount: function componentDidMount() {
+	        var ref = this.refs.AuthorWidget;
+	        if (!ref) {
+	            return;
+	        }var rect = ref.getDOMNode().getBoundingClientRect();
+	        var bottom = rect.bottom;
+	        var scroll = this.state.scroll;
+
+	        var _this = this;
+	        var cb = function cb(value) {
+	            //console.log("callback:"+value);
+	            _this.setState({
+	                scroll: value
+	            });
+	        };
+
+	        $(window).scroll(function (event) {
+	            // console.log("s"+$(this).scrollTop());
+	            // console.log(bottom);
+	            // console.log($(this).scrollTop() < bottom );
+	            // console.log(scroll);
+
+	            if ($(this).scrollTop() > bottom) {
+	                cb(true);
+	            }
+	            if ($(this).scrollTop() < bottom) {
+
+	                cb(false);
+	            }
+	        });
+	    },
+	    render: function render() {
+	        //console.log(Author.user.bio_excerpt);
+	        //console.log(Author.user.bio_raw);
+	        //
+	        var result = "";
+	        if (this.props.type === "section") {
+	            result = React.createElement(
+	                "div",
+	                { className: "Author" },
+	                React.createElement("div", { dangerouslySetInnerHTML: { __html: Author.user.bio_excerpt } }),
+	                React.createElement(
+	                    "div",
+	                    { className: "Author-gotoBio" },
+	                    "作者個人頁面"
+	                )
+	            );
+	        } else if (this.props.type === "widget") {
+	            var classSet = React.addons.classSet;
+	            var classes = classSet({
+	                "Author-widget": true,
+	                "Author-fixedWidget": this.state.scroll
+	            });
+
+	            result = React.createElement(
+	                "div",
+	                { className: classes,
+	                    ref: "AuthorWidget" },
+	                React.createElement("img", { className: "Author-widgetAvatar",
+	                    src: "http://okapi.books.com.tw/uploads/article/article10144_3.png" }),
+	                React.createElement(
+	                    "div",
+	                    { className: "Author-widgetInfo" },
+	                    React.createElement(
+	                        "a",
+	                        { className: "Author-widgetLink",
+	                            href: "#/author/1" },
+	                        "朱家安"
+	                    ),
+	                    "・發表於",
+	                    React.createElement(
+	                        "a",
+	                        { className: "Author-widgetLink" },
+	                        "沃草烙哲學"
+	                    ),
+	                    React.createElement(
+	                        "span",
+	                        { className: "Author-tagsSection" },
+	                        React.createElement(
+	                            "span",
+	                            { className: "Author-tags" },
+	                            "／"
+	                        ),
+	                        React.createElement(
+	                            "a",
+	                            { className: "Author-tagLink" },
+	                            "哲學"
+	                        ),
+	                        React.createElement(
+	                            "span",
+	                            { className: "Author-tags" },
+	                            "・"
+	                        ),
+	                        React.createElement(
+	                            "a",
+	                            { className: "Author-tagLink" },
+	                            "藝術"
+	                        )
+	                    )
+	                )
+	            );
+	        } else if (this.props.type === "page") {
+	            /* ================================ 
+	             *   Tabs
+	             * ================================ */
+	            var tabs = [{ id: "article", title: "文章" }, { id: "bio", title: "簡介" }];
+
+	            var postItems = AuthorPost.map(function (item, key) {
+	                return React.createElement(
+	                    "a",
+	                    { className: "Author-articleItem",
+	                        key: key,
+	                        href: "#/article/1" },
+	                    React.createElement(
+	                        "div",
+	                        { className: "Author-articleItemDate" },
+	                        item.date
+	                    ),
+	                    React.createElement(
+	                        "div",
+	                        { className: "Author-articleItemTitle" },
+	                        item.title
+	                    )
+	                );
+	            });
+
+	            var authorBio = this.state.showFullBio ? React.createElement("div", { dangerouslySetInnerHTML: { __html: Author.user.bio_raw } }) : React.createElement(
+	                "p",
+	                null,
+	                "我相信，當我們以淺白、易懂、清晰的探討方式進入哲學，避免那些晦澀、神秘、模糊的用詞，哲學思維內含的邏輯和批判能力才能發揮最大效用，協助我們解析論述和議題，察覺錯謬和悖論，在複雜的情境中做出正確的抉擇。"
+	            );
+
+	            var authorBioBUtton = this.state.showFullBio ? "" : React.createElement(
+	                "div",
+	                { className: "Author-showFullBio",
+	                    onClick: this._onShowFullBio },
+	                "看完整介紹"
+	            );
+
+	            result = React.createElement(
+	                "div",
+	                { className: "Author--page" },
+	                React.createElement(
+	                    "div",
+	                    { className: "Author--pageBio" },
+	                    React.createElement(
+	                        "div",
+	                        { className: "Author--pageContent" },
+	                        React.createElement(
+	                            "div",
+	                            { className: "Author-pageTop" },
+	                            React.createElement("img", { className: "Author-pageAvatar",
+	                                src: "http://okapi.books.com.tw/uploads/photo/photo10142.jpg" }),
+	                            React.createElement(
+	                                "div",
+	                                { className: "Author-nameTitle" },
+	                                Author.user.name
+	                            )
+	                        ),
+	                        React.createElement(
+	                            "div",
+	                            { className: "Author-bio" },
+	                            authorBio,
+	                            authorBioBUtton
+	                        )
+	                    )
+	                ),
+	                React.createElement(
+	                    "div",
+	                    { className: "Author--pageMain" },
+	                    React.createElement(
+	                        "div",
+	                        { className: "Author--pageContent" },
+	                        React.createElement(
+	                            "div",
+	                            { className: "Author-articleTitleWrapper" },
+	                            React.createElement(
+	                                "div",
+	                                { className: "Author-articleTitle" },
+	                                "最新文章"
+	                            )
+	                        ),
+	                        React.createElement(
+	                            "div",
+	                            { className: "Author-article" },
+	                            postItems
+	                        )
+	                    )
+	                )
+	            );
+	        } else {}
+
+	        return result;
+	    }
+	});
+
+	//no op
+
+	/* REACT HOT LOADER */ })(); if (true) { (function () { module.hot.dispose(function (data) { data.makeHot = module.makeHot; }); if (module.exports && module.makeHot) { var makeExportsHot = __webpack_require__(6), foundReactClasses = false; if (makeExportsHot(module, __webpack_require__(17))) { foundReactClasses = true; } var shouldAcceptModule = true && foundReactClasses; if (shouldAcceptModule) { module.hot.accept(function (err) { if (err) { console.error("Cannot not apply hot update to " + "Author.es6" + ": " + err.message); } }); } } })(); }
+	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(7)(module)))
+
+/***/ },
+/* 44 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(module) {/* REACT HOT LOADER */ if (true) { (function () { var ReactHotAPI = __webpack_require__(16), RootInstanceProvider = __webpack_require__(5), ReactMount = __webpack_require__(15), React = __webpack_require__(17); module.makeHot = module.hot.data ? module.hot.data.makeHot : ReactHotAPI(function () { return RootInstanceProvider.getRootInstances(ReactMount); }, React); })(); } (function () {
@@ -8199,7 +8510,7 @@
 
 	//import Router, {RouteHandler, State} from "react-router";
 
-	var Author = _interopRequire(__webpack_require__(46));
+	var Author = _interopRequire(__webpack_require__(43));
 
 	var Comments = _interopRequire(__webpack_require__(88));
 
@@ -8212,7 +8523,7 @@
 	//http://community.citizenedu.tw/t/topic/102/10
 	//http://community.citizenedu.tw/t/topic/767/17
 
-	var article = _interopRequire(__webpack_require__(135));
+	var article = _interopRequire(__webpack_require__(137));
 
 	;
 
@@ -8313,7 +8624,7 @@
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(7)(module)))
 
 /***/ },
-/* 43 */
+/* 45 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(module) {/* REACT HOT LOADER */ if (true) { (function () { var ReactHotAPI = __webpack_require__(16), RootInstanceProvider = __webpack_require__(5), ReactMount = __webpack_require__(15), React = __webpack_require__(17); module.makeHot = module.hot.data ? module.hot.data.makeHot : ReactHotAPI(function () { return RootInstanceProvider.getRootInstances(ReactMount); }, React); })(); } (function () {
@@ -8324,80 +8635,7 @@
 
 	var React = _interopRequire(__webpack_require__(17));
 
-	__webpack_require__(95);
-
-	module.exports = React.createClass({
-	  displayName: "AppBar",
-
-	  render: function render() {
-
-	    var result = React.createElement("div", null);
-	    var type = this.props.type;
-
-	    if (type === "simple") {
-	      result = React.createElement(
-	        "div",
-	        { className: "AppBar" },
-	        React.createElement(
-	          "a",
-	          { href: "#/",
-	            className: "AppBar-logo" },
-	          "公民學院部落格"
-	        )
-	      );
-	    } else if (type === "nav") {
-	      result = React.createElement(
-	        "div",
-	        { className: "AppBar" },
-	        React.createElement(
-	          "a",
-	          { href: "#/",
-	            className: "AppBar-logo" },
-	          "公民學院部落格"
-	        ),
-	        React.createElement(
-	          "a",
-	          { href: "#/",
-	            className: "AppBar-nav" },
-	          "最新"
-	        ),
-	        React.createElement(
-	          "a",
-	          { href: "#/columns",
-	            className: "AppBar-nav" },
-	          "專欄"
-	        ),
-	        React.createElement(
-	          "a",
-	          { href: "#/collections",
-	            className: "AppBar-nav" },
-	          "Collections"
-	        )
-	      );
-	    } else {}
-
-	    return result;
-	  }
-	});
-
-	//
-
-	/* REACT HOT LOADER */ })(); if (true) { (function () { module.hot.dispose(function (data) { data.makeHot = module.makeHot; }); if (module.exports && module.makeHot) { var makeExportsHot = __webpack_require__(6), foundReactClasses = false; if (makeExportsHot(module, __webpack_require__(17))) { foundReactClasses = true; } var shouldAcceptModule = true && foundReactClasses; if (shouldAcceptModule) { module.hot.accept(function (err) { if (err) { console.error("Cannot not apply hot update to " + "AppBar.es6" + ": " + err.message); } }); } } })(); }
-	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(7)(module)))
-
-/***/ },
-/* 44 */
-/***/ function(module, exports, __webpack_require__) {
-
-	/* WEBPACK VAR INJECTION */(function(module) {/* REACT HOT LOADER */ if (true) { (function () { var ReactHotAPI = __webpack_require__(16), RootInstanceProvider = __webpack_require__(5), ReactMount = __webpack_require__(15), React = __webpack_require__(17); module.makeHot = module.hot.data ? module.hot.data.makeHot : ReactHotAPI(function () { return RootInstanceProvider.getRootInstances(ReactMount); }, React); })(); } (function () {
-
-	"use strict";
-
-	var _interopRequire = function (obj) { return obj && obj.__esModule ? obj["default"] : obj; };
-
-	var React = _interopRequire(__webpack_require__(17));
-
-	__webpack_require__(97);
+	__webpack_require__(100);
 
 	module.exports = React.createClass({
 	    displayName: "AboutSite",
@@ -8437,7 +8675,7 @@
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(7)(module)))
 
 /***/ },
-/* 45 */
+/* 46 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(module) {/* REACT HOT LOADER */ if (true) { (function () { var ReactHotAPI = __webpack_require__(16), RootInstanceProvider = __webpack_require__(5), ReactMount = __webpack_require__(15), React = __webpack_require__(17); module.makeHot = module.hot.data ? module.hot.data.makeHot : ReactHotAPI(function () { return RootInstanceProvider.getRootInstances(ReactMount); }, React); })(); } (function () {
@@ -8448,11 +8686,11 @@
 
 	var React = _interopRequire(__webpack_require__(17));
 
-	__webpack_require__(99);
+	__webpack_require__(102);
 
-	var Columns = _interopRequire(__webpack_require__(136));
+	var Columns = _interopRequire(__webpack_require__(138));
 
-	var Collections = _interopRequire(__webpack_require__(137));
+	var Collections = _interopRequire(__webpack_require__(139));
 
 	module.exports = React.createClass({
 	    displayName: "Columns",
@@ -8486,221 +8724,6 @@
 	});
 
 	/* REACT HOT LOADER */ })(); if (true) { (function () { module.hot.dispose(function (data) { data.makeHot = module.makeHot; }); if (module.exports && module.makeHot) { var makeExportsHot = __webpack_require__(6), foundReactClasses = false; if (makeExportsHot(module, __webpack_require__(17))) { foundReactClasses = true; } var shouldAcceptModule = true && foundReactClasses; if (shouldAcceptModule) { module.hot.accept(function (err) { if (err) { console.error("Cannot not apply hot update to " + "Columns.es6" + ": " + err.message); } }); } } })(); }
-	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(7)(module)))
-
-/***/ },
-/* 46 */
-/***/ function(module, exports, __webpack_require__) {
-
-	/* WEBPACK VAR INJECTION */(function(module) {/* REACT HOT LOADER */ if (true) { (function () { var ReactHotAPI = __webpack_require__(16), RootInstanceProvider = __webpack_require__(5), ReactMount = __webpack_require__(15), React = __webpack_require__(17); module.makeHot = module.hot.data ? module.hot.data.makeHot : ReactHotAPI(function () { return RootInstanceProvider.getRootInstances(ReactMount); }, React); })(); } (function () {
-
-	"use strict";
-
-	var _interopRequire = function (obj) { return obj && obj.__esModule ? obj["default"] : obj; };
-
-	var React = _interopRequire(__webpack_require__(87));
-
-	__webpack_require__(101);
-
-	var $ = _interopRequire(__webpack_require__(148));
-
-	var Tabs = _interopRequire(__webpack_require__(103));
-
-	//http://community.citizenedu.tw/users/kris/activity
-
-	var Author = _interopRequire(__webpack_require__(138));
-
-	//http://community.citizenedu.tw/users/kris/activity/posts
-
-	var AuthorPost = _interopRequire(__webpack_require__(139));
-
-	module.exports = React.createClass({
-	    displayName: "Author",
-
-	    getInitialState: function getInitialState() {
-	        return {
-	            scroll: false,
-	            focusTab: "article"
-	        };
-	    },
-
-	    _onToggle: function _onToggle(choice, event) {
-	        this.setState({
-	            focusTab: choice
-	        });
-	    },
-
-	    componentDidMount: function componentDidMount() {
-	        var ref = this.refs.AuthorWidget;
-	        if (!ref) {
-	            return;
-	        }var rect = ref.getDOMNode().getBoundingClientRect();
-	        var bottom = rect.bottom;
-	        var scroll = this.state.scroll;
-
-	        var _this = this;
-	        var cb = function cb(value) {
-	            //console.log("callback:"+value);
-	            _this.setState({
-	                scroll: value
-	            });
-	        };
-
-	        $(window).scroll(function (event) {
-	            // console.log("s"+$(this).scrollTop());
-	            // console.log(bottom);
-	            // console.log($(this).scrollTop() < bottom );
-	            // console.log(scroll);
-
-	            if ($(this).scrollTop() > bottom) {
-	                cb(true);
-	            }
-	            if ($(this).scrollTop() < bottom) {
-
-	                cb(false);
-	            }
-	        });
-	    },
-	    render: function render() {
-	        //console.log(Author.user.bio_excerpt);
-	        //console.log(Author.user.bio_raw);
-	        var result = "";
-	        if (this.props.type === "section") {
-	            result = React.createElement(
-	                "div",
-	                { className: "Author" },
-	                React.createElement("div", { dangerouslySetInnerHTML: { __html: Author.user.bio_excerpt } }),
-	                React.createElement(
-	                    "div",
-	                    { className: "Author-showFullBio" },
-	                    "看完整作者介紹"
-	                )
-	            );
-	        } else if (this.props.type === "widget") {
-	            var classSet = React.addons.classSet;
-	            var classes = classSet({
-	                "Author-widget": true,
-	                "Author-fixedWidget": this.state.scroll
-	            });
-
-	            result = React.createElement(
-	                "div",
-	                { className: classes,
-	                    ref: "AuthorWidget" },
-	                React.createElement("img", { className: "Author-widgetAvatar",
-	                    src: "http://okapi.books.com.tw/uploads/article/article10144_3.png" }),
-	                React.createElement(
-	                    "div",
-	                    { className: "Author-widgetInfo" },
-	                    React.createElement(
-	                        "a",
-	                        { className: "Author-widgetLink",
-	                            href: "#/author/1" },
-	                        "朱家安"
-	                    ),
-	                    "・發表於",
-	                    React.createElement(
-	                        "a",
-	                        { className: "Author-widgetLink" },
-	                        "沃草烙哲學"
-	                    ),
-	                    React.createElement(
-	                        "span",
-	                        { className: "Author-tagsSection" },
-	                        React.createElement(
-	                            "span",
-	                            { className: "Author-tags" },
-	                            "／"
-	                        ),
-	                        React.createElement(
-	                            "a",
-	                            { className: "Author-tagLink" },
-	                            "哲學"
-	                        ),
-	                        React.createElement(
-	                            "span",
-	                            { className: "Author-tags" },
-	                            "・"
-	                        ),
-	                        React.createElement(
-	                            "a",
-	                            { className: "Author-tagLink" },
-	                            "藝術"
-	                        )
-	                    )
-	                )
-	            );
-	        } else if (this.props.type === "page") {
-	            /* ================================ 
-	             *   Tabs
-	             * ================================ */
-	            var tabs = [{ id: "article", title: "文章" }, { id: "bio", title: "簡介" }];
-
-	            var postItems = AuthorPost.map(function (item, key) {
-	                return React.createElement(
-	                    "a",
-	                    { className: "Author-articleItem",
-	                        key: key,
-	                        href: "#/article/1" },
-	                    React.createElement(
-	                        "div",
-	                        { className: "Author-articleItemDate" },
-	                        item.date
-	                    ),
-	                    React.createElement(
-	                        "div",
-	                        { className: "Author-articleItemTitle" },
-	                        item.title
-	                    )
-	                );
-	            });
-
-	            var mainBody = this.state.focusTab === "article" ? React.createElement(
-	                "div",
-	                { className: "Author-article" },
-	                postItems
-	            ) : React.createElement(
-	                "div",
-	                { className: "Author" },
-	                React.createElement("div", { dangerouslySetInnerHTML: { __html: Author.user.bio_raw } })
-	            );
-
-	            result = React.createElement(
-	                "div",
-	                { className: "Author--page" },
-	                React.createElement(
-	                    "div",
-	                    { className: "Author--pageContent" },
-	                    React.createElement(
-	                        "div",
-	                        { className: "Author-pageTop" },
-	                        React.createElement("img", { className: "Author-pageAvatar",
-	                            src: "http://okapi.books.com.tw/uploads/photo/photo10142.jpg" }),
-	                        React.createElement(
-	                            "div",
-	                            { className: "Author-nameTitle" },
-	                            Author.user.name
-	                        )
-	                    ),
-	                    React.createElement(
-	                        "div",
-	                        { className: "Author-Tabs" },
-	                        React.createElement(Tabs, { activeId: this.state.focusTab,
-	                            data: tabs,
-	                            onClick: this._onToggle })
-	                    ),
-	                    mainBody
-	                )
-	            );
-	        } else {}
-
-	        return result;
-	    }
-	});
-
-	//no op
-
-	/* REACT HOT LOADER */ })(); if (true) { (function () { module.hot.dispose(function (data) { data.makeHot = module.makeHot; }); if (module.exports && module.makeHot) { var makeExportsHot = __webpack_require__(6), foundReactClasses = false; if (makeExportsHot(module, __webpack_require__(17))) { foundReactClasses = true; } var shouldAcceptModule = true && foundReactClasses; if (shouldAcceptModule) { module.hot.accept(function (err) { if (err) { console.error("Cannot not apply hot update to " + "Author.es6" + ": " + err.message); } }); } } })(); }
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(7)(module)))
 
 /***/ },
@@ -8738,32 +8761,17 @@
 
 	        if (type === "article") {
 
-	            var nextPostItem = React.createElement(
-	                "div",
-	                { className: "List-nextItem" },
-	                React.createElement(
-	                    "div",
-	                    { className: "List-nextItemTitle" },
-	                    "下一篇文章"
-	                ),
-	                React.createElement(
-	                    "div",
-	                    { className: "List-nextPost" },
-	                    React.createElement(
-	                        "div",
-	                        { className: "List-nextTitle" },
-	                        NextPost.title,
-	                        "／朱家安"
-	                    ),
-	                    React.createElement(
-	                        "div",
-	                        { className: "List-nextPreview" },
-	                        NextPost.brief + "..."
-	                    )
-	                )
-	            );
+	            // var nextPostItem = <div className="List-nextItem">
+	            //   <div className="List-nextItemTitle">下一篇文章</div>
+	            //     <div className="List-nextPost">
+	            //       <div className="List-nextTitle">{NextPost.title}／朱家安</div>
+	            //       <div className="List-nextPreview">{ NextPost.brief+"..."}</div>
+
+	            //     </div>
+	            // </div>;
 
 	            var postItems = AuthorPost.map(function (item, key) {
+	                var title = item.author + "：" + item.title;
 	                return React.createElement(
 	                    "a",
 	                    { className: "List-articleItem",
@@ -8777,7 +8785,7 @@
 	                    React.createElement(
 	                        "div",
 	                        { className: "List-articleItemTitle" },
-	                        item.title
+	                        title
 	                    )
 	                );
 	            });
@@ -8790,10 +8798,9 @@
 	                    { className: "List-content" },
 	                    React.createElement(
 	                        "div",
-	                        null,
-	                        nextPostItem
+	                        { className: "List-title" },
+	                        "其他哲學類的文章"
 	                    ),
-	                    React.createElement("div", { className: "List-title" }),
 	                    postItems
 	                )
 	            );
@@ -8807,8 +8814,8 @@
 	                    React.createElement(
 	                        "div",
 	                        { className: "List-articleItemTitle List-boldTitle" },
-	                        item.title,
-	                        " ／朱家安"
+	                        "朱家安：",
+	                        item.title
 	                    ),
 	                    React.createElement(
 	                        "div",
@@ -9142,7 +9149,7 @@
 
 	module.exports = React;
 
-	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(62)))
+	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(52)))
 
 /***/ },
 /* 51 */
@@ -9169,10 +9176,74 @@
 /* 52 */
 /***/ function(module, exports, __webpack_require__) {
 
+	// shim for using process in browser
+
+	var process = module.exports = {};
+	var queue = [];
+	var draining = false;
+
+	function drainQueue() {
+	    if (draining) {
+	        return;
+	    }
+	    draining = true;
+	    var currentQueue;
+	    var len = queue.length;
+	    while(len) {
+	        currentQueue = queue;
+	        queue = [];
+	        var i = -1;
+	        while (++i < len) {
+	            currentQueue[i]();
+	        }
+	        len = queue.length;
+	    }
+	    draining = false;
+	}
+	process.nextTick = function (fun) {
+	    queue.push(fun);
+	    if (!draining) {
+	        setTimeout(drainQueue, 0);
+	    }
+	};
+
+	process.title = 'browser';
+	process.browser = true;
+	process.env = {};
+	process.argv = [];
+	process.version = ''; // empty string to avoid regexp issues
+	process.versions = {};
+
+	function noop() {}
+
+	process.on = noop;
+	process.addListener = noop;
+	process.once = noop;
+	process.off = noop;
+	process.removeListener = noop;
+	process.removeAllListeners = noop;
+	process.emit = noop;
+
+	process.binding = function (name) {
+	    throw new Error('process.binding is not supported');
+	};
+
+	// TODO(shtylman)
+	process.cwd = function () { return '/' };
+	process.chdir = function (dir) {
+	    throw new Error('process.chdir is not supported');
+	};
+	process.umask = function() { return 0; };
+
+
+/***/ },
+/* 53 */
+/***/ function(module, exports, __webpack_require__) {
+
 	"use strict";
 
 	var React = __webpack_require__(17);
-	var Configuration = __webpack_require__(123);
+	var Configuration = __webpack_require__(121);
 	var PropTypes = __webpack_require__(122);
 
 	/**
@@ -9199,13 +9270,13 @@
 	module.exports = DefaultRoute;
 
 /***/ },
-/* 53 */
+/* 54 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
 
 	var React = __webpack_require__(17);
-	var classSet = __webpack_require__(121);
+	var classSet = __webpack_require__(123);
 	var assign = __webpack_require__(78);
 	var Navigation = __webpack_require__(66);
 	var State = __webpack_require__(68);
@@ -9316,13 +9387,13 @@
 	module.exports = Link;
 
 /***/ },
-/* 54 */
+/* 55 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
 
 	var React = __webpack_require__(17);
-	var Configuration = __webpack_require__(123);
+	var Configuration = __webpack_require__(121);
 	var PropTypes = __webpack_require__(122);
 
 	/**
@@ -9350,13 +9421,13 @@
 	module.exports = NotFoundRoute;
 
 /***/ },
-/* 55 */
+/* 56 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
 
 	var React = __webpack_require__(17);
-	var Configuration = __webpack_require__(123);
+	var Configuration = __webpack_require__(121);
 	var PropTypes = __webpack_require__(122);
 
 	/**
@@ -9381,15 +9452,15 @@
 	module.exports = Redirect;
 
 /***/ },
-/* 56 */
+/* 57 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
 
 	var React = __webpack_require__(17);
-	var Configuration = __webpack_require__(123);
+	var Configuration = __webpack_require__(121);
 	var PropTypes = __webpack_require__(122);
-	var RouteHandler = __webpack_require__(57);
+	var RouteHandler = __webpack_require__(58);
 	/**
 	 * <Route> components specify components that are rendered to the page when the
 	 * URL matches a given pattern.
@@ -9454,7 +9525,7 @@
 	module.exports = Route;
 
 /***/ },
-/* 57 */
+/* 58 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -9481,7 +9552,7 @@
 	module.exports = RouteHandler;
 
 /***/ },
-/* 58 */
+/* 59 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -9604,7 +9675,7 @@
 	module.exports = HashLocation;
 
 /***/ },
-/* 59 */
+/* 60 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -9701,12 +9772,12 @@
 	module.exports = HistoryLocation;
 
 /***/ },
-/* 60 */
+/* 61 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
 
-	var HistoryLocation = __webpack_require__(59);
+	var HistoryLocation = __webpack_require__(60);
 	var History = __webpack_require__(65);
 
 	/**
@@ -9737,7 +9808,7 @@
 	module.exports = RefreshLocation;
 
 /***/ },
-/* 61 */
+/* 62 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -9792,70 +9863,6 @@
 	StaticLocation.prototype.pop = throwCannotModify;
 
 	module.exports = StaticLocation;
-
-/***/ },
-/* 62 */
-/***/ function(module, exports, __webpack_require__) {
-
-	// shim for using process in browser
-
-	var process = module.exports = {};
-	var queue = [];
-	var draining = false;
-
-	function drainQueue() {
-	    if (draining) {
-	        return;
-	    }
-	    draining = true;
-	    var currentQueue;
-	    var len = queue.length;
-	    while(len) {
-	        currentQueue = queue;
-	        queue = [];
-	        var i = -1;
-	        while (++i < len) {
-	            currentQueue[i]();
-	        }
-	        len = queue.length;
-	    }
-	    draining = false;
-	}
-	process.nextTick = function (fun) {
-	    queue.push(fun);
-	    if (!draining) {
-	        setTimeout(drainQueue, 0);
-	    }
-	};
-
-	process.title = 'browser';
-	process.browser = true;
-	process.env = {};
-	process.argv = [];
-	process.version = ''; // empty string to avoid regexp issues
-	process.versions = {};
-
-	function noop() {}
-
-	process.on = noop;
-	process.addListener = noop;
-	process.once = noop;
-	process.off = noop;
-	process.removeListener = noop;
-	process.removeAllListeners = noop;
-	process.emit = noop;
-
-	process.binding = function (name) {
-	    throw new Error('process.binding is not supported');
-	};
-
-	// TODO(shtylman)
-	process.cwd = function () { return '/' };
-	process.chdir = function (dir) {
-	    throw new Error('process.chdir is not supported');
-	};
-	process.umask = function() { return 0; };
-
 
 /***/ },
 /* 63 */
@@ -10403,9 +10410,9 @@
 	var React = __webpack_require__(17);
 	var assign = __webpack_require__(78);
 	var warning = __webpack_require__(41);
-	var DefaultRouteType = __webpack_require__(52).type;
-	var NotFoundRouteType = __webpack_require__(54).type;
-	var RedirectType = __webpack_require__(55).type;
+	var DefaultRouteType = __webpack_require__(53).type;
+	var NotFoundRouteType = __webpack_require__(55).type;
+	var RedirectType = __webpack_require__(56).type;
 	var Route = __webpack_require__(69);
 
 	function checkPropTypes(componentName, propTypes, props) {
@@ -10492,10 +10499,10 @@
 	var canUseDOM = __webpack_require__(120).canUseDOM;
 	var LocationActions = __webpack_require__(124);
 	var ImitateBrowserBehavior = __webpack_require__(63);
-	var HashLocation = __webpack_require__(58);
-	var HistoryLocation = __webpack_require__(59);
-	var RefreshLocation = __webpack_require__(60);
-	var StaticLocation = __webpack_require__(61);
+	var HashLocation = __webpack_require__(59);
+	var HistoryLocation = __webpack_require__(60);
+	var RefreshLocation = __webpack_require__(61);
+	var StaticLocation = __webpack_require__(62);
 	var NavigationContext = __webpack_require__(126);
 	var ScrollHistory = __webpack_require__(127);
 	var StateContext = __webpack_require__(128);
@@ -10939,7 +10946,7 @@
 	}
 
 	module.exports = createRouter;
-	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(62)))
+	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(52)))
 
 /***/ },
 /* 72 */
@@ -11013,7 +11020,7 @@
 
 	"use strict";
 
-	var keyMirror = __webpack_require__(143);
+	var keyMirror = __webpack_require__(144);
 
 	var PropagationPhases = keyMirror({bubbled: null, captured: null});
 
@@ -11092,8 +11099,8 @@
 	var EventPluginRegistry = __webpack_require__(75);
 	var EventPluginUtils = __webpack_require__(107);
 
-	var accumulateInto = __webpack_require__(144);
-	var forEachAccumulated = __webpack_require__(145);
+	var accumulateInto = __webpack_require__(145);
+	var forEachAccumulated = __webpack_require__(146);
 	var invariant = __webpack_require__(39);
 
 	/**
@@ -11349,7 +11356,7 @@
 
 	module.exports = EventPluginHub;
 
-	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(62)))
+	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(52)))
 
 /***/ },
 /* 75 */
@@ -11632,7 +11639,7 @@
 
 	module.exports = EventPluginRegistry;
 
-	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(62)))
+	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(52)))
 
 /***/ },
 /* 76 */
@@ -11705,7 +11712,7 @@
 
 	"use strict";
 
-	var getUnboundedScrollPosition = __webpack_require__(146);
+	var getUnboundedScrollPosition = __webpack_require__(147);
 
 	var ViewportMetrics = {
 
@@ -11914,6 +11921,43 @@
 /* 81 */
 /***/ function(module, exports, __webpack_require__) {
 
+	/* WEBPACK VAR INJECTION */(function(process) {/**
+	 * Copyright 2014, Facebook, Inc.
+	 * All rights reserved.
+	 *
+	 * This source code is licensed under the BSD-style license found in the
+	 * LICENSE file in the root directory of this source tree. An additional grant
+	 * of patent rights can be found in the PATENTS file in the same directory.
+	 *
+	 * @providesModule monitorCodeUse
+	 */
+
+	"use strict";
+
+	var invariant = __webpack_require__(39);
+
+	/**
+	 * Provides open-source compatible instrumentation for monitoring certain API
+	 * uses before we're ready to issue a warning or refactor. It accepts an event
+	 * name which may only contain the characters [a-z0-9_] and an optional data
+	 * object with further information.
+	 */
+
+	function monitorCodeUse(eventName, data) {
+	  ("production" !== process.env.NODE_ENV ? invariant(
+	    eventName && !/[^a-z0-9_]/.test(eventName),
+	    'You must provide an eventName using only the characters [a-z0-9_]'
+	  ) : invariant(eventName && !/[^a-z0-9_]/.test(eventName)));
+	}
+
+	module.exports = monitorCodeUse;
+
+	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(52)))
+
+/***/ },
+/* 82 */
+/***/ function(module, exports, __webpack_require__) {
+
 	/**
 	 * Copyright 2013-2014, Facebook, Inc.
 	 * All rights reserved.
@@ -11946,43 +11990,6 @@
 
 
 /***/ },
-/* 82 */
-/***/ function(module, exports, __webpack_require__) {
-
-	/* WEBPACK VAR INJECTION */(function(process) {/**
-	 * Copyright 2014, Facebook, Inc.
-	 * All rights reserved.
-	 *
-	 * This source code is licensed under the BSD-style license found in the
-	 * LICENSE file in the root directory of this source tree. An additional grant
-	 * of patent rights can be found in the PATENTS file in the same directory.
-	 *
-	 * @providesModule monitorCodeUse
-	 */
-
-	"use strict";
-
-	var invariant = __webpack_require__(39);
-
-	/**
-	 * Provides open-source compatible instrumentation for monitoring certain API
-	 * uses before we're ready to issue a warning or refactor. It accepts an event
-	 * name which may only contain the characters [a-z0-9_] and an optional data
-	 * object with further information.
-	 */
-
-	function monitorCodeUse(eventName, data) {
-	  ("production" !== process.env.NODE_ENV ? invariant(
-	    eventName && !/[^a-z0-9_]/.test(eventName),
-	    'You must provide an eventName using only the characters [a-z0-9_]'
-	  ) : invariant(eventName && !/[^a-z0-9_]/.test(eventName)));
-	}
-
-	module.exports = monitorCodeUse;
-
-	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(62)))
-
-/***/ },
 /* 83 */
 /***/ function(module, exports, __webpack_require__) {
 
@@ -11998,7 +12005,7 @@
 	 * @typechecks
 	 */
 
-	var isNode = __webpack_require__(147);
+	var isNode = __webpack_require__(148);
 
 	/**
 	 * @param {*} object The object to check.
@@ -12085,7 +12092,7 @@
 
 	module.exports = ReactNativeComponent;
 
-	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(62)))
+	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(52)))
 
 /***/ },
 /* 85 */
@@ -12165,7 +12172,7 @@
 
 	module.exports = ReactEmptyComponent;
 
-	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(62)))
+	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(52)))
 
 /***/ },
 /* 86 */
@@ -12226,20 +12233,20 @@
 
 	__webpack_require__(150);
 
-	var Tabs = _interopRequire(__webpack_require__(103));
+	var Tabs = _interopRequire(__webpack_require__(99));
 
 	//http://community.citizenedu.tw/t/topic/798/11
 
 	var post_stream = __webpack_require__(152).post_stream;
 
-	var $ = _interopRequire(__webpack_require__(148));
+	var $ = _interopRequire(__webpack_require__(143));
 
 	module.exports = React.createClass({
 	    displayName: "Comments",
 
 	    getInitialState: function getInitialState() {
 	        return {
-	            focusTab: "editorsPick", //all
+	            focusTab: "all", //all, editorsPick
 	            max: 3,
 	            commentData: post_stream.posts,
 	            expandedCommentId: {}
@@ -12324,11 +12331,14 @@
 	        var commentData = _state.commentData;
 	        var expandedCommentId = _state.expandedCommentId;
 
+	        var noComment = true;
+
 	        //console.log(commentData);
 
 	        var postsItem = commentData.filter(function (item) {
 	            return focusTab === "editorsPick" ? item.post_type === 2 : item;
 	        }).map(function (item, key) {
+	            noComment = false;
 	            var size = 120;
 	            var avatarTemplate = item.avatar_template.split("{size}")[0] + "/" + size + "/" + item.avatar_template.split("{size}")[1];
 	            var imgURL = "http://community.citizenedu.tw" + avatarTemplate;
@@ -12349,6 +12359,23 @@
 	                { className: "Comments-expandButton",
 	                    onClick: bouncClick },
 	                "Read more"
+	            );
+
+	            /* =====================================
+	             *  Content
+	             * ===================================== */
+
+	            var regex = /(<([^>]+)>)/ig;
+	            var commentContentItem = true ?
+	            //var commentContentItem = (expandedCommentId[item.id]) ?
+	            React.createElement("div", { dangerouslySetInnerHTML: { __html: item.cooked } }) : React.createElement(
+	                "div",
+	                null,
+	                React.createElement(
+	                    "p",
+	                    null,
+	                    item.cooked.replace(regex, "").substring(0, 150) + "..."
+	                )
 	            );
 	            return React.createElement(
 	                "div",
@@ -12373,7 +12400,7 @@
 	                        { className: "Comments-date" },
 	                        "・發表於  " + item.created_at.split("T")[0]
 	                    ),
-	                    React.createElement("div", { dangerouslySetInnerHTML: { __html: item.cooked } })
+	                    commentContentItem
 	                ),
 	                expandButtomItem
 	            );
@@ -12384,10 +12411,14 @@
 	         * ================================ */
 	        var tabs = [{ id: "editorsPick", title: "編輯嚴選" }, { id: "all", title: "全部" }];
 
+	        React.createElement(Tabs, { activeId: this.state.focusTab,
+	            data: tabs,
+	            onClick: this._onToggle });
+
 	        /* ================================ 
 	         *   Show More Button
 	         * ================================ */
-	        var showMoreButtonItem = postsItem.length > max ? React.createElement(
+	        var showMoreButtonItem = postsItem.length > max && !noComment ? React.createElement(
 	            "div",
 	            { className: "Comments-footer" },
 	            React.createElement(
@@ -12413,6 +12444,12 @@
 	            )
 	        );
 
+	        var content = noComment ? React.createElement(
+	            "div",
+	            { className: "Comments-noPost" },
+	            "現在沒有討論"
+	        ) : postsItem;
+
 	        return React.createElement(
 	            "div",
 	            { className: "Comments" },
@@ -12424,10 +12461,7 @@
 	                    { className: "Comments-title" },
 	                    "討論"
 	                ),
-	                React.createElement(Tabs, { activeId: this.state.focusTab,
-	                    data: tabs,
-	                    onClick: this._onToggle }),
-	                postsItem,
+	                content,
 	                showMoreButtonItem
 	            )
 	        );
@@ -12552,7 +12586,7 @@
 /***/ function(module, exports, __webpack_require__) {
 
 	exports = module.exports = __webpack_require__(51)();
-	exports.push([module.id, ".List {\n\t//background: rgb(250,250,250);\n\tpadding-bottom: 90px;\n\n}\n.List-article {\n\tbackground: rgb(250,250,250);\n}\n\n\n/* NEXT */\n.List-nextItem {\n\tline-height: 1.4;\n\tfont-size: 14px;\n\tmargin: 10px 0 4px 0;\t\n}\n.List-nextItemTitle {\n\tbackground: rgb(200,200,200);\n\tdisplay: inline-block;\n\tpadding: 6px 14px;\n\tcolor: white;\n\tmargin: 10px 0;\t\n}\n.List-nextPost {\n\tcursor: pointer;\t\n}\n.List-nextPost:hover, .List-nextTitle:hover {\n\tcolor: #87B825;\n}\n.List-nextTitle {\n\tfont-weight: 700;\n}\n.List-nextPreview {\n\tfont-size: 16px;\n}\n.List-nextLink {\n\tdisplay: inline-block;\n\tfont-size: 16px;\n\tcolor: rgb(100,100,100);\n\tborder: none;\n\ttext-decoration: underline;\n}\n\n/* LIST */\n.List-content {\n\tpadding: 10px 5px 0px 5px;\n}\n@media screen and (min-width: 400px){\n    .List-content {\n\t\tmax-width: 600px;\n        margin: 0 auto;\n\n    }\n    .List-indexContent {\n\t\tmax-width: 600px;\n       \n    }\n}\n.List-title {\n\tpadding: 0px 5px 10px 15px;\n\tfont-weight: 700;\n\t\n\tborder-bottom: 1px solid rgb(120,120,120);\n}\n\n\n.List-articleItem {\n\tmargin: 1px;\n\tpadding: 12px 12px;\n\tcursor: pointer;\n\tcolor: rgb(80,80,80);\n\tdisplay: block;\n\tborder:none;\n\tline-height: 1.4;\n\tfont-size: 16px;\n\n}\n.List-articleItem:hover, .List-indexItem:hover {\n\tcolor: black;\n\tbackground: rgb(240,240,240);\n}\n\n.List-articleItemDate {\n\tdisplay: inline-block;\n    margin-right: 14px;\n    float: left;\n\n}\n.List-articleItemTitle {\n\toverflow: hidden;  _overflow:visible;  zoom:1;\n    \n}\n\n/* ----------------- */\n.List-boldTitle {\n\tfont-weight: 800;\n}\n@media screen and (min-width: 600px){\n    .List--index {\n    \theight: 100vh;\n    \toverflow: scroll;\n    }\n}\n.List-indexContent {\n\tmax-width: 800px;\n\n}\n.List-indexItem {\n\tmargin-bottom: 20px;\n\tpadding: 10px 12px;\n\tcursor: pointer;\n\tcolor: rgb(80,80,80);\n\tdisplay: block;\n\tborder:none;\n\tline-height: 1.4;\n\tfont-size: 16px;\n}\n.List-articleItemBrief {\n\tcolor: rgb(100,100,100);\n}\n\n/* ----------------- */\n.List-footer {\n\tmargin: 0 auto;\n\ttext-align: center;\n}\n.List-button {\n\tborder: 1px solid rgb(220,220,220);\n\tcolor: rgb(100,100,100);\n\tcursor: pointer;\n\tpadding: 8px 20px;\n\tdisplay: inline-block;\n\tborder-radius: 20px;\n\n}\n.List-button:hover {\n   border: 1px solid rgb(50,50,50);\n   color: black;\n}\n\n/* ----------------- */\n\n/* ----------------- */\n.List-filter {\n    line-height: 1.4;\n    padding: 10px;\n    border-bottom: 1px solid rgb(220,220,220);\n    //text-align: center;\n\n}\n.List-filterMeta {\n\tfont-size: 14px;\n}\n.List-filterTitle {\n\tmargin-top: 4px;\n\tfont-size: 18px;\n\tfont-weight: 800;\n}\n\n\n\n", ""]);
+	exports.push([module.id, ".List {\n\t//background: rgb(250,250,250);\n\tpadding-bottom: 90px;\n\n}\n.List-article {\n\tbackground: rgb(250,250,250);\n}\n\n\n/* NEXT */\n.List-nextItem {\n\tline-height: 1.4;\n\tfont-size: 14px;\n\tmargin: 10px 0 4px 0;\t\n}\n.List-nextItemTitle {\n\tbackground: rgb(200,200,200);\n\tdisplay: inline-block;\n\tpadding: 6px 14px;\n\tcolor: white;\n\tmargin: 10px 0;\t\n}\n.List-nextPost {\n\tcursor: pointer;\t\n}\n.List-nextPost:hover, .List-nextTitle:hover {\n\tcolor: #87B825;\n}\n.List-nextTitle {\n\tfont-weight: 700;\n}\n.List-nextPreview {\n\tfont-size: 16px;\n}\n.List-nextLink {\n\tdisplay: inline-block;\n\tfont-size: 16px;\n\tcolor: rgb(100,100,100);\n\tborder: none;\n\ttext-decoration: underline;\n}\n\n/* LIST */\n.List-content {\n\tpadding: 10px 5px 0px 5px;\n}\n@media screen and (min-width: 400px){\n    .List-content {\n\t\tmax-width: 600px;\n        margin: 0 auto;\n\n    }\n    .List-indexContent {\n\t\tmax-width: 600px;\n       \n    }\n}\n.List-title {\n\tpadding: 0px 12px;\n\tfont-weight: 700;\n\t//border-bottom: 1px solid rgb(120,120,120);\n}\n@media all and (min-width: 400px){\n\t.List-title {\n\t\tpadding: 0px 5px 10px 15px;\n    }\n}\n.List-articleItem {\n\tmargin: 1px;\n\tpadding: 12px 12px;\n\tcursor: pointer;\n\tcolor: rgb(80,80,80);\n\tdisplay: block;\n\tborder:none;\n\tline-height: 1.4;\n\tfont-size: 16px;\n\n}\n.List-articleItem:hover, .List-indexItem:hover {\n\tcolor: black;\n\tbackground: rgb(240,240,240);\n}\n.List-articleItemDate {\n   display: inline-block;\n   background: rgb(220,220,220);\n   padding: 0 4px;\n   margin: 5px 0;\n}\n@media all and (min-width: 400px){\n\t.List-articleItemDate {\n\t   display: inline-block;\n       float: left;\n       background: none;\n       margin: 0 14px 0 0;\n    }\n}\n.List-articleItemTitle {\n\toverflow: hidden;  _overflow:visible;  zoom:1;\n    \n}\n\n/* ----------------- */\n.List-boldTitle {\n\tfont-weight: 800;\n}\n.List--index {\n\tflex: 1;\n\torder: 2;\n}\n@media screen and (min-width: 600px){\n    .List--index {\n    \theight: 100vh;\n    \toverflow: scroll;\n    }\n}\n\n\n\n.List-indexContent {\n\tmax-width: 800px;\n\n}\n.List-indexItem {\n\tmargin-bottom: 20px;\n\tpadding: 10px 12px;\n\tcursor: pointer;\n\tcolor: rgb(80,80,80);\n\tdisplay: block;\n\tborder:none;\n\tline-height: 1.4;\n\tfont-size: 16px;\n}\n.List-articleItemBrief {\n\tcolor: rgb(100,100,100);\n}\n\n/* ----------------- */\n.List-footer {\n\tmargin: 0 auto;\n\ttext-align: center;\n}\n.List-button {\n\tborder: 1px solid rgb(220,220,220);\n\tcolor: rgb(100,100,100);\n\tcursor: pointer;\n\tpadding: 8px 20px;\n\tdisplay: inline-block;\n\tborder-radius: 20px;\n\n}\n.List-button:hover {\n   border: 1px solid rgb(50,50,50);\n   color: black;\n}\n\n/* ----------------- */\n\n/* ----------------- */\n.List-filter {\n    line-height: 1.4;\n    padding: 10px;\n    border-bottom: 1px solid rgb(220,220,220);\n    //text-align: center;\n\n}\n.List-filterMeta {\n\tfont-size: 14px;\n}\n.List-filterTitle {\n\tmargin-top: 4px;\n\tfont-size: 18px;\n\tfont-weight: 800;\n}\n\n\n\n", ""]);
 
 /***/ },
 /* 94 */
@@ -12665,70 +12699,10 @@
 /***/ function(module, exports, __webpack_require__) {
 
 	exports = module.exports = __webpack_require__(51)();
-	exports.push([module.id, ".AboutSite {\n    width: 100%;\n    //background: #C39372;\n    background: rgba(135,184,37,1);\n    \n    color: white;\n    //color: rgb(50,50,50);\n    overflow: scroll;\n    flex: 1;   \n}\n@media screen and (min-width: 600px){\n\t.AboutSite {\n\t\tfloat: left;\n    \twidth: 340px;\n    \theight: 100vh;\n    \toverflow: scroll;\n    \tflex: none;\n\n    }\n    \n\n}\n\n.AboutSite-img {\n\twidth: 100%;\n}\n.AboutSite-content {\n\tline-height: 1.6;\n\tpadding: 10px;\n}\n.AboutSite-title {\n\tfont-size: 24px;\n\tfont-weight: 800;\n}\n.AboutSite-meta {\n\tmargin-top: 20px;\n\tfont-size: 10px;\n\tdisplay: inline-block;\n\tcursor: pointer;\n}\n.AboutSite-meta:hover {\n\tborder-bottom: 1px solid;\n\n}", ""]);
+	exports.push([module.id, ".Author {\n\tline-height: 1.6;\n\tmargin-bottom: 20px;\n\tbox-shadow: 4px 4px 0px rgba(200,200,200,0.4);\n\tpadding: 0 18px;\n\tbackground: white;\n\tcursor: pointer;\n\tborder: 1px solid gray;\n\tmargin: 0 5px;\n\t\n}\n.Author p{\n\tline-height: 1.4;\n\tfont-size: 16px;\n\n}\n.Author img {\n\tmax-width: 100%;\n}\n.Author:hover {\n    box-shadow: 4px 4px 0px rgba(200,200,200,0.6);\n}\n.Author-gotoBio {\n\tmargin-top: 5px;\n\tbackground: #87B825;\n\tcolor: white;\n\tdisplay: inline-block;\n\tpadding: 4px 10px;\n\tcursor: pointer;\n\n}\n.Author-gotoBio:hover {\n\t//box-shadow: 4px 4px 8px rgba(0,0,0,0.12), -4px -4px 8px rgba(0,0,0,0.12);\n}\n/* =================================================== */\n\n.Author-widget {\n\ttext-align: center;\n\tbackground: rgb(240,240,240);\n\tpadding: 4px 1px;\n\tfont-size: 14px;\n}\n.Author-widgetLink {\n\tdisplay: inline-block;\n\tborder: none;\n\tcolor: rgb(50,50,50);\n\tmargin: 0 1px;\n}\n.Author-widgetLink:hover {\n\tcolor: #87B825;\n}\n@media screen and (min-width: 400px){\n\t.Author-widget {\n\t\tbackground: rgba(250,250,250,0.8);\n\t\tbox-shadow: 0px 1px 0px rgba(0,0,0,0.12);\n\t    z-index: 10;\n\t\tfont-size: 16px;\n\t\ttext-align: center;\n\t\twidth: 100%;\n\t\theight: 50px;\n\t\tpadding-top: 4px;\n    }\n    .Author-fixedWidget {\n    \tbackground: rgba(255,255,255,0.95);\n    \tposition: fixed;\n\t\ttop: 0;\n\t\tz-index: 100;\n    }\n\n}\n.Author-widgetAvatar {\n\twidth: 40px;\n\tborder-radius: 50%;\n}\n.Author-widgetInfo {\n\tvertical-align: top;\n\tdisplay: inline-block;\n\tmargin: 0 6px;\n    padding-top: 4px;\n}\n\n/* ====== 學科分類 ====== */\n.Author-tagsSection {\n\tdisplay: none;\n}\n@media screen and (min-width: 400px){\n\t.Author-tagsSection {\n\t\tdisplay: inline-block;\n\t}\n}\n.Author-tags {\n\tfont-size: 14px;\n}\n.Author-tagLink {\n\tfont-size: 14px;\n\tcolor: rgb(80,80,80);\n}\n.Author-tagLink:hover {\n\tcolor: black;\n}\n\n\n\n/* ==================================== */\n.Author--pageBio {\n\twidth: 100%;\n\t//background: rgb(241,241,241);\n\tpadding-top: 50px;\n    \n}\n.Author--pageContent{\n\tmargin: 0 auto;\n\tposition: relative;\n}\n\n.Author-pageTop {\n\ttext-align: center;\n\t//padding-bottom: 30px;\n}\n.Author-nameTitle {\n\tmargin-top: 10px;\n\tfont-size: 40px;\n\tfont-weight: 800;\n\ttext-align: center;\n}\n.Author-pageAvatar {\n\twidth: 120px;\n\theight: 120px;\n\tborder-radius: 50%;\n\tbox-shadow: 1px 1px 0 0 rgba(0,0,0,0.12),-1px 1px 0 0 rgba(0,0,0,0.12);\n    border: 3px solid white;\n}\n.Author-Tabs {\n\tmargin: 0 5px;\n}\n\n.Author--pageMain{\n\twidth: 100%;\n\tborder-top: 1px dotted rgb(220,220,220);\n\tbackground: rgb(250,250,250);\n\tpadding-top: 20px;\n\tpadding-bottom: 100px;\n}\n.Author-bio {\n\tline-height: 1.6;\n\t//box-shadow: 4px 4px 0px rgba(200,200,200,0.4);\n\tpadding: 0 10px;\n\tbackground: white;\n\tcursor: pointer;\n\tmargin: 0 5px 50px 5px;\n}\n@media all and (min-width: 600px){\n\t.Author--page {\n        display: flex;\n\t}\n\t.Author--pageBio {\n\t\tflex: 0 0 340px;\n\t\theight: 100vh;\n\t\toverflow-y: scroll;\n\t\tpadding: 10px;\n\n\t}\n\t.Author--pageMain {\n\t\tflex: 1;\n\t\tborder: none;\n\t\tpadding: 30px 10px;\n\t\theight: 100vh;\n        overflow-x: hidden;\n\t\toverflow-y: scroll;\n\t}\n}\n@media all and (min-width: 900px){\n\t.Author--pageMain {\n\t\tpadding: 30px;\n\t}\n\n}\n.Author-bio p{\n    font-size: 16px;\n    line-height: 1.4;\n}\n.Author-showFullBio {\n\tbackground: rgb(220,220,220);\n\tpadding: 4px 10px;\n\tcolor: rgb(100,100,100);\n\tdisplay: inline-block;\n\tmargin: 0;\n\ttext-align: center;\n}\n.Author-articleTitleWrapper {\n\tposition: absolute;\n    top: -32px;\n    left: 50%;\n}\n.Author-articleTitle {\n\tposition: relative;\n    left: -50%;\n    display: inline-block;\n    background: white;\n    border: 1px solid rgb(220,220,220);\n    padding: 2px 20px;\n    color: rgb(100,100,100);\n  \n}\n@media all and (min-width: 600px){\n\t.Author-articleTitleWrapper {\n\t\tposition: relative;\n\t\ttop: 0;\n\t\tmargin-left: 10px;\n\t\tdisplay: block;\n\t\t\n    }\n    .Author-articleTitle {\n    \tposition: relative;\n\n    }\n\t\n}\n.Author-article {\n    line-height: 1.6;\n\tmargin-bottom: 20px;\n\t//box-shadow: 4px 4px 0px rgba(200,200,200,0.4);\n\t//background: white;\n\t//border: 1px solid gray;\n\tmargin: 0 5px;\n\tmax-width: 600px;\n}\n.Author-articleItem {\n\tmargin: 1px;\n\tpadding: 12px;\n\tcursor: pointer;\n\tcolor: rgb(80,80,80);\n\tdisplay: block;\n\tborder:none;\n\tline-height: 1.4;\n\tfont-size: 16px;\n}\n.Author-articleItem:hover {\n\tcolor: black;\n\tbackground: rgb(240,240,240);\n}\n.Author-articleItemDate {\n    display: inline-block;\n    margin-right: 14px;\n    float: left; \n}\n.Author-articleItemTitle {\n\toverflow: hidden;  _overflow:visible;  zoom:1;\n}", ""]);
 
 /***/ },
 /* 99 */
-/***/ function(module, exports, __webpack_require__) {
-
-	// style-loader: Adds some css to the DOM by adding a <style> tag
-
-	// load the styles
-	var content = __webpack_require__(100);
-	if(typeof content === 'string') content = [[module.id, content, '']];
-	// add the styles to the DOM
-	var update = __webpack_require__(27)(content, {});
-	// Hot Module Replacement
-	if(true) {
-		// When the styles change, update the <style> tags
-		module.hot.accept(100, function() {
-			var newContent = __webpack_require__(100);
-			if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
-			update(newContent);
-		});
-		// When the module is disposed, remove the <style> tags
-		module.hot.dispose(function() { update(); });
-	}
-
-/***/ },
-/* 100 */
-/***/ function(module, exports, __webpack_require__) {
-
-	exports = module.exports = __webpack_require__(51)();
-	exports.push([module.id, ".Columns {\n\tdisplay: inline-block;\n\toverflow:hidden;  _overflow:visible;  zoom:1;\n\t//background: #DABDA8;\n\tbackground: #FAFAFA;\n\t//min-height:100vh;\n\twidth: 100%;\n\n\tflex: none;\n\n}\n\n.Column {\n\tbackground: white;\n\t//border: 1px solid #DABDA8;\n\tborder: 1px solid #FAFAFA;\n\tbox-shadow: 4px 4px 0 0 rgba(0,0,0,0.12);\n\tmargin: 5px;\n\tcursor: pointer;\n\n\tdisplay: inline-block;\n\t\n\tvertical-align: top;\n\tpadding: 8px;\n\tline-height: 1.6;\n\n\t\n\toverflow: hidden;\n\n\t\n}\n@media screen and (min-width: 600px){\n    .Columns {\n    \tflex: 2;\n    \t\n    \theight: 100vh;\n    \toverflow: scroll;\n    \tpadding: 0 10px;\n    }\n    .Column {\n    \twidth: 250px;\n    \tmargin: 10px 5px;\n    \theight: 200px;\n    }\n}\n.Column:hover {\n\tbox-shadow: 4px 4px 0 0 rgba(0,0,0,0.24);\n}\n.Column-name {\n   font-size: 20px;\n   font-weight: 800;\n   color: rgb(50,50,50);\n}\n.Column:hover .Column-name {\n\t//color: #87B825;\n\tcolor: black;\n}", ""]);
-
-/***/ },
-/* 101 */
-/***/ function(module, exports, __webpack_require__) {
-
-	// style-loader: Adds some css to the DOM by adding a <style> tag
-
-	// load the styles
-	var content = __webpack_require__(102);
-	if(typeof content === 'string') content = [[module.id, content, '']];
-	// add the styles to the DOM
-	var update = __webpack_require__(27)(content, {});
-	// Hot Module Replacement
-	if(true) {
-		// When the styles change, update the <style> tags
-		module.hot.accept(102, function() {
-			var newContent = __webpack_require__(102);
-			if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
-			update(newContent);
-		});
-		// When the module is disposed, remove the <style> tags
-		module.hot.dispose(function() { update(); });
-	}
-
-/***/ },
-/* 102 */
-/***/ function(module, exports, __webpack_require__) {
-
-	exports = module.exports = __webpack_require__(51)();
-	exports.push([module.id, ".Author {\n\tline-height: 1.6;\n\tmargin-bottom: 20px;\n\tbox-shadow: 4px 4px 0px rgba(200,200,200,0.4);\n\tpadding: 0 18px;\n\tbackground: white;\n\tcursor: pointer;\n\tborder: 1px solid gray;\n\tmargin: 0 5px;\n\t\n}\n.Author p {\n\tline-height: 1.4;\n\tfont-size: 14px;\n}\n.Author img {\n\tmax-width: 100%;\n}\n.Author:hover {\n    box-shadow: 4px 4px 0px rgba(200,200,200,0.6);\n}\n.Author-showFullBio {\n\tmargin-top: 15px;\n\tbackground: #87B825;\n\tcolor: white;\n\tdisplay: inline-block;\n\tpadding: 4px 10px;\n\tcursor: pointer;\n\tdisplay: none;\n}\n.Author-showFullBio:hover {\n\tbox-shadow: 4px 4px 8px rgba(0,0,0,0.12), -4px -4px 8px rgba(0,0,0,0.12);;\n}\n/* =================================================== */\n\n.Author-widget {\n\ttext-align: center;\n\tbackground: rgb(240,240,240);\n\tpadding: 4px 1px;\n\tfont-size: 14px;\n}\n.Author-widgetLink {\n\tdisplay: inline-block;\n\tborder: none;\n\tcolor: rgb(50,50,50);\n\tmargin: 0 1px;\n}\n.Author-widgetLink:hover {\n\tcolor: #87B825;\n}\n@media screen and (min-width: 400px){\n\t.Author-widget {\n\t\tbackground: rgba(250,250,250,0.8);\n\t\tbox-shadow: 0px 1px 0px rgba(0,0,0,0.12);\n\t    z-index: 10;\n\t\tfont-size: 16px;\n\t\ttext-align: center;\n\t\twidth: 100%;\n\t\theight: 50px;\n\t\tpadding-top: 4px;\n    }\n    .Author-fixedWidget {\n    \tbackground: rgba(255,255,255,0.95);\n    \tposition: fixed;\n\t\ttop: 0;\n\t\tz-index: 100;\n    }\n\n}\n.Author-widgetAvatar {\n\twidth: 40px;\n\tborder-radius: 50%;\n}\n.Author-widgetInfo {\n\tvertical-align: top;\n\tdisplay: inline-block;\n\tmargin: 0 6px;\n    padding-top: 4px;\n}\n\n/* ====== 學科分類 ====== */\n.Author-tagsSection {\n\tdisplay: none;\n}\n@media screen and (min-width: 400px){\n\t.Author-tagsSection {\n\t\tdisplay: inline-block;\n\t}\n}\n.Author-tags {\n\tfont-size: 14px;\n}\n.Author-tagLink {\n\tfont-size: 14px;\n\tcolor: rgb(80,80,80);\n}\n.Author-tagLink:hover {\n\tcolor: black;\n}\n\n\n\n/* ==================================== */\n.Author--page {\n\twidth: 100%;\n\t//background: rgb(241,241,241);\n\tmin-height: 100vh;\n\theight: 100%;\n\tpadding-top: 50px;\n\tpadding-bottom: 80px;\n}\n@media screen and (min-width: 600px){\n\t.Author--pageContent{\n\t\twidth: 600px;\n\t\tmargin: 0 auto;\n\t}\n}\n.Author-pageTop {\n\ttext-align: center;\n\tpadding-bottom: 30px;\n}\n.Author-nameTitle {\n\tmargin-top: 10px;\n\tfont-size: 40px;\n\tfont-weight: 800;\n\ttext-align: center;\n}\n.Author-pageAvatar {\n\twidth: 120px;\n\theight: 120px;\n\tborder-radius: 50%;\n\tbox-shadow: 1px 1px 0 0 rgba(0,0,0,0.12),-1px 1px 0 0 rgba(0,0,0,0.12);\n    border: 3px solid white;\n}\n.Author-Tabs {\n\tmargin: 0 5px;\n}\n.Author-article {\n    line-height: 1.6;\n\tmargin-bottom: 20px;\n\tbox-shadow: 4px 4px 0px rgba(200,200,200,0.4);\n\tbackground: white;\n\tborder: 1px solid gray;\n\tmargin: 0 5px;\n}\n.Author-articleItem {\n\tmargin: 1px;\n\tpadding: 12px;\n\tcursor: pointer;\n\tcolor: rgb(80,80,80);\n\tdisplay: block;\n\tborder:none;\n\tline-height: 1.4;\n\tfont-size: 16px;\n}\n.Author-articleItem:hover {\n\tcolor: black;\n\tbackground: rgb(240,240,240);\n}\n.Author-articleItemDate {\n    display: inline-block;\n    margin-right: 14px;\n    float: left; \n}\n.Author-articleItemTitle {\n\toverflow: hidden;  _overflow:visible;  zoom:1;\n}", ""]);
-
-/***/ },
-/* 103 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(module) {/* REACT HOT LOADER */ if (true) { (function () { var ReactHotAPI = __webpack_require__(16), RootInstanceProvider = __webpack_require__(5), ReactMount = __webpack_require__(15), React = __webpack_require__(17); module.makeHot = module.hot.data ? module.hot.data.makeHot : ReactHotAPI(function () { return RootInstanceProvider.getRootInstances(ReactMount); }, React); })(); } (function () {
@@ -12774,6 +12748,66 @@
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(7)(module)))
 
 /***/ },
+/* 100 */
+/***/ function(module, exports, __webpack_require__) {
+
+	// style-loader: Adds some css to the DOM by adding a <style> tag
+
+	// load the styles
+	var content = __webpack_require__(101);
+	if(typeof content === 'string') content = [[module.id, content, '']];
+	// add the styles to the DOM
+	var update = __webpack_require__(27)(content, {});
+	// Hot Module Replacement
+	if(true) {
+		// When the styles change, update the <style> tags
+		module.hot.accept(101, function() {
+			var newContent = __webpack_require__(101);
+			if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+			update(newContent);
+		});
+		// When the module is disposed, remove the <style> tags
+		module.hot.dispose(function() { update(); });
+	}
+
+/***/ },
+/* 101 */
+/***/ function(module, exports, __webpack_require__) {
+
+	exports = module.exports = __webpack_require__(51)();
+	exports.push([module.id, ".AboutSite {\n    width: 100%;\n    //background: #C39372;\n    background: rgba(135,184,37,1);\n    \n    color: white;\n    //color: rgb(50,50,50);\n    overflow: scroll;\n    order: 1;\n    flex: 1;   \n}\n@media screen and (min-width: 600px){\n\t.AboutSite {\n\t\theight: 100vh;\n    \toverflow: scroll;\n    \tflex: 0 0 340px;\n    }\n}\n.AboutSite-img {\n\tdisplay: none;\n}\n@media screen and (min-width: 600px){\n    .AboutSite-img { \n        display: block;   \n        width: 100%;    \n    }\n}\n.AboutSite-content {\n\tline-height: 1.6;\n\tpadding: 10px;\n}\n.AboutSite-title {\n\tfont-size: 24px;\n\tfont-weight: 800;\n}\n.AboutSite-meta {\n\tmargin-top: 20px;\n\tfont-size: 10px;\n\tdisplay: inline-block;\n\tcursor: pointer;\n}\n.AboutSite-meta:hover {\n\tborder-bottom: 1px solid;\n\n}", ""]);
+
+/***/ },
+/* 102 */
+/***/ function(module, exports, __webpack_require__) {
+
+	// style-loader: Adds some css to the DOM by adding a <style> tag
+
+	// load the styles
+	var content = __webpack_require__(103);
+	if(typeof content === 'string') content = [[module.id, content, '']];
+	// add the styles to the DOM
+	var update = __webpack_require__(27)(content, {});
+	// Hot Module Replacement
+	if(true) {
+		// When the styles change, update the <style> tags
+		module.hot.accept(103, function() {
+			var newContent = __webpack_require__(103);
+			if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+			update(newContent);
+		});
+		// When the module is disposed, remove the <style> tags
+		module.hot.dispose(function() { update(); });
+	}
+
+/***/ },
+/* 103 */
+/***/ function(module, exports, __webpack_require__) {
+
+	exports = module.exports = __webpack_require__(51)();
+	exports.push([module.id, ".Columns {\n\tdisplay: inline-block;\n\toverflow:hidden;  _overflow:visible;  zoom:1;\n\t//background: #DABDA8;\n\tbackground: #FAFAFA;\n\t//min-height:100vh;\n\twidth: 100%;\n\n\tflex: 1;\n\torder: 2;\n\n}\n\n.Column {\n\tbackground: white;\n\t//border: 1px solid #DABDA8;\n\tborder: 1px solid #FAFAFA;\n\tbox-shadow: 4px 4px 0 0 rgba(0,0,0,0.12);\n\tmargin: 5px;\n\tcursor: pointer;\n\n\tdisplay: inline-block;\n\t\n\tvertical-align: top;\n\tpadding: 8px;\n\tline-height: 1.6;\n\n\t\n\toverflow: hidden;\n\n\t\n}\n@media screen and (min-width: 600px){\n    .Columns {\n    \tflex: 2;\n    \t\n    \theight: 100vh;\n    \toverflow: scroll;\n    \tpadding: 0 10px;\n    }\n    .Column {\n    \twidth: 250px;\n    \tmargin: 10px 5px;\n    \theight: 200px;\n    }\n}\n.Column:hover {\n\tbox-shadow: 4px 4px 0 0 rgba(0,0,0,0.24);\n}\n.Column-name {\n   font-size: 20px;\n   font-weight: 800;\n   color: rgb(50,50,50);\n}\n.Column:hover .Column-name {\n\t//color: #87B825;\n\tcolor: black;\n}", ""]);
+
+/***/ },
 /* 104 */
 /***/ function(module, exports, __webpack_require__) {
 
@@ -12801,7 +12835,7 @@
 /***/ function(module, exports, __webpack_require__) {
 
 	exports = module.exports = __webpack_require__(51)();
-	exports.push([module.id, ".Tags {\n\t//background: #D36E6E;\n\tbackground: rgb(250,250,250);\n\t\n\tdisplay: inline-block;\n\tvertical-align: top;\n\tpadding-left: 10px;\n\twidth: 100%;\n\tpadding-bottom: 80px;\n\t\n}\n\n@media screen and (min-width: 1000px){\n\t.Tags {\n\t\tfloat: right;\n    \twidth: 320px;\n    \theight: 100vh;\n    }\n\n}\n.Tags-title {\n\tborder-bottom: 1px solid rgb(220,220,220);\n\tpadding: 5px;\n\tmargin: 10px 0;\n\tcolor: rgb(120,120,120);\n}\n.Tags-Tag {\n\tpadding: 5px 10px;\n\tcursor: pointer;\n\tborder: 1px solid rgb(220,220,220);\n\tdisplay: inline-block;\n\tmargin: 4px;\n\tbackground: white;\n}\n.Tags-Tag:hover {\n\t//border: 1px solid #D36E6E;\n\tborder: 1px solid rgba(135,184,37,1);\n\t//background: #D36E6E;\n\tbackground: rgba(135,184,37,1);\n\tcolor: white;\n}", ""]);
+	exports.push([module.id, ".Tags {\n\t//background: #D36E6E;\n\tbackground: rgb(250,250,250);\n\t\n\tdisplay: inline-block;\n\tvertical-align: top;\n\tpadding-left: 10px;\n\twidth: 100%;\n\tpadding-bottom: 80px;\n\torder: 3;\n\t\n}\n@media screen and (min-width: 600px){\n\t.Tags {\n\t\tflex: 1 100%;\n    }\n\n}\n@media screen and (min-width: 1000px){\n\t.Tags {\n\t\tflex: 0 0 320px;\n    \theight: 100vh;\n    }\n\n}\n.Tags-title {\n\tborder-bottom: 1px solid rgb(220,220,220);\n\tpadding: 5px;\n\tmargin: 10px 0;\n\tcolor: rgb(120,120,120);\n}\n.Tags-Tag {\n\tpadding: 5px 10px;\n\tcursor: pointer;\n\tborder: 1px solid rgb(220,220,220);\n\tdisplay: inline-block;\n\tmargin: 4px;\n\tbackground: white;\n}\n.Tags-Tag:hover {\n\t//border: 1px solid #D36E6E;\n\tborder: 1px solid rgba(135,184,37,1);\n\t//background: #D36E6E;\n\tbackground: rgba(135,184,37,1);\n\tcolor: white;\n}", ""]);
 
 /***/ },
 /* 106 */
@@ -13001,7 +13035,7 @@
 
 	module.exports = DOMPropertyOperations;
 
-	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(62)))
+	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(52)))
 
 /***/ },
 /* 107 */
@@ -13225,7 +13259,7 @@
 
 	module.exports = EventPluginUtils;
 
-	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(62)))
+	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(52)))
 
 /***/ },
 /* 108 */
@@ -13378,7 +13412,7 @@
 
 	module.exports = ReactChildren;
 
-	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(62)))
+	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(52)))
 
 /***/ },
 /* 109 */
@@ -13403,7 +13437,7 @@
 
 	var assign = __webpack_require__(78);
 	var invariant = __webpack_require__(39);
-	var keyMirror = __webpack_require__(143);
+	var keyMirror = __webpack_require__(144);
 
 	/**
 	 * Every React component is in one of these life cycles.
@@ -13824,7 +13858,7 @@
 
 	module.exports = ReactComponent;
 
-	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(62)))
+	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(52)))
 
 /***/ },
 /* 110 */
@@ -13861,9 +13895,9 @@
 	var assign = __webpack_require__(78);
 	var instantiateReactComponent = __webpack_require__(38);
 	var invariant = __webpack_require__(39);
-	var keyMirror = __webpack_require__(143);
+	var keyMirror = __webpack_require__(144);
 	var keyOf = __webpack_require__(167);
-	var monitorCodeUse = __webpack_require__(82);
+	var monitorCodeUse = __webpack_require__(81);
 	var mapObject = __webpack_require__(168);
 	var shouldUpdateReactComponent = __webpack_require__(40);
 	var warning = __webpack_require__(41);
@@ -15267,7 +15301,7 @@
 
 	module.exports = ReactCompositeComponent;
 
-	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(62)))
+	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(52)))
 
 /***/ },
 /* 111 */
@@ -15297,7 +15331,7 @@
 	var ReactPropTypeLocations = __webpack_require__(165);
 	var ReactCurrentOwner = __webpack_require__(30);
 
-	var monitorCodeUse = __webpack_require__(82);
+	var monitorCodeUse = __webpack_require__(81);
 	var warning = __webpack_require__(41);
 
 	/**
@@ -15552,7 +15586,7 @@
 
 	module.exports = ReactElementValidator;
 
-	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(62)))
+	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(52)))
 
 /***/ },
 /* 112 */
@@ -15738,7 +15772,7 @@
 
 	module.exports = ReactDOM;
 
-	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(62)))
+	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(52)))
 
 /***/ },
 /* 113 */
@@ -15758,10 +15792,10 @@
 
 	"use strict";
 
-	var CSSPropertyOperations = __webpack_require__(195);
+	var CSSPropertyOperations = __webpack_require__(169);
 	var DOMProperty = __webpack_require__(28);
 	var DOMPropertyOperations = __webpack_require__(106);
-	var ReactBrowserComponentMixin = __webpack_require__(177);
+	var ReactBrowserComponentMixin = __webpack_require__(170);
 	var ReactComponent = __webpack_require__(109);
 	var ReactBrowserEventEmitter = __webpack_require__(29);
 	var ReactMount = __webpack_require__(15);
@@ -15773,7 +15807,7 @@
 	var invariant = __webpack_require__(39);
 	var isEventSupported = __webpack_require__(79);
 	var keyOf = __webpack_require__(167);
-	var monitorCodeUse = __webpack_require__(82);
+	var monitorCodeUse = __webpack_require__(81);
 
 	var deleteListener = ReactBrowserEventEmitter.deleteListener;
 	var listenTo = ReactBrowserEventEmitter.listenTo;
@@ -16228,7 +16262,7 @@
 
 	module.exports = ReactDOMComponent;
 
-	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(62)))
+	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(52)))
 
 /***/ },
 /* 114 */
@@ -16247,37 +16281,37 @@
 
 	"use strict";
 
-	var BeforeInputEventPlugin = __webpack_require__(169);
-	var ChangeEventPlugin = __webpack_require__(170);
-	var ClientReactRootIndex = __webpack_require__(171);
-	var CompositionEventPlugin = __webpack_require__(172);
-	var DefaultEventPluginOrder = __webpack_require__(173);
-	var EnterLeaveEventPlugin = __webpack_require__(174);
+	var BeforeInputEventPlugin = __webpack_require__(171);
+	var ChangeEventPlugin = __webpack_require__(172);
+	var ClientReactRootIndex = __webpack_require__(173);
+	var CompositionEventPlugin = __webpack_require__(174);
+	var DefaultEventPluginOrder = __webpack_require__(175);
+	var EnterLeaveEventPlugin = __webpack_require__(176);
 	var ExecutionEnvironment = __webpack_require__(120);
-	var HTMLDOMPropertyConfig = __webpack_require__(175);
-	var MobileSafariClickEventPlugin = __webpack_require__(176);
-	var ReactBrowserComponentMixin = __webpack_require__(177);
+	var HTMLDOMPropertyConfig = __webpack_require__(177);
+	var MobileSafariClickEventPlugin = __webpack_require__(178);
+	var ReactBrowserComponentMixin = __webpack_require__(170);
 	var ReactComponentBrowserEnvironment =
-	  __webpack_require__(178);
-	var ReactDefaultBatchingStrategy = __webpack_require__(179);
+	  __webpack_require__(179);
+	var ReactDefaultBatchingStrategy = __webpack_require__(180);
 	var ReactDOMComponent = __webpack_require__(113);
-	var ReactDOMButton = __webpack_require__(180);
-	var ReactDOMForm = __webpack_require__(181);
-	var ReactDOMImg = __webpack_require__(182);
-	var ReactDOMInput = __webpack_require__(183);
-	var ReactDOMOption = __webpack_require__(184);
-	var ReactDOMSelect = __webpack_require__(185);
-	var ReactDOMTextarea = __webpack_require__(186);
-	var ReactEventListener = __webpack_require__(187);
-	var ReactInjection = __webpack_require__(188);
+	var ReactDOMButton = __webpack_require__(181);
+	var ReactDOMForm = __webpack_require__(182);
+	var ReactDOMImg = __webpack_require__(183);
+	var ReactDOMInput = __webpack_require__(184);
+	var ReactDOMOption = __webpack_require__(185);
+	var ReactDOMSelect = __webpack_require__(186);
+	var ReactDOMTextarea = __webpack_require__(187);
+	var ReactEventListener = __webpack_require__(188);
+	var ReactInjection = __webpack_require__(189);
 	var ReactInstanceHandles = __webpack_require__(33);
 	var ReactMount = __webpack_require__(15);
-	var SelectEventPlugin = __webpack_require__(189);
-	var ServerReactRootIndex = __webpack_require__(190);
-	var SimpleEventPlugin = __webpack_require__(191);
-	var SVGDOMPropertyConfig = __webpack_require__(192);
+	var SelectEventPlugin = __webpack_require__(190);
+	var ServerReactRootIndex = __webpack_require__(191);
+	var SimpleEventPlugin = __webpack_require__(192);
+	var SVGDOMPropertyConfig = __webpack_require__(193);
 
-	var createFullPageComponent = __webpack_require__(193);
+	var createFullPageComponent = __webpack_require__(194);
 
 	function inject() {
 	  ReactInjection.EventEmitter.injectReactEventListener(
@@ -16350,7 +16384,7 @@
 	  if ("production" !== process.env.NODE_ENV) {
 	    var url = (ExecutionEnvironment.canUseDOM && window.location.href) || '';
 	    if ((/[?&]react_perf\b/).test(url)) {
-	      var ReactDefaultPerf = __webpack_require__(194);
+	      var ReactDefaultPerf = __webpack_require__(195);
 	      ReactDefaultPerf.start();
 	    }
 	  }
@@ -16360,7 +16394,7 @@
 	  inject: inject
 	};
 
-	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(62)))
+	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(52)))
 
 /***/ },
 /* 115 */
@@ -17233,7 +17267,7 @@
 	  renderToStaticMarkup: renderToStaticMarkup
 	};
 
-	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(62)))
+	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(52)))
 
 /***/ },
 /* 118 */
@@ -17386,7 +17420,7 @@
 
 	module.exports = onlyChild;
 
-	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(62)))
+	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(52)))
 
 /***/ },
 /* 120 */
@@ -17441,6 +17475,67 @@
 /* 121 */
 /***/ function(module, exports, __webpack_require__) {
 
+	"use strict";
+
+	var warning = __webpack_require__(41);
+	var invariant = __webpack_require__(39);
+
+	function checkPropTypes(componentName, propTypes, props) {
+	  for (var propName in propTypes) {
+	    if (propTypes.hasOwnProperty(propName)) {
+	      var error = propTypes[propName](props, propName, componentName);
+
+	      if (error instanceof Error) warning(false, error.message);
+	    }
+	  }
+	}
+
+	var Configuration = {
+
+	  statics: {
+
+	    validateProps: function validateProps(props) {
+	      checkPropTypes(this.displayName, this.propTypes, props);
+	    }
+
+	  },
+
+	  render: function render() {
+	    invariant(false, "%s elements are for router configuration only and should not be rendered", this.constructor.displayName);
+	  }
+
+	};
+
+	module.exports = Configuration;
+
+/***/ },
+/* 122 */
+/***/ function(module, exports, __webpack_require__) {
+
+	"use strict";
+
+	var assign = __webpack_require__(78);
+	var ReactPropTypes = __webpack_require__(17).PropTypes;
+
+	var PropTypes = assign({
+
+	  /**
+	   * Requires that the value of a prop be falsy.
+	   */
+	  falsy: function falsy(props, propName, componentName) {
+	    if (props[propName]) {
+	      return new Error("<" + componentName + "> may not have a \"" + propName + "\" prop");
+	    }
+	  }
+
+	}, ReactPropTypes);
+
+	module.exports = PropTypes;
+
+/***/ },
+/* 123 */
+/***/ function(module, exports, __webpack_require__) {
+
 	/**
 	 * Copyright 2013-2014, Facebook, Inc.
 	 * All rights reserved.
@@ -17479,67 +17574,6 @@
 
 	module.exports = cx;
 
-
-/***/ },
-/* 122 */
-/***/ function(module, exports, __webpack_require__) {
-
-	"use strict";
-
-	var assign = __webpack_require__(78);
-	var ReactPropTypes = __webpack_require__(17).PropTypes;
-
-	var PropTypes = assign({
-
-	  /**
-	   * Requires that the value of a prop be falsy.
-	   */
-	  falsy: function falsy(props, propName, componentName) {
-	    if (props[propName]) {
-	      return new Error("<" + componentName + "> may not have a \"" + propName + "\" prop");
-	    }
-	  }
-
-	}, ReactPropTypes);
-
-	module.exports = PropTypes;
-
-/***/ },
-/* 123 */
-/***/ function(module, exports, __webpack_require__) {
-
-	"use strict";
-
-	var warning = __webpack_require__(41);
-	var invariant = __webpack_require__(39);
-
-	function checkPropTypes(componentName, propTypes, props) {
-	  for (var propName in propTypes) {
-	    if (propTypes.hasOwnProperty(propName)) {
-	      var error = propTypes[propName](props, propName, componentName);
-
-	      if (error instanceof Error) warning(false, error.message);
-	    }
-	  }
-	}
-
-	var Configuration = {
-
-	  statics: {
-
-	    validateProps: function validateProps(props) {
-	      checkPropTypes(this.displayName, this.propTypes, props);
-	    }
-
-	  },
-
-	  render: function render() {
-	    invariant(false, "%s elements are for router configuration only and should not be rendered", this.constructor.displayName);
-	  }
-
-	};
-
-	module.exports = Configuration;
 
 /***/ },
 /* 124 */
@@ -18184,185 +18218,6 @@
 /***/ function(module, exports, __webpack_require__) {
 
 	module.exports = {
-		"id": 1872,
-		"name": "朱家安",
-		"username": "kris",
-		"avatar_template": "/user_avatar/community.citizenedu.tw/kris/{size}/18.png",
-		"uploaded_avatar_id": 18,
-		"created_at": "2015-03-16T07:09:39.039Z",
-		"cooked": "<h1>作者已死：評論藝術作品，需要看作者臉色嗎？</h1>\n\n<p><div class=\"lightbox-wrapper\"></div> </p>\n\n<p>試想以下狀況：</p>\n\n<p>評論家針對一本小說寫了評論，認為它隱含強烈的懷疑論思想。然而，小說作者認為該評論的詮釋嚴重扭曲了他原本的創作意圖，並為文反駁。</p>\n\n<p>在文章裡，小說家強調自己根本沒有任何懷疑論的想法，並認為該評論非常不負責任：如果想知道作品背後的創作意圖，為何不打通電話來詢問作者而卻要私自揣測呢？作者還好端端活著，只要一通電話就能得到正確答案呀！就算不打電話，也可以去看他在雜誌以及網路專欄的訪談，早就談過作品真正想表達的內容。</p>\n\n<p>評論家看了作家反駁的文章，不甘示弱也寫了另一篇文回應，在文中他表示，他通常不會去看作家高談闊論自己作品的文章，他只關注作品本身告訴他什麼；如果讀者還得請作者來「指導」他讀懂作品，這不會是文學評論的正途。</p>\n\n<h2>作者意圖與詮釋</h2>\n\n<p>前例改編自筆者身邊的真實故事，事實上這種作家與評論家（或讀者與讀者之間）的爭論相當常見，網路上的電影、小說討論區甚至文學界的研究者都常為了作品的正確詮釋而爭論不休。這種現象不禁讓我們想問：究竟任意詮釋作品是否合理？有所謂的過度詮釋嗎？若有，限制詮釋的條件是什麼？到底有沒有「唯一正確」的詮釋？這一系列問題大抵上就構成了藝術哲學中一個相當棘手的議題：詮釋（interpretation）。</p>\n\n<p>從開頭的例子，我們大概可以看出作家跟評論家兩人爭論的一個重點：</p>\n\n<blockquote><p>作者意圖（authorial intention）&lt;1&gt;與作品意義（work-meaning）之間的關係究竟是什麼？</p></blockquote>\n\n<p>在前例中，作家認為一部作品說了什麼，取決於作者要透過它說什麼；評論家則認為，作品說了什麼，應該僅取決於作品內容。簡單地說：一方認為正確的詮釋是作者說了算，另一方認為是作品說了算。</p>\n\n<h2>意圖謬誤</h2>\n\n<p>在英美分析哲學的歷史中，詮釋理論的爭論始於1946年的一篇論文〈意圖謬誤〉（The Intentional Fallacy）&lt;2&gt;。〈意圖謬誤〉由文學評論家Wimsatt與哲學家Beardsley合著，它在英美藝術哲學界掀起的論戰，迄今尚未停歇。Wimsatt和Beardsley的核心主張很簡單：</p>\n\n<blockquote><p>任何由作者意圖（前提）來推出作品意義（結論）的論證，都犯了「訴諸意圖的謬誤」（以下簡稱「意圖謬誤」）。</p></blockquote>\n\n<p>舉例來說，假設我是一位評論家，讀完了一本小說後打算寫書評，動筆之前我從電視上的作者訪談得知作者在創作這本小說時，打算透過這個故事來體現懷疑論的哲學思想。於是我在評論文章中便以此為基礎，將該本小說詮釋成表達了懷疑論的思想。對於Wimsatt還有Beardsley而言，這樣的詮釋就是意圖謬誤。根據Wimsatt和Beardsley，「訴諸作者的意圖來推出作品意義」的推理，是無效的。</p>\n\n<p>他們首先用一個兩難式來證明，作者意圖與作品詮釋無關（irrelevant）：</p>\n\n<ul>\n<li>（前提一）要嘛作者成功在作品中實現了他的創作意圖，要嘛失敗了。</li>\n<li>（前提二）如果作者成功在作品中實現了他的創作意圖，那麼我們便沒有必要訴諸作者意圖（作品本身就告訴我們作者意圖）。</li>\n<li>（前提三）如果作者沒有成功在作品中實現創作意圖，我們當然也不需要訴諸作者意圖（既然失敗，這個意圖已經跟作品無關了）。</li>\n<li>（結論）不管是哪一種狀況，訴諸作者意圖都是沒有必要的。</li>\n</ul>\n\n<p>舉剛剛的例子，如果作者藉由小說表達懷疑論的哲學思想，並且成功寫出了體現懷疑論的故事，在這種情況下，讀者沒有必要去閱讀作者的訪談或去看作者的facebook來得知該作品背後有懷疑論的思想，因為故事本身就能告訴我們這點。</p>\n\n<p>然而，如果作者的嘗試失敗了，作品無法與懷疑論產生有意義的關聯，那麼就算作者在訪談中說他試圖創作一部懷疑論的小說，我們也不需要去管這個創作意圖，因為實際上寫出來的作品已經跟這個意圖毫無關係了。也就是說，無論如何，要知道作品的意義，我們只需要看作品本身，毋須訴諸作者的意圖來進行詮釋工作，因為文本就告訴我們一切。這種詮釋立場被稱為「反意圖主義」（anti-intentionalism）。你可以猜到，和這種立場相反的，自然就被叫做「意圖主義」（intentionalism）。</p>\n\n<h1>語言慣例與作品意義</h1>\n\n<p>如果我們接受了反意圖主義的兩難論證&lt;3&gt;，不禁要繼續追問「作品自己說了算」或是「文本就告訴我們一切」到底是什麼意思&lt;4&gt;。僅依賴文本來得出作品意義，所依賴的到底是什麼？對反意圖主義而言，我們的詮釋必定依據文本呈現出的一套客觀資料。這些客觀資料其實就是作品中的文字所關涉到的語言慣例（linguistic conventions）。</p>\n\n<p>文學作品由文字組成，文字的意義來自語言慣例，這包含了字典中對字詞成語的定義以及一般大眾的語言使用習慣。若沒有這些語言慣例，大部分的言談都不可能進行，更不用說看懂文學作品了。反意圖主義者認為，語言慣例是詮釋作品時不能違背的客觀資料，詮釋者必須觀察作品所使用文字的語言慣例，透過公共的語言知識來推敲作品意義。</p>\n\n<p>有些人可能會說，透過語言慣例頂多只是知道字詞或語句的表面意思（literal meaning），而難以知道正確的弦外之音，就是因為難以確定作品的隱含意義（implicit meaning），才需要知道作者意圖來破解一些模糊的文意。但反意圖主義者對於語言慣例的理解比這種批評來得廣泛和深刻。</p>\n\n<p>對反意圖主義者來說，語言慣例包括字詞的言外之意（connotation），因為它們也是字詞意義的一部分。例如當我們說「沙漠」就會聯想到「乾渴」，不會聯想到「豐饒」；「獅子」代表「勇猛」而不會是「膽小」；而像成語都有固定指涉的意義，不可濫用。針對較大的語言單位，例如語句，其暗示（suggestion）也都有跡可尋而非任意。如果有人跟你說：「今天的考試超級難！」你就可以推知對方今天參加了考試，而且可能沒有考超高分。這些都預設了語言慣例的理解&lt;5&gt;。</p>\n\n<p>當一個作品中某個段落的意義含糊時，我們通常可以透過掌握相關的語言慣例，全盤細讀作品的上下文來排除不可能的解讀並推理出正確的作品意義。反意圖主義者認為透過這樣的方式，在大部分的狀況下我們可以得到一個唯一正確的作品詮釋&lt;6&gt;。由於主張作品意義是由語言慣例所決定，反意圖主義者又被稱為「慣例主義者」（conventionalist）。</p>\n\n<h2>為什麼反意圖？</h2>\n\n<p>Beardsley進一步提出兩個論證來說明文學評論應該要採取反意圖主義的進路&lt;7&gt;。第一個是關於作者意圖的可得性（availability）。通常讀者們難以獲取關於作者意圖的證據或資料（回想你從以前到現在看過的小說，你了解幾本小說的創作意圖？），更別提許多作者都是年代久遠的古人，想問也問不到。在這種情況下，在裁定詮釋的對錯時，最可靠的證據就是文本。如果我們最後可以從文本中找到證據否決某個解讀，那麼該解讀就是錯的。</p>\n\n<p>第二個論證是關於審美的滿足感（aesthetic satisfaction）。文學詮釋的目標應該是幫助讀者深入了解作品來獲取閱讀的滿足感。例如小說或詩詞的評論文章常常可以替我們指點迷津，讓我們發出「原來這首詩有這層意思！」或是「原來這個故事表達了這個主題！」之類的讚嘆，進而使我們的閱讀經驗更加愉快。既然我們在閱讀及解讀的對象是作品，評論瞄準的應該就是作品本身，而不是外在於作品的作者以及其意圖。</p>\n\n<p>讀到這裡也許有人會說，透過作者意圖來了解作品不也能帶來閱讀的滿足感？當我們更了解作家寫作的嘗試時，常常也能夠讓閱讀體驗更有趣。嚴格說來Beardsley並沒有反對我們在詮釋作品時「參考」作者意圖的資訊，他真正反對的是這些資訊必然地決定了作品意義。參考這些資訊，可以，但我們被這些訊息所啟發的詮釋假設是對是錯，由我們在作品身上觀察到的證據來決定。這些資訊頂多帶給我們詮釋靈感，但不能決定作品意義。如果這些資訊最後證明跟作品無關，那麼就算它能帶來滿足感，也不會是詮釋活動應該要帶來的滿足。</p>\n\n<h2>小結</h2>\n\n<p>反意圖主義的精神在於給予作品自己的生命，而不是讓作品成為作者手下的傀儡。作品就像作者的孩子，出生後就是獨立自存的個體，擁有自己的思想，不受父母控制。父母或許是孩子誕生的原因，但他們沒有辦法代替孩子說話，就如同作者不能代替作品說話。在詮釋活動中，我們該理解、傾聽的不是作者，而是作品。評論者應該把作品從作者的陰影中解放出來&lt;8&gt;。</p>\n\n<h1>Notes</h1>\n\n<ol>\n<li>如何定義「意圖」（intention）也引發了不少的爭議，但可以粗略理解成作者欲在作品中實現的計畫或設計。</li>\n<li>Wimsatt Jr, William and Beardsley, Monroe C. (1946). The Intentional Fallacy. <em>Sewanee Review</em>, 54: 468-88.</li>\n<li>關於反意圖主義的兩難論證該如何「詮釋」有很大的爭議，這個論證真正證明的是訴諸作者意圖是不必要的，但沒有證明作者意圖不能決定作品意義，因為它仍承認了那些成功在作品中實現的意圖。Wimsatt與Beardsley要說的是語言慣例就能充分地（sufficiently）決定作品意義，因此考慮作者意圖是多餘的。但後來Beardsley的立場卻似乎否認作者意圖與作品意義有任何相關性。由於Beardsley是反意圖主義最重要的人物，如上理解也成為一般對意圖謬誤的標準詮釋。針對此點爭議可參閱Lyas, C. (1992). Wittgensteinian Intentions. In G. Iseminger (ed.), <em>Intention &amp; Interpretation</em>. Philadelphia: Temple University Press, 132-151.</li>\n<li>「文本」（text）、「作品」（work）二詞在反意圖主義的脈絡中沒有太深刻的區分，常常混用，這是因為Beardsley將作品等同於文本。但後來的哲學家將二詞做出了嚴格區分。此處不細論。</li>\n<li>Beardsley, M. C. (1981). <em>Aesthetics, Problems in the Philosophy of Criticism</em>. Hackett Publishing.</li>\n<li>若不能，表示文本本身就是模糊的，但反意圖主義者認為這種狀況不多。</li>\n<li>Beardsley, M. C. (1970). <em>The Possibility of Criticism</em>. Detroit: Wayne State University Press.</li>\n<li>本文只是介紹哲學立場，不代表作者立場。</li>\n</ol>",
-		"post_number": 18,
-		"post_type": 1,
-		"updated_at": "2015-03-19T08:18:36.036Z",
-		"reply_count": 0,
-		"reply_to_post_number": null,
-		"quote_count": 0,
-		"avg_time": 24,
-		"incoming_link_count": 1,
-		"reads": 14,
-		"score": 23.8,
-		"yours": false,
-		"topic_id": 767,
-		"topic_slug": "topic",
-		"topic_auto_close_at": null,
-		"display_username": "朱家安",
-		"primary_group_name": null,
-		"version": 4,
-		"can_edit": true,
-		"can_delete": true,
-		"can_recover": true,
-		"link_counts": [
-			{
-				"url": "https://www.facebook.com/citizenedu",
-				"internal": false,
-				"reflection": false,
-				"title": "沃草公民學院 - Watchout Citizenedu | Facebook",
-				"clicks": 1
-			},
-			{
-				"url": "https://www.facebook.com/pages/%E6%9E%97%E6%96%AF%E8%AB%BA-Lin-Sihyan/147719061920901",
-				"internal": false,
-				"reflection": false,
-				"title": "林斯諺　Lin Sihyan | Facebook",
-				"clicks": 1
-			},
-			{
-				"url": "http://community.citizenedu.tw/",
-				"internal": true,
-				"reflection": false,
-				"clicks": 0
-			}
-		],
-		"read": true,
-		"user_title": null,
-		"actions_summary": [
-			{
-				"id": 2,
-				"count": 1,
-				"hidden": false,
-				"can_act": true,
-				"can_defer_flags": false
-			},
-			{
-				"id": 3,
-				"count": 0,
-				"hidden": false,
-				"can_act": true,
-				"can_defer_flags": false
-			},
-			{
-				"id": 4,
-				"count": 0,
-				"hidden": false,
-				"can_act": true,
-				"can_defer_flags": false
-			},
-			{
-				"id": 5,
-				"count": 0,
-				"hidden": true,
-				"can_act": true,
-				"can_defer_flags": false
-			},
-			{
-				"id": 6,
-				"count": 0,
-				"hidden": false,
-				"can_act": true,
-				"can_defer_flags": false
-			},
-			{
-				"id": 7,
-				"count": 0,
-				"hidden": false,
-				"can_act": true,
-				"can_defer_flags": false
-			},
-			{
-				"id": 8,
-				"count": 0,
-				"hidden": false,
-				"can_act": true,
-				"can_defer_flags": false
-			}
-		],
-		"moderator": true,
-		"admin": true,
-		"staff": true,
-		"user_id": 4,
-		"hidden": false,
-		"hidden_reason_id": null,
-		"trust_level": 4,
-		"deleted_at": null,
-		"user_deleted": false,
-		"edit_reason": "",
-		"can_view_edit_history": true,
-		"wiki": false
-	}
-
-/***/ },
-/* 136 */
-/***/ function(module, exports, __webpack_require__) {
-
-	module.exports = [
-		{
-			"name": "沃草烙哲學",
-			"intro": "「沃草烙哲學」希望透過互助合作，推廣人文普及寫作，豐富中文世界裡的思辨素材，鼓勵關於普及寫作技術和題材的網路討論。以開放、自由的社群經營來完成上述目標。"
-		},
-		{
-			"name": "菜市場政治學",
-			"intro": "我們是一群政治學的研究者/實踐者。我們想讓大家知道，「政治思辨」不是遙不可及的，容易了解的政治哲學文章，你我在菜市場搬個板凳就可以開聊。"
-		},
-		{
-			"name": "芭樂人類學",
-			"intro": "芭樂人類學創始於2009年11月，以台灣青壯人類學家為主的共筆部落格 ，五十多位輪值寫手多任教於大學及學術機構，從人類學觀點探索日常生活、文化況味、社會張力、與世界百態。"
-		},
-		{
-			"name": "巷子口社會學",
-			"intro": "街頭巷尾，是一般人最常出入的地方，也構築了基本的社區。在這裡，我們看看台灣的日常生活社會如何運行。"
-		},
-		{
-			"name": "歷史學柑仔店",
-			"intro": "我們是一群嘗試從臺灣思考歷史的書寫的史學界夥伴。我們成立了一個「歷史學柑仔店（kám-á-tiàm）」部落格。"
-		},
-		{
-			"name": "沃草烙哲學",
-			"intro": "「沃草烙哲學」希望透過互助合作，推廣人文普及寫作，豐富中文世界裡的思辨素材，鼓勵關於普及寫作技術和題材的網路討論。以開放、自由的社群經營來完成上述目標。"
-		},
-		{
-			"name": "菜市場政治學",
-			"intro": "我們是一群政治學的研究者/實踐者。我們想讓大家知道，「政治思辨」不是遙不可及的，容易了解的政治哲學文章，你我在菜市場搬個板凳就可以開聊。"
-		},
-		{
-			"name": "芭樂人類學",
-			"intro": "芭樂人類學創始於2009年11月，以台灣青壯人類學家為主的共筆部落格 ，五十多位輪值寫手多任教於大學及學術機構，從人類學觀點探索日常生活、文化況味、社會張力、與世界百態。"
-		},
-		{
-			"name": "巷子口社會學",
-			"intro": "街頭巷尾，是一般人最常出入的地方，也構築了基本的社區。在這裡，我們看看台灣的日常生活社會如何運行。"
-		},
-		{
-			"name": "歷史學柑仔店",
-			"intro": "我們是一群嘗試從臺灣思考歷史的書寫的史學界夥伴。我們成立了一個「歷史學柑仔店（kám-á-tiàm）」部落格。"
-		}
-	]
-
-/***/ },
-/* 137 */
-/***/ function(module, exports, __webpack_require__) {
-
-	module.exports = [
-		{
-			"name": "哲學入門 10 篇",
-			"intro": "「沃草烙哲學」希望透過互助合作，推廣人文普及寫作，豐富中文世界裡的思辨素材，鼓勵關於普及寫作技術和題材的網路討論。以開放、自由的社群經營來完成上述目標。"
-		}
-	]
-
-/***/ },
-/* 138 */
-/***/ function(module, exports, __webpack_require__) {
-
-	module.exports = {
 		"user_badges": [
 			{
 				"id": 4,
@@ -18484,8 +18339,8 @@
 			"name": "朱家安",
 			"last_posted_at": "2015-03-26T04:09:46.989Z",
 			"last_seen_at": "2015-03-26T04:09:32.222Z",
-			"bio_raw": "<a href=\"http://3.bp.blogspot.com/-3QCbAP3nL-w/VAQ03Me5uTI/AAAAAAAAF2w/F_Tdd0wu_oc/s1600/1fgnf4TAymOaHtdCn0Xw_271023_469144789785070_742566237_n.jpg\" imageanchor=\"1\" ><img border=\"0\" src=\"http://3.bp.blogspot.com/-3QCbAP3nL-w/VAQ03Me5uTI/AAAAAAAAF2w/F_Tdd0wu_oc/s640/1fgnf4TAymOaHtdCn0Xw_271023_469144789785070_742566237_n.jpg\" /></a>\n<p>你好，我是朱家安，1987年生的宜蘭人，中正哲學研究所博士班學生。我是哲學與思辨的推廣者，也是平面設計師。</p>\n<p>「哲學」這個詞通常會讓人聯想到一些神秘難解、用字莫名的高深言論，或者生活智慧和算命這些事實上和學術哲學毫無關係的東西。作為一個哲學人，我沒辦法阻止宗教人士、算命師和勵志作家用「哲學」來稱呼他們的工作成果，但我希望藉由這裡讓大家瞭解其實很平易近人的哲學。我相信，當我們以淺白、易懂、清晰的探討方式進入哲學，避免那些晦澀、神秘、模糊的用詞，哲學思維內含的邏輯和批判能力才能發揮最大效用，協助我們解析論述和議題，察覺錯謬和悖論，在複雜的情境中做出正確的抉擇。</p>\n<p>在部落格之外，我和幾位哲學所同學共同創立簡單哲學實驗室，致力於網路上和生活中的哲學推廣。2009年至今，簡單哲學實驗室已經舉辦超過30場哲學營隊和講座，參與者達500人次。</p>\n<p>在2013年，我出版了<a href=\"http://phiphicake.logdown.com/posts/206348-the-pithy-philosophical-books\">第一本書</a>，它的名字和這個部落格一樣，叫做「哲學哲學雞蛋糕」。我希望它能協助哲學無痛進入讀者的生活，就像我長久以來在部落格和講座現場做的那樣。</p>\n<p>身為哲學推廣者，我切身體會視覺對知識傳播的重要。因此，我在2013年與<a href=\"http://pansci.tw/\">Pansci泛科學</a>主編陸子鈞共同成立<a href=\"http://anchr.tw/\">Anchr設計團隊</a>，致力於分享有助於知識推廣的簡報設計、視覺化技巧，並提供視覺設計與諮詢服務。</p>\n<p>2014年起我加入沃草，主持「公民學院」計畫，繼續在人文普及上努力。</p>\n<h1>目前</h1>\n<il><li>沃草公民學院主編</li>\n<li><a href=\"http://phedo.org/\">Phedo台灣高中哲學教育推廣協會</a>理事</li>\n<li><a href=\"http://pansci.tw/\">PanSci泛科學</a>專欄作家</li>\n<li><a href=\"http://opinion.udn.com/author/articles/224\">udn鳴人堂</a>專欄作家</li>\n<li>Anchr簡報與視覺設計師</li>\n<li>簡單哲學實驗室創辦人</li></il>\n<h1>經歷</h1>\n<il><li>2013 出版《哲學哲學雞蛋糕》</li>\n<li>2013 TEDxTainan講者</li>\n<li>2013 TEDx溫羅汀講者</li>\n<li>2012 創辦簡單哲學實驗室</li>\n<li>2012~13 羅東高中哲學研究社社團老師</li>\n<li>2012 彰化高中福田邏輯思考社社團老師</li>\n<li>2011 中正哲學所碩士</li>\n<li>2007 創立哲學哲學雞蛋糕網站</li>\n<li>2006~08 深藍學生論壇哲學版創版板主</li>\n<li>2006 仰山童學會創會會長</li>\n<li>1987 出生</li></il>\n<h1>媒體報導</h1>\n<p><a href=\"http://webcache.googleusercontent.com/search?q=cache:aNHz0zWc1l0J:udn.com/NEWS/NATIONAL/NATS5/8580426.shtml%3Fch%3Drss_focus+&cd=2&hl=zh-TW&ct=clnk&gl=tw&lr=lang_en%7Clang_zh-TW\">聯合報 2014</a>：「「每個人心裡都有一個哲學家，卻常因恐懼，錯失與站在對立面的人討論的機會。」朱家安認為，在媒體高度發展、「人人都是評論家」的年代，我們反而更需要「哲學思考」進行更細緻的民主思辨，在公民社會中重新擁抱哲學。」</p>\n\n<p><a href=\"http://okapi.books.com.tw/index.php/p3/p3_detail/sn/2513\">博客來Okapi 2013</a>：「哲學思辨，不是拿來做為爭論的武器，是可以讓社會溝通更容易運行與推進的工具，更是每個人都需具備的日常能力。」<p/>\n\n<p><a href=\"https://www.facebook.com/photo.php?fbid=501273203258194\">新新聞 2013</a>：「走進哲學的思考領域很難嗎？社會議題、時事與生活經驗都可以進行哲學思辨！「哲學哲學雞蛋糕」累積178萬點閱量，透過串連、舉辦講座，不只要讓哲學變簡單，也培養公共議題的討論品質…」</p>\n\n<p><a href=\"https://www.peopo.org/news/60877\">中正E報 2010</a>：「這不是一般的雞蛋糕，這是「哲學哲學雞蛋糕」，老闆是中正大學哲研二朱家安，企圖用各種有趣的方式，推廣哲學平易近人的一面。」</p>",
-			"bio_cooked": "<p><a href=\"http://3.bp.blogspot.com/-3QCbAP3nL-w/VAQ03Me5uTI/AAAAAAAAF2w/F_Tdd0wu_oc/s1600/1fgnf4TAymOaHtdCn0Xw_271023_469144789785070_742566237_n.jpg\"><img src=\"http://3.bp.blogspot.com/-3QCbAP3nL-w/VAQ03Me5uTI/AAAAAAAAF2w/F_Tdd0wu_oc/s640/1fgnf4TAymOaHtdCn0Xw_271023_469144789785070_742566237_n.jpg\"></a><br><p>你好，我是朱家安，1987年生的宜蘭人，中正哲學研究所博士班學生。我是哲學與思辨的推廣者，也是平面設計師。</p><br><p>「哲學」這個詞通常會讓人聯想到一些神秘難解、用字莫名的高深言論，或者生活智慧和算命這些事實上和學術哲學毫無關係的東西。作為一個哲學人，我沒辦法阻止宗教人士、算命師和勵志作家用「哲學」來稱呼他們的工作成果，但我希望藉由這裡讓大家瞭解其實很平易近人的哲學。我相信，當我們以淺白、易懂、清晰的探討方式進入哲學，避免那些晦澀、神秘、模糊的用詞，哲學思維內含的邏輯和批判能力才能發揮最大效用，協助我們解析論述和議題，察覺錯謬和悖論，在複雜的情境中做出正確的抉擇。</p><br><p>在部落格之外，我和幾位哲學所同學共同創立簡單哲學實驗室，致力於網路上和生活中的哲學推廣。2009年至今，簡單哲學實驗室已經舉辦超過30場哲學營隊和講座，參與者達500人次。</p><br><p>在2013年，我出版了<a href=\"http://phiphicake.logdown.com/posts/206348-the-pithy-philosophical-books\">第一本書</a>，它的名字和這個部落格一樣，叫做「哲學哲學雞蛋糕」。我希望它能協助哲學無痛進入讀者的生活，就像我長久以來在部落格和講座現場做的那樣。</p><br><p>身為哲學推廣者，我切身體會視覺對知識傳播的重要。因此，我在2013年與<a href=\"http://pansci.tw/\">Pansci泛科學</a>主編陸子鈞共同成立<a href=\"http://anchr.tw/\">Anchr設計團隊</a>，致力於分享有助於知識推廣的簡報設計、視覺化技巧，並提供視覺設計與諮詢服務。</p><br><p>2014年起我加入沃草，主持「公民學院」計畫，繼續在人文普及上努力。</p><br><h1>目前</h1><br><li>沃草公民學院主編</li><br><li><a href=\"http://phedo.org/\">Phedo台灣高中哲學教育推廣協會</a>理事</li><br><li><a href=\"http://pansci.tw/\">PanSci泛科學</a>專欄作家</li><br><li><a href=\"http://opinion.udn.com/author/articles/224\">udn鳴人堂</a>專欄作家</li><br><li>Anchr簡報與視覺設計師</li><br><li>簡單哲學實驗室創辦人</li><br><h1>經歷</h1><br><li>2013 出版《哲學哲學雞蛋糕》</li><br><li>2013 TEDxTainan講者</li><br><li>2013 TEDx溫羅汀講者</li><br><li>2012 創辦簡單哲學實驗室</li><br><li>2012~13 羅東高中哲學研究社社團老師</li><br><li>2012 彰化高中福田邏輯思考社社團老師</li><br><li>2011 中正哲學所碩士</li><br><li>2007 創立哲學哲學雞蛋糕網站</li><br><li>2006~08 深藍學生論壇哲學版創版板主</li><br><li>2006 仰山童學會創會會長</li><br><li>1987 出生</li><br><h1>媒體報導</h1><br><p><a href=\"http://webcache.googleusercontent.com/search?q=cache:aNHz0zWc1l0J:udn.com/NEWS/NATIONAL/NATS5/8580426.shtml%3Fch%3Drss_focus+&amp;cd=2&amp;hl=zh-TW&amp;ct=clnk&amp;gl=tw&amp;lr=lang_en%7Clang_zh-TW\">聯合報 2014</a>：「「每個人心裡都有一個哲學家，卻常因恐懼，錯失與站在對立面的人討論的機會。」朱家安認為，在媒體高度發展、「人人都是評論家」的年代，我們反而更需要「哲學思考」進行更細緻的民主思辨，在公民社會中重新擁抱哲學。」</p></p>\n\n<p><a href=\"http://okapi.books.com.tw/index.php/p3/p3_detail/sn/2513\">博客來Okapi 2013</a>：「哲學思辨，不是拿來做為爭論的武器，是可以讓社會溝通更容易運行與推進的工具，更是每個人都需具備的日常能力。」<p><p><a href=\"https://www.facebook.com/photo.php?fbid=501273203258194\">新新聞 2013</a>：「走進哲學的思考領域很難嗎？社會議題、時事與生活經驗都可以進行哲學思辨！「哲學哲學雞蛋糕」累積178萬點閱量，透過串連、舉辦講座，不只要讓哲學變簡單，也培養公共議題的討論品質…」</p><p><a href=\"https://www.peopo.org/news/60877\">中正E報 2010</a>：「這不是一般的雞蛋糕，這是「哲學哲學雞蛋糕」，老闆是中正大學哲研二朱家安，企圖用各種有趣的方式，推廣哲學平易近人的一面。」</p></p></p>",
+			"bio_raw": "<p>我相信，當我們以淺白、易懂、清晰的探討方式進入哲學，避免那些晦澀、神秘、模糊的用詞，哲學思維內含的邏輯和批判能力才能發揮最大效用，協助我們解析論述和議題，察覺錯謬和悖論，在複雜的情境中做出正確的抉擇。</p><p>你好，我是朱家安，1987年生的宜蘭人，中正哲學研究所博士班學生。我是哲學與思辨的推廣者，也是平面設計師。</p>\n<p>「哲學」這個詞通常會讓人聯想到一些神秘難解、用字莫名的高深言論，或者生活智慧和算命這些事實上和學術哲學毫無關係的東西。作為一個哲學人，我沒辦法阻止宗教人士、算命師和勵志作家用「哲學」來稱呼他們的工作成果，但我希望藉由這裡讓大家瞭解其實很平易近人的哲學。我相信，當我們以淺白、易懂、清晰的探討方式進入哲學，避免那些晦澀、神秘、模糊的用詞，哲學思維內含的邏輯和批判能力才能發揮最大效用，協助我們解析論述和議題，察覺錯謬和悖論，在複雜的情境中做出正確的抉擇。</p>\n<p>在部落格之外，我和幾位哲學所同學共同創立簡單哲學實驗室，致力於網路上和生活中的哲學推廣。2009年至今，簡單哲學實驗室已經舉辦超過30場哲學營隊和講座，參與者達500人次。</p>\n<p>在2013年，我出版了<a href=\"http://phiphicake.logdown.com/posts/206348-the-pithy-philosophical-books\">第一本書</a>，它的名字和這個部落格一樣，叫做「哲學哲學雞蛋糕」。我希望它能協助哲學無痛進入讀者的生活，就像我長久以來在部落格和講座現場做的那樣。</p>\n<p>身為哲學推廣者，我切身體會視覺對知識傳播的重要。因此，我在2013年與<a href=\"http://pansci.tw/\">Pansci泛科學</a>主編陸子鈞共同成立<a href=\"http://anchr.tw/\">Anchr設計團隊</a>，致力於分享有助於知識推廣的簡報設計、視覺化技巧，並提供視覺設計與諮詢服務。</p>\n<p>2014年起我加入沃草，主持「公民學院」計畫，繼續在人文普及上努力。</p>\n<h1>目前</h1>\n<il><li>沃草公民學院主編</li>\n<li><a href=\"http://phedo.org/\">Phedo台灣高中哲學教育推廣協會</a>理事</li>\n<li><a href=\"http://pansci.tw/\">PanSci泛科學</a>專欄作家</li>\n<li><a href=\"http://opinion.udn.com/author/articles/224\">udn鳴人堂</a>專欄作家</li>\n<li>Anchr簡報與視覺設計師</li>\n<li>簡單哲學實驗室創辦人</li></il>\n<h1>經歷</h1>\n<il><li>2013 出版《哲學哲學雞蛋糕》</li>\n<li>2013 TEDxTainan講者</li>\n<li>2013 TEDx溫羅汀講者</li>\n<li>2012 創辦簡單哲學實驗室</li>\n<li>2012~13 羅東高中哲學研究社社團老師</li>\n<li>2012 彰化高中福田邏輯思考社社團老師</li>\n<li>2011 中正哲學所碩士</li>\n<li>2007 創立哲學哲學雞蛋糕網站</li>\n<li>2006~08 深藍學生論壇哲學版創版板主</li>\n<li>2006 仰山童學會創會會長</li>\n<li>1987 出生</li></il>\n<h1>媒體報導</h1>\n<p><a href=\"http://webcache.googleusercontent.com/search?q=cache:aNHz0zWc1l0J:udn.com/NEWS/NATIONAL/NATS5/8580426.shtml%3Fch%3Drss_focus+&cd=2&hl=zh-TW&ct=clnk&gl=tw&lr=lang_en%7Clang_zh-TW\">聯合報 2014</a>：「「每個人心裡都有一個哲學家，卻常因恐懼，錯失與站在對立面的人討論的機會。」朱家安認為，在媒體高度發展、「人人都是評論家」的年代，我們反而更需要「哲學思考」進行更細緻的民主思辨，在公民社會中重新擁抱哲學。」</p>\n\n<p><a href=\"http://okapi.books.com.tw/index.php/p3/p3_detail/sn/2513\">博客來Okapi 2013</a>：「哲學思辨，不是拿來做為爭論的武器，是可以讓社會溝通更容易運行與推進的工具，更是每個人都需具備的日常能力。」<p/>\n\n<p><a href=\"https://www.facebook.com/photo.php?fbid=501273203258194\">新新聞 2013</a>：「走進哲學的思考領域很難嗎？社會議題、時事與生活經驗都可以進行哲學思辨！「哲學哲學雞蛋糕」累積178萬點閱量，透過串連、舉辦講座，不只要讓哲學變簡單，也培養公共議題的討論品質…」</p>\n\n<p><a href=\"https://www.peopo.org/news/60877\">中正E報 2010</a>：「這不是一般的雞蛋糕，這是「哲學哲學雞蛋糕」，老闆是中正大學哲研二朱家安，企圖用各種有趣的方式，推廣哲學平易近人的一面。」</p>",
+			"bio_cooked": "<p>你好，我是朱家安，1987年生的宜蘭人，中正哲學研究所博士班學生。我是哲學與思辨的推廣者，也是平面設計師。</p><br><p>「哲學」這個詞通常會讓人聯想到一些神秘難解、用字莫名的高深言論，或者生活智慧和算命這些事實上和學術哲學毫無關係的東西。作為一個哲學人，我沒辦法阻止宗教人士、算命師和勵志作家用「哲學」來稱呼他們的工作成果，但我希望藉由這裡讓大家瞭解其實很平易近人的哲學。我相信，當我們以淺白、易懂、清晰的探討方式進入哲學，避免那些晦澀、神秘、模糊的用詞，哲學思維內含的邏輯和批判能力才能發揮最大效用，協助我們解析論述和議題，察覺錯謬和悖論，在複雜的情境中做出正確的抉擇。</p><br><p>在部落格之外，我和幾位哲學所同學共同創立簡單哲學實驗室，致力於網路上和生活中的哲學推廣。2009年至今，簡單哲學實驗室已經舉辦超過30場哲學營隊和講座，參與者達500人次。</p><br><p>在2013年，我出版了<a href=\"http://phiphicake.logdown.com/posts/206348-the-pithy-philosophical-books\">第一本書</a>，它的名字和這個部落格一樣，叫做「哲學哲學雞蛋糕」。我希望它能協助哲學無痛進入讀者的生活，就像我長久以來在部落格和講座現場做的那樣。</p><br><p>身為哲學推廣者，我切身體會視覺對知識傳播的重要。因此，我在2013年與<a href=\"http://pansci.tw/\">Pansci泛科學</a>主編陸子鈞共同成立<a href=\"http://anchr.tw/\">Anchr設計團隊</a>，致力於分享有助於知識推廣的簡報設計、視覺化技巧，並提供視覺設計與諮詢服務。</p><br><p>2014年起我加入沃草，主持「公民學院」計畫，繼續在人文普及上努力。</p><br><h1>目前</h1><br><li>沃草公民學院主編</li><br><li><a href=\"http://phedo.org/\">Phedo台灣高中哲學教育推廣協會</a>理事</li><br><li><a href=\"http://pansci.tw/\">PanSci泛科學</a>專欄作家</li><br><li><a href=\"http://opinion.udn.com/author/articles/224\">udn鳴人堂</a>專欄作家</li><br><li>Anchr簡報與視覺設計師</li><br><li>簡單哲學實驗室創辦人</li><br><h1>經歷</h1><br><li>2013 出版《哲學哲學雞蛋糕》</li><br><li>2013 TEDxTainan講者</li><br><li>2013 TEDx溫羅汀講者</li><br><li>2012 創辦簡單哲學實驗室</li><br><li>2012~13 羅東高中哲學研究社社團老師</li><br><li>2012 彰化高中福田邏輯思考社社團老師</li><br><li>2011 中正哲學所碩士</li><br><li>2007 創立哲學哲學雞蛋糕網站</li><br><li>2006~08 深藍學生論壇哲學版創版板主</li><br><li>2006 仰山童學會創會會長</li><br><li>1987 出生</li><br><h1>媒體報導</h1><br><p><a href=\"http://webcache.googleusercontent.com/search?q=cache:aNHz0zWc1l0J:udn.com/NEWS/NATIONAL/NATS5/8580426.shtml%3Fch%3Drss_focus+&amp;cd=2&amp;hl=zh-TW&amp;ct=clnk&amp;gl=tw&amp;lr=lang_en%7Clang_zh-TW\">聯合報 2014</a>：「「每個人心裡都有一個哲學家，卻常因恐懼，錯失與站在對立面的人討論的機會。」朱家安認為，在媒體高度發展、「人人都是評論家」的年代，我們反而更需要「哲學思考」進行更細緻的民主思辨，在公民社會中重新擁抱哲學。」</p></p>\n\n<p><a href=\"http://okapi.books.com.tw/index.php/p3/p3_detail/sn/2513\">博客來Okapi 2013</a>：「哲學思辨，不是拿來做為爭論的武器，是可以讓社會溝通更容易運行與推進的工具，更是每個人都需具備的日常能力。」<p><p><a href=\"https://www.facebook.com/photo.php?fbid=501273203258194\">新新聞 2013</a>：「走進哲學的思考領域很難嗎？社會議題、時事與生活經驗都可以進行哲學思辨！「哲學哲學雞蛋糕」累積178萬點閱量，透過串連、舉辦講座，不只要讓哲學變簡單，也培養公共議題的討論品質…」</p><p><a href=\"https://www.peopo.org/news/60877\">中正E報 2010</a>：「這不是一般的雞蛋糕，這是「哲學哲學雞蛋糕」，老闆是中正大學哲研二朱家安，企圖用各種有趣的方式，推廣哲學平易近人的一面。」</p></p></p>",
 			"created_at": "2014-08-31T06:00:12.877Z",
 			"website": "http://phiphicake.blogspot.tw",
 			"can_edit": true,
@@ -18593,7 +18448,7 @@
 	}
 
 /***/ },
-/* 139 */
+/* 136 */
 /***/ function(module, exports, __webpack_require__) {
 
 	module.exports = [
@@ -18635,37 +18490,222 @@
 	]
 
 /***/ },
+/* 137 */
+/***/ function(module, exports, __webpack_require__) {
+
+	module.exports = {
+		"id": 1872,
+		"name": "朱家安",
+		"username": "kris",
+		"avatar_template": "/user_avatar/community.citizenedu.tw/kris/{size}/18.png",
+		"uploaded_avatar_id": 18,
+		"created_at": "2015-03-16T07:09:39.039Z",
+		"cooked": "<h1>作者已死：評論藝術作品，需要看作者臉色嗎？</h1>\n\n<p><div class=\"lightbox-wrapper\"></div> </p>\n\n<p>試想以下狀況：</p>\n\n<p>評論家針對一本小說寫了評論，認為它隱含強烈的懷疑論思想。然而，小說作者認為該評論的詮釋嚴重扭曲了他原本的創作意圖，並為文反駁。</p>\n\n<p>在文章裡，小說家強調自己根本沒有任何懷疑論的想法，並認為該評論非常不負責任：如果想知道作品背後的創作意圖，為何不打通電話來詢問作者而卻要私自揣測呢？作者還好端端活著，只要一通電話就能得到正確答案呀！就算不打電話，也可以去看他在雜誌以及網路專欄的訪談，早就談過作品真正想表達的內容。</p>\n\n<p>評論家看了作家反駁的文章，不甘示弱也寫了另一篇文回應，在文中他表示，他通常不會去看作家高談闊論自己作品的文章，他只關注作品本身告訴他什麼；如果讀者還得請作者來「指導」他讀懂作品，這不會是文學評論的正途。</p>\n\n<h2>作者意圖與詮釋</h2>\n\n<p>前例改編自筆者身邊的真實故事，事實上這種作家與評論家（或讀者與讀者之間）的爭論相當常見，網路上的電影、小說討論區甚至文學界的研究者都常為了作品的正確詮釋而爭論不休。這種現象不禁讓我們想問：究竟任意詮釋作品是否合理？有所謂的過度詮釋嗎？若有，限制詮釋的條件是什麼？到底有沒有「唯一正確」的詮釋？這一系列問題大抵上就構成了藝術哲學中一個相當棘手的議題：詮釋（interpretation）。</p>\n\n<p>從開頭的例子，我們大概可以看出作家跟評論家兩人爭論的一個重點：</p>\n\n<blockquote><p>作者意圖（authorial intention）&lt;1&gt;與作品意義（work-meaning）之間的關係究竟是什麼？</p></blockquote>\n\n<p>在前例中，作家認為一部作品說了什麼，取決於作者要透過它說什麼；評論家則認為，作品說了什麼，應該僅取決於作品內容。簡單地說：一方認為正確的詮釋是作者說了算，另一方認為是作品說了算。</p>\n\n<h2>意圖謬誤</h2>\n\n<p>在英美分析哲學的歷史中，詮釋理論的爭論始於1946年的一篇論文〈意圖謬誤〉（The Intentional Fallacy）&lt;2&gt;。〈意圖謬誤〉由文學評論家Wimsatt與哲學家Beardsley合著，它在英美藝術哲學界掀起的論戰，迄今尚未停歇。Wimsatt和Beardsley的核心主張很簡單：</p>\n\n<blockquote><p>任何由作者意圖（前提）來推出作品意義（結論）的論證，都犯了「訴諸意圖的謬誤」（以下簡稱「意圖謬誤」）。</p></blockquote>\n\n<p>舉例來說，假設我是一位評論家，讀完了一本小說後打算寫書評，動筆之前我從電視上的作者訪談得知作者在創作這本小說時，打算透過這個故事來體現懷疑論的哲學思想。於是我在評論文章中便以此為基礎，將該本小說詮釋成表達了懷疑論的思想。對於Wimsatt還有Beardsley而言，這樣的詮釋就是意圖謬誤。根據Wimsatt和Beardsley，「訴諸作者的意圖來推出作品意義」的推理，是無效的。</p>\n\n<p>他們首先用一個兩難式來證明，作者意圖與作品詮釋無關（irrelevant）：</p>\n\n<ul>\n<li>（前提一）要嘛作者成功在作品中實現了他的創作意圖，要嘛失敗了。</li>\n<li>（前提二）如果作者成功在作品中實現了他的創作意圖，那麼我們便沒有必要訴諸作者意圖（作品本身就告訴我們作者意圖）。</li>\n<li>（前提三）如果作者沒有成功在作品中實現創作意圖，我們當然也不需要訴諸作者意圖（既然失敗，這個意圖已經跟作品無關了）。</li>\n<li>（結論）不管是哪一種狀況，訴諸作者意圖都是沒有必要的。</li>\n</ul>\n\n<p>舉剛剛的例子，如果作者藉由小說表達懷疑論的哲學思想，並且成功寫出了體現懷疑論的故事，在這種情況下，讀者沒有必要去閱讀作者的訪談或去看作者的facebook來得知該作品背後有懷疑論的思想，因為故事本身就能告訴我們這點。</p>\n\n<p>然而，如果作者的嘗試失敗了，作品無法與懷疑論產生有意義的關聯，那麼就算作者在訪談中說他試圖創作一部懷疑論的小說，我們也不需要去管這個創作意圖，因為實際上寫出來的作品已經跟這個意圖毫無關係了。也就是說，無論如何，要知道作品的意義，我們只需要看作品本身，毋須訴諸作者的意圖來進行詮釋工作，因為文本就告訴我們一切。這種詮釋立場被稱為「反意圖主義」（anti-intentionalism）。你可以猜到，和這種立場相反的，自然就被叫做「意圖主義」（intentionalism）。</p>\n\n<h1>語言慣例與作品意義</h1>\n\n<p>如果我們接受了反意圖主義的兩難論證&lt;3&gt;，不禁要繼續追問「作品自己說了算」或是「文本就告訴我們一切」到底是什麼意思&lt;4&gt;。僅依賴文本來得出作品意義，所依賴的到底是什麼？對反意圖主義而言，我們的詮釋必定依據文本呈現出的一套客觀資料。這些客觀資料其實就是作品中的文字所關涉到的語言慣例（linguistic conventions）。</p>\n\n<p>文學作品由文字組成，文字的意義來自語言慣例，這包含了字典中對字詞成語的定義以及一般大眾的語言使用習慣。若沒有這些語言慣例，大部分的言談都不可能進行，更不用說看懂文學作品了。反意圖主義者認為，語言慣例是詮釋作品時不能違背的客觀資料，詮釋者必須觀察作品所使用文字的語言慣例，透過公共的語言知識來推敲作品意義。</p>\n\n<p>有些人可能會說，透過語言慣例頂多只是知道字詞或語句的表面意思（literal meaning），而難以知道正確的弦外之音，就是因為難以確定作品的隱含意義（implicit meaning），才需要知道作者意圖來破解一些模糊的文意。但反意圖主義者對於語言慣例的理解比這種批評來得廣泛和深刻。</p>\n\n<p>對反意圖主義者來說，語言慣例包括字詞的言外之意（connotation），因為它們也是字詞意義的一部分。例如當我們說「沙漠」就會聯想到「乾渴」，不會聯想到「豐饒」；「獅子」代表「勇猛」而不會是「膽小」；而像成語都有固定指涉的意義，不可濫用。針對較大的語言單位，例如語句，其暗示（suggestion）也都有跡可尋而非任意。如果有人跟你說：「今天的考試超級難！」你就可以推知對方今天參加了考試，而且可能沒有考超高分。這些都預設了語言慣例的理解&lt;5&gt;。</p>\n\n<p>當一個作品中某個段落的意義含糊時，我們通常可以透過掌握相關的語言慣例，全盤細讀作品的上下文來排除不可能的解讀並推理出正確的作品意義。反意圖主義者認為透過這樣的方式，在大部分的狀況下我們可以得到一個唯一正確的作品詮釋&lt;6&gt;。由於主張作品意義是由語言慣例所決定，反意圖主義者又被稱為「慣例主義者」（conventionalist）。</p>\n\n<h2>為什麼反意圖？</h2>\n\n<p>Beardsley進一步提出兩個論證來說明文學評論應該要採取反意圖主義的進路&lt;7&gt;。第一個是關於作者意圖的可得性（availability）。通常讀者們難以獲取關於作者意圖的證據或資料（回想你從以前到現在看過的小說，你了解幾本小說的創作意圖？），更別提許多作者都是年代久遠的古人，想問也問不到。在這種情況下，在裁定詮釋的對錯時，最可靠的證據就是文本。如果我們最後可以從文本中找到證據否決某個解讀，那麼該解讀就是錯的。</p>\n\n<p>第二個論證是關於審美的滿足感（aesthetic satisfaction）。文學詮釋的目標應該是幫助讀者深入了解作品來獲取閱讀的滿足感。例如小說或詩詞的評論文章常常可以替我們指點迷津，讓我們發出「原來這首詩有這層意思！」或是「原來這個故事表達了這個主題！」之類的讚嘆，進而使我們的閱讀經驗更加愉快。既然我們在閱讀及解讀的對象是作品，評論瞄準的應該就是作品本身，而不是外在於作品的作者以及其意圖。</p>\n\n<p>讀到這裡也許有人會說，透過作者意圖來了解作品不也能帶來閱讀的滿足感？當我們更了解作家寫作的嘗試時，常常也能夠讓閱讀體驗更有趣。嚴格說來Beardsley並沒有反對我們在詮釋作品時「參考」作者意圖的資訊，他真正反對的是這些資訊必然地決定了作品意義。參考這些資訊，可以，但我們被這些訊息所啟發的詮釋假設是對是錯，由我們在作品身上觀察到的證據來決定。這些資訊頂多帶給我們詮釋靈感，但不能決定作品意義。如果這些資訊最後證明跟作品無關，那麼就算它能帶來滿足感，也不會是詮釋活動應該要帶來的滿足。</p>\n\n<h2>小結</h2>\n\n<p>反意圖主義的精神在於給予作品自己的生命，而不是讓作品成為作者手下的傀儡。作品就像作者的孩子，出生後就是獨立自存的個體，擁有自己的思想，不受父母控制。父母或許是孩子誕生的原因，但他們沒有辦法代替孩子說話，就如同作者不能代替作品說話。在詮釋活動中，我們該理解、傾聽的不是作者，而是作品。評論者應該把作品從作者的陰影中解放出來&lt;8&gt;。</p>\n\n<h1>Notes</h1>\n\n<ol>\n<li>如何定義「意圖」（intention）也引發了不少的爭議，但可以粗略理解成作者欲在作品中實現的計畫或設計。</li>\n<li>Wimsatt Jr, William and Beardsley, Monroe C. (1946). The Intentional Fallacy. <em>Sewanee Review</em>, 54: 468-88.</li>\n<li>關於反意圖主義的兩難論證該如何「詮釋」有很大的爭議，這個論證真正證明的是訴諸作者意圖是不必要的，但沒有證明作者意圖不能決定作品意義，因為它仍承認了那些成功在作品中實現的意圖。Wimsatt與Beardsley要說的是語言慣例就能充分地（sufficiently）決定作品意義，因此考慮作者意圖是多餘的。但後來Beardsley的立場卻似乎否認作者意圖與作品意義有任何相關性。由於Beardsley是反意圖主義最重要的人物，如上理解也成為一般對意圖謬誤的標準詮釋。針對此點爭議可參閱Lyas, C. (1992). Wittgensteinian Intentions. In G. Iseminger (ed.), <em>Intention &amp; Interpretation</em>. Philadelphia: Temple University Press, 132-151.</li>\n<li>「文本」（text）、「作品」（work）二詞在反意圖主義的脈絡中沒有太深刻的區分，常常混用，這是因為Beardsley將作品等同於文本。但後來的哲學家將二詞做出了嚴格區分。此處不細論。</li>\n<li>Beardsley, M. C. (1981). <em>Aesthetics, Problems in the Philosophy of Criticism</em>. Hackett Publishing.</li>\n<li>若不能，表示文本本身就是模糊的，但反意圖主義者認為這種狀況不多。</li>\n<li>Beardsley, M. C. (1970). <em>The Possibility of Criticism</em>. Detroit: Wayne State University Press.</li>\n<li>本文只是介紹哲學立場，不代表作者立場。</li>\n</ol>",
+		"post_number": 18,
+		"post_type": 1,
+		"updated_at": "2015-03-19T08:18:36.036Z",
+		"reply_count": 0,
+		"reply_to_post_number": null,
+		"quote_count": 0,
+		"avg_time": 24,
+		"incoming_link_count": 1,
+		"reads": 14,
+		"score": 23.8,
+		"yours": false,
+		"topic_id": 767,
+		"topic_slug": "topic",
+		"topic_auto_close_at": null,
+		"display_username": "朱家安",
+		"primary_group_name": null,
+		"version": 4,
+		"can_edit": true,
+		"can_delete": true,
+		"can_recover": true,
+		"link_counts": [
+			{
+				"url": "https://www.facebook.com/citizenedu",
+				"internal": false,
+				"reflection": false,
+				"title": "沃草公民學院 - Watchout Citizenedu | Facebook",
+				"clicks": 1
+			},
+			{
+				"url": "https://www.facebook.com/pages/%E6%9E%97%E6%96%AF%E8%AB%BA-Lin-Sihyan/147719061920901",
+				"internal": false,
+				"reflection": false,
+				"title": "林斯諺　Lin Sihyan | Facebook",
+				"clicks": 1
+			},
+			{
+				"url": "http://community.citizenedu.tw/",
+				"internal": true,
+				"reflection": false,
+				"clicks": 0
+			}
+		],
+		"read": true,
+		"user_title": null,
+		"actions_summary": [
+			{
+				"id": 2,
+				"count": 1,
+				"hidden": false,
+				"can_act": true,
+				"can_defer_flags": false
+			},
+			{
+				"id": 3,
+				"count": 0,
+				"hidden": false,
+				"can_act": true,
+				"can_defer_flags": false
+			},
+			{
+				"id": 4,
+				"count": 0,
+				"hidden": false,
+				"can_act": true,
+				"can_defer_flags": false
+			},
+			{
+				"id": 5,
+				"count": 0,
+				"hidden": true,
+				"can_act": true,
+				"can_defer_flags": false
+			},
+			{
+				"id": 6,
+				"count": 0,
+				"hidden": false,
+				"can_act": true,
+				"can_defer_flags": false
+			},
+			{
+				"id": 7,
+				"count": 0,
+				"hidden": false,
+				"can_act": true,
+				"can_defer_flags": false
+			},
+			{
+				"id": 8,
+				"count": 0,
+				"hidden": false,
+				"can_act": true,
+				"can_defer_flags": false
+			}
+		],
+		"moderator": true,
+		"admin": true,
+		"staff": true,
+		"user_id": 4,
+		"hidden": false,
+		"hidden_reason_id": null,
+		"trust_level": 4,
+		"deleted_at": null,
+		"user_deleted": false,
+		"edit_reason": "",
+		"can_view_edit_history": true,
+		"wiki": false
+	}
+
+/***/ },
+/* 138 */
+/***/ function(module, exports, __webpack_require__) {
+
+	module.exports = [
+		{
+			"name": "沃草烙哲學",
+			"intro": "「沃草烙哲學」希望透過互助合作，推廣人文普及寫作，豐富中文世界裡的思辨素材，鼓勵關於普及寫作技術和題材的網路討論。以開放、自由的社群經營來完成上述目標。"
+		},
+		{
+			"name": "菜市場政治學",
+			"intro": "我們是一群政治學的研究者/實踐者。我們想讓大家知道，「政治思辨」不是遙不可及的，容易了解的政治哲學文章，你我在菜市場搬個板凳就可以開聊。"
+		},
+		{
+			"name": "芭樂人類學",
+			"intro": "芭樂人類學創始於2009年11月，以台灣青壯人類學家為主的共筆部落格 ，五十多位輪值寫手多任教於大學及學術機構，從人類學觀點探索日常生活、文化況味、社會張力、與世界百態。"
+		},
+		{
+			"name": "巷子口社會學",
+			"intro": "街頭巷尾，是一般人最常出入的地方，也構築了基本的社區。在這裡，我們看看台灣的日常生活社會如何運行。"
+		},
+		{
+			"name": "歷史學柑仔店",
+			"intro": "我們是一群嘗試從臺灣思考歷史的書寫的史學界夥伴。我們成立了一個「歷史學柑仔店（kám-á-tiàm）」部落格。"
+		},
+		{
+			"name": "沃草烙哲學",
+			"intro": "「沃草烙哲學」希望透過互助合作，推廣人文普及寫作，豐富中文世界裡的思辨素材，鼓勵關於普及寫作技術和題材的網路討論。以開放、自由的社群經營來完成上述目標。"
+		},
+		{
+			"name": "菜市場政治學",
+			"intro": "我們是一群政治學的研究者/實踐者。我們想讓大家知道，「政治思辨」不是遙不可及的，容易了解的政治哲學文章，你我在菜市場搬個板凳就可以開聊。"
+		},
+		{
+			"name": "芭樂人類學",
+			"intro": "芭樂人類學創始於2009年11月，以台灣青壯人類學家為主的共筆部落格 ，五十多位輪值寫手多任教於大學及學術機構，從人類學觀點探索日常生活、文化況味、社會張力、與世界百態。"
+		},
+		{
+			"name": "巷子口社會學",
+			"intro": "街頭巷尾，是一般人最常出入的地方，也構築了基本的社區。在這裡，我們看看台灣的日常生活社會如何運行。"
+		},
+		{
+			"name": "歷史學柑仔店",
+			"intro": "我們是一群嘗試從臺灣思考歷史的書寫的史學界夥伴。我們成立了一個「歷史學柑仔店（kám-á-tiàm）」部落格。"
+		}
+	]
+
+/***/ },
+/* 139 */
+/***/ function(module, exports, __webpack_require__) {
+
+	module.exports = [
+		{
+			"name": "哲學入門 10 篇",
+			"intro": "「沃草烙哲學」希望透過互助合作，推廣人文普及寫作，豐富中文世界裡的思辨素材，鼓勵關於普及寫作技術和題材的網路討論。以開放、自由的社群經營來完成上述目標。"
+		}
+	]
+
+/***/ },
 /* 140 */
 /***/ function(module, exports, __webpack_require__) {
 
 	module.exports = [
 		{
 			"title": "我對書卷獎的不滿",
+			"author": "朱家安",
 			"date": "2015.03.09",
 			"brief": "有些學校有書卷獎或校長獎：每學期發給每班平均成績前幾名的獎學金，以中正大學為例，前兩名各兩萬元。有些學校為了彰顯自己並非忽視「成績單分數之外的學習成果」，採取其它方法篩選得獎者，例如交由班導師決定，但主事者為了避免爭議，通常依舊會以平均分數為決定性考量。"
 		},
 		{
 			"title": "色情和藝術：被fb封鎖的裸體名畫",
+			"author": "馮一凡",
 			"date": "2015.03.05",
 			"brief": "是色情還是藝術，恐怕法國法院和 Facebook 有得吵了。據外電報導，法國一名老師在 Facebook 上傳一幅由 19 世紀藝術家 Gustave Courbet 油畫作品「L’Origine du monde」（世界的起源），然而這幅描述女性陰部的畫作，竟讓老師的帳號被 Facebook 封鎖，就在老師一狀告上法院時，Facebook 卻認定自己不受法國管轄，因此連法國法院都怒了。"
 		},
 		{
 			"title": "農村行銷、櫻木花道和瀉藥",
+			"author": "洪偉",
 			"date": "2015.03.01",
 			"brief": "最近有越來越多農村彩繪：在農村的房屋牆壁上彩繪，形成特殊的公共景觀。在社區營造和社區觀光盛行的現在，不難理解為什麼牆壁彩繪會成為吸引遊客的常用手段：牆壁帶不走。牆壁是天生的拍照背景。我相信遊客的自拍一向是觀光宣傳的重要途徑，因為如果不是的話，就無法說明為什麼許多地方會放著挖空臉孔的奇怪立牌。而連那些立牌都吃得開，表示遊客真的是熱愛自拍到了極點，在這種情況下，不管牆上畫的是什麼，他們大概都無法抵抗。"
 		},
 		{
 			"title": "還是讓機器人有道德兩難好了…是嗎？",
+			"author": "賴天恆",
 			"date": "2015.02.23",
 			"brief": "最近看到一個youtube影片，是關於科學家實驗讓小機器人去救小機器人1。在機器人可以移動的平面上，科學家劃定特定的「標示區域」為「洞」，接著設定一些機器人往「洞」移動，而某個機器人則要阻止其他機器人「掉進去」。"
 		},
 		{
 			"title": "震驚網友的裙子顏色",
+			"author": "王人俊",
 			"date": "2015.02.20",
 			"brief": "這裙子是什麼顏色？白/金還是藍/黑？這個問題在網路上吵成一團，Buzzfeed甚至做了投票。此外，謝伯讓也寫了篇文章3說明為什麼大家對於顏色的判斷會有歧義。我覺得我們也可以趁現在用這個例子寫篇文章介紹跟顏色感官相關的哲學。例如：有所謂「客觀」的顏色嗎？顏色就是所謂「會反射特定波常光波的表面性質」嗎？除了謝伯讓提到的「顏色恆常」之外，有其他因素影響大家對於顏色的判斷嗎？"
 		},
 		{
 			"title": "沒結婚的30歲以上女性稻草人問題和失言新聞",
+			"author": "朱家安",
 			"date": "2015.02.15",
 			"brief": "柯文哲說，如果30歲以上女生有百分之三十沒結婚，國家會不穩定，結果被罵翻了。"
 		}
@@ -18705,244 +18745,6 @@
 
 /***/ },
 /* 143 */
-/***/ function(module, exports, __webpack_require__) {
-
-	/* WEBPACK VAR INJECTION */(function(process) {/**
-	 * Copyright 2013-2014, Facebook, Inc.
-	 * All rights reserved.
-	 *
-	 * This source code is licensed under the BSD-style license found in the
-	 * LICENSE file in the root directory of this source tree. An additional grant
-	 * of patent rights can be found in the PATENTS file in the same directory.
-	 *
-	 * @providesModule keyMirror
-	 * @typechecks static-only
-	 */
-
-	"use strict";
-
-	var invariant = __webpack_require__(39);
-
-	/**
-	 * Constructs an enumeration with keys equal to their value.
-	 *
-	 * For example:
-	 *
-	 *   var COLORS = keyMirror({blue: null, red: null});
-	 *   var myColor = COLORS.blue;
-	 *   var isColorValid = !!COLORS[myColor];
-	 *
-	 * The last line could not be performed if the values of the generated enum were
-	 * not equal to their keys.
-	 *
-	 *   Input:  {key1: val1, key2: val2}
-	 *   Output: {key1: key1, key2: key2}
-	 *
-	 * @param {object} obj
-	 * @return {object}
-	 */
-	var keyMirror = function(obj) {
-	  var ret = {};
-	  var key;
-	  ("production" !== process.env.NODE_ENV ? invariant(
-	    obj instanceof Object && !Array.isArray(obj),
-	    'keyMirror(...): Argument must be an object.'
-	  ) : invariant(obj instanceof Object && !Array.isArray(obj)));
-	  for (key in obj) {
-	    if (!obj.hasOwnProperty(key)) {
-	      continue;
-	    }
-	    ret[key] = key;
-	  }
-	  return ret;
-	};
-
-	module.exports = keyMirror;
-
-	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(62)))
-
-/***/ },
-/* 144 */
-/***/ function(module, exports, __webpack_require__) {
-
-	/* WEBPACK VAR INJECTION */(function(process) {/**
-	 * Copyright 2014, Facebook, Inc.
-	 * All rights reserved.
-	 *
-	 * This source code is licensed under the BSD-style license found in the
-	 * LICENSE file in the root directory of this source tree. An additional grant
-	 * of patent rights can be found in the PATENTS file in the same directory.
-	 *
-	 * @providesModule accumulateInto
-	 */
-
-	"use strict";
-
-	var invariant = __webpack_require__(39);
-
-	/**
-	 *
-	 * Accumulates items that must not be null or undefined into the first one. This
-	 * is used to conserve memory by avoiding array allocations, and thus sacrifices
-	 * API cleanness. Since `current` can be null before being passed in and not
-	 * null after this function, make sure to assign it back to `current`:
-	 *
-	 * `a = accumulateInto(a, b);`
-	 *
-	 * This API should be sparingly used. Try `accumulate` for something cleaner.
-	 *
-	 * @return {*|array<*>} An accumulation of items.
-	 */
-
-	function accumulateInto(current, next) {
-	  ("production" !== process.env.NODE_ENV ? invariant(
-	    next != null,
-	    'accumulateInto(...): Accumulated items must not be null or undefined.'
-	  ) : invariant(next != null));
-	  if (current == null) {
-	    return next;
-	  }
-
-	  // Both are not empty. Warning: Never call x.concat(y) when you are not
-	  // certain that x is an Array (x could be a string with concat method).
-	  var currentIsArray = Array.isArray(current);
-	  var nextIsArray = Array.isArray(next);
-
-	  if (currentIsArray && nextIsArray) {
-	    current.push.apply(current, next);
-	    return current;
-	  }
-
-	  if (currentIsArray) {
-	    current.push(next);
-	    return current;
-	  }
-
-	  if (nextIsArray) {
-	    // A bit too dangerous to mutate `next`.
-	    return [current].concat(next);
-	  }
-
-	  return [current, next];
-	}
-
-	module.exports = accumulateInto;
-
-	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(62)))
-
-/***/ },
-/* 145 */
-/***/ function(module, exports, __webpack_require__) {
-
-	/**
-	 * Copyright 2013-2014, Facebook, Inc.
-	 * All rights reserved.
-	 *
-	 * This source code is licensed under the BSD-style license found in the
-	 * LICENSE file in the root directory of this source tree. An additional grant
-	 * of patent rights can be found in the PATENTS file in the same directory.
-	 *
-	 * @providesModule forEachAccumulated
-	 */
-
-	"use strict";
-
-	/**
-	 * @param {array} an "accumulation" of items which is either an Array or
-	 * a single item. Useful when paired with the `accumulate` module. This is a
-	 * simple utility that allows us to reason about a collection of items, but
-	 * handling the case when there is exactly one item (and we do not need to
-	 * allocate an array).
-	 */
-	var forEachAccumulated = function(arr, cb, scope) {
-	  if (Array.isArray(arr)) {
-	    arr.forEach(cb, scope);
-	  } else if (arr) {
-	    cb.call(scope, arr);
-	  }
-	};
-
-	module.exports = forEachAccumulated;
-
-
-/***/ },
-/* 146 */
-/***/ function(module, exports, __webpack_require__) {
-
-	/**
-	 * Copyright 2013-2014, Facebook, Inc.
-	 * All rights reserved.
-	 *
-	 * This source code is licensed under the BSD-style license found in the
-	 * LICENSE file in the root directory of this source tree. An additional grant
-	 * of patent rights can be found in the PATENTS file in the same directory.
-	 *
-	 * @providesModule getUnboundedScrollPosition
-	 * @typechecks
-	 */
-
-	"use strict";
-
-	/**
-	 * Gets the scroll position of the supplied element or window.
-	 *
-	 * The return values are unbounded, unlike `getScrollPosition`. This means they
-	 * may be negative or exceed the element boundaries (which is possible using
-	 * inertial scrolling).
-	 *
-	 * @param {DOMWindow|DOMElement} scrollable
-	 * @return {object} Map with `x` and `y` keys.
-	 */
-	function getUnboundedScrollPosition(scrollable) {
-	  if (scrollable === window) {
-	    return {
-	      x: window.pageXOffset || document.documentElement.scrollLeft,
-	      y: window.pageYOffset || document.documentElement.scrollTop
-	    };
-	  }
-	  return {
-	    x: scrollable.scrollLeft,
-	    y: scrollable.scrollTop
-	  };
-	}
-
-	module.exports = getUnboundedScrollPosition;
-
-
-/***/ },
-/* 147 */
-/***/ function(module, exports, __webpack_require__) {
-
-	/**
-	 * Copyright 2013-2014, Facebook, Inc.
-	 * All rights reserved.
-	 *
-	 * This source code is licensed under the BSD-style license found in the
-	 * LICENSE file in the root directory of this source tree. An additional grant
-	 * of patent rights can be found in the PATENTS file in the same directory.
-	 *
-	 * @providesModule isNode
-	 * @typechecks
-	 */
-
-	/**
-	 * @param {*} object The object to check.
-	 * @return {boolean} Whether or not the object is a DOM node.
-	 */
-	function isNode(object) {
-	  return !!(object && (
-	    typeof Node === 'function' ? object instanceof Node :
-	      typeof object === 'object' &&
-	      typeof object.nodeType === 'number' &&
-	      typeof object.nodeName === 'string'
-	  ));
-	}
-
-	module.exports = isNode;
-
-
-/***/ },
-/* 148 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;/*!
@@ -28153,6 +27955,244 @@
 
 
 /***/ },
+/* 144 */
+/***/ function(module, exports, __webpack_require__) {
+
+	/* WEBPACK VAR INJECTION */(function(process) {/**
+	 * Copyright 2013-2014, Facebook, Inc.
+	 * All rights reserved.
+	 *
+	 * This source code is licensed under the BSD-style license found in the
+	 * LICENSE file in the root directory of this source tree. An additional grant
+	 * of patent rights can be found in the PATENTS file in the same directory.
+	 *
+	 * @providesModule keyMirror
+	 * @typechecks static-only
+	 */
+
+	"use strict";
+
+	var invariant = __webpack_require__(39);
+
+	/**
+	 * Constructs an enumeration with keys equal to their value.
+	 *
+	 * For example:
+	 *
+	 *   var COLORS = keyMirror({blue: null, red: null});
+	 *   var myColor = COLORS.blue;
+	 *   var isColorValid = !!COLORS[myColor];
+	 *
+	 * The last line could not be performed if the values of the generated enum were
+	 * not equal to their keys.
+	 *
+	 *   Input:  {key1: val1, key2: val2}
+	 *   Output: {key1: key1, key2: key2}
+	 *
+	 * @param {object} obj
+	 * @return {object}
+	 */
+	var keyMirror = function(obj) {
+	  var ret = {};
+	  var key;
+	  ("production" !== process.env.NODE_ENV ? invariant(
+	    obj instanceof Object && !Array.isArray(obj),
+	    'keyMirror(...): Argument must be an object.'
+	  ) : invariant(obj instanceof Object && !Array.isArray(obj)));
+	  for (key in obj) {
+	    if (!obj.hasOwnProperty(key)) {
+	      continue;
+	    }
+	    ret[key] = key;
+	  }
+	  return ret;
+	};
+
+	module.exports = keyMirror;
+
+	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(52)))
+
+/***/ },
+/* 145 */
+/***/ function(module, exports, __webpack_require__) {
+
+	/* WEBPACK VAR INJECTION */(function(process) {/**
+	 * Copyright 2014, Facebook, Inc.
+	 * All rights reserved.
+	 *
+	 * This source code is licensed under the BSD-style license found in the
+	 * LICENSE file in the root directory of this source tree. An additional grant
+	 * of patent rights can be found in the PATENTS file in the same directory.
+	 *
+	 * @providesModule accumulateInto
+	 */
+
+	"use strict";
+
+	var invariant = __webpack_require__(39);
+
+	/**
+	 *
+	 * Accumulates items that must not be null or undefined into the first one. This
+	 * is used to conserve memory by avoiding array allocations, and thus sacrifices
+	 * API cleanness. Since `current` can be null before being passed in and not
+	 * null after this function, make sure to assign it back to `current`:
+	 *
+	 * `a = accumulateInto(a, b);`
+	 *
+	 * This API should be sparingly used. Try `accumulate` for something cleaner.
+	 *
+	 * @return {*|array<*>} An accumulation of items.
+	 */
+
+	function accumulateInto(current, next) {
+	  ("production" !== process.env.NODE_ENV ? invariant(
+	    next != null,
+	    'accumulateInto(...): Accumulated items must not be null or undefined.'
+	  ) : invariant(next != null));
+	  if (current == null) {
+	    return next;
+	  }
+
+	  // Both are not empty. Warning: Never call x.concat(y) when you are not
+	  // certain that x is an Array (x could be a string with concat method).
+	  var currentIsArray = Array.isArray(current);
+	  var nextIsArray = Array.isArray(next);
+
+	  if (currentIsArray && nextIsArray) {
+	    current.push.apply(current, next);
+	    return current;
+	  }
+
+	  if (currentIsArray) {
+	    current.push(next);
+	    return current;
+	  }
+
+	  if (nextIsArray) {
+	    // A bit too dangerous to mutate `next`.
+	    return [current].concat(next);
+	  }
+
+	  return [current, next];
+	}
+
+	module.exports = accumulateInto;
+
+	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(52)))
+
+/***/ },
+/* 146 */
+/***/ function(module, exports, __webpack_require__) {
+
+	/**
+	 * Copyright 2013-2014, Facebook, Inc.
+	 * All rights reserved.
+	 *
+	 * This source code is licensed under the BSD-style license found in the
+	 * LICENSE file in the root directory of this source tree. An additional grant
+	 * of patent rights can be found in the PATENTS file in the same directory.
+	 *
+	 * @providesModule forEachAccumulated
+	 */
+
+	"use strict";
+
+	/**
+	 * @param {array} an "accumulation" of items which is either an Array or
+	 * a single item. Useful when paired with the `accumulate` module. This is a
+	 * simple utility that allows us to reason about a collection of items, but
+	 * handling the case when there is exactly one item (and we do not need to
+	 * allocate an array).
+	 */
+	var forEachAccumulated = function(arr, cb, scope) {
+	  if (Array.isArray(arr)) {
+	    arr.forEach(cb, scope);
+	  } else if (arr) {
+	    cb.call(scope, arr);
+	  }
+	};
+
+	module.exports = forEachAccumulated;
+
+
+/***/ },
+/* 147 */
+/***/ function(module, exports, __webpack_require__) {
+
+	/**
+	 * Copyright 2013-2014, Facebook, Inc.
+	 * All rights reserved.
+	 *
+	 * This source code is licensed under the BSD-style license found in the
+	 * LICENSE file in the root directory of this source tree. An additional grant
+	 * of patent rights can be found in the PATENTS file in the same directory.
+	 *
+	 * @providesModule getUnboundedScrollPosition
+	 * @typechecks
+	 */
+
+	"use strict";
+
+	/**
+	 * Gets the scroll position of the supplied element or window.
+	 *
+	 * The return values are unbounded, unlike `getScrollPosition`. This means they
+	 * may be negative or exceed the element boundaries (which is possible using
+	 * inertial scrolling).
+	 *
+	 * @param {DOMWindow|DOMElement} scrollable
+	 * @return {object} Map with `x` and `y` keys.
+	 */
+	function getUnboundedScrollPosition(scrollable) {
+	  if (scrollable === window) {
+	    return {
+	      x: window.pageXOffset || document.documentElement.scrollLeft,
+	      y: window.pageYOffset || document.documentElement.scrollTop
+	    };
+	  }
+	  return {
+	    x: scrollable.scrollLeft,
+	    y: scrollable.scrollTop
+	  };
+	}
+
+	module.exports = getUnboundedScrollPosition;
+
+
+/***/ },
+/* 148 */
+/***/ function(module, exports, __webpack_require__) {
+
+	/**
+	 * Copyright 2013-2014, Facebook, Inc.
+	 * All rights reserved.
+	 *
+	 * This source code is licensed under the BSD-style license found in the
+	 * LICENSE file in the root directory of this source tree. An additional grant
+	 * of patent rights can be found in the PATENTS file in the same directory.
+	 *
+	 * @providesModule isNode
+	 * @typechecks
+	 */
+
+	/**
+	 * @param {*} object The object to check.
+	 * @return {boolean} Whether or not the object is a DOM node.
+	 */
+	function isNode(object) {
+	  return !!(object && (
+	    typeof Node === 'function' ? object instanceof Node :
+	      typeof object === 'object' &&
+	      typeof object.nodeType === 'number' &&
+	      typeof object.nodeName === 'string'
+	  ));
+	}
+
+	module.exports = isNode;
+
+
+/***/ },
 /* 149 */
 /***/ function(module, exports, __webpack_require__) {
 
@@ -28184,7 +28224,7 @@
 	var ReactTransitionGroup = __webpack_require__(208);
 	var ReactUpdates = __webpack_require__(162);
 
-	var cx = __webpack_require__(121);
+	var cx = __webpack_require__(123);
 	var cloneWithProps = __webpack_require__(209);
 	var update = __webpack_require__(210);
 
@@ -28201,13 +28241,13 @@
 	};
 
 	if ("production" !== process.env.NODE_ENV) {
-	  React.addons.Perf = __webpack_require__(194);
+	  React.addons.Perf = __webpack_require__(195);
 	  React.addons.TestUtils = __webpack_require__(211);
 	}
 
 	module.exports = React;
 
-	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(62)))
+	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(52)))
 
 /***/ },
 /* 150 */
@@ -28237,7 +28277,7 @@
 /***/ function(module, exports, __webpack_require__) {
 
 	exports = module.exports = __webpack_require__(51)();
-	exports.push([module.id, ".Comments {\n\tbackground: rgb(250,250,250);\n\tpadding: 40px 8px;\n\t\n}\n@media screen and (min-width: 400px){\n    .Comments-content {\n\t\tmax-width: 600px;\n        margin: 0 auto;\n    }\n}\n.Comments-title {\n\t/*padding: 4px 10px;\n    border-left: 5px solid;*/\n    margin: 30px 0px 20px 0px;\n    font-size: 40px;\n    font-weight: 800;\n\n}\n\n.Comments-post {\n\tborder-bottom: 1px solid rgb(220,220,220);\n\tposition: relative;\n\tmin-height: 150px;\n\tborder: 1px solid;\n\t\n\tmargin: 0 auto;\n\tmargin-bottom: 10px;\n\n\t\n}\n.Comments-post.is-hide {\n\theight: 0px;\n\twidth: 0px;\n\tmin-height: 0px;\n\tpadding: 0px;\n\toverflow: hidden;\n\tmargin: 0px;\n\tborder: none;\n}\n.Comments-main {\n\theight: 280px;\n\t\n}\n.Comments-main.is-expanded {\n\theight: auto;\n\tpadding-bottom: 10px;\n}\n.Comments-expandButton {\n\tposition: absolute;\n\tbottom: 0px;\n\twidth: 100%;\n\tpadding: 12px;\n\tpadding-left: 22px;\n\tbackground: rgba(230,230,230,0.9);\n\t//background: rgba(0,0,0,0.8);\n\t//color: white;\n\tcolor: gray;\n\tcursor: pointer;\n\tbox-shadow: 0px -3px 0px rgba(200,200,200,0.9);\n}\n.Comments-expandButton:hover {\n\tcolor: #87B825;\n\t//color: black;\n}\n\n.Comments-post p, .Comments-post a{\n\tline-height: 1.4;\n\tfont-size: 16px;\n}\n.Comments-post ul, .Comments-post ol {\n\tpadding-left: 26px;\n\tline-height: 1.2;\n\tfont-size: 16px;\n\t\n}\n.Comments-post li {\n\tmargin: 10px;\n\tfont-size: 16px;\n\t;\n}\n.Comments-index {\n    //font-family: 'Helvetica','Arial','sans-serif';\n    //display: none;\n    font-size: 10px;\n}\n.Comments-img {\n\twidth: 45px;\n\tborder-radius: 50%;\n\tdisplay: none;\n}\n.Comments-left {\n\tfloat: left;\n\t//width: 60px;\n\tpadding-top: 10px;\n\ttext-align: center;\n}\n.Comments-main {\n\toverflow:hidden;  _overflow:visible;  zoom:1; \n\tpadding: 10px 20px 0px 24px;\n}\n.Comments-author {\n\tline-height: 1.4;\n    font-weight: 800;\n    color: rgb(80,80,80);\n    font-size: 18px;\n    margin-top: 10px;\n    display: inline-block;\n}\n.Comments-date {\n\tline-height: 1.4;\n\tfont-size: 14px;\n\tcolor: rgb(80,80,80);\n\tdisplay: inline-block;\n}\n.Comments-footer {\n\ttext-align: center;\n\tmargin-top: 20px;\n}\n.Comments-button {\n\tborder: 1px solid rgb(200,200,200);\n    border-radius: 20px;\n    display: inline-block;\n    padding: 9px 20px;\n    cursor: pointer;\n    margin-top: 10px;\n    color: rgb(100,100,100);\n    margin: 5px;\n}\n.Comments-button:hover {\n\tcolor: #87B825;\n    border-color: #87B825;\n}\na.Comments-button--hightlight {\n\tborder: 1px solid rgb(100,100,100);\n    color: rgb(100,100,100);\n    padding: 3px 20px;\n    border-radius: 20px;\n    display: inline-block;\n    cursor: pointer;\n    margin-top: 10px;\n    margin: 5px;\n    font-size: 16px;\n\n}\na.Comments-button--hightlight:hover {\n  color: black;\n  border-color: black;\n\n}\naside { /* comment 中引用 */\n\tmargin-top: 10px;\n    border-left: 4px solid rgb(220,220,220);\n\t//background: rgba(200,200,200,1);\n\tpadding: 1px 5px;\n\tfont-family: 'Georgia';\n\tposition: relative;\n\t\n}\naside blockquote {\n    font-family: sans-serif; \n    //font-family: 'Georgia';\t\n    //quotes: \"\\201C\" \"\\201D\" \"\\2018\" \"\\2019\";\n    quotes: \"\\201C\" \"\\201D\" \"\\201C\" \"\\201D\";\n}\naside blockquote:before {\n    content: open-quote;\n    font-size: 30px;\n    line-height: 0;\n    margin: 0;\n    padding: 0;\n    position: absolute;\n    top: 14px;\n    left: -14px;\n    color: #87B825;\n}\n/*aside blockquote:after {\n\tcontent: close-quote;\n\tcolor: #ccc;\n\tfont-size: 40px;\n}*/\naside img {\n\tposition: absolute;\n\ttop: 8px;\n\tleft: 0px;\n\tdisplay: none;\n}\n.Comments-main img {\n\tdisplay: none;\n}\naside .title {\n\tpadding-left: 24px;\n}", ""]);
+	exports.push([module.id, ".Comments {\n\tbackground: rgb(250,250,250);\n\tpadding: 40px 8px;\n\t\n}\n@media screen and (min-width: 400px){\n    .Comments-content {\n\t\tmax-width: 600px;\n        margin: 0 auto;\n    }\n}\n.Comments-title {\n\t/*padding: 4px 10px;\n    border-left: 5px solid;*/\n    margin: 30px 0px 0px 0px;\n    font-size: 40px;\n    font-weight: 800;\n    border-bottom: 1px solid rgb(120,120,120);\n    padding-left: 10px;\n    padding-bottom: 10px;\n\n}\n.Comments-noPost {\n\tpadding: 10px;\n}\n.Comments-post {\n\tborder-bottom: 1px solid rgb(160,160,160);\n\tpadding-bottom: 10px;\n\t\n\tposition: relative;\n\tmin-height: 50px;\n\toverflow: hidden;\n\t\n\tmargin: 0 auto;\n\tmargin-bottom: 10px;\n\n\t//background: white;\n\t//box-shadow: 2px 2px 3px rgba(0,0,0,.12);\n\n\n}\n.Comments-post:hover {\n\t//box-shadow: 2px 2px 4px rgba(0,0,0,.24);\n}\n.Comments-post.is-hide {\n\theight: 0px;\n\twidth: 0px;\n\tmin-height: 0px;\n\tpadding: 0px;\n\toverflow: hidden;\n\tmargin: 0px;\n\tborder: none;\n}\n\n.Comments-main {\n\tmax-height: 260px;\n\toverflow:hidden;  _overflow:visible;  zoom:1; \n\tpadding: 10px 10px 0px 10px;\n}\n@media all and (min-width: 400px){\n\t.Comments-main {\n\t   //padding: 10px 30px 0px 30px;\n    }\n}\n.Comments-main.is-expanded {\n\theight: auto;\n\tpadding-bottom: 10px;\n}\n.Comments-expandButton {\n\tpadding: 10px 20px 10px 12px;\n    width: 100%;\n    /*position: absolute;\n    bottom: 0px;\n    right: 0px;*/\n    cursor: pointer;\n    background: rgba(240,240,240,0.9);\n    color: rgb(160,160,160);\n    font-weight: 800;\n    font-family: 'Georgia';\n}\n.Comments-expandButton:hover {\n\tcolor: #87B825;\n\t//color: black;\n}\n\n.Comments-post p, .Comments-post a{\n\tline-height: 1.6;\n\tfont-size: 16px;\n}\n.Comments-post ul, .Comments-post ol {\n\tpadding-left: 26px;\n\tline-height: 1.2;\n\tfont-size: 16px;\n\t\n}\n.Comments-post li {\n\tmargin: 10px;\n\tfont-size: 16px;\n\t;\n}\n.Comments-index {\n    //font-family: 'Helvetica','Arial','sans-serif';\n    //display: none;\n    font-size: 10px;\n}\n.Comments-img {\n\twidth: 45px;\n\tborder-radius: 50%;\n\tdisplay: none;\n}\n.Comments-left {\n\tfloat: left;\n\t//width: 60px;\n\tpadding-top: 10px;\n\ttext-align: center;\n}\n\n.Comments-author {\n\tline-height: 1.4;\n    font-weight: 800;\n    color: rgb(80,80,80);\n    font-size: 18px;\n    margin-top: 10px;\n    display: inline-block;\n}\n.Comments-date {\n\tline-height: 1.4;\n\tfont-size: 14px;\n\tcolor: rgb(80,80,80);\n\tdisplay: inline-block;\n}\n.Comments-footer {\n\ttext-align: center;\n\tmargin-top: 20px;\n}\n.Comments-button {\n\tborder: 1px solid rgb(200,200,200);\n    border-radius: 20px;\n    display: inline-block;\n    padding: 9px 20px;\n    cursor: pointer;\n    margin-top: 10px;\n    color: rgb(100,100,100);\n    margin: 5px;\n}\n.Comments-button:hover {\n\tcolor: #87B825;\n    border-color: #87B825;\n}\na.Comments-button--hightlight {\n\tborder: 1px solid rgb(100,100,100);\n    color: rgb(100,100,100);\n    padding: 3px 20px;\n    border-radius: 20px;\n    display: inline-block;\n    cursor: pointer;\n    margin-top: 10px;\n    margin: 5px;\n    font-size: 16px;\n\n}\na.Comments-button--hightlight:hover {\n  color: black;\n  border-color: black;\n\n}\n/* comment 中引用 */\n/*aside .title, aside blockquote { \n\tdisplay: none;\t\n}\n.Comments-main.is-expanded aside .title, .Comments-main.is-expanded aside blockquote { \n\tdisplay: block;\t\n}*/\naside {\n\tdisplay: block;\n\tmargin-top: 10px;\n    //border-left: 4px solid rgb(220,220,220);\n\t//background: rgba(200,200,200,1);\n\tpadding: 1px 5px;\n\tfont-family: 'Georgia';\n\tposition: relative;\n}\naside blockquote {\n    font-family: sans-serif; \n    //font-family: 'Georgia';\t\n    //quotes: \"\\201C\" \"\\201D\" \"\\2018\" \"\\2019\";\n    quotes: \"\\201C\" \"\\201D\" \"\\201C\" \"\\201D\";\n    margin: 0px;\n    padding: 0px;\n}\n@media all and (min-width: 400px){\n\taside blockquote {\n\t\tpadding: 0 22px;\n\t}\n}\naside blockquote:before {\n    content: open-quote;\n    font-size: 30px;\n    line-height: 0;\n    margin: 0;\n    padding: 0;\n    position: absolute;\n    top: 14px;\n    left: -14px;\n    color: #87B825;\n}\n/*aside blockquote:after {\n\tcontent: close-quote;\n\tcolor: #ccc;\n\tfont-size: 40px;\n}*/\naside img {\n\tposition: absolute;\n\ttop: 8px;\n\tleft: 0px;\n\tdisplay: none;\n}\n.Comments-main img {\n\tdisplay: none;\n}\naside .title {\n\tpadding-left: 24px;\n}", ""]);
 
 /***/ },
 /* 152 */
@@ -30101,7 +30141,7 @@
 
 	module.exports = PooledClass;
 
-	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(62)))
+	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(52)))
 
 /***/ },
 /* 160 */
@@ -30287,7 +30327,7 @@
 
 	module.exports = traverseAllChildren;
 
-	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(62)))
+	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(52)))
 
 /***/ },
 /* 161 */
@@ -30446,7 +30486,7 @@
 
 	module.exports = ReactOwner;
 
-	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(62)))
+	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(52)))
 
 /***/ },
 /* 162 */
@@ -30739,7 +30779,7 @@
 
 	module.exports = ReactUpdates;
 
-	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(62)))
+	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(52)))
 
 /***/ },
 /* 163 */
@@ -30945,7 +30985,7 @@
 
 	module.exports = ReactPropTransferer;
 
-	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(62)))
+	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(52)))
 
 /***/ },
 /* 165 */
@@ -30964,7 +31004,7 @@
 
 	"use strict";
 
-	var keyMirror = __webpack_require__(143);
+	var keyMirror = __webpack_require__(144);
 
 	var ReactPropTypeLocations = keyMirror({
 	  prop: null,
@@ -31004,7 +31044,7 @@
 
 	module.exports = ReactPropTypeLocationNames;
 
-	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(62)))
+	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(52)))
 
 /***/ },
 /* 167 */
@@ -31107,6 +31147,190 @@
 /* 169 */
 /***/ function(module, exports, __webpack_require__) {
 
+	/* WEBPACK VAR INJECTION */(function(process) {/**
+	 * Copyright 2013-2014, Facebook, Inc.
+	 * All rights reserved.
+	 *
+	 * This source code is licensed under the BSD-style license found in the
+	 * LICENSE file in the root directory of this source tree. An additional grant
+	 * of patent rights can be found in the PATENTS file in the same directory.
+	 *
+	 * @providesModule CSSPropertyOperations
+	 * @typechecks static-only
+	 */
+
+	"use strict";
+
+	var CSSProperty = __webpack_require__(217);
+	var ExecutionEnvironment = __webpack_require__(120);
+
+	var camelizeStyleName = __webpack_require__(218);
+	var dangerousStyleValue = __webpack_require__(219);
+	var hyphenateStyleName = __webpack_require__(220);
+	var memoizeStringOnly = __webpack_require__(158);
+	var warning = __webpack_require__(41);
+
+	var processStyleName = memoizeStringOnly(function(styleName) {
+	  return hyphenateStyleName(styleName);
+	});
+
+	var styleFloatAccessor = 'cssFloat';
+	if (ExecutionEnvironment.canUseDOM) {
+	  // IE8 only supports accessing cssFloat (standard) as styleFloat
+	  if (document.documentElement.style.cssFloat === undefined) {
+	    styleFloatAccessor = 'styleFloat';
+	  }
+	}
+
+	if ("production" !== process.env.NODE_ENV) {
+	  var warnedStyleNames = {};
+
+	  var warnHyphenatedStyleName = function(name) {
+	    if (warnedStyleNames.hasOwnProperty(name) && warnedStyleNames[name]) {
+	      return;
+	    }
+
+	    warnedStyleNames[name] = true;
+	    ("production" !== process.env.NODE_ENV ? warning(
+	      false,
+	      'Unsupported style property ' + name + '. Did you mean ' +
+	      camelizeStyleName(name) + '?'
+	    ) : null);
+	  };
+	}
+
+	/**
+	 * Operations for dealing with CSS properties.
+	 */
+	var CSSPropertyOperations = {
+
+	  /**
+	   * Serializes a mapping of style properties for use as inline styles:
+	   *
+	   *   > createMarkupForStyles({width: '200px', height: 0})
+	   *   "width:200px;height:0;"
+	   *
+	   * Undefined values are ignored so that declarative programming is easier.
+	   * The result should be HTML-escaped before insertion into the DOM.
+	   *
+	   * @param {object} styles
+	   * @return {?string}
+	   */
+	  createMarkupForStyles: function(styles) {
+	    var serialized = '';
+	    for (var styleName in styles) {
+	      if (!styles.hasOwnProperty(styleName)) {
+	        continue;
+	      }
+	      if ("production" !== process.env.NODE_ENV) {
+	        if (styleName.indexOf('-') > -1) {
+	          warnHyphenatedStyleName(styleName);
+	        }
+	      }
+	      var styleValue = styles[styleName];
+	      if (styleValue != null) {
+	        serialized += processStyleName(styleName) + ':';
+	        serialized += dangerousStyleValue(styleName, styleValue) + ';';
+	      }
+	    }
+	    return serialized || null;
+	  },
+
+	  /**
+	   * Sets the value for multiple styles on a node.  If a value is specified as
+	   * '' (empty string), the corresponding style property will be unset.
+	   *
+	   * @param {DOMElement} node
+	   * @param {object} styles
+	   */
+	  setValueForStyles: function(node, styles) {
+	    var style = node.style;
+	    for (var styleName in styles) {
+	      if (!styles.hasOwnProperty(styleName)) {
+	        continue;
+	      }
+	      if ("production" !== process.env.NODE_ENV) {
+	        if (styleName.indexOf('-') > -1) {
+	          warnHyphenatedStyleName(styleName);
+	        }
+	      }
+	      var styleValue = dangerousStyleValue(styleName, styles[styleName]);
+	      if (styleName === 'float') {
+	        styleName = styleFloatAccessor;
+	      }
+	      if (styleValue) {
+	        style[styleName] = styleValue;
+	      } else {
+	        var expansion = CSSProperty.shorthandPropertyExpansions[styleName];
+	        if (expansion) {
+	          // Shorthand property that IE8 won't like unsetting, so unset each
+	          // component to placate it
+	          for (var individualStyleName in expansion) {
+	            style[individualStyleName] = '';
+	          }
+	        } else {
+	          style[styleName] = '';
+	        }
+	      }
+	    }
+	  }
+
+	};
+
+	module.exports = CSSPropertyOperations;
+
+	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(52)))
+
+/***/ },
+/* 170 */
+/***/ function(module, exports, __webpack_require__) {
+
+	/* WEBPACK VAR INJECTION */(function(process) {/**
+	 * Copyright 2013-2014, Facebook, Inc.
+	 * All rights reserved.
+	 *
+	 * This source code is licensed under the BSD-style license found in the
+	 * LICENSE file in the root directory of this source tree. An additional grant
+	 * of patent rights can be found in the PATENTS file in the same directory.
+	 *
+	 * @providesModule ReactBrowserComponentMixin
+	 */
+
+	"use strict";
+
+	var ReactEmptyComponent = __webpack_require__(85);
+	var ReactMount = __webpack_require__(15);
+
+	var invariant = __webpack_require__(39);
+
+	var ReactBrowserComponentMixin = {
+	  /**
+	   * Returns the DOM node rendered by this component.
+	   *
+	   * @return {DOMElement} The root node of this component.
+	   * @final
+	   * @protected
+	   */
+	  getDOMNode: function() {
+	    ("production" !== process.env.NODE_ENV ? invariant(
+	      this.isMounted(),
+	      'getDOMNode(): A component must be mounted to have a DOM node.'
+	    ) : invariant(this.isMounted()));
+	    if (ReactEmptyComponent.isNullComponentID(this._rootNodeID)) {
+	      return null;
+	    }
+	    return ReactMount.getNode(this._rootNodeID);
+	  }
+	};
+
+	module.exports = ReactBrowserComponentMixin;
+
+	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(52)))
+
+/***/ },
+/* 171 */
+/***/ function(module, exports, __webpack_require__) {
+
 	/**
 	 * Copyright 2013 Facebook, Inc.
 	 * All rights reserved.
@@ -31122,9 +31346,9 @@
 	"use strict";
 
 	var EventConstants = __webpack_require__(73);
-	var EventPropagators = __webpack_require__(217);
+	var EventPropagators = __webpack_require__(221);
 	var ExecutionEnvironment = __webpack_require__(120);
-	var SyntheticInputEvent = __webpack_require__(218);
+	var SyntheticInputEvent = __webpack_require__(224);
 
 	var keyOf = __webpack_require__(167);
 
@@ -31330,7 +31554,7 @@
 
 
 /***/ },
-/* 170 */
+/* 172 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/**
@@ -31348,13 +31572,13 @@
 
 	var EventConstants = __webpack_require__(73);
 	var EventPluginHub = __webpack_require__(74);
-	var EventPropagators = __webpack_require__(217);
+	var EventPropagators = __webpack_require__(221);
 	var ExecutionEnvironment = __webpack_require__(120);
 	var ReactUpdates = __webpack_require__(162);
-	var SyntheticEvent = __webpack_require__(219);
+	var SyntheticEvent = __webpack_require__(222);
 
 	var isEventSupported = __webpack_require__(79);
-	var isTextInputElement = __webpack_require__(220);
+	var isTextInputElement = __webpack_require__(223);
 	var keyOf = __webpack_require__(167);
 
 	var topLevelTypes = EventConstants.topLevelTypes;
@@ -31716,7 +31940,7 @@
 
 
 /***/ },
-/* 171 */
+/* 173 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/**
@@ -31745,7 +31969,7 @@
 
 
 /***/ },
-/* 172 */
+/* 174 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/**
@@ -31763,12 +31987,12 @@
 	"use strict";
 
 	var EventConstants = __webpack_require__(73);
-	var EventPropagators = __webpack_require__(217);
+	var EventPropagators = __webpack_require__(221);
 	var ExecutionEnvironment = __webpack_require__(120);
-	var ReactInputSelection = __webpack_require__(221);
-	var SyntheticCompositionEvent = __webpack_require__(222);
+	var ReactInputSelection = __webpack_require__(225);
+	var SyntheticCompositionEvent = __webpack_require__(226);
 
-	var getTextContentAccessor = __webpack_require__(223);
+	var getTextContentAccessor = __webpack_require__(227);
 	var keyOf = __webpack_require__(167);
 
 	var END_KEYCODES = [9, 13, 27, 32]; // Tab, Return, Esc, Space
@@ -32008,7 +32232,7 @@
 
 
 /***/ },
-/* 173 */
+/* 175 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/**
@@ -32052,7 +32276,7 @@
 
 
 /***/ },
-/* 174 */
+/* 176 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/**
@@ -32070,8 +32294,8 @@
 	"use strict";
 
 	var EventConstants = __webpack_require__(73);
-	var EventPropagators = __webpack_require__(217);
-	var SyntheticMouseEvent = __webpack_require__(224);
+	var EventPropagators = __webpack_require__(221);
+	var SyntheticMouseEvent = __webpack_require__(228);
 
 	var ReactMount = __webpack_require__(15);
 	var keyOf = __webpack_require__(167);
@@ -32196,7 +32420,7 @@
 
 
 /***/ },
-/* 175 */
+/* 177 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/**
@@ -32392,7 +32616,7 @@
 
 
 /***/ },
-/* 176 */
+/* 178 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/**
@@ -32454,53 +32678,7 @@
 
 
 /***/ },
-/* 177 */
-/***/ function(module, exports, __webpack_require__) {
-
-	/* WEBPACK VAR INJECTION */(function(process) {/**
-	 * Copyright 2013-2014, Facebook, Inc.
-	 * All rights reserved.
-	 *
-	 * This source code is licensed under the BSD-style license found in the
-	 * LICENSE file in the root directory of this source tree. An additional grant
-	 * of patent rights can be found in the PATENTS file in the same directory.
-	 *
-	 * @providesModule ReactBrowserComponentMixin
-	 */
-
-	"use strict";
-
-	var ReactEmptyComponent = __webpack_require__(85);
-	var ReactMount = __webpack_require__(15);
-
-	var invariant = __webpack_require__(39);
-
-	var ReactBrowserComponentMixin = {
-	  /**
-	   * Returns the DOM node rendered by this component.
-	   *
-	   * @return {DOMElement} The root node of this component.
-	   * @final
-	   * @protected
-	   */
-	  getDOMNode: function() {
-	    ("production" !== process.env.NODE_ENV ? invariant(
-	      this.isMounted(),
-	      'getDOMNode(): A component must be mounted to have a DOM node.'
-	    ) : invariant(this.isMounted()));
-	    if (ReactEmptyComponent.isNullComponentID(this._rootNodeID)) {
-	      return null;
-	    }
-	    return ReactMount.getNode(this._rootNodeID);
-	  }
-	};
-
-	module.exports = ReactBrowserComponentMixin;
-
-	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(62)))
-
-/***/ },
-/* 178 */
+/* 179 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(process) {/**
@@ -32518,15 +32696,15 @@
 
 	"use strict";
 
-	var ReactDOMIDOperations = __webpack_require__(225);
+	var ReactDOMIDOperations = __webpack_require__(229);
 	var ReactMarkupChecksum = __webpack_require__(198);
 	var ReactMount = __webpack_require__(15);
 	var ReactPerf = __webpack_require__(34);
-	var ReactReconcileTransaction = __webpack_require__(226);
+	var ReactReconcileTransaction = __webpack_require__(230);
 
 	var getReactRootElementInContainer = __webpack_require__(37);
 	var invariant = __webpack_require__(39);
-	var setInnerHTML = __webpack_require__(227);
+	var setInnerHTML = __webpack_require__(231);
 
 
 	var ELEMENT_NODE_TYPE = 1;
@@ -32622,10 +32800,10 @@
 
 	module.exports = ReactComponentBrowserEnvironment;
 
-	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(62)))
+	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(52)))
 
 /***/ },
-/* 179 */
+/* 180 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/**
@@ -32702,7 +32880,7 @@
 
 
 /***/ },
-/* 180 */
+/* 181 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/**
@@ -32718,13 +32896,13 @@
 
 	"use strict";
 
-	var AutoFocusMixin = __webpack_require__(228);
-	var ReactBrowserComponentMixin = __webpack_require__(177);
+	var AutoFocusMixin = __webpack_require__(232);
+	var ReactBrowserComponentMixin = __webpack_require__(170);
 	var ReactCompositeComponent = __webpack_require__(110);
 	var ReactElement = __webpack_require__(31);
 	var ReactDOM = __webpack_require__(112);
 
-	var keyMirror = __webpack_require__(143);
+	var keyMirror = __webpack_require__(144);
 
 	// Store a reference to the <button> `ReactDOMComponent`. TODO: use string
 	var button = ReactElement.createFactory(ReactDOM.button.type);
@@ -32771,7 +32949,7 @@
 
 
 /***/ },
-/* 181 */
+/* 182 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/**
@@ -32788,8 +32966,8 @@
 	"use strict";
 
 	var EventConstants = __webpack_require__(73);
-	var LocalEventTrapMixin = __webpack_require__(229);
-	var ReactBrowserComponentMixin = __webpack_require__(177);
+	var LocalEventTrapMixin = __webpack_require__(233);
+	var ReactBrowserComponentMixin = __webpack_require__(170);
 	var ReactCompositeComponent = __webpack_require__(110);
 	var ReactElement = __webpack_require__(31);
 	var ReactDOM = __webpack_require__(112);
@@ -32825,7 +33003,7 @@
 
 
 /***/ },
-/* 182 */
+/* 183 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/**
@@ -32842,8 +33020,8 @@
 	"use strict";
 
 	var EventConstants = __webpack_require__(73);
-	var LocalEventTrapMixin = __webpack_require__(229);
-	var ReactBrowserComponentMixin = __webpack_require__(177);
+	var LocalEventTrapMixin = __webpack_require__(233);
+	var ReactBrowserComponentMixin = __webpack_require__(170);
 	var ReactCompositeComponent = __webpack_require__(110);
 	var ReactElement = __webpack_require__(31);
 	var ReactDOM = __webpack_require__(112);
@@ -32877,7 +33055,7 @@
 
 
 /***/ },
-/* 183 */
+/* 184 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(process) {/**
@@ -32893,10 +33071,10 @@
 
 	"use strict";
 
-	var AutoFocusMixin = __webpack_require__(228);
+	var AutoFocusMixin = __webpack_require__(232);
 	var DOMPropertyOperations = __webpack_require__(106);
-	var LinkedValueUtils = __webpack_require__(230);
-	var ReactBrowserComponentMixin = __webpack_require__(177);
+	var LinkedValueUtils = __webpack_require__(234);
+	var ReactBrowserComponentMixin = __webpack_require__(170);
 	var ReactCompositeComponent = __webpack_require__(110);
 	var ReactElement = __webpack_require__(31);
 	var ReactDOM = __webpack_require__(112);
@@ -33055,10 +33233,10 @@
 
 	module.exports = ReactDOMInput;
 
-	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(62)))
+	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(52)))
 
 /***/ },
-/* 184 */
+/* 185 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(process) {/**
@@ -33074,7 +33252,7 @@
 
 	"use strict";
 
-	var ReactBrowserComponentMixin = __webpack_require__(177);
+	var ReactBrowserComponentMixin = __webpack_require__(170);
 	var ReactCompositeComponent = __webpack_require__(110);
 	var ReactElement = __webpack_require__(31);
 	var ReactDOM = __webpack_require__(112);
@@ -33111,10 +33289,10 @@
 
 	module.exports = ReactDOMOption;
 
-	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(62)))
+	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(52)))
 
 /***/ },
-/* 185 */
+/* 186 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/**
@@ -33130,9 +33308,9 @@
 
 	"use strict";
 
-	var AutoFocusMixin = __webpack_require__(228);
-	var LinkedValueUtils = __webpack_require__(230);
-	var ReactBrowserComponentMixin = __webpack_require__(177);
+	var AutoFocusMixin = __webpack_require__(232);
+	var LinkedValueUtils = __webpack_require__(234);
+	var ReactBrowserComponentMixin = __webpack_require__(170);
 	var ReactCompositeComponent = __webpack_require__(110);
 	var ReactElement = __webpack_require__(31);
 	var ReactDOM = __webpack_require__(112);
@@ -33302,7 +33480,7 @@
 
 
 /***/ },
-/* 186 */
+/* 187 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(process) {/**
@@ -33318,10 +33496,10 @@
 
 	"use strict";
 
-	var AutoFocusMixin = __webpack_require__(228);
+	var AutoFocusMixin = __webpack_require__(232);
 	var DOMPropertyOperations = __webpack_require__(106);
-	var LinkedValueUtils = __webpack_require__(230);
-	var ReactBrowserComponentMixin = __webpack_require__(177);
+	var LinkedValueUtils = __webpack_require__(234);
+	var ReactBrowserComponentMixin = __webpack_require__(170);
 	var ReactCompositeComponent = __webpack_require__(110);
 	var ReactElement = __webpack_require__(31);
 	var ReactDOM = __webpack_require__(112);
@@ -33443,10 +33621,10 @@
 
 	module.exports = ReactDOMTextarea;
 
-	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(62)))
+	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(52)))
 
 /***/ },
-/* 187 */
+/* 188 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/**
@@ -33463,7 +33641,7 @@
 
 	"use strict";
 
-	var EventListener = __webpack_require__(231);
+	var EventListener = __webpack_require__(235);
 	var ExecutionEnvironment = __webpack_require__(120);
 	var PooledClass = __webpack_require__(159);
 	var ReactInstanceHandles = __webpack_require__(33);
@@ -33471,8 +33649,8 @@
 	var ReactUpdates = __webpack_require__(162);
 
 	var assign = __webpack_require__(78);
-	var getEventTarget = __webpack_require__(232);
-	var getUnboundedScrollPosition = __webpack_require__(146);
+	var getEventTarget = __webpack_require__(236);
+	var getUnboundedScrollPosition = __webpack_require__(147);
 
 	/**
 	 * Finds the parent React component of `node`.
@@ -33634,7 +33812,7 @@
 
 
 /***/ },
-/* 188 */
+/* 189 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/**
@@ -33658,7 +33836,7 @@
 	var ReactBrowserEventEmitter = __webpack_require__(29);
 	var ReactNativeComponent = __webpack_require__(84);
 	var ReactPerf = __webpack_require__(34);
-	var ReactRootIndex = __webpack_require__(81);
+	var ReactRootIndex = __webpack_require__(82);
 	var ReactUpdates = __webpack_require__(162);
 
 	var ReactInjection = {
@@ -33678,7 +33856,7 @@
 
 
 /***/ },
-/* 189 */
+/* 190 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/**
@@ -33695,14 +33873,14 @@
 	"use strict";
 
 	var EventConstants = __webpack_require__(73);
-	var EventPropagators = __webpack_require__(217);
-	var ReactInputSelection = __webpack_require__(221);
-	var SyntheticEvent = __webpack_require__(219);
+	var EventPropagators = __webpack_require__(221);
+	var ReactInputSelection = __webpack_require__(225);
+	var SyntheticEvent = __webpack_require__(222);
 
-	var getActiveElement = __webpack_require__(233);
-	var isTextInputElement = __webpack_require__(220);
+	var getActiveElement = __webpack_require__(237);
+	var isTextInputElement = __webpack_require__(223);
 	var keyOf = __webpack_require__(167);
-	var shallowEqual = __webpack_require__(234);
+	var shallowEqual = __webpack_require__(238);
 
 	var topLevelTypes = EventConstants.topLevelTypes;
 
@@ -33877,7 +34055,7 @@
 
 
 /***/ },
-/* 190 */
+/* 191 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/**
@@ -33912,7 +34090,7 @@
 
 
 /***/ },
-/* 191 */
+/* 192 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(process) {/**
@@ -33930,18 +34108,18 @@
 
 	var EventConstants = __webpack_require__(73);
 	var EventPluginUtils = __webpack_require__(107);
-	var EventPropagators = __webpack_require__(217);
-	var SyntheticClipboardEvent = __webpack_require__(235);
-	var SyntheticEvent = __webpack_require__(219);
-	var SyntheticFocusEvent = __webpack_require__(236);
-	var SyntheticKeyboardEvent = __webpack_require__(237);
-	var SyntheticMouseEvent = __webpack_require__(224);
-	var SyntheticDragEvent = __webpack_require__(238);
-	var SyntheticTouchEvent = __webpack_require__(239);
-	var SyntheticUIEvent = __webpack_require__(240);
-	var SyntheticWheelEvent = __webpack_require__(241);
+	var EventPropagators = __webpack_require__(221);
+	var SyntheticClipboardEvent = __webpack_require__(239);
+	var SyntheticEvent = __webpack_require__(222);
+	var SyntheticFocusEvent = __webpack_require__(240);
+	var SyntheticKeyboardEvent = __webpack_require__(241);
+	var SyntheticMouseEvent = __webpack_require__(228);
+	var SyntheticDragEvent = __webpack_require__(242);
+	var SyntheticTouchEvent = __webpack_require__(243);
+	var SyntheticUIEvent = __webpack_require__(244);
+	var SyntheticWheelEvent = __webpack_require__(245);
 
-	var getEventCharCode = __webpack_require__(242);
+	var getEventCharCode = __webpack_require__(246);
 
 	var invariant = __webpack_require__(39);
 	var keyOf = __webpack_require__(167);
@@ -34340,10 +34518,10 @@
 
 	module.exports = SimpleEventPlugin;
 
-	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(62)))
+	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(52)))
 
 /***/ },
-/* 192 */
+/* 193 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/**
@@ -34439,7 +34617,7 @@
 
 
 /***/ },
-/* 193 */
+/* 194 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(process) {/**
@@ -34500,10 +34678,10 @@
 
 	module.exports = createFullPageComponent;
 
-	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(62)))
+	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(52)))
 
 /***/ },
-/* 194 */
+/* 195 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/**
@@ -34767,144 +34945,6 @@
 
 
 /***/ },
-/* 195 */
-/***/ function(module, exports, __webpack_require__) {
-
-	/* WEBPACK VAR INJECTION */(function(process) {/**
-	 * Copyright 2013-2014, Facebook, Inc.
-	 * All rights reserved.
-	 *
-	 * This source code is licensed under the BSD-style license found in the
-	 * LICENSE file in the root directory of this source tree. An additional grant
-	 * of patent rights can be found in the PATENTS file in the same directory.
-	 *
-	 * @providesModule CSSPropertyOperations
-	 * @typechecks static-only
-	 */
-
-	"use strict";
-
-	var CSSProperty = __webpack_require__(243);
-	var ExecutionEnvironment = __webpack_require__(120);
-
-	var camelizeStyleName = __webpack_require__(244);
-	var dangerousStyleValue = __webpack_require__(245);
-	var hyphenateStyleName = __webpack_require__(246);
-	var memoizeStringOnly = __webpack_require__(158);
-	var warning = __webpack_require__(41);
-
-	var processStyleName = memoizeStringOnly(function(styleName) {
-	  return hyphenateStyleName(styleName);
-	});
-
-	var styleFloatAccessor = 'cssFloat';
-	if (ExecutionEnvironment.canUseDOM) {
-	  // IE8 only supports accessing cssFloat (standard) as styleFloat
-	  if (document.documentElement.style.cssFloat === undefined) {
-	    styleFloatAccessor = 'styleFloat';
-	  }
-	}
-
-	if ("production" !== process.env.NODE_ENV) {
-	  var warnedStyleNames = {};
-
-	  var warnHyphenatedStyleName = function(name) {
-	    if (warnedStyleNames.hasOwnProperty(name) && warnedStyleNames[name]) {
-	      return;
-	    }
-
-	    warnedStyleNames[name] = true;
-	    ("production" !== process.env.NODE_ENV ? warning(
-	      false,
-	      'Unsupported style property ' + name + '. Did you mean ' +
-	      camelizeStyleName(name) + '?'
-	    ) : null);
-	  };
-	}
-
-	/**
-	 * Operations for dealing with CSS properties.
-	 */
-	var CSSPropertyOperations = {
-
-	  /**
-	   * Serializes a mapping of style properties for use as inline styles:
-	   *
-	   *   > createMarkupForStyles({width: '200px', height: 0})
-	   *   "width:200px;height:0;"
-	   *
-	   * Undefined values are ignored so that declarative programming is easier.
-	   * The result should be HTML-escaped before insertion into the DOM.
-	   *
-	   * @param {object} styles
-	   * @return {?string}
-	   */
-	  createMarkupForStyles: function(styles) {
-	    var serialized = '';
-	    for (var styleName in styles) {
-	      if (!styles.hasOwnProperty(styleName)) {
-	        continue;
-	      }
-	      if ("production" !== process.env.NODE_ENV) {
-	        if (styleName.indexOf('-') > -1) {
-	          warnHyphenatedStyleName(styleName);
-	        }
-	      }
-	      var styleValue = styles[styleName];
-	      if (styleValue != null) {
-	        serialized += processStyleName(styleName) + ':';
-	        serialized += dangerousStyleValue(styleName, styleValue) + ';';
-	      }
-	    }
-	    return serialized || null;
-	  },
-
-	  /**
-	   * Sets the value for multiple styles on a node.  If a value is specified as
-	   * '' (empty string), the corresponding style property will be unset.
-	   *
-	   * @param {DOMElement} node
-	   * @param {object} styles
-	   */
-	  setValueForStyles: function(node, styles) {
-	    var style = node.style;
-	    for (var styleName in styles) {
-	      if (!styles.hasOwnProperty(styleName)) {
-	        continue;
-	      }
-	      if ("production" !== process.env.NODE_ENV) {
-	        if (styleName.indexOf('-') > -1) {
-	          warnHyphenatedStyleName(styleName);
-	        }
-	      }
-	      var styleValue = dangerousStyleValue(styleName, styles[styleName]);
-	      if (styleName === 'float') {
-	        styleName = styleFloatAccessor;
-	      }
-	      if (styleValue) {
-	        style[styleName] = styleValue;
-	      } else {
-	        var expansion = CSSProperty.shorthandPropertyExpansions[styleName];
-	        if (expansion) {
-	          // Shorthand property that IE8 won't like unsetting, so unset each
-	          // component to placate it
-	          for (var individualStyleName in expansion) {
-	            style[individualStyleName] = '';
-	          }
-	        } else {
-	          style[styleName] = '';
-	        }
-	      }
-	    }
-	  }
-
-	};
-
-	module.exports = CSSPropertyOperations;
-
-	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(62)))
-
-/***/ },
 /* 196 */
 /***/ function(module, exports, __webpack_require__) {
 
@@ -34921,7 +34961,7 @@
 
 	"use strict";
 
-	var keyMirror = __webpack_require__(143);
+	var keyMirror = __webpack_require__(144);
 
 	/**
 	 * When a component's children are updated, a series of update configuration
@@ -35011,7 +35051,7 @@
 
 	module.exports = flattenChildren;
 
-	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(62)))
+	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(52)))
 
 /***/ },
 /* 198 */
@@ -35442,7 +35482,7 @@
 
 	"use strict";
 
-	var shallowEqual = __webpack_require__(234);
+	var shallowEqual = __webpack_require__(238);
 
 	/**
 	 * If your React component's render function is "pure", e.g. it will render the
@@ -35802,7 +35842,7 @@
 
 	module.exports = cloneWithProps;
 
-	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(62)))
+	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(52)))
 
 /***/ },
 /* 210 */
@@ -35973,7 +36013,7 @@
 
 	module.exports = update;
 
-	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(62)))
+	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(52)))
 
 /***/ },
 /* 211 */
@@ -35994,14 +36034,14 @@
 
 	var EventConstants = __webpack_require__(73);
 	var EventPluginHub = __webpack_require__(74);
-	var EventPropagators = __webpack_require__(217);
+	var EventPropagators = __webpack_require__(221);
 	var React = __webpack_require__(50);
 	var ReactElement = __webpack_require__(31);
 	var ReactBrowserEventEmitter = __webpack_require__(29);
 	var ReactMount = __webpack_require__(15);
 	var ReactTextComponent = __webpack_require__(118);
 	var ReactUpdates = __webpack_require__(162);
-	var SyntheticEvent = __webpack_require__(219);
+	var SyntheticEvent = __webpack_require__(222);
 
 	var assign = __webpack_require__(78);
 
@@ -36458,7 +36498,7 @@
 
 	module.exports = emptyObject;
 
-	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(62)))
+	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(52)))
 
 /***/ },
 /* 214 */
@@ -36561,7 +36601,7 @@
 
 	module.exports = CallbackQueue;
 
-	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(62)))
+	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(52)))
 
 /***/ },
 /* 215 */
@@ -36805,7 +36845,7 @@
 
 	module.exports = Transaction;
 
-	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(62)))
+	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(52)))
 
 /***/ },
 /* 216 */
@@ -36856,6 +36896,282 @@
 /* 217 */
 /***/ function(module, exports, __webpack_require__) {
 
+	/**
+	 * Copyright 2013-2014, Facebook, Inc.
+	 * All rights reserved.
+	 *
+	 * This source code is licensed under the BSD-style license found in the
+	 * LICENSE file in the root directory of this source tree. An additional grant
+	 * of patent rights can be found in the PATENTS file in the same directory.
+	 *
+	 * @providesModule CSSProperty
+	 */
+
+	"use strict";
+
+	/**
+	 * CSS properties which accept numbers but are not in units of "px".
+	 */
+	var isUnitlessNumber = {
+	  columnCount: true,
+	  flex: true,
+	  flexGrow: true,
+	  flexShrink: true,
+	  fontWeight: true,
+	  lineClamp: true,
+	  lineHeight: true,
+	  opacity: true,
+	  order: true,
+	  orphans: true,
+	  widows: true,
+	  zIndex: true,
+	  zoom: true,
+
+	  // SVG-related properties
+	  fillOpacity: true,
+	  strokeOpacity: true
+	};
+
+	/**
+	 * @param {string} prefix vendor-specific prefix, eg: Webkit
+	 * @param {string} key style name, eg: transitionDuration
+	 * @return {string} style name prefixed with `prefix`, properly camelCased, eg:
+	 * WebkitTransitionDuration
+	 */
+	function prefixKey(prefix, key) {
+	  return prefix + key.charAt(0).toUpperCase() + key.substring(1);
+	}
+
+	/**
+	 * Support style names that may come passed in prefixed by adding permutations
+	 * of vendor prefixes.
+	 */
+	var prefixes = ['Webkit', 'ms', 'Moz', 'O'];
+
+	// Using Object.keys here, or else the vanilla for-in loop makes IE8 go into an
+	// infinite loop, because it iterates over the newly added props too.
+	Object.keys(isUnitlessNumber).forEach(function(prop) {
+	  prefixes.forEach(function(prefix) {
+	    isUnitlessNumber[prefixKey(prefix, prop)] = isUnitlessNumber[prop];
+	  });
+	});
+
+	/**
+	 * Most style properties can be unset by doing .style[prop] = '' but IE8
+	 * doesn't like doing that with shorthand properties so for the properties that
+	 * IE8 breaks on, which are listed here, we instead unset each of the
+	 * individual properties. See http://bugs.jquery.com/ticket/12385.
+	 * The 4-value 'clock' properties like margin, padding, border-width seem to
+	 * behave without any problems. Curiously, list-style works too without any
+	 * special prodding.
+	 */
+	var shorthandPropertyExpansions = {
+	  background: {
+	    backgroundImage: true,
+	    backgroundPosition: true,
+	    backgroundRepeat: true,
+	    backgroundColor: true
+	  },
+	  border: {
+	    borderWidth: true,
+	    borderStyle: true,
+	    borderColor: true
+	  },
+	  borderBottom: {
+	    borderBottomWidth: true,
+	    borderBottomStyle: true,
+	    borderBottomColor: true
+	  },
+	  borderLeft: {
+	    borderLeftWidth: true,
+	    borderLeftStyle: true,
+	    borderLeftColor: true
+	  },
+	  borderRight: {
+	    borderRightWidth: true,
+	    borderRightStyle: true,
+	    borderRightColor: true
+	  },
+	  borderTop: {
+	    borderTopWidth: true,
+	    borderTopStyle: true,
+	    borderTopColor: true
+	  },
+	  font: {
+	    fontStyle: true,
+	    fontVariant: true,
+	    fontWeight: true,
+	    fontSize: true,
+	    lineHeight: true,
+	    fontFamily: true
+	  }
+	};
+
+	var CSSProperty = {
+	  isUnitlessNumber: isUnitlessNumber,
+	  shorthandPropertyExpansions: shorthandPropertyExpansions
+	};
+
+	module.exports = CSSProperty;
+
+
+/***/ },
+/* 218 */
+/***/ function(module, exports, __webpack_require__) {
+
+	/**
+	 * Copyright 2014, Facebook, Inc.
+	 * All rights reserved.
+	 *
+	 * This source code is licensed under the BSD-style license found in the
+	 * LICENSE file in the root directory of this source tree. An additional grant
+	 * of patent rights can be found in the PATENTS file in the same directory.
+	 *
+	 * @providesModule camelizeStyleName
+	 * @typechecks
+	 */
+
+	"use strict";
+
+	var camelize = __webpack_require__(258);
+
+	var msPattern = /^-ms-/;
+
+	/**
+	 * Camelcases a hyphenated CSS property name, for example:
+	 *
+	 *   > camelizeStyleName('background-color')
+	 *   < "backgroundColor"
+	 *   > camelizeStyleName('-moz-transition')
+	 *   < "MozTransition"
+	 *   > camelizeStyleName('-ms-transition')
+	 *   < "msTransition"
+	 *
+	 * As Andi Smith suggests
+	 * (http://www.andismith.com/blog/2012/02/modernizr-prefixed/), an `-ms` prefix
+	 * is converted to lowercase `ms`.
+	 *
+	 * @param {string} string
+	 * @return {string}
+	 */
+	function camelizeStyleName(string) {
+	  return camelize(string.replace(msPattern, 'ms-'));
+	}
+
+	module.exports = camelizeStyleName;
+
+
+/***/ },
+/* 219 */
+/***/ function(module, exports, __webpack_require__) {
+
+	/**
+	 * Copyright 2013-2014, Facebook, Inc.
+	 * All rights reserved.
+	 *
+	 * This source code is licensed under the BSD-style license found in the
+	 * LICENSE file in the root directory of this source tree. An additional grant
+	 * of patent rights can be found in the PATENTS file in the same directory.
+	 *
+	 * @providesModule dangerousStyleValue
+	 * @typechecks static-only
+	 */
+
+	"use strict";
+
+	var CSSProperty = __webpack_require__(217);
+
+	var isUnitlessNumber = CSSProperty.isUnitlessNumber;
+
+	/**
+	 * Convert a value into the proper css writable value. The style name `name`
+	 * should be logical (no hyphens), as specified
+	 * in `CSSProperty.isUnitlessNumber`.
+	 *
+	 * @param {string} name CSS property name such as `topMargin`.
+	 * @param {*} value CSS property value such as `10px`.
+	 * @return {string} Normalized style value with dimensions applied.
+	 */
+	function dangerousStyleValue(name, value) {
+	  // Note that we've removed escapeTextForBrowser() calls here since the
+	  // whole string will be escaped when the attribute is injected into
+	  // the markup. If you provide unsafe user data here they can inject
+	  // arbitrary CSS which may be problematic (I couldn't repro this):
+	  // https://www.owasp.org/index.php/XSS_Filter_Evasion_Cheat_Sheet
+	  // http://www.thespanner.co.uk/2007/11/26/ultimate-xss-css-injection/
+	  // This is not an XSS hole but instead a potential CSS injection issue
+	  // which has lead to a greater discussion about how we're going to
+	  // trust URLs moving forward. See #2115901
+
+	  var isEmpty = value == null || typeof value === 'boolean' || value === '';
+	  if (isEmpty) {
+	    return '';
+	  }
+
+	  var isNonNumeric = isNaN(value);
+	  if (isNonNumeric || value === 0 ||
+	      isUnitlessNumber.hasOwnProperty(name) && isUnitlessNumber[name]) {
+	    return '' + value; // cast to string
+	  }
+
+	  if (typeof value === 'string') {
+	    value = value.trim();
+	  }
+	  return value + 'px';
+	}
+
+	module.exports = dangerousStyleValue;
+
+
+/***/ },
+/* 220 */
+/***/ function(module, exports, __webpack_require__) {
+
+	/**
+	 * Copyright 2013-2014, Facebook, Inc.
+	 * All rights reserved.
+	 *
+	 * This source code is licensed under the BSD-style license found in the
+	 * LICENSE file in the root directory of this source tree. An additional grant
+	 * of patent rights can be found in the PATENTS file in the same directory.
+	 *
+	 * @providesModule hyphenateStyleName
+	 * @typechecks
+	 */
+
+	"use strict";
+
+	var hyphenate = __webpack_require__(259);
+
+	var msPattern = /^ms-/;
+
+	/**
+	 * Hyphenates a camelcased CSS property name, for example:
+	 *
+	 *   > hyphenateStyleName('backgroundColor')
+	 *   < "background-color"
+	 *   > hyphenateStyleName('MozTransition')
+	 *   < "-moz-transition"
+	 *   > hyphenateStyleName('msTransition')
+	 *   < "-ms-transition"
+	 *
+	 * As Modernizr suggests (http://modernizr.com/docs/#prefixed), an `ms` prefix
+	 * is converted to `-ms-`.
+	 *
+	 * @param {string} string
+	 * @return {string}
+	 */
+	function hyphenateStyleName(string) {
+	  return hyphenate(string).replace(msPattern, '-ms-');
+	}
+
+	module.exports = hyphenateStyleName;
+
+
+/***/ },
+/* 221 */
+/***/ function(module, exports, __webpack_require__) {
+
 	/* WEBPACK VAR INJECTION */(function(process) {/**
 	 * Copyright 2013-2014, Facebook, Inc.
 	 * All rights reserved.
@@ -36872,8 +37188,8 @@
 	var EventConstants = __webpack_require__(73);
 	var EventPluginHub = __webpack_require__(74);
 
-	var accumulateInto = __webpack_require__(144);
-	var forEachAccumulated = __webpack_require__(145);
+	var accumulateInto = __webpack_require__(145);
+	var forEachAccumulated = __webpack_require__(146);
 
 	var PropagationPhases = EventConstants.PropagationPhases;
 	var getListener = EventPluginHub.getListener;
@@ -36995,61 +37311,10 @@
 
 	module.exports = EventPropagators;
 
-	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(62)))
+	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(52)))
 
 /***/ },
-/* 218 */
-/***/ function(module, exports, __webpack_require__) {
-
-	/**
-	 * Copyright 2013 Facebook, Inc.
-	 * All rights reserved.
-	 *
-	 * This source code is licensed under the BSD-style license found in the
-	 * LICENSE file in the root directory of this source tree. An additional grant
-	 * of patent rights can be found in the PATENTS file in the same directory.
-	 *
-	 * @providesModule SyntheticInputEvent
-	 * @typechecks static-only
-	 */
-
-	"use strict";
-
-	var SyntheticEvent = __webpack_require__(219);
-
-	/**
-	 * @interface Event
-	 * @see http://www.w3.org/TR/2013/WD-DOM-Level-3-Events-20131105
-	 *      /#events-inputevents
-	 */
-	var InputEventInterface = {
-	  data: null
-	};
-
-	/**
-	 * @param {object} dispatchConfig Configuration used to dispatch this event.
-	 * @param {string} dispatchMarker Marker identifying the event target.
-	 * @param {object} nativeEvent Native browser event.
-	 * @extends {SyntheticUIEvent}
-	 */
-	function SyntheticInputEvent(
-	  dispatchConfig,
-	  dispatchMarker,
-	  nativeEvent) {
-	  SyntheticEvent.call(this, dispatchConfig, dispatchMarker, nativeEvent);
-	}
-
-	SyntheticEvent.augmentClass(
-	  SyntheticInputEvent,
-	  InputEventInterface
-	);
-
-	module.exports = SyntheticInputEvent;
-
-
-
-/***/ },
-/* 219 */
+/* 222 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/**
@@ -37070,7 +37335,7 @@
 
 	var assign = __webpack_require__(78);
 	var emptyFunction = __webpack_require__(86);
-	var getEventTarget = __webpack_require__(232);
+	var getEventTarget = __webpack_require__(236);
 
 	/**
 	 * @interface Event
@@ -37211,7 +37476,7 @@
 
 
 /***/ },
-/* 220 */
+/* 223 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/**
@@ -37259,7 +37524,58 @@
 
 
 /***/ },
-/* 221 */
+/* 224 */
+/***/ function(module, exports, __webpack_require__) {
+
+	/**
+	 * Copyright 2013 Facebook, Inc.
+	 * All rights reserved.
+	 *
+	 * This source code is licensed under the BSD-style license found in the
+	 * LICENSE file in the root directory of this source tree. An additional grant
+	 * of patent rights can be found in the PATENTS file in the same directory.
+	 *
+	 * @providesModule SyntheticInputEvent
+	 * @typechecks static-only
+	 */
+
+	"use strict";
+
+	var SyntheticEvent = __webpack_require__(222);
+
+	/**
+	 * @interface Event
+	 * @see http://www.w3.org/TR/2013/WD-DOM-Level-3-Events-20131105
+	 *      /#events-inputevents
+	 */
+	var InputEventInterface = {
+	  data: null
+	};
+
+	/**
+	 * @param {object} dispatchConfig Configuration used to dispatch this event.
+	 * @param {string} dispatchMarker Marker identifying the event target.
+	 * @param {object} nativeEvent Native browser event.
+	 * @extends {SyntheticUIEvent}
+	 */
+	function SyntheticInputEvent(
+	  dispatchConfig,
+	  dispatchMarker,
+	  nativeEvent) {
+	  SyntheticEvent.call(this, dispatchConfig, dispatchMarker, nativeEvent);
+	}
+
+	SyntheticEvent.augmentClass(
+	  SyntheticInputEvent,
+	  InputEventInterface
+	);
+
+	module.exports = SyntheticInputEvent;
+
+
+
+/***/ },
+/* 225 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/**
@@ -37275,11 +37591,11 @@
 
 	"use strict";
 
-	var ReactDOMSelection = __webpack_require__(258);
+	var ReactDOMSelection = __webpack_require__(260);
 
 	var containsNode = __webpack_require__(35);
-	var focusNode = __webpack_require__(259);
-	var getActiveElement = __webpack_require__(233);
+	var focusNode = __webpack_require__(261);
+	var getActiveElement = __webpack_require__(237);
 
 	function isInDocument(node) {
 	  return containsNode(document.documentElement, node);
@@ -37399,7 +37715,7 @@
 
 
 /***/ },
-/* 222 */
+/* 226 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/**
@@ -37416,7 +37732,7 @@
 
 	"use strict";
 
-	var SyntheticEvent = __webpack_require__(219);
+	var SyntheticEvent = __webpack_require__(222);
 
 	/**
 	 * @interface Event
@@ -37449,7 +37765,7 @@
 
 
 /***/ },
-/* 223 */
+/* 227 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/**
@@ -37490,7 +37806,7 @@
 
 
 /***/ },
-/* 224 */
+/* 228 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/**
@@ -37507,10 +37823,10 @@
 
 	"use strict";
 
-	var SyntheticUIEvent = __webpack_require__(240);
+	var SyntheticUIEvent = __webpack_require__(244);
 	var ViewportMetrics = __webpack_require__(77);
 
-	var getEventModifierState = __webpack_require__(260);
+	var getEventModifierState = __webpack_require__(262);
 
 	/**
 	 * @interface MouseEvent
@@ -37577,7 +37893,7 @@
 
 
 /***/ },
-/* 225 */
+/* 229 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(process) {/**
@@ -37596,14 +37912,14 @@
 
 	"use strict";
 
-	var CSSPropertyOperations = __webpack_require__(195);
-	var DOMChildrenOperations = __webpack_require__(261);
+	var CSSPropertyOperations = __webpack_require__(169);
+	var DOMChildrenOperations = __webpack_require__(263);
 	var DOMPropertyOperations = __webpack_require__(106);
 	var ReactMount = __webpack_require__(15);
 	var ReactPerf = __webpack_require__(34);
 
 	var invariant = __webpack_require__(39);
-	var setInnerHTML = __webpack_require__(227);
+	var setInnerHTML = __webpack_require__(231);
 
 	/**
 	 * Errors for properties that should not be updated with `updatePropertyById()`.
@@ -37763,10 +38079,10 @@
 
 	module.exports = ReactDOMIDOperations;
 
-	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(62)))
+	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(52)))
 
 /***/ },
-/* 226 */
+/* 230 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/**
@@ -37786,7 +38102,7 @@
 	var CallbackQueue = __webpack_require__(214);
 	var PooledClass = __webpack_require__(159);
 	var ReactBrowserEventEmitter = __webpack_require__(29);
-	var ReactInputSelection = __webpack_require__(221);
+	var ReactInputSelection = __webpack_require__(225);
 	var ReactPutListenerQueue = __webpack_require__(250);
 	var Transaction = __webpack_require__(215);
 
@@ -37946,7 +38262,7 @@
 
 
 /***/ },
-/* 227 */
+/* 231 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/**
@@ -38028,7 +38344,7 @@
 
 
 /***/ },
-/* 228 */
+/* 232 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/**
@@ -38045,7 +38361,7 @@
 
 	"use strict";
 
-	var focusNode = __webpack_require__(259);
+	var focusNode = __webpack_require__(261);
 
 	var AutoFocusMixin = {
 	  componentDidMount: function() {
@@ -38059,7 +38375,7 @@
 
 
 /***/ },
-/* 229 */
+/* 233 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(process) {/**
@@ -38077,8 +38393,8 @@
 
 	var ReactBrowserEventEmitter = __webpack_require__(29);
 
-	var accumulateInto = __webpack_require__(144);
-	var forEachAccumulated = __webpack_require__(145);
+	var accumulateInto = __webpack_require__(145);
+	var forEachAccumulated = __webpack_require__(146);
 	var invariant = __webpack_require__(39);
 
 	function remove(event) {
@@ -38109,10 +38425,10 @@
 
 	module.exports = LocalEventTrapMixin;
 
-	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(62)))
+	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(52)))
 
 /***/ },
-/* 230 */
+/* 234 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(process) {/**
@@ -38268,10 +38584,10 @@
 
 	module.exports = LinkedValueUtils;
 
-	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(62)))
+	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(52)))
 
 /***/ },
-/* 231 */
+/* 235 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(process) {/**
@@ -38361,10 +38677,10 @@
 
 	module.exports = EventListener;
 
-	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(62)))
+	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(52)))
 
 /***/ },
-/* 232 */
+/* 236 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/**
@@ -38399,7 +38715,7 @@
 
 
 /***/ },
-/* 233 */
+/* 237 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/**
@@ -38432,7 +38748,7 @@
 
 
 /***/ },
-/* 234 */
+/* 238 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/**
@@ -38480,7 +38796,7 @@
 
 
 /***/ },
-/* 235 */
+/* 239 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/**
@@ -38497,7 +38813,7 @@
 
 	"use strict";
 
-	var SyntheticEvent = __webpack_require__(219);
+	var SyntheticEvent = __webpack_require__(222);
 
 	/**
 	 * @interface Event
@@ -38530,7 +38846,7 @@
 
 
 /***/ },
-/* 236 */
+/* 240 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/**
@@ -38547,7 +38863,7 @@
 
 	"use strict";
 
-	var SyntheticUIEvent = __webpack_require__(240);
+	var SyntheticUIEvent = __webpack_require__(244);
 
 	/**
 	 * @interface FocusEvent
@@ -38573,7 +38889,7 @@
 
 
 /***/ },
-/* 237 */
+/* 241 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/**
@@ -38590,11 +38906,11 @@
 
 	"use strict";
 
-	var SyntheticUIEvent = __webpack_require__(240);
+	var SyntheticUIEvent = __webpack_require__(244);
 
-	var getEventCharCode = __webpack_require__(242);
-	var getEventKey = __webpack_require__(262);
-	var getEventModifierState = __webpack_require__(260);
+	var getEventCharCode = __webpack_require__(246);
+	var getEventKey = __webpack_require__(264);
+	var getEventModifierState = __webpack_require__(262);
 
 	/**
 	 * @interface KeyboardEvent
@@ -38664,7 +38980,7 @@
 
 
 /***/ },
-/* 238 */
+/* 242 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/**
@@ -38681,7 +38997,7 @@
 
 	"use strict";
 
-	var SyntheticMouseEvent = __webpack_require__(224);
+	var SyntheticMouseEvent = __webpack_require__(228);
 
 	/**
 	 * @interface DragEvent
@@ -38707,7 +39023,7 @@
 
 
 /***/ },
-/* 239 */
+/* 243 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/**
@@ -38724,9 +39040,9 @@
 
 	"use strict";
 
-	var SyntheticUIEvent = __webpack_require__(240);
+	var SyntheticUIEvent = __webpack_require__(244);
 
-	var getEventModifierState = __webpack_require__(260);
+	var getEventModifierState = __webpack_require__(262);
 
 	/**
 	 * @interface TouchEvent
@@ -38759,7 +39075,7 @@
 
 
 /***/ },
-/* 240 */
+/* 244 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/**
@@ -38776,9 +39092,9 @@
 
 	"use strict";
 
-	var SyntheticEvent = __webpack_require__(219);
+	var SyntheticEvent = __webpack_require__(222);
 
-	var getEventTarget = __webpack_require__(232);
+	var getEventTarget = __webpack_require__(236);
 
 	/**
 	 * @interface UIEvent
@@ -38825,7 +39141,7 @@
 
 
 /***/ },
-/* 241 */
+/* 245 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/**
@@ -38842,7 +39158,7 @@
 
 	"use strict";
 
-	var SyntheticMouseEvent = __webpack_require__(224);
+	var SyntheticMouseEvent = __webpack_require__(228);
 
 	/**
 	 * @interface WheelEvent
@@ -38890,7 +39206,7 @@
 
 
 /***/ },
-/* 242 */
+/* 246 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/**
@@ -38943,282 +39259,6 @@
 	}
 
 	module.exports = getEventCharCode;
-
-
-/***/ },
-/* 243 */
-/***/ function(module, exports, __webpack_require__) {
-
-	/**
-	 * Copyright 2013-2014, Facebook, Inc.
-	 * All rights reserved.
-	 *
-	 * This source code is licensed under the BSD-style license found in the
-	 * LICENSE file in the root directory of this source tree. An additional grant
-	 * of patent rights can be found in the PATENTS file in the same directory.
-	 *
-	 * @providesModule CSSProperty
-	 */
-
-	"use strict";
-
-	/**
-	 * CSS properties which accept numbers but are not in units of "px".
-	 */
-	var isUnitlessNumber = {
-	  columnCount: true,
-	  flex: true,
-	  flexGrow: true,
-	  flexShrink: true,
-	  fontWeight: true,
-	  lineClamp: true,
-	  lineHeight: true,
-	  opacity: true,
-	  order: true,
-	  orphans: true,
-	  widows: true,
-	  zIndex: true,
-	  zoom: true,
-
-	  // SVG-related properties
-	  fillOpacity: true,
-	  strokeOpacity: true
-	};
-
-	/**
-	 * @param {string} prefix vendor-specific prefix, eg: Webkit
-	 * @param {string} key style name, eg: transitionDuration
-	 * @return {string} style name prefixed with `prefix`, properly camelCased, eg:
-	 * WebkitTransitionDuration
-	 */
-	function prefixKey(prefix, key) {
-	  return prefix + key.charAt(0).toUpperCase() + key.substring(1);
-	}
-
-	/**
-	 * Support style names that may come passed in prefixed by adding permutations
-	 * of vendor prefixes.
-	 */
-	var prefixes = ['Webkit', 'ms', 'Moz', 'O'];
-
-	// Using Object.keys here, or else the vanilla for-in loop makes IE8 go into an
-	// infinite loop, because it iterates over the newly added props too.
-	Object.keys(isUnitlessNumber).forEach(function(prop) {
-	  prefixes.forEach(function(prefix) {
-	    isUnitlessNumber[prefixKey(prefix, prop)] = isUnitlessNumber[prop];
-	  });
-	});
-
-	/**
-	 * Most style properties can be unset by doing .style[prop] = '' but IE8
-	 * doesn't like doing that with shorthand properties so for the properties that
-	 * IE8 breaks on, which are listed here, we instead unset each of the
-	 * individual properties. See http://bugs.jquery.com/ticket/12385.
-	 * The 4-value 'clock' properties like margin, padding, border-width seem to
-	 * behave without any problems. Curiously, list-style works too without any
-	 * special prodding.
-	 */
-	var shorthandPropertyExpansions = {
-	  background: {
-	    backgroundImage: true,
-	    backgroundPosition: true,
-	    backgroundRepeat: true,
-	    backgroundColor: true
-	  },
-	  border: {
-	    borderWidth: true,
-	    borderStyle: true,
-	    borderColor: true
-	  },
-	  borderBottom: {
-	    borderBottomWidth: true,
-	    borderBottomStyle: true,
-	    borderBottomColor: true
-	  },
-	  borderLeft: {
-	    borderLeftWidth: true,
-	    borderLeftStyle: true,
-	    borderLeftColor: true
-	  },
-	  borderRight: {
-	    borderRightWidth: true,
-	    borderRightStyle: true,
-	    borderRightColor: true
-	  },
-	  borderTop: {
-	    borderTopWidth: true,
-	    borderTopStyle: true,
-	    borderTopColor: true
-	  },
-	  font: {
-	    fontStyle: true,
-	    fontVariant: true,
-	    fontWeight: true,
-	    fontSize: true,
-	    lineHeight: true,
-	    fontFamily: true
-	  }
-	};
-
-	var CSSProperty = {
-	  isUnitlessNumber: isUnitlessNumber,
-	  shorthandPropertyExpansions: shorthandPropertyExpansions
-	};
-
-	module.exports = CSSProperty;
-
-
-/***/ },
-/* 244 */
-/***/ function(module, exports, __webpack_require__) {
-
-	/**
-	 * Copyright 2014, Facebook, Inc.
-	 * All rights reserved.
-	 *
-	 * This source code is licensed under the BSD-style license found in the
-	 * LICENSE file in the root directory of this source tree. An additional grant
-	 * of patent rights can be found in the PATENTS file in the same directory.
-	 *
-	 * @providesModule camelizeStyleName
-	 * @typechecks
-	 */
-
-	"use strict";
-
-	var camelize = __webpack_require__(263);
-
-	var msPattern = /^-ms-/;
-
-	/**
-	 * Camelcases a hyphenated CSS property name, for example:
-	 *
-	 *   > camelizeStyleName('background-color')
-	 *   < "backgroundColor"
-	 *   > camelizeStyleName('-moz-transition')
-	 *   < "MozTransition"
-	 *   > camelizeStyleName('-ms-transition')
-	 *   < "msTransition"
-	 *
-	 * As Andi Smith suggests
-	 * (http://www.andismith.com/blog/2012/02/modernizr-prefixed/), an `-ms` prefix
-	 * is converted to lowercase `ms`.
-	 *
-	 * @param {string} string
-	 * @return {string}
-	 */
-	function camelizeStyleName(string) {
-	  return camelize(string.replace(msPattern, 'ms-'));
-	}
-
-	module.exports = camelizeStyleName;
-
-
-/***/ },
-/* 245 */
-/***/ function(module, exports, __webpack_require__) {
-
-	/**
-	 * Copyright 2013-2014, Facebook, Inc.
-	 * All rights reserved.
-	 *
-	 * This source code is licensed under the BSD-style license found in the
-	 * LICENSE file in the root directory of this source tree. An additional grant
-	 * of patent rights can be found in the PATENTS file in the same directory.
-	 *
-	 * @providesModule dangerousStyleValue
-	 * @typechecks static-only
-	 */
-
-	"use strict";
-
-	var CSSProperty = __webpack_require__(243);
-
-	var isUnitlessNumber = CSSProperty.isUnitlessNumber;
-
-	/**
-	 * Convert a value into the proper css writable value. The style name `name`
-	 * should be logical (no hyphens), as specified
-	 * in `CSSProperty.isUnitlessNumber`.
-	 *
-	 * @param {string} name CSS property name such as `topMargin`.
-	 * @param {*} value CSS property value such as `10px`.
-	 * @return {string} Normalized style value with dimensions applied.
-	 */
-	function dangerousStyleValue(name, value) {
-	  // Note that we've removed escapeTextForBrowser() calls here since the
-	  // whole string will be escaped when the attribute is injected into
-	  // the markup. If you provide unsafe user data here they can inject
-	  // arbitrary CSS which may be problematic (I couldn't repro this):
-	  // https://www.owasp.org/index.php/XSS_Filter_Evasion_Cheat_Sheet
-	  // http://www.thespanner.co.uk/2007/11/26/ultimate-xss-css-injection/
-	  // This is not an XSS hole but instead a potential CSS injection issue
-	  // which has lead to a greater discussion about how we're going to
-	  // trust URLs moving forward. See #2115901
-
-	  var isEmpty = value == null || typeof value === 'boolean' || value === '';
-	  if (isEmpty) {
-	    return '';
-	  }
-
-	  var isNonNumeric = isNaN(value);
-	  if (isNonNumeric || value === 0 ||
-	      isUnitlessNumber.hasOwnProperty(name) && isUnitlessNumber[name]) {
-	    return '' + value; // cast to string
-	  }
-
-	  if (typeof value === 'string') {
-	    value = value.trim();
-	  }
-	  return value + 'px';
-	}
-
-	module.exports = dangerousStyleValue;
-
-
-/***/ },
-/* 246 */
-/***/ function(module, exports, __webpack_require__) {
-
-	/**
-	 * Copyright 2013-2014, Facebook, Inc.
-	 * All rights reserved.
-	 *
-	 * This source code is licensed under the BSD-style license found in the
-	 * LICENSE file in the root directory of this source tree. An additional grant
-	 * of patent rights can be found in the PATENTS file in the same directory.
-	 *
-	 * @providesModule hyphenateStyleName
-	 * @typechecks
-	 */
-
-	"use strict";
-
-	var hyphenate = __webpack_require__(264);
-
-	var msPattern = /^ms-/;
-
-	/**
-	 * Hyphenates a camelcased CSS property name, for example:
-	 *
-	 *   > hyphenateStyleName('backgroundColor')
-	 *   < "background-color"
-	 *   > hyphenateStyleName('MozTransition')
-	 *   < "-moz-transition"
-	 *   > hyphenateStyleName('msTransition')
-	 *   < "-ms-transition"
-	 *
-	 * As Modernizr suggests (http://modernizr.com/docs/#prefixed), an `ms` prefix
-	 * is converted to `-ms-`.
-	 *
-	 * @param {string} string
-	 * @return {string}
-	 */
-	function hyphenateStyleName(string) {
-	  return hyphenate(string).replace(msPattern, '-ms-');
-	}
-
-	module.exports = hyphenateStyleName;
 
 
 /***/ },
@@ -39884,7 +39924,7 @@
 
 	module.exports = ReactCSSTransitionGroupChild;
 
-	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(62)))
+	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(52)))
 
 /***/ },
 /* 254 */
@@ -40121,6 +40161,79 @@
 	 * LICENSE file in the root directory of this source tree. An additional grant
 	 * of patent rights can be found in the PATENTS file in the same directory.
 	 *
+	 * @providesModule camelize
+	 * @typechecks
+	 */
+
+	var _hyphenPattern = /-(.)/g;
+
+	/**
+	 * Camelcases a hyphenated string, for example:
+	 *
+	 *   > camelize('background-color')
+	 *   < "backgroundColor"
+	 *
+	 * @param {string} string
+	 * @return {string}
+	 */
+	function camelize(string) {
+	  return string.replace(_hyphenPattern, function(_, character) {
+	    return character.toUpperCase();
+	  });
+	}
+
+	module.exports = camelize;
+
+
+/***/ },
+/* 259 */
+/***/ function(module, exports, __webpack_require__) {
+
+	/**
+	 * Copyright 2013-2014, Facebook, Inc.
+	 * All rights reserved.
+	 *
+	 * This source code is licensed under the BSD-style license found in the
+	 * LICENSE file in the root directory of this source tree. An additional grant
+	 * of patent rights can be found in the PATENTS file in the same directory.
+	 *
+	 * @providesModule hyphenate
+	 * @typechecks
+	 */
+
+	var _uppercasePattern = /([A-Z])/g;
+
+	/**
+	 * Hyphenates a camelcased string, for example:
+	 *
+	 *   > hyphenate('backgroundColor')
+	 *   < "background-color"
+	 *
+	 * For CSS style names, use `hyphenateStyleName` instead which works properly
+	 * with all vendor prefixes, including `ms`.
+	 *
+	 * @param {string} string
+	 * @return {string}
+	 */
+	function hyphenate(string) {
+	  return string.replace(_uppercasePattern, '-$1').toLowerCase();
+	}
+
+	module.exports = hyphenate;
+
+
+/***/ },
+/* 260 */
+/***/ function(module, exports, __webpack_require__) {
+
+	/**
+	 * Copyright 2013-2014, Facebook, Inc.
+	 * All rights reserved.
+	 *
+	 * This source code is licensed under the BSD-style license found in the
+	 * LICENSE file in the root directory of this source tree. An additional grant
+	 * of patent rights can be found in the PATENTS file in the same directory.
+	 *
 	 * @providesModule ReactDOMSelection
 	 */
 
@@ -40129,7 +40242,7 @@
 	var ExecutionEnvironment = __webpack_require__(120);
 
 	var getNodeForCharacterOffset = __webpack_require__(270);
-	var getTextContentAccessor = __webpack_require__(223);
+	var getTextContentAccessor = __webpack_require__(227);
 
 	/**
 	 * While `isCollapsed` is available on the Selection object and `collapsed`
@@ -40323,7 +40436,7 @@
 
 
 /***/ },
-/* 259 */
+/* 261 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/**
@@ -40356,7 +40469,7 @@
 
 
 /***/ },
-/* 260 */
+/* 262 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/**
@@ -40407,7 +40520,7 @@
 
 
 /***/ },
-/* 261 */
+/* 263 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(process) {/**
@@ -40427,7 +40540,7 @@
 	var Danger = __webpack_require__(271);
 	var ReactMultiChildUpdateTypes = __webpack_require__(196);
 
-	var getTextContentAccessor = __webpack_require__(223);
+	var getTextContentAccessor = __webpack_require__(227);
 	var invariant = __webpack_require__(39);
 
 	/**
@@ -40582,10 +40695,10 @@
 
 	module.exports = DOMChildrenOperations;
 
-	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(62)))
+	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(52)))
 
 /***/ },
-/* 262 */
+/* 264 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/**
@@ -40602,7 +40715,7 @@
 
 	"use strict";
 
-	var getEventCharCode = __webpack_require__(242);
+	var getEventCharCode = __webpack_require__(246);
 
 	/**
 	 * Normalization of deprecated HTML5 `key` values
@@ -40691,79 +40804,6 @@
 	}
 
 	module.exports = getEventKey;
-
-
-/***/ },
-/* 263 */
-/***/ function(module, exports, __webpack_require__) {
-
-	/**
-	 * Copyright 2013-2014, Facebook, Inc.
-	 * All rights reserved.
-	 *
-	 * This source code is licensed under the BSD-style license found in the
-	 * LICENSE file in the root directory of this source tree. An additional grant
-	 * of patent rights can be found in the PATENTS file in the same directory.
-	 *
-	 * @providesModule camelize
-	 * @typechecks
-	 */
-
-	var _hyphenPattern = /-(.)/g;
-
-	/**
-	 * Camelcases a hyphenated string, for example:
-	 *
-	 *   > camelize('background-color')
-	 *   < "backgroundColor"
-	 *
-	 * @param {string} string
-	 * @return {string}
-	 */
-	function camelize(string) {
-	  return string.replace(_hyphenPattern, function(_, character) {
-	    return character.toUpperCase();
-	  });
-	}
-
-	module.exports = camelize;
-
-
-/***/ },
-/* 264 */
-/***/ function(module, exports, __webpack_require__) {
-
-	/**
-	 * Copyright 2013-2014, Facebook, Inc.
-	 * All rights reserved.
-	 *
-	 * This source code is licensed under the BSD-style license found in the
-	 * LICENSE file in the root directory of this source tree. An additional grant
-	 * of patent rights can be found in the PATENTS file in the same directory.
-	 *
-	 * @providesModule hyphenate
-	 * @typechecks
-	 */
-
-	var _uppercasePattern = /([A-Z])/g;
-
-	/**
-	 * Hyphenates a camelcased string, for example:
-	 *
-	 *   > hyphenate('backgroundColor')
-	 *   < "background-color"
-	 *
-	 * For CSS style names, use `hyphenateStyleName` instead which works properly
-	 * with all vendor prefixes, including `ms`.
-	 *
-	 * @param {string} string
-	 * @return {string}
-	 */
-	function hyphenate(string) {
-	  return string.replace(_uppercasePattern, '-$1').toLowerCase();
-	}
-
-	module.exports = hyphenate;
 
 
 /***/ },
@@ -40911,7 +40951,7 @@
 
 	module.exports = CSSCore;
 
-	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(62)))
+	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(52)))
 
 /***/ },
 /* 267 */
@@ -41540,7 +41580,7 @@
 
 	module.exports = Danger;
 
-	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(62)))
+	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(52)))
 
 /***/ },
 /* 272 */
@@ -41633,7 +41673,7 @@
 
 	module.exports = createNodesFromMarkup;
 
-	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(62)))
+	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(52)))
 
 /***/ },
 /* 273 */
@@ -41753,7 +41793,7 @@
 
 	module.exports = getMarkupWrap;
 
-	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(62)))
+	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(52)))
 
 /***/ },
 /* 274 */
@@ -41918,7 +41958,7 @@
 
 	module.exports = toArray;
 
-	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(62)))
+	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(52)))
 
 /***/ }
 /******/ ]);
