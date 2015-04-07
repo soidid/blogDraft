@@ -71,8 +71,10 @@ export default React.createClass({
       if(this.props.type === "section"){
           result = (
               <div className="Author">
+                 <a href="#/author/1">
                  <div dangerouslySetInnerHTML={{__html: Author.user.bio_excerpt}}></div>
                  <div className="Author-gotoBio">作者個人頁面</div>
+                 </a>
               </div>
           )
 

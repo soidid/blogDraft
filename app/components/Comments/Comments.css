@@ -53,7 +53,7 @@
 }
 
 .Comments-main {
-	max-height: 260px;
+	max-height: 250px;
 	overflow:hidden;  _overflow:visible;  zoom:1; 
 	padding: 10px 10px 0px 10px;
 }
@@ -83,9 +83,15 @@
 	//color: black;
 }
 
-.Comments-post p, .Comments-post a{
+.Comments-post p {
 	line-height: 1.6;
 	font-size: 16px;
+}
+.Comments-post a, .Comments-post a:visited {
+	color: rgb(135,184,37);
+	font-size: 16px;
+	text-decoration: none;
+	border: none;
 }
 .Comments-post ul, .Comments-post ol {
 	padding-left: 26px;
@@ -96,7 +102,6 @@
 .Comments-post li {
 	margin: 10px;
 	font-size: 16px;
-	;
 }
 .Comments-index {
     //font-family: 'Helvetica','Arial','sans-serif';
@@ -179,6 +184,7 @@ aside {
 	padding: 1px 5px;
 	font-family: 'Georgia';
 	position: relative;
+	color: rgb(100,100,100);
 }
 aside blockquote {
     font-family: sans-serif; 
@@ -187,6 +193,16 @@ aside blockquote {
     quotes: "\201C" "\201D" "\201C" "\201D";
     margin: 0px;
     padding: 0px;
+}
+aside blockquote > * {
+	color: rgb(100,100,100);	
+}
+
+.Comments-main p {
+	margin: 8px;
+}
+aside blockquote > p {
+	line-height: 1.2;
 }
 @media all and (min-width: 400px){
 	aside blockquote {
