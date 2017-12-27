@@ -35,10 +35,7 @@ p, blockquote, h3, ul, ol, li, a, span {
   position: relative;
 }
 .Article-coverImg {
-  width: 110%;
-  position: absolute;
-  top: -100px;
-  left: -10px;
+
 }
 .Article-coverCopyright {
   color: #2F2930;
@@ -59,9 +56,7 @@ p, blockquote, h3, ul, ol, li, a, span {
         height: 300px;
     }
     .Article-coverImg {
-        width: 110%;
-        top: -380px;
-        left: -10%;
+
     }
 }
 .Article-content {

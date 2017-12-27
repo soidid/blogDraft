@@ -6,6 +6,8 @@ import Comments from "../Comments/Comments.es6";
 import Social from "../Social/Social.es6";
 import List from "../List/List.es6";
 
+import bannerImg from "./images/articleBanner.png";
+
 import "./Article.css";
 
 //http://community.citizenedu.tw/t/topic/102/10
@@ -50,10 +52,8 @@ export default React.createClass({
             
             <div className="Article-cover">
                 <img className="Article-coverImg"
-                     src="https://fbcdn-sphotos-d-a.akamaihd.net/hphotos-ak-xfp1/t31.0-8/10514156_978580618821819_5686475740468114136_o.jpg" />
-                <a className="Article-coverCopyright"
-                   href="https://www.facebook.com/ElaineeFangs"
-                   target="_blank">圖／Elainee.’s</a>
+                     src={bannerImg} />
+                
             </div>
             
             <Social goToCommentHandler={this._onGoToComment}/>
